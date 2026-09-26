@@ -182,6 +182,44 @@ h1, h2, h3, .logo, .btn, .stat h3, .step h3 {
 .footer-logo { color: #fff; font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; }
 .disclaimer { font-size: .8rem; line-height: 1.6; margin-bottom: 18px; color: #8fa0ba; }
 .copy { font-size: .85rem; }
+.copy a { color: #8fa0ba; text-decoration: underline; }
+.copy a:hover { color: var(--gold-soft); }
+.footer-links { font-size: .85rem; margin-bottom: 18px; }
+.footer-links a { color: #8fa0ba; text-decoration: underline; margin-right: 16px; }
+.footer-links a:hover { color: var(--gold-soft); }
+
+/* ---------- Cookie consent ---------- */
+/* Banner markup lives in consent.js so it is injected identically on every page.
+   Hidden by default and only revealed when no stored choice exists. */
+.consent-banner {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 100;
+  background: var(--navy); color: #c9d3e3;
+  border-top: 2px solid var(--gold);
+  box-shadow: 0 -4px 16px rgba(0,0,0,.28);
+  padding: 20px 0;
+  display: none;
+}
+.consent-banner.show { display: block; }
+.consent-inner {
+  max-width: 1080px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+}
+.consent-text { flex: 1 1 380px; font-size: .88rem; line-height: 1.6; }
+.consent-text a { color: var(--gold-soft); text-decoration: underline; }
+.consent-text a:hover { color: #fff; }
+.consent-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-consent-accept,
+.btn-consent-decline {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-size: .85rem; font-weight: 600;
+  padding: 9px 20px; border-radius: var(--radius);
+  cursor: pointer; border: 1px solid transparent;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.btn-consent-accept { background: var(--gold); color: var(--navy); }
+.btn-consent-accept:hover { background: var(--gold-soft); }
+.btn-consent-decline { background: transparent; color: #c9d3e3; border-color: #46587a; }
+.btn-consent-decline:hover { border-color: var(--gold); color: #fff; }
 
 /* ---------- Mobile ---------- */
 @media (max-width: 860px) {
