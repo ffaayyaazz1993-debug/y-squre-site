@@ -1,0 +1,166 @@
+/* Y-Square — news & research publication
+   base.css — design tokens, reset, typography, utilities
+   ---------------------------------------------------------------------------
+   Editorial wire-service system. Dense, restrained, high legibility.
+   Content ethics are enforced in the markup: .story-fact for reported
+   material, .story-analysis for opinion. They are visually distinct so a
+   reader can never confuse Y-Square's own analysis with a reported event. */
+
+:root {
+  --ink:        #11181f;
+  --ink-2:      #33404d;
+  --muted:      #5d6875;
+  --faint:      #6b7683;   /* was #8a939e: too pale for small caps metadata */
+  --paper:      #ffffff;
+  --paper-2:    #f5f6f8;
+  --paper-3:    #eceef1;
+  --line:       #d5dae0;
+  --line-2:     #e6e9ed;
+  --navy:       #0d2036;
+  --navy-2:     #1a3350;
+  --navy-3:     #2c4a6b;
+
+  /* Single accent. Section identity comes from the kicker label, not hue. */
+  --accent:     #c8471f;
+  --accent-2:   #e0653c;
+
+  /* Category colours — used only on small kicker chips, never as fills. */
+  --c-geo:      #1d5c8f;
+  --c-macro:    #7a4b12;
+  --c-markets:  #2f6b3f;
+  --c-analysis: #6b3a7d;
+  --c-research: #4a5560;
+
+  /* Legal furniture keeps gold — it signals caution, not decoration. */
+  --caution:    #b8860b;
+
+  --maxw:       1200px;
+  --measure:    680px;   /* article reading column */
+  --radius:     2px;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --serif: Georgia, 'Times New Roman', Times, serif;
+  --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg, video { max-width: 100%; height: auto; display: block; }
+a { color: var(--navy-2); }
+a:hover { color: var(--accent); }
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.015em;
+  color: var(--navy);
+}
+
+/* ---------- layout primitives ---------- */
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+.wrap-narrow { max-width: 900px; }
+main { display: block; min-height: 50vh; }
+[hidden] { display: none !important; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 200;
+  background: var(--navy); color: #fff; padding: 10px 16px; font-size: .85rem;
+}
+.skip-link:focus { left: 0; color: #fff; }
+
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* ---------- editorial primitives ---------- */
+.kicker {
+  font-size: .7rem; font-weight: 700; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--accent);
+  display: block; margin-bottom: 5px;
+}
+.kicker-geo      { color: var(--c-geo); }
+.kicker-macro    { color: var(--c-macro); }
+.kicker-markets  { color: var(--c-markets); }
+.kicker-analysis { color: var(--c-analysis); }
+.kicker-research { color: var(--c-research); }
+
+.meta {
+  font-size: .74rem; color: var(--faint);
+  text-transform: uppercase; letter-spacing: .05em;
+}
+.meta-sep { color: var(--line); margin: 0 6px; }
+
+/* Section header: title left, "view all" right, heavy rule beneath. */
+.sect { margin-bottom: 34px; }
+.sect-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap;
+  border-bottom: 2px solid var(--navy);
+  padding-bottom: 7px; margin-bottom: 16px;
+}
+.sect-head h2 { font-size: 1.15rem; }
+.sect-head .more {
+  font-size: .74rem; text-transform: uppercase; letter-spacing: .07em;
+  font-weight: 700; text-decoration: none; color: var(--muted);
+  white-space: nowrap;
+}
+.sect-head .more:hover { color: var(--accent); }
+
+.lede { color: var(--ink-2); font-size: 1.02rem; max-width: 70ch; }
+
+/* ---------- ad slots ----------
+   Placeholders only. No adsbygoogle.push() anywhere: ad units are added
+   after the account is approved. The reserved height stops CLS. */
+.ad-slot {
+  display: block; margin: 22px 0;
+  background: var(--paper-2);
+  border: 1px dashed var(--line);
+  color: var(--faint);
+  font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+  text-align: center; overflow: hidden;
+}
+.ad-top    { min-height: 90px; }
+.ad-inline { min-height: 250px; }
+.ad-sidebar{ min-height: 600px; }
+.ad-bottom { min-height: 90px; }
+.ad-slot::before {
+  content: attr(data-ad-label);
+  display: block; padding: 6px 0 2px;
+}
+
+/* ---------- states ---------- */
+.empty-state {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--line);
+  background: var(--paper-2);
+  padding: 18px 20px;
+  font-size: .9rem; color: var(--muted);
+}
+.empty-state strong { color: var(--ink-2); display: block; margin-bottom: 3px; font-size: .95rem; }
+
+.notice {
+  background: #fdf8e8; border: 1px solid #e8d9a8;
+  border-left: 3px solid var(--caution);
+  padding: 14px 16px; font-size: .88rem; color: #6b5518;
+  margin: 18px 0;
+}
+.notice p:last-child { margin-bottom: 0; }
+
+@media print {
+  .nav, .footer, .ad-slot, .cookie-banner, .sidebar { display: none !important; }
+  body { font-size: 11pt; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
+}

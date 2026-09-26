@@ -1,0 +1,86 @@
+/* Y-Square — responsive.css
+   Mobile-first breakpoints. Verified at 320 / 375 / 414 / 768 / 1024 / 1440.
+   Breakpoints: 480, 700, 900, 1080. */
+
+/* ---------- small phones (320–479) ---------- */
+@media (max-width: 479px) {
+  body { font-size: 15px; }
+  .wrap { padding: 0 14px; }
+  .mast-tagline { display: none; }
+  .brand { font-size: 1.12rem; padding: 12px 10px 12px 0; margin-right: 8px; }
+  .prose p { font-size: 1rem; }
+  .article-head h1 { font-size: 1.45rem; }
+  .lead h1, .lead h2 { font-size: 1.35rem; }
+  .index-row { grid-template-columns: 1fr; gap: 4px; }
+  .index-when { order: -1; padding-top: 0; }
+  .footer-top { grid-template-columns: 1fr; gap: 20px; }
+  .ad-sidebar { display: none; }
+  .keypoints { padding: 14px; }
+  .data-table { font-size: .84rem; }
+  .data-table th, .data-table td { padding: 6px 7px; }
+}
+
+/* ---------- large phones + small tablets (480–699) ---------- */
+@media (max-width: 699px) {
+  .nav-list {
+    display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 60;
+    background: var(--navy); flex-direction: column; align-items: stretch;
+    border-bottom: 3px solid var(--accent); box-shadow: 0 6px 14px rgba(0,0,0,.18);
+  }
+  .nav-list.open { display: flex; }
+  .nav-list a { border-bottom: 1px solid #1e3450; padding: 12px 20px; }
+  .nav-list a[aria-current="page"] { border-bottom-color: var(--accent); border-left: 3px solid var(--accent); }
+  .nav-toggle { display: block; }
+  .searchbar form { flex-direction: column; }
+  .lead { grid-template-columns: 1fr; gap: 18px; }
+  .lead-brief { order: 2; }
+  .article-grid, .cols { grid-template-columns: 1fr; gap: 26px; }
+  .sidebar { border-left: 0; padding-left: 0; border-top: 2px solid var(--navy); padding-top: 18px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 22px; }
+  .footer-top > :first-child { grid-column: 1 / -1; }
+  .ad-sidebar { display: none; }
+  .cards { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- tablets (700–899) ---------- */
+@media (min-width: 700px) and (max-width: 899px) {
+  .article-grid { grid-template-columns: 1fr; }
+  .sidebar { border-left: 0; padding-left: 0; border-top: 2px solid var(--navy); padding-top: 18px; }
+  .ad-sidebar { display: none; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- small laptops (900–1079) ---------- */
+@media (min-width: 900px) and (max-width: 1079px) {
+  .cols, .article-grid { grid-template-columns: 1fr 260px; gap: 30px; }
+  .nav-list a { padding: 13px 9px; font-size: .74rem; }
+  .ad-sidebar { min-height: 480px; }
+}
+
+/* ---------- large screens (1080+) ---------- */
+@media (min-width: 1080px) {
+  .nav-list a { padding: 14px 14px; }
+}
+
+/* ---------- prefers-reduced-motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* ---------- forced colours / high contrast ---------- */
+@media (forced-colors: active) {
+  .card, .story, .keypoints, .sources, .ad-slot { border: 1px solid CanvasText; }
+  .kicker, .ctype { forced-color-adjust: none; }
+}
+
+/* ---------- print ---------- */
+@media print {
+  .nav-list, .nav-toggle, .searchbar, .ad-slot, .share, .footer-top { display: none !important; }
+  .article-grid, .cols { display: block; }
+  a { text-decoration: none; color: inherit; }
+  .prose { max-width: none; }
+}
