@@ -6,7 +6,7 @@ stale — comment on the card, don't silently improvise.
 ## Identity
 
 - **Brand:** Y-Square
-- **Domain:** y-squre.com (GoDaddy, registrar only)
+- **Domain:** y-squre.com (GoDaddy registrar, BigRock hosting + DNS)
 - **Category:** independent investment research & advisory
 - **Positioning line:** Investment research, grounded in macro reality.
 - **Not:** a broker, a fund, a trading platform, a finfluencer, an SEBI-registered investment
@@ -80,16 +80,21 @@ machine. Known gaps:
 - No legal pages: privacy policy, terms, disclaimer page (footer has an inline disclaimer only)
 - No contact form — email only
 - No analytics beyond AdSense
-- Site is not deployed. DNS still points at a GoDaddy placeholder; Render target not verified.
+- Site **is deployed and live** on BigRock (`66.116.229.73`, docroot `/home2/a1790256/public_html`,
+  Apache, Let's Encrypt wildcard TLS). DNS resolved 23 Sep 2026. Nothing outstanding on hosting.
+- `ads.txt` is **AdSense-authorized**. The `google-adsense-account` meta tag and the loader script
+  are both live in `<head>`. Remaining AdSense work is Google's own review queue.
+- `robots.txt` and `sitemap.xml` are live at the domain root.
 
 ## Order of work (proposed)
 
-1. Deploy the existing page (DNS + Render) — everything else is invisible until this happens.
-2. `marketing-analyst`: segmentation + positioning + keyword map.
-3. `content-writer`: insights section real content, seeded by macro-econ cycle state.
-4. `web-developer`: multi-page split, JSON-LD, sitemap/robots, OG tags, legal pages.
-5. Contact form + privacy policy (required before AdSense approval for lead-gen).
-6. Iterate on SEO metadata from the keyword map.
+1. `marketing-analyst`: segmentation + positioning + keyword map.
+2. `content-writer`: insights section real content, seeded by macro-econ cycle state.
+3. `web-developer`: multi-page split, JSON-LD, OG tags, legal pages.
+4. Contact form + privacy policy (required before AdSense approval for lead-gen).
+5. Iterate on SEO metadata from the keyword map.
+
+Deploy is done — do not plan, brief, or block on hosting work.
 
 ## Compliance note
 

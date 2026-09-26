@@ -5,7 +5,8 @@ Static marketing site for **Y-Square**, an independent investment research and a
 ## Stack
 
 Static HTML + CSS + a few lines of vanilla JS. No framework, no build step, no Django, no
-`node_modules`. Deploy target: **Render.com** (static site). Registrar: GoDaddy.
+`node_modules`. Hosted on **BigRock** shared cPanel, docroot `/home2/a1790256/public_html`.
+Registrar: GoDaddy.
 
 ## Layout
 
@@ -44,16 +45,34 @@ Body font: Georgia serif. UI/headings: Segoe UI stack.
 4. **Contact email:** `ffaayyaazz1993@gmail.com`, reply promise 2 business days.
 5. **No new runtime dependencies.** If a feature seems to need one, it is mis-scoped.
 
-## DNS (applied by a human in GoDaddy — agents do not log in)
+## Hosting
 
-| Action | Type | Host | Value | TTL |
-|---|---|---|---|---|
-| DELETE | A | @ | GoDaddy Website Builder A records | — |
-| ADD | A | @ | `216.24.57.1` | 1 Hour |
-| EDIT | CNAME | www | `<service>.onrender.com` | 1 Hour |
-| DELETE | TXT | @ | stray `216.24.57.1` | — |
+**Live.** No DNS work is outstanding — do not plan any.
 
-No nameserver change, no MX, no AAAA. SSL is automatic once Render verifies the domain.
+| | |
+|---|---|
+| Host | BigRock shared cPanel, `sh00021.bigrock.com:2083` |
+| IP | `66.116.229.73` (unifiedlayer.com) |
+| Nameservers | `sns00041.bigrock.com` / `sns00042.bigrock.com` |
+| Docroot | `/home2/a1790256/public_html` |
+| Server | Apache |
+| TLS | Let's Encrypt wildcard (`*.y-squre.com` + apex), auto-renews |
+
+Registrar remains GoDaddy, but DNS is served by BigRock's nameservers — do not attempt a
+GoDaddy DNS change, it will break the live site.
+
+## Deploying
+
+Files are uploaded through the cPanel UAPI from the authenticated File Manager session.
+The `cpanel-cdp-deploy` skill holds the working driver and the full pitfall list.
+
+Two things that will bite you if nobody told you:
+
+- **Overwrites need `save_file_content`, not `upload_files`.** `upload_files` refuses existing
+  files — HTTP 200, `"succeeded":0`, "already exists" — and its `check_existing=no` field is
+  ignored on this build. `save_file_content` takes the body as a plain UTF-8 string.
+- **cPanel rewrites LF to CRLF on save.** A local file never matches the served byte count
+  exactly. Verify by content, not by size.
 
 ## Team
 
