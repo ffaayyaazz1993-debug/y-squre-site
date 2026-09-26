@@ -1,0 +1,13 @@
+# robots.txt — y-squre.com
+# Y-Square: independent investment research & advisory.
+# Nothing on this site is private, so nothing is blocked. This file exists to
+# (a) state that plainly to crawlers and (b) point them at the sitemap.
+
+User-agent: *
+Allow: /
+
+# ads.txt must stay fetchable — AdSense reads it at the domain root.
+# Spelled out explicitly so a future blanket-Disallow edit can't silently break it.
+Allow: /ads.txt
+
+Sitemap: https://y-squre.com/sitemap.xml
