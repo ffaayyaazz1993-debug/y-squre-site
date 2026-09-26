@@ -1,0 +1,14 @@
+* text=auto eol=lf
+
+# The deploy target is a Linux host. Force LF in the working tree so
+# git never rewrites line endings on checkout, and never hand a CRLF
+# file to the cPanel text endpoint (Fileman/save_file_content converts
+# every LF to CRLF — see cpanel-cdp-deploy skill).
+*.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf
+*.xml  text eol=lf
+*.txt  text eol=lf
+
+# ads.txt MUST stay byte-exact: the AdSense crawler parses it.
+ads.txt -text
