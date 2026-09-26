@@ -74,7 +74,6 @@ Single page, six anchor sections, all copy drafted. It is a positioning page, no
 machine. Known gaps:
 
 - `#insights` holds three "in preparation" placeholder cards — no real content
-- No `robots.txt`, no `sitemap.xml`
 - No JSON-LD structured data (Organization, ProfessionalService, FAQPage candidates)
 - No OG/Twitter card images
 - No legal pages: privacy policy, terms, disclaimer page (footer has an inline disclaimer only)
