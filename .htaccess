@@ -1,0 +1,69 @@
+# Y-Square — Apache configuration
+#
+# The section taxonomy was reorganised on 2026-09-27. The old paths are
+# redirected rather than deleted so any inbound link or search result keeps
+# working. Targets are 301 (permanent) because the move is deliberate and
+# final, not a temporary alias.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # --- renamed geopolitical sections -------------------------------------
+  RewriteRule ^geopolitics/middle-east/?$        /geopolitics/middle-east-north-africa/ [R=301,L]
+  RewriteRule ^geopolitics/africa/?$            /geopolitics/sub-saharan-africa/    [R=301,L]
+  RewriteRule ^geopolitics/pacific/?$           /geopolitics/oceania-pacific/       [R=301,L]
+
+  # The United Kingdom stops being a peer region of Asia and Africa; it is
+  # folded into Europe under the brief's taxonomy. It lands on Western Europe
+  # rather than a dedicated "British Isles" subregion: that subregion held only
+  # Ireland and the UK, both of which Western Europe already lists, so keeping
+  # it would have shown the same two countries twice in one menu.
+  RewriteRule ^geopolitics/united-kingdom/?$    /geopolitics/europe/western-europe/  [R=301,L]
+
+  # --- subregions removed when overlapping country lists were merged -------
+  # "Nordic Countries" listed the same five states as Northern Europe, and
+  # "British Isles" repeated Ireland and the UK from Western Europe.
+  RewriteRule ^geopolitics/europe/nordics/?$      /geopolitics/europe/northern-europe/  [R=301,L]
+  RewriteRule ^geopolitics/europe/british-isles/?$ /geopolitics/europe/western-europe/ [R=301,L]
+
+  # "West Asia" re-listed the whole Middle East as a second home for countries
+  # already filed under MENA. Only the Caucasus states are genuinely West Asian,
+  # so that is what the region keeps.
+  RewriteRule ^geopolitics/asia/west-asia/?$   /geopolitics/asia/caucasus/           [R=301,L]
+
+  # "North Asia" held Russia alone, which is already in Eastern Europe.
+  RewriteRule ^geopolitics/asia/north-asia/?$  /geopolitics/europe/eastern-europe/   [R=301,L]
+
+  # Central America and the Caribbean are now filed once, under Latin America
+  # & Caribbean. Their North America pages are retired, not deleted, so the old
+  # URLs keep resolving.
+  RewriteRule ^geopolitics/north-america/central-america/?$ /geopolitics/latin-america/central-america-latam/ [R=301,L]
+  RewriteRule ^geopolitics/north-america/caribbean/?$      /geopolitics/latin-america/caribbean-latam/      [R=301,L]
+
+  # /geopolitics/ is now a section index, not a redirect.
+</IfModule>
+
+# --- serving ---------------------------------------------------------------
+DirectoryIndex index.html
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css              "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/svg+xml         "access plus 30 days"
+  # HTML is not cached: the taxonomy changes often and a stale nav is worse
+  # than a slower page.
+  ExpiresByType text/html             "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|svg)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+
+ErrorDocument 404 /404/index.html

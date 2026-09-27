@@ -1,5 +1,4 @@
-.venv/
-node_modules/
-*.zip
-.DS_Store
-Thumbs.db
+# Deployment staging tree produced by tools/deploy_full.py
+tools/_stage/
+__pycache__/
+*.pyc

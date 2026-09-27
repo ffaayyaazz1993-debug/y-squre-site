@@ -1,0 +1,427 @@
+/* Y-Square — nav.css
+   Header chrome only: masthead, primary bar, topic bar, mega-menus, mobile
+   menu. Deliberately separate from layout.css so a header change never has to
+   reason about page layout, and so the brand tokens in base.css stay the
+   single definition of colour.
+
+   Contents
+     1. masthead
+     2. primary + topic bars
+     3. mega-menu
+     4. mobile menu
+     5. breadcrumb
+     6. responsive
+
+   Performance: no framework, no animation library, no webfont, no icon font.
+   The only images are two inline SVGs. Panels use visibility, not display, so
+   the open state stays out of the a11y tree correctly without forcing layout.
+*/
+
+/* ---------------------------------------------------------- 1. masthead */
+.masthead {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.masthead-inner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 62px;
+  padding: 8px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.brand-mark {
+  width: 28px; height: 28px;
+  display: grid; place-items: center;
+  background: var(--navy);
+  color: #fff;
+  font: 700 15px/1 var(--sans);
+  letter-spacing: .02em;
+}
+.brand-name {
+  display: block;
+  font: 700 20px/1 var(--sans);
+  letter-spacing: .16em;
+  color: var(--navy);
+  text-transform: uppercase;
+}
+.tagline {
+  margin: 0;
+  padding-left: 18px;
+  border-left: 1px solid var(--line);
+  font-size: .78rem;
+  letter-spacing: .04em;
+  color: var(--faint);
+}
+
+.masthead-utils {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.util-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .76rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+}
+.util-link:hover { border-bottom-color: var(--accent); }
+.util-icon { flex-shrink: 0; }
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  gap: 7px;
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--line);
+  padding: 7px 11px;
+  font: 600 .74rem/1 var(--sans);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--navy);
+  cursor: pointer;
+}
+.nav-toggle-bars { display: grid; gap: 3px; }
+.nav-toggle-bars i {
+  display: block; width: 15px; height: 2px;
+  background: currentColor;
+}
+
+/* --------------------------------------------- 2. primary + topic bars */
+.primary-nav, .topic-nav {
+  background: var(--navy);
+  border-bottom: 1px solid var(--navy-2);
+}
+.topic-nav { background: var(--navy-2); }
+
+.nav-list {
+  display: flex;
+  align-items: stretch;
+  /* Wrap rather than scroll. Thirteen items carrying full region names do not
+     fit one row between roughly 900 and 1500px; a nav you must swipe sideways
+     conceals sections, so the bar takes a second row instead. */
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+.nav-item { position: static; }   /* panels anchor to the bar, see .mega */
+
+.nav-plain, .nav-trigger {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 40px;
+  padding: 0 11px;
+  background: none;
+  border: 0;
+  font: 600 .78rem/1 var(--sans);
+  letter-spacing: .045em;
+  text-transform: uppercase;
+  color: #dfe5ee;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+}
+.nav-plain:hover, .nav-trigger:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, .07);
+  border-bottom-color: var(--accent);
+}
+.nav-trigger[aria-expanded="true"] {
+  color: #fff;
+  background: rgba(255, 255, 255, .1);
+  border-bottom-color: var(--accent);
+}
+.nav-caret { opacity: .65; flex-shrink: 0; transition: transform .12s ease; }
+.nav-trigger[aria-expanded="true"] .nav-caret { transform: rotate(180deg); }
+
+/* ----------------------------------------------- 3. mega-menu */
+.primary-nav .wrap, .topic-nav .wrap { position: relative; }
+
+.mega {
+  /* display, not just visibility: a hidden-but-laid-out absolute panel past
+     the right edge still counts toward document scrollWidth, which showed up
+     as a phantom horizontal scrollbar on every desktop page. */
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 60;
+  min-width: 0;          /* full-width: left:0/right:0 sizes it to the bar */
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  box-shadow: 0 10px 26px rgba(16, 32, 56, .17);
+}
+.mega[data-open="true"] { display: block; }
+
+.mega-inner {
+  padding: 18px 22px 20px;
+  /* A 9-subregion region with 9 countries each runs tall. Cap it and let the
+     panel scroll internally rather than covering the article underneath. */
+  max-height: min(72vh, 600px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  /* Scroll affordance: the panel holds 7 subregions and cannot show them all
+     at once, so the cut edge has to look deliberate rather than clipped. */
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+.mega-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding-bottom: 11px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--line);
+}
+.mega-title {
+  font: 700 1rem/1 var(--sans);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+}
+.mega-title:hover { color: var(--accent); }
+.mega-sub { font-size: .78rem; color: var(--faint); }
+
+.mega-cols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 4px 26px;
+}
+.mega-cols-topic { grid-template-columns: minmax(260px, 1fr); }
+/* Topic panels are short lists; do not stretch them to the region width. */
+.mega:has(.mega-cols-topic) .mega-inner { max-width: 720px; }
+
+.mega-group { margin-bottom: 16px; }
+.mega-group-name {
+  display: block;
+  font: 700 .78rem/1.3 var(--sans);
+  letter-spacing: .045em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+  padding-bottom: 4px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--line);
+}
+.mega-group-name:hover { color: var(--accent); }
+
+.mega-list { list-style: none; margin: 0; padding: 0; }
+.mega-list li { margin: 0; }
+.mega-list a {
+  display: block;
+  padding: 2px 0;
+  font-size: .82rem;
+  line-height: 1.35;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.mega-list a:hover { color: var(--accent); text-decoration: underline; }
+
+.mega-list-topic li { padding: 7px 0; border-bottom: 1px solid var(--line-2); }
+.mega-list-topic li:last-child { border-bottom: 0; }
+.mega-list-topic a {
+  display: block;
+  font: 700 .84rem/1.3 var(--sans);
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.mega-item-scope {
+  display: block;
+  margin-top: 2px;
+  font-size: .76rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--faint);
+  line-height: 1.4;
+}
+
+.mega-note {
+  margin: 4px 0 0;
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
+  font-size: .76rem;
+  color: var(--faint);
+  max-width: 78ch;
+}
+
+.mega-types { margin-top: 12px; display: flex; gap: 7px; flex-wrap: wrap; }
+.type-chip {
+  font: 600 .68rem/1 var(--sans);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 5px 8px;
+  border: 1px solid var(--line);
+  color: var(--faint);
+}
+
+/* --------------------------------------------------- 4. mobile menu */
+.skip-link {
+  position: absolute; left: -9999px;
+  background: var(--navy); color: #fff;
+  padding: 10px 15px; z-index: 200; font-size: .84rem;
+}
+.skip-link:focus { left: 8px; top: 8px; }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  top: 62px;
+  z-index: 120;
+  background: var(--paper);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 14px 0 40px;
+}
+.mobile-menu[data-open="true"] { display: block; }
+
+.acc-list { list-style: none; margin: 0; padding: 0; }
+.acc-list-root { padding: 0 16px; max-width: 720px; margin: 0 auto; }
+
+.acc-item { border-bottom: 1px solid var(--line); }
+.acc-trigger, .acc-leaf a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 13px 2px;
+  background: none; border: 0;
+  font: 600 .9rem/1.3 var(--sans);
+  color: var(--navy);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+.acc-trigger[aria-expanded="true"] { color: var(--accent); }
+.acc-caret { flex-shrink: 0; transition: transform .15s ease; }
+.acc-trigger[aria-expanded="true"] .acc-caret { transform: rotate(180deg); }
+
+.acc-panel { display: none; padding: 0 0 10px 14px; border-left: 2px solid var(--line); margin-left: 2px; }
+.acc-panel[data-open="true"] { display: block; }
+.acc-panel .acc-item:last-child { border-bottom: 0; }
+.acc-panel .acc-trigger, .acc-panel .acc-leaf a {
+  font-weight: 400;
+  font-size: .86rem;
+  color: var(--ink-2);
+  padding: 9px 2px;
+}
+.acc-panel .acc-list { padding-left: 0; }
+.acc-panel .acc-panel { padding-left: 12px; }
+
+.mobile-foot {
+  max-width: 720px;
+  margin: 20px auto 0;
+  padding: 16px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+.mobile-foot a {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--faint);
+  text-decoration: none;
+}
+.mobile-foot a:hover { color: var(--accent); }
+
+/* ------------------------------------------------------ 5. breadcrumb */
+.crumbs { margin: 0 0 18px; }
+.crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: .74rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.crumbs li { display: flex; align-items: center; gap: 7px; }
+.crumbs li + li::before { content: "/"; color: var(--line); }
+.crumbs a { color: var(--faint); text-decoration: none; }
+.crumbs a:hover { color: var(--accent); }
+.crumbs [aria-current] { color: var(--navy); font-weight: 600; }
+
+/* ------------------------------------------------------ 6. responsive */
+/* Thirteen items with full region names do not fit one row at 1440. Measured:
+   1549px of labels against a 1425px bar. Tighten type first, then let the bar
+   wrap in the narrow-desktop band, and only below 900px hand off to the
+   burger. Wrapping is preferred over horizontal scroll: a nav you have to
+   swipe sideways hides half the sections. */
+@media (max-width: 1560px) {
+  .nav-plain, .nav-trigger { padding: 0 9px; font-size: .73rem; letter-spacing: .015em; }
+}
+
+@media (max-width: 1180px) {
+  .nav-plain, .nav-trigger { padding: 0 7px; font-size: .69rem; letter-spacing: 0; }
+  .mega-cols { grid-template-columns: repeat(2, minmax(160px, 1fr)); gap: 2px 24px; }
+}
+
+@media (max-width: 1024px) {
+  .tagline { display: none; }
+  /* Two-row nav in the narrow-desktop band. Each trigger keeps its own
+     mega-menu, so wrapping costs height, not function. */
+  .nav-list { flex-wrap: wrap; }
+  .nav-plain, .nav-trigger { height: 36px; }
+  .nav-item { flex: 0 0 auto; }
+}
+
+@media (max-width: 860px) {
+  .masthead-utils { display: none; }
+  .nav-toggle { display: flex; }
+  .primary-nav, .topic-nav { display: none; }
+  .masthead-inner { min-height: 56px; }
+  .mobile-menu { top: 56px; }
+  .brand-name { font-size: 18px; }
+}
+
+@media (max-width: 380px) {
+  .nav-toggle-text { display: none; }
+  .brand-name { font-size: 16px; letter-spacing: .12em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-caret, .acc-caret { transition: none; }
+  .mega { opacity: 1; }
+}
+
+/* Print: collapse the chrome, keep the breadcrumb trail which identifies
+   the section in a printed or saved-as-PDF copy. */
+@media print {
+  .primary-nav, .topic-nav, .mobile-menu, .masthead-utils, .nav-toggle { display: none !important; }
+  .masthead { border-bottom: 1px solid #999; }
+  .mega { position: static; visibility: visible; opacity: 1; box-shadow: none; display: none; }
+  .crumbs a { color: #000; }
+}

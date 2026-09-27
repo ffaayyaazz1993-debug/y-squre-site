@@ -1,0 +1,1313 @@
+{
+ "version": "2026-09-27",
+ "note": "Editorial taxonomy. Subregion assignment is a publishing choice, not a geographic fact. 'also' lists a country's secondary placement without repeating it in the menu.",
+ "regions": [
+  {
+   "slug": "north-america",
+   "name": "North America",
+   "path": "/geopolitics/north-america/",
+   "lede": "Trade and tariff policy, alliance commitments, border and immigration policy, and the fiscal and monetary divergence across Canada, the United States and Mexico.",
+   "sections": [
+    {
+     "slug": "canada-united-states-mexico",
+     "name": "Canada, United States & Mexico",
+     "countries": [
+      {
+       "name": "Canada",
+       "anchor": "canada"
+      },
+      {
+       "name": "Mexico",
+       "anchor": "mexico"
+      },
+      {
+       "name": "United States",
+       "anchor": "united-states"
+      }
+     ],
+     "scope": "USMCA compliance, tariff and trade-policy actions, and the monetary and fiscal divergence between the three."
+    }
+   ],
+   "also": []
+  },
+  {
+   "slug": "latin-america",
+   "name": "Latin America & Caribbean",
+   "path": "/geopolitics/latin-america/",
+   "lede": "Commodity export dependence, fiscal stress, monetary credibility and electoral and constitutional developments. Debt and capital-flow dynamics are the recurring transmission channel.",
+   "sections": [
+    {
+     "slug": "south-america",
+     "name": "South America",
+     "countries": [
+      {
+       "name": "Argentina",
+       "anchor": "argentina"
+      },
+      {
+       "name": "Bolivia",
+       "anchor": "bolivia"
+      },
+      {
+       "name": "Brazil",
+       "anchor": "brazil"
+      },
+      {
+       "name": "Chile",
+       "anchor": "chile"
+      },
+      {
+       "name": "Colombia",
+       "anchor": "colombia"
+      },
+      {
+       "name": "Ecuador",
+       "anchor": "ecuador"
+      },
+      {
+       "name": "Guyana",
+       "anchor": "guyana"
+      },
+      {
+       "name": "Paraguay",
+       "anchor": "paraguay"
+      },
+      {
+       "name": "Peru",
+       "anchor": "peru"
+      },
+      {
+       "name": "Suriname",
+       "anchor": "suriname"
+      },
+      {
+       "name": "Uruguay",
+       "anchor": "uruguay"
+      },
+      {
+       "name": "Venezuela",
+       "anchor": "venezuela"
+      }
+     ],
+     "scope": "Commodity terms of trade, sovereign spreads and currency regimes."
+    },
+    {
+     "slug": "central-america-latam",
+     "name": "Central America",
+     "countries": [
+      {
+       "name": "Belize",
+       "anchor": "belize"
+      },
+      {
+       "name": "Costa Rica",
+       "anchor": "costa-rica"
+      },
+      {
+       "name": "El Salvador",
+       "anchor": "el-salvador"
+      },
+      {
+       "name": "Guatemala",
+       "anchor": "guatemala"
+      },
+      {
+       "name": "Honduras",
+       "anchor": "honduras"
+      },
+      {
+       "name": "Nicaragua",
+       "anchor": "nicaragua"
+      },
+      {
+       "name": "Panama",
+       "anchor": "panama"
+      }
+     ],
+     "scope": "Canal and shipping exposure, remittance dependence, and fiscal stress."
+    },
+    {
+     "slug": "caribbean-latam",
+     "name": "Caribbean",
+     "countries": [
+      {
+       "name": "Antigua and Barbuda",
+       "anchor": "antigua-and-barbuda"
+      },
+      {
+       "name": "Bahamas",
+       "anchor": "bahamas"
+      },
+      {
+       "name": "Barbados",
+       "anchor": "barbados"
+      },
+      {
+       "name": "Cuba",
+       "anchor": "cuba"
+      },
+      {
+       "name": "Dominica",
+       "anchor": "dominica"
+      },
+      {
+       "name": "Dominican Republic",
+       "anchor": "dominican-republic"
+      },
+      {
+       "name": "Grenada",
+       "anchor": "grenada"
+      },
+      {
+       "name": "Haiti",
+       "anchor": "haiti"
+      },
+      {
+       "name": "Jamaica",
+       "anchor": "jamaica"
+      },
+      {
+       "name": "Saint Kitts and Nevis",
+       "anchor": "saint-kitts-and-nevis"
+      },
+      {
+       "name": "Saint Lucia",
+       "anchor": "saint-lucia"
+      },
+      {
+       "name": "Saint Vincent and the Grenadines",
+       "anchor": "saint-vincent-and-the-grenadines"
+      },
+      {
+       "name": "Trinidad and Tobago",
+       "anchor": "trinidad-and-tobago"
+      }
+     ],
+     "scope": "Tourism dependence, energy import costs, and debt restructuring."
+    }
+   ],
+   "also": []
+  },
+  {
+   "slug": "europe",
+   "name": "Europe",
+   "path": "/geopolitics/europe/",
+   "lede": "Energy security, the sanctions architecture, fiscal fragmentation, and monetary policy divergence between the euro area and the periphery. Classified by geographic subregion; the placement of individual states is an editorial choice and is revised rather than treated as settled.",
+   "sections": [
+    {
+     "slug": "western-europe",
+     "name": "Western Europe",
+     "countries": [
+      {
+       "name": "Austria",
+       "anchor": "austria"
+      },
+      {
+       "name": "Belgium",
+       "anchor": "belgium"
+      },
+      {
+       "name": "France",
+       "anchor": "france"
+      },
+      {
+       "name": "Germany",
+       "anchor": "germany"
+      },
+      {
+       "name": "Ireland",
+       "anchor": "ireland"
+      },
+      {
+       "name": "Luxembourg",
+       "anchor": "luxembourg"
+      },
+      {
+       "name": "Netherlands",
+       "anchor": "netherlands"
+      },
+      {
+       "name": "Switzerland",
+       "anchor": "switzerland"
+      },
+      {
+       "name": "United Kingdom",
+       "anchor": "united-kingdom"
+      }
+     ],
+     "scope": "Euro area policy, sovereign issuance and energy pricing. The UK is covered here; see the analysis section for sterling and gilt mechanics."
+    },
+    {
+     "slug": "northern-europe",
+     "name": "Northern Europe",
+     "countries": [
+      {
+       "name": "Denmark",
+       "anchor": "denmark"
+      },
+      {
+       "name": "Finland",
+       "anchor": "finland"
+      },
+      {
+       "name": "Iceland",
+       "anchor": "iceland"
+      },
+      {
+       "name": "Norway",
+       "anchor": "norway"
+      },
+      {
+       "name": "Sweden",
+       "anchor": "sweden"
+      }
+     ],
+     "scope": "Nordic policy divergence, energy exports, and currency hedging."
+    },
+    {
+     "slug": "southern-europe",
+     "name": "Southern Europe",
+     "countries": [
+      {
+       "name": "Andorra",
+       "anchor": "andorra"
+      },
+      {
+       "name": "Cyprus",
+       "anchor": "cyprus"
+      },
+      {
+       "name": "Greece",
+       "anchor": "greece"
+      },
+      {
+       "name": "Italy",
+       "anchor": "italy"
+      },
+      {
+       "name": "Malta",
+       "anchor": "malta"
+      },
+      {
+       "name": "Portugal",
+       "anchor": "portugal"
+      },
+      {
+       "name": "San Marino",
+       "anchor": "san-marino"
+      },
+      {
+       "name": "Spain",
+       "anchor": "spain"
+      },
+      {
+       "name": "Vatican City",
+       "anchor": "vatican-city"
+      }
+     ],
+     "scope": "Debt sustainability, bank-sovereign loops, and euro-area convergence. Balkan states are listed under Balkans & Southeastern Europe."
+    },
+    {
+     "slug": "central-europe",
+     "name": "Central Europe",
+     "countries": [
+      {
+       "name": "Austria",
+       "anchor": "austria"
+      },
+      {
+       "name": "Czechia",
+       "anchor": "czechia"
+      },
+      {
+       "name": "Germany",
+       "anchor": "germany"
+      },
+      {
+       "name": "Hungary",
+       "anchor": "hungary"
+      },
+      {
+       "name": "Liechtenstein",
+       "anchor": "liechtenstein"
+      },
+      {
+       "name": "Poland",
+       "anchor": "poland"
+      },
+      {
+       "name": "Slovakia",
+       "anchor": "slovakia"
+      },
+      {
+       "name": "Slovenia",
+       "anchor": "slovenia"
+      },
+      {
+       "name": "Switzerland",
+       "anchor": "switzerland"
+      }
+     ],
+     "scope": "Industrial exposure, energy imports, and EU fiscal rules."
+    },
+    {
+     "slug": "eastern-europe",
+     "name": "Eastern Europe",
+     "countries": [
+      {
+       "name": "Belarus",
+       "anchor": "belarus"
+      },
+      {
+       "name": "Moldova",
+       "anchor": "moldova"
+      },
+      {
+       "name": "Romania",
+       "anchor": "romania"
+      },
+      {
+       "name": "Russia",
+       "anchor": "russia"
+      },
+      {
+       "name": "Ukraine",
+       "anchor": "ukraine"
+      }
+     ],
+     "scope": "War economy, sanctions exposure, and currency management. Central European members appear under Central Europe."
+    },
+    {
+     "slug": "balkans",
+     "name": "Balkans & Southeastern Europe",
+     "countries": [
+      {
+       "name": "Albania",
+       "anchor": "albania"
+      },
+      {
+       "name": "Bosnia and Herzegovina",
+       "anchor": "bosnia-and-herzegovina"
+      },
+      {
+       "name": "Bulgaria",
+       "anchor": "bulgaria"
+      },
+      {
+       "name": "Croatia",
+       "anchor": "croatia"
+      },
+      {
+       "name": "Kosovo",
+       "anchor": "kosovo"
+      },
+      {
+       "name": "Montenegro",
+       "anchor": "montenegro"
+      },
+      {
+       "name": "North Macedonia",
+       "anchor": "north-macedonia"
+      },
+      {
+       "name": "Serbia",
+       "anchor": "serbia"
+      },
+      {
+       "name": "Slovenia",
+       "anchor": "slovenia"
+      }
+     ],
+     "scope": "EU accession process, energy interconnection, and political risk."
+    },
+    {
+     "slug": "baltics",
+     "name": "Baltic States",
+     "countries": [
+      {
+       "name": "Estonia",
+       "anchor": "estonia"
+      },
+      {
+       "name": "Latvia",
+       "anchor": "latvia"
+      },
+      {
+       "name": "Lithuania",
+       "anchor": "lithuania"
+      }
+     ],
+     "scope": "Euro adoption, energy independence from Russia, and sanctions compliance."
+    }
+   ],
+   "also": [
+    "Faroe Islands and Greenland are tracked under Northern Europe where relevant to coverage."
+   ]
+  },
+  {
+   "slug": "middle-east-north-africa",
+   "name": "Middle East & North Africa",
+   "path": "/geopolitics/middle-east-north-africa/",
+   "lede": "Conflict spillovers, energy chokepoints, sanctions regimes, and water and labour migration. Kept as distinct subregions because a single flat list hides the Gulf/Levant distinction that drives the pricing.",
+   "sections": [
+    {
+     "slug": "gulf",
+     "name": "Gulf",
+     "countries": [
+      {
+       "name": "Bahrain",
+       "anchor": "bahrain"
+      },
+      {
+       "name": "Kuwait",
+       "anchor": "kuwait"
+      },
+      {
+       "name": "Oman",
+       "anchor": "oman"
+      },
+      {
+       "name": "Qatar",
+       "anchor": "qatar"
+      },
+      {
+       "name": "Saudi Arabia",
+       "anchor": "saudi-arabia"
+      },
+      {
+       "name": "United Arab Emirates",
+       "anchor": "united-arab-emirates"
+      }
+     ],
+     "scope": "Oil production policy, OPEC+ compliance, and regional capital flows."
+    },
+    {
+     "slug": "levant",
+     "name": "Levant",
+     "countries": [
+      {
+       "name": "Jordan",
+       "anchor": "jordan"
+      },
+      {
+       "name": "Lebanon",
+       "anchor": "lebanon"
+      },
+      {
+       "name": "Palestinian territories",
+       "anchor": "palestinian-territories"
+      },
+      {
+       "name": "Syria",
+       "anchor": "syria"
+      }
+     ],
+     "scope": "Refugee and aid flows, reconstruction financing, and border economics."
+    },
+    {
+     "slug": "north-africa",
+     "name": "North Africa",
+     "countries": [
+      {
+       "name": "Algeria",
+       "anchor": "algeria"
+      },
+      {
+       "name": "Egypt",
+       "anchor": "egypt"
+      },
+      {
+       "name": "Libya",
+       "anchor": "libya"
+      },
+      {
+       "name": "Morocco",
+       "anchor": "morocco"
+      },
+      {
+       "name": "Sudan",
+       "anchor": "sudan"
+      },
+      {
+       "name": "Tunisia",
+       "anchor": "tunisia"
+      },
+      {
+       "name": "Mauritania",
+       "anchor": "mauritania"
+      }
+     ],
+     "scope": "Sovereign debt, energy subsidies, and Mediterranean supply routes."
+    },
+    {
+     "slug": "eastern-mediterranean",
+     "name": "Eastern Mediterranean",
+     "countries": [
+      {
+       "name": "Cyprus",
+       "anchor": "cyprus"
+      },
+      {
+       "name": "Greece",
+       "anchor": "greece"
+      },
+      {
+       "name": "Israel",
+       "anchor": "israel"
+      },
+      {
+       "name": "Turkey",
+       "anchor": "turkey"
+      }
+     ],
+     "scope": "Maritime boundaries, energy transit, and military posture."
+    },
+    {
+     "slug": "iran-iraq",
+     "name": "Iran & Iraq",
+     "countries": [
+      {
+       "name": "Iran",
+       "anchor": "iran"
+      },
+      {
+       "name": "Iraq",
+       "anchor": "iraq"
+      }
+     ],
+     "scope": "Sanctions enforcement, oil exports, and militia-linked supply risk."
+    },
+    {
+     "slug": "turkey-anatolia",
+     "name": "Turkey & Anatolia",
+     "countries": [
+      {
+       "name": "Turkey",
+       "anchor": "turkey"
+      }
+     ],
+     "scope": "Inflation credibility, lira policy, and regional economic influence."
+    }
+   ],
+   "also": []
+  },
+  {
+   "slug": "sub-saharan-africa",
+   "name": "Sub-Saharan Africa",
+   "path": "/geopolitics/sub-saharan-africa/",
+   "lede": "Commodity and debt dynamics, resource-exporter fiscal dependence, and regional trade blocs. Coverage is Sub-Saharan; North African states are covered under Middle East & North Africa.",
+   "sections": [
+    {
+     "slug": "west-africa",
+     "name": "West Africa",
+     "countries": [
+      {
+       "name": "Benin",
+       "anchor": "benin"
+      },
+      {
+       "name": "Burkina Faso",
+       "anchor": "burkina-faso"
+      },
+      {
+       "name": "Cabo Verde",
+       "anchor": "cabo-verde"
+      },
+      {
+       "name": "Cote d'Ivoire",
+       "anchor": "cote-d-ivoire"
+      },
+      {
+       "name": "Gambia",
+       "anchor": "gambia"
+      },
+      {
+       "name": "Ghana",
+       "anchor": "ghana"
+      },
+      {
+       "name": "Guinea",
+       "anchor": "guinea"
+      },
+      {
+       "name": "Guinea-Bissau",
+       "anchor": "guinea-bissau"
+      },
+      {
+       "name": "Liberia",
+       "anchor": "liberia"
+      },
+      {
+       "name": "Mali",
+       "anchor": "mali"
+      },
+      {
+       "name": "Niger",
+       "anchor": "niger"
+      },
+      {
+       "name": "Nigeria",
+       "anchor": "nigeria"
+      },
+      {
+       "name": "Senegal",
+       "anchor": "senegal"
+      },
+      {
+       "name": "Sierra Leone",
+       "anchor": "sierra-leone"
+      },
+      {
+       "name": "Togo",
+       "anchor": "togo"
+      }
+     ],
+     "scope": "CFA franc arrangements, commodity terms of trade, and fiscal consolidation."
+    },
+    {
+     "slug": "east-africa",
+     "name": "East Africa",
+     "countries": [
+      {
+       "name": "Kenya",
+       "anchor": "kenya"
+      },
+      {
+       "name": "Tanzania",
+       "anchor": "tanzania"
+      },
+      {
+       "name": "Uganda",
+       "anchor": "uganda"
+      },
+      {
+       "name": "Rwanda",
+       "anchor": "rwanda"
+      },
+      {
+       "name": "Burundi",
+       "anchor": "burundi"
+      },
+      {
+       "name": "Ethiopia",
+       "anchor": "ethiopia"
+      },
+      {
+       "name": "South Sudan",
+       "anchor": "south-sudan"
+      },
+      {
+       "name": "Malawi",
+       "anchor": "malawi"
+      },
+      {
+       "name": "Zambia",
+       "anchor": "zambia"
+      },
+      {
+       "name": "Zimbabwe",
+       "anchor": "zimbabwe"
+      }
+     ],
+     "scope": "Inflation, exchange-rate regimes, and regional market integration."
+    },
+    {
+     "slug": "horn-of-africa",
+     "name": "Horn of Africa",
+     "countries": [
+      {
+       "name": "Djibouti",
+       "anchor": "djibouti"
+      },
+      {
+       "name": "Eritrea",
+       "anchor": "eritrea"
+      },
+      {
+       "name": "Ethiopia",
+       "anchor": "ethiopia"
+      },
+      {
+       "name": "Somalia",
+       "anchor": "somalia"
+      }
+     ],
+     "scope": "Shipping-route risk, trade corridor disruption, and drought exposure."
+    },
+    {
+     "slug": "central-africa",
+     "name": "Central Africa",
+     "countries": [
+      {
+       "name": "Cameroon",
+       "anchor": "cameroon"
+      },
+      {
+       "name": "Central African Republic",
+       "anchor": "central-african-republic"
+      },
+      {
+       "name": "Chad",
+       "anchor": "chad"
+      },
+      {
+       "name": "Republic of the Congo",
+       "anchor": "republic-of-the-congo"
+      },
+      {
+       "name": "Democratic Republic of the Congo",
+       "anchor": "democratic-republic-of-the-congo"
+      },
+      {
+       "name": "Equatorial Guinea",
+       "anchor": "equatorial-guinea"
+      },
+      {
+       "name": "Gabon",
+       "anchor": "gabon"
+      },
+      {
+       "name": "Sao Tome and Principe",
+       "anchor": "sao-tome-and-principe"
+      }
+     ],
+     "scope": "Oil and mineral rents, and conflict-affected corridors."
+    },
+    {
+     "slug": "southern-africa",
+     "name": "Southern Africa",
+     "countries": [
+      {
+       "name": "Angola",
+       "anchor": "angola"
+      },
+      {
+       "name": "Botswana",
+       "anchor": "botswana"
+      },
+      {
+       "name": "Eswatini",
+       "anchor": "eswatini"
+      },
+      {
+       "name": "Lesotho",
+       "anchor": "lesotho"
+      },
+      {
+       "name": "Mauritius",
+       "anchor": "mauritius"
+      },
+      {
+       "name": "Mozambique",
+       "anchor": "mozambique"
+      },
+      {
+       "name": "Namibia",
+       "anchor": "namibia"
+      },
+      {
+       "name": "South Africa",
+       "anchor": "south-africa"
+      },
+      {
+       "name": "Zambia",
+       "anchor": "zambia"
+      },
+      {
+       "name": "Zimbabwe",
+       "anchor": "zimbabwe"
+      }
+     ],
+     "scope": "Currency crises, reserve accumulation, and power supply."
+    }
+   ],
+   "also": [
+    "Mauritania also appears under North Africa, which is where its primary structural coverage sits."
+   ]
+  },
+  {
+   "slug": "asia",
+   "name": "Asia",
+   "path": "/geopolitics/asia/",
+   "lede": "Regional trade architecture, semiconductor and energy supply chains, maritime disputes, and currency policy across the largest growth block in the world.",
+   "sections": [
+    {
+     "slug": "central-asia",
+     "name": "Central Asia",
+     "countries": [
+      {
+       "name": "Kazakhstan",
+       "anchor": "kazakhstan"
+      },
+      {
+       "name": "Kyrgyzstan",
+       "anchor": "kyrgyzstan"
+      },
+      {
+       "name": "Tajikistan",
+       "anchor": "tajikistan"
+      },
+      {
+       "name": "Turkmenistan",
+       "anchor": "turkmenistan"
+      },
+      {
+       "name": "Uzbekistan",
+       "anchor": "uzbekistan"
+      }
+     ],
+     "scope": "Commodity export revenue, and trade corridors through Russia and China."
+    },
+    {
+     "slug": "east-asia",
+     "name": "East Asia",
+     "countries": [
+      {
+       "name": "China",
+       "anchor": "china"
+      },
+      {
+       "name": "Japan",
+       "anchor": "japan"
+      },
+      {
+       "name": "Mongolia",
+       "anchor": "mongolia"
+      },
+      {
+       "name": "North Korea",
+       "anchor": "north-korea"
+      },
+      {
+       "name": "South Korea",
+       "anchor": "south-korea"
+      },
+      {
+       "name": "Taiwan",
+       "anchor": "taiwan"
+      }
+     ],
+     "scope": "Semiconductor supply chains, export controls, and the yen/yuan regime."
+    },
+    {
+     "slug": "south-asia",
+     "name": "South Asia",
+     "countries": [
+      {
+       "name": "Afghanistan",
+       "anchor": "afghanistan"
+      },
+      {
+       "name": "Bangladesh",
+       "anchor": "bangladesh"
+      },
+      {
+       "name": "Bhutan",
+       "anchor": "bhutan"
+      },
+      {
+       "name": "India",
+       "anchor": "india"
+      },
+      {
+       "name": "Maldives",
+       "anchor": "maldives"
+      },
+      {
+       "name": "Nepal",
+       "anchor": "nepal"
+      },
+      {
+       "name": "Pakistan",
+       "anchor": "pakistan"
+      },
+      {
+       "name": "Sri Lanka",
+       "anchor": "sri-lanka"
+      }
+     ],
+     "scope": "Trade measures, energy import dependence, and reserve management."
+    },
+    {
+     "slug": "southeast-asia",
+     "name": "Southeast Asia",
+     "countries": [
+      {
+       "name": "Brunei",
+       "anchor": "brunei"
+      },
+      {
+       "name": "Cambodia",
+       "anchor": "cambodia"
+      },
+      {
+       "name": "Indonesia",
+       "anchor": "indonesia"
+      },
+      {
+       "name": "Laos",
+       "anchor": "laos"
+      },
+      {
+       "name": "Malaysia",
+       "anchor": "malaysia"
+      },
+      {
+       "name": "Myanmar",
+       "anchor": "myanmar"
+      },
+      {
+       "name": "Philippines",
+       "anchor": "philippines"
+      },
+      {
+       "name": "Singapore",
+       "anchor": "singapore"
+      },
+      {
+       "name": "Thailand",
+       "anchor": "thailand"
+      },
+      {
+       "name": "Timor-Leste",
+       "anchor": "timor-leste"
+      },
+      {
+       "name": "Vietnam",
+       "anchor": "vietnam"
+      }
+     ],
+     "scope": "Electronics assembly, critical-mineral processing, and ASEAN tariff policy."
+    },
+    {
+     "slug": "caucasus",
+     "name": "Caucasus",
+     "countries": [
+      {
+       "name": "Armenia",
+       "anchor": "armenia"
+      },
+      {
+       "name": "Azerbaijan",
+       "anchor": "azerbaijan"
+      },
+      {
+       "name": "Georgia",
+       "anchor": "georgia"
+      }
+     ],
+     "scope": "Corridors and pipeline leverage, and the sanctions environment around the South Caucasus routes. The Gulf, Levant and Anatolia sit under Middle East & North Africa, which holds their structural coverage."
+    }
+   ],
+   "also": []
+  },
+  {
+   "slug": "oceania-pacific",
+   "name": "Oceania & Pacific",
+   "path": "/geopolitics/oceania-pacific/",
+   "lede": "Pacific security architecture, supply-chain reconfiguration, and the fiscal and climate exposure of small island states.",
+   "sections": [
+    {
+     "slug": "australia-new-zealand",
+     "name": "Australia & New Zealand",
+     "countries": [
+      {
+       "name": "Australia",
+       "anchor": "australia"
+      },
+      {
+       "name": "New Zealand",
+       "anchor": "new-zealand"
+      }
+     ],
+     "scope": "Commodity exports, RBA policy, and Pacific financing arrangements."
+    },
+    {
+     "slug": "pacific-islands",
+     "name": "Pacific Islands",
+     "countries": [
+      {
+       "name": "Fiji",
+       "anchor": "fiji"
+      },
+      {
+       "name": "Kiribati",
+       "anchor": "kiribati"
+      },
+      {
+       "name": "Marshall Islands",
+       "anchor": "marshall-islands"
+      },
+      {
+       "name": "Micronesia",
+       "anchor": "micronesia"
+      },
+      {
+       "name": "Nauru",
+       "anchor": "nauru"
+      },
+      {
+       "name": "Palau",
+       "anchor": "palau"
+      },
+      {
+       "name": "Samoa",
+       "anchor": "samoa"
+      },
+      {
+       "name": "Solomon Islands",
+       "anchor": "solomon-islands"
+      },
+      {
+       "name": "Tonga",
+       "anchor": "tonga"
+      },
+      {
+       "name": "Tuvalu",
+       "anchor": "tuvalu"
+      },
+      {
+       "name": "Vanuatu",
+       "anchor": "vanuatu"
+      },
+      {
+       "name": "Papua New Guinea",
+       "anchor": "papua-new-guinea"
+      }
+     ],
+     "scope": "Climate finance, shipping-route risk, and resource projects."
+    }
+   ],
+   "also": []
+  }
+ ],
+ "topics": [
+  {
+   "slug": "global",
+   "name": "Global",
+   "path": "/geopolitics/global/",
+   "lede": "Stories not primarily associated with one region.",
+   "children": [
+    {
+     "slug": "world",
+     "name": "World",
+     "scope": "Cross-border developments with no single national home."
+    },
+    {
+     "slug": "global-economy",
+     "name": "Global Economy",
+     "scope": "Global growth, trade-weighted output, and synchronised cycles."
+    },
+    {
+     "slug": "global-trade",
+     "name": "Global Trade",
+     "scope": "Tariff action, supply chains, and trade agreement negotiation."
+    },
+    {
+     "slug": "international-organizations",
+     "name": "International Organizations",
+     "scope": "WTO, IMF, UN and multilateral institution positions."
+    },
+    {
+     "slug": "climate-energy",
+     "name": "Climate & Energy",
+     "scope": "Energy transition, grid investment, and carbon policy."
+    },
+    {
+     "slug": "global-security",
+     "name": "Global Security",
+     "scope": "Defence posture, alliances, and arms transfers."
+    },
+    {
+     "slug": "global-technology",
+     "name": "Global Technology",
+     "scope": "Export controls, semiconductor capacity, and platform regulation."
+    }
+   ]
+  },
+  {
+   "slug": "markets",
+   "name": "Markets",
+   "path": "/markets/",
+   "lede": "How macro and geopolitical developments price into assets.",
+   "children": [
+    {
+     "slug": "stocks",
+     "name": "Stocks",
+     "scope": "Equity index and single-name analysis."
+    },
+    {
+     "slug": "indices",
+     "name": "Indices",
+     "scope": "Index construction, concentration and rebalancing."
+    },
+    {
+     "slug": "bonds",
+     "name": "Bonds",
+     "scope": "Sovereign and corporate credit, curves and issuance."
+    },
+    {
+     "slug": "commodities",
+     "name": "Commodities",
+     "scope": "Energy, metals and agricultural pricing."
+    },
+    {
+     "slug": "currencies",
+     "name": "Currencies",
+     "scope": "FX regimes, carry, and cross-rates."
+    },
+    {
+     "slug": "crypto",
+     "name": "Crypto",
+     "scope": "Digital assets as a macro and liquidity proxy."
+    },
+    {
+     "slug": "companies",
+     "name": "Companies",
+     "scope": "Filings, guidance, and capital allocation."
+    },
+    {
+     "slug": "sectors",
+     "name": "Sectors",
+     "scope": "Cross-company industry structure."
+    }
+   ]
+  },
+  {
+   "slug": "macro",
+   "name": "Macro",
+   "path": "/macro/",
+   "lede": "The aggregate economy: prices, output, labour and policy.",
+   "children": [
+    {
+     "slug": "inflation",
+     "name": "Inflation",
+     "scope": "Headline and core, supply versus demand drivers."
+    },
+    {
+     "slug": "gdp",
+     "name": "GDP",
+     "scope": "Growth accounting and revisions."
+    },
+    {
+     "slug": "interest-rates",
+     "name": "Interest Rates",
+     "scope": "Policy paths, curve shape and term premia."
+    },
+    {
+     "slug": "monetary-policy",
+     "name": "Monetary Policy",
+     "scope": "Balance sheets, frameworks and credibility."
+    },
+    {
+     "slug": "fiscal-policy",
+     "name": "Fiscal Policy",
+     "scope": "Budgets, debt sustainability and sovereign issuance."
+    },
+    {
+     "slug": "employment",
+     "name": "Employment",
+     "scope": "Labour markets, wages and participation."
+    },
+    {
+     "slug": "trade",
+     "name": "Trade",
+     "scope": "Tariffs, current accounts and re-exports."
+    },
+    {
+     "slug": "currencies",
+     "name": "Currencies",
+     "scope": "Exchange-rate pass-through to prices."
+    }
+   ]
+  },
+  {
+   "slug": "research",
+   "name": "Research",
+   "path": "/research/",
+   "lede": "Longer-form notes with stated methodology and named sources.",
+   "children": [
+    {
+     "slug": "macro-research",
+     "name": "Macro Research",
+     "scope": "Cross-country macro frameworks."
+    },
+    {
+     "slug": "geopolitical-research",
+     "name": "Geopolitical Research",
+     "scope": "Structural and thematic geopolitical work."
+    },
+    {
+     "slug": "sector-research",
+     "name": "Sector Research",
+     "scope": "Industry structure and profitability."
+    },
+    {
+     "slug": "market-research",
+     "name": "Market Research",
+     "scope": "Pricing behaviour and cross-asset allocation."
+    },
+    {
+     "slug": "data-statistics",
+     "name": "Data & Statistics",
+     "scope": "Primary data notes and series construction."
+    }
+   ]
+  },
+  {
+   "slug": "blog",
+   "name": "Blog",
+   "path": "/blog/",
+   "lede": "Analysis, opinion, explainers and commentary — labelled as opinion, never as reporting.",
+   "children": [
+    {
+     "slug": "analysis",
+     "name": "Analysis",
+     "scope": "Our interpretation of data and events."
+    },
+    {
+     "slug": "opinion",
+     "name": "Opinion",
+     "scope": "Argument and commentary, clearly held to our own view."
+    },
+    {
+     "slug": "explainers",
+     "name": "Explainers",
+     "scope": "Mechanics, written to be understood."
+    },
+    {
+     "slug": "commentary",
+     "name": "Commentary",
+     "scope": "Reactions to the week's developments."
+    },
+    {
+     "slug": "research-notes",
+     "name": "Research Notes",
+     "scope": "Method-documented research documents."
+    }
+   ]
+  }
+ ],
+ "content_types": [
+  {
+   "id": "news",
+   "label": "News",
+   "desc": "Reporting on an event, attributed to its source."
+  },
+  {
+   "id": "analysis",
+   "label": "Analysis",
+   "desc": "Our interpretation of events or data."
+  },
+  {
+   "id": "explainer",
+   "label": "Explainer",
+   "desc": "An explanation of a mechanism."
+  },
+  {
+   "id": "research",
+   "label": "Research Note",
+   "desc": "A longer document with a stated method."
+  }
+ ]
+}

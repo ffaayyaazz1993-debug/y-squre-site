@@ -1,0 +1,101 @@
+/* Y-Square — search.css
+   The /search/ page only. Loaded via extra_css so it costs nothing on the
+   other 89 pages. */
+
+.search-page-form {
+  display: flex;
+  gap: 10px;
+  margin: 0 0 14px;
+  max-width: 620px;
+}
+.search-page-form input[type="search"] {
+  flex: 1;
+  min-width: 0;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font: 400 1rem/1.3 var(--sans);
+  color: var(--ink);
+}
+.search-page-form input[type="search"]:focus {
+  outline: 2px solid var(--navy);
+  outline-offset: -1px;
+  border-color: var(--navy);
+}
+.search-page-form button {
+  padding: 11px 20px;
+  background: var(--navy);
+  color: #fff;
+  border: 0;
+  font: 600 .78rem/1 var(--sans);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.search-page-form button:hover { background: var(--navy-2); }
+
+.search-count {
+  margin: 0 0 18px;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.search-count:empty { display: none; }
+
+.search-results { margin: 0 0 8px; max-width: 78ch; }
+
+.index-list { display: block; }
+
+.index-row {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line-2);
+}
+.index-when {
+  font-size: .69rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--faint);
+  padding-top: 3px;
+}
+.index-row h3 {
+  margin: 0 0 5px;
+  font: 700 1.02rem/1.3 var(--sans);
+  letter-spacing: -.008em;
+}
+.index-row h3 a { color: var(--navy); text-decoration: none; }
+.index-row h3 a:hover { color: var(--accent); text-decoration: underline; }
+.index-row p {
+  margin: 0 0 6px;
+  font-size: .89rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.index-row .meta {
+  font-size: .74rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+/* A taxonomy hit is a location, not a story. Dimmer and flatter on purpose so
+   a list of results does not read as a list of articles. */
+.index-row-tax .index-when { color: var(--c-geo); }
+.index-row-tax h3 { font-size: .95rem; }
+.index-row-tax h3 a::after {
+  content: " \2192";
+  color: var(--faint);
+  font-weight: 400;
+}
+
+@media (max-width: 620px) {
+  .index-row { grid-template-columns: 1fr; gap: 5px; }
+  .search-page-form { flex-direction: column; }
+  .search-page-form button { padding: 12px 20px; }
+}

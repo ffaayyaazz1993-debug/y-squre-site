@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
     <link rel="stylesheet" href="/assets/css/article.css">
+    <link rel="stylesheet" href="/assets/css/nav.css">
+    <link rel="stylesheet" href="/assets/css/sections.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
   <meta name="google-adsense-account" content="ca-pub-9461123152614358">
@@ -29,45 +31,439 @@
   <meta name="twitter:description" content="The page you requested does not exist on this site. Use the links below to reach the homepage, the latest articles, or any section index.">
   <meta name="twitter:image" content="https://y-squre.com/assets/images/logo/og-default.svg">
   <script src="/assets/js/main.js" defer></script>
-  <script src="/assets/js/navigation.js" defer></script>
+  <script src="/assets/js/nav.js" defer></script>
   <script src="/assets/js/consent.js" defer></script>
   <script src="/assets/js/search.js" defer></script>
 </head>
 <body>
+
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="masthead">
-    <div class="wrap masthead-top">
-      <span class="mast-tagline">Independent macro &amp; geopolitical research</span>
-      <div class="mast-tools">
-        <a href="/about/index.html">About</a>
-        <a href="/contact/index.html">Contact</a>
-        <a href="/advertising/index.html">Advertise</a>
+  <header class="site-header">
+    <div class="masthead">
+      <div class="wrap masthead-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">Y</span>
+          <span class="brand-text"><span class="brand-name">Y-SQUARE</span></span>
+        </a>
+        <p class="tagline">Global News, Data &amp; Analysis</p>
+        <div class="masthead-utils">
+          <a class="util-link" href="/search/index.html">
+            <svg class="util-icon" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
+              <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M10.5 10.5L15 15" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span>Search</span>
+          </a>
+          <a class="util-link util-signin" href="/account/index.html">Sign In</a>
+        </div>
+        <button class="nav-toggle" data-burger aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="nav-toggle-text">Menu</span>
+        </button>
       </div>
     </div>
-    <nav class="navbar" aria-label="Primary">
-      <div class="wrap navbar-inner">
-        <a class="brand" href="/">Y<span>-</span>Square</a>
-        <ul class="nav-list">
-        <li><a href="/latest/">Latest</a></li>
-        <li><a href="/geopolitics/">Geopolitics</a></li>
-        <li><a href="/macro/">Macro</a></li>
-        <li><a href="/markets/">Markets</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/research/">Research</a></li>
+    <nav class="primary-nav" data-nav aria-label="Sections">
+      <div class="wrap">
+        <ul class="nav-list nav-list-geo">
+      <li class="nav-item">
+        <a class="nav-plain" href="/latest/">Latest</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-trigger" href="/geopolitics/north-america/" aria-expanded="false" aria-controls="m-north-america">North America<svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+
+      <div class="mega" id="m-north-america" data-open="false" aria-label="North America sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/geopolitics/north-america/">North America</a>
+            <span class="mega-sub">All north america coverage</span>
+          </div>
+          <div class="mega-cols">
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/north-america/canada-united-states-mexico/">Canada, United States &amp; Mexico</a>
+        <ul class="mega-list"><li><a href="/geopolitics/north-america/canada-united-states-mexico/#canada">Canada</a></li><li><a href="/geopolitics/north-america/canada-united-states-mexico/#mexico">Mexico</a></li><li><a href="/geopolitics/north-america/canada-united-states-mexico/#united-states">United States</a></li></ul>
+      </div>
+    </div>
+          </div>
+
+        </div>
+      </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-trigger" href="/geopolitics/latin-america/" aria-expanded="false" aria-controls="m-latin-america">Latin America &amp; Caribbean<svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+
+      <div class="mega" id="m-latin-america" data-open="false" aria-label="Latin America &amp; Caribbean sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/geopolitics/latin-america/">Latin America &amp; Caribbean</a>
+            <span class="mega-sub">All latin america &amp; caribbean coverage</span>
+          </div>
+          <div class="mega-cols">
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/latin-america/south-america/">South America</a>
+        <ul class="mega-list"><li><a href="/geopolitics/latin-america/south-america/#argentina">Argentina</a></li><li><a href="/geopolitics/latin-america/south-america/#bolivia">Bolivia</a></li><li><a href="/geopolitics/latin-america/south-america/#brazil">Brazil</a></li><li><a href="/geopolitics/latin-america/south-america/#chile">Chile</a></li><li><a href="/geopolitics/latin-america/south-america/#colombia">Colombia</a></li><li><a href="/geopolitics/latin-america/south-america/#ecuador">Ecuador</a></li><li><a href="/geopolitics/latin-america/south-america/#guyana">Guyana</a></li><li><a href="/geopolitics/latin-america/south-america/#paraguay">Paraguay</a></li><li><a href="/geopolitics/latin-america/south-america/#peru">Peru</a></li><li><a href="/geopolitics/latin-america/south-america/#suriname">Suriname</a></li><li><a href="/geopolitics/latin-america/south-america/#uruguay">Uruguay</a></li><li><a href="/geopolitics/latin-america/south-america/#venezuela">Venezuela</a></li></ul>
+      </div>
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/latin-america/caribbean-latam/">Caribbean</a>
+        <ul class="mega-list"><li><a href="/geopolitics/latin-america/caribbean-latam/#antigua-and-barbuda">Antigua and Barbuda</a></li><li><a href="/geopolitics/latin-america/caribbean-latam/#bahamas">Bahamas</a></li><li><a href="/geopolitics/latin-america/caribbean-latam/#barbados">Barbados</a></li><li><a href="/geopolitics/latin-america/caribbean-latam/#cuba">Cuba</a></li><li><a href="/geopolitics/latin-america/caribbean-latam/#dominica">Dominica</a></li><li><a href="/geopolitics/latin-america/caribbean-latam/#dominican-republic">Dominican Republic</a></li><li><a href="/geopolitics/latin-america/caribbean-latam/#grenada">Grenada</a></li><li><a href="/geopolitics/latin-america/caribbean-latam/#haiti">Haiti</a></li><li><a href="/geopolitics/latin-america/caribbean-latam/#jamaica">Jamaica</a></li><li><a href="/geopolitics/latin-america/caribbean-latam/#saint-kitts-and-nevis">Saint Kitts and Nevis</a></li><li><a href="/geopolitics/latin-america/caribbean-latam/#saint-lucia">Saint Lucia</a></li><li><a href="/geopolitics/latin-america/caribbean-latam/#saint-vincent-and-the-grenadines">Saint Vincent and the Grenadines</a></li><li><a href="/geopolitics/latin-america/caribbean-latam/#trinidad-and-tobago">Trinidad and Tobago</a></li></ul>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/latin-america/central-america-latam/">Central America</a>
+        <ul class="mega-list"><li><a href="/geopolitics/latin-america/central-america-latam/#belize">Belize</a></li><li><a href="/geopolitics/latin-america/central-america-latam/#costa-rica">Costa Rica</a></li><li><a href="/geopolitics/latin-america/central-america-latam/#el-salvador">El Salvador</a></li><li><a href="/geopolitics/latin-america/central-america-latam/#guatemala">Guatemala</a></li><li><a href="/geopolitics/latin-america/central-america-latam/#honduras">Honduras</a></li><li><a href="/geopolitics/latin-america/central-america-latam/#nicaragua">Nicaragua</a></li><li><a href="/geopolitics/latin-america/central-america-latam/#panama">Panama</a></li></ul>
+      </div>
+    </div>
+          </div>
+
+        </div>
+      </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-trigger" href="/geopolitics/europe/" aria-expanded="false" aria-controls="m-europe">Europe<svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+
+      <div class="mega" id="m-europe" data-open="false" aria-label="Europe sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/geopolitics/europe/">Europe</a>
+            <span class="mega-sub">All europe coverage</span>
+          </div>
+          <div class="mega-cols">
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/europe/western-europe/">Western Europe</a>
+        <ul class="mega-list"><li><a href="/geopolitics/europe/western-europe/#austria">Austria</a></li><li><a href="/geopolitics/europe/western-europe/#belgium">Belgium</a></li><li><a href="/geopolitics/europe/western-europe/#france">France</a></li><li><a href="/geopolitics/europe/western-europe/#germany">Germany</a></li><li><a href="/geopolitics/europe/western-europe/#ireland">Ireland</a></li><li><a href="/geopolitics/europe/western-europe/#luxembourg">Luxembourg</a></li><li><a href="/geopolitics/europe/western-europe/#netherlands">Netherlands</a></li><li><a href="/geopolitics/europe/western-europe/#switzerland">Switzerland</a></li><li><a href="/geopolitics/europe/western-europe/#united-kingdom">United Kingdom</a></li></ul>
+      </div>
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/europe/eastern-europe/">Eastern Europe</a>
+        <ul class="mega-list"><li><a href="/geopolitics/europe/eastern-europe/#belarus">Belarus</a></li><li><a href="/geopolitics/europe/eastern-europe/#moldova">Moldova</a></li><li><a href="/geopolitics/europe/eastern-europe/#romania">Romania</a></li><li><a href="/geopolitics/europe/eastern-europe/#russia">Russia</a></li><li><a href="/geopolitics/europe/eastern-europe/#ukraine">Ukraine</a></li></ul>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/europe/northern-europe/">Northern Europe</a>
+        <ul class="mega-list"><li><a href="/geopolitics/europe/northern-europe/#denmark">Denmark</a></li><li><a href="/geopolitics/europe/northern-europe/#finland">Finland</a></li><li><a href="/geopolitics/europe/northern-europe/#iceland">Iceland</a></li><li><a href="/geopolitics/europe/northern-europe/#norway">Norway</a></li><li><a href="/geopolitics/europe/northern-europe/#sweden">Sweden</a></li></ul>
+      </div>
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/europe/balkans/">Balkans &amp; Southeastern Europe</a>
+        <ul class="mega-list"><li><a href="/geopolitics/europe/balkans/#albania">Albania</a></li><li><a href="/geopolitics/europe/balkans/#bosnia-and-herzegovina">Bosnia and Herzegovina</a></li><li><a href="/geopolitics/europe/balkans/#bulgaria">Bulgaria</a></li><li><a href="/geopolitics/europe/balkans/#croatia">Croatia</a></li><li><a href="/geopolitics/europe/balkans/#kosovo">Kosovo</a></li><li><a href="/geopolitics/europe/balkans/#montenegro">Montenegro</a></li><li><a href="/geopolitics/europe/balkans/#north-macedonia">North Macedonia</a></li><li><a href="/geopolitics/europe/balkans/#serbia">Serbia</a></li><li><a href="/geopolitics/europe/balkans/#slovenia">Slovenia</a></li></ul>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/europe/southern-europe/">Southern Europe</a>
+        <ul class="mega-list"><li><a href="/geopolitics/europe/southern-europe/#andorra">Andorra</a></li><li><a href="/geopolitics/europe/southern-europe/#cyprus">Cyprus</a></li><li><a href="/geopolitics/europe/southern-europe/#greece">Greece</a></li><li><a href="/geopolitics/europe/southern-europe/#italy">Italy</a></li><li><a href="/geopolitics/europe/southern-europe/#malta">Malta</a></li><li><a href="/geopolitics/europe/southern-europe/#portugal">Portugal</a></li><li><a href="/geopolitics/europe/southern-europe/#san-marino">San Marino</a></li><li><a href="/geopolitics/europe/southern-europe/#spain">Spain</a></li><li><a href="/geopolitics/europe/southern-europe/#vatican-city">Vatican City</a></li></ul>
+      </div>
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/europe/baltics/">Baltic States</a>
+        <ul class="mega-list"><li><a href="/geopolitics/europe/baltics/#estonia">Estonia</a></li><li><a href="/geopolitics/europe/baltics/#latvia">Latvia</a></li><li><a href="/geopolitics/europe/baltics/#lithuania">Lithuania</a></li></ul>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/europe/central-europe/">Central Europe</a>
+        <ul class="mega-list"><li><a href="/geopolitics/europe/central-europe/#austria">Austria</a></li><li><a href="/geopolitics/europe/central-europe/#czechia">Czechia</a></li><li><a href="/geopolitics/europe/central-europe/#germany">Germany</a></li><li><a href="/geopolitics/europe/central-europe/#hungary">Hungary</a></li><li><a href="/geopolitics/europe/central-europe/#liechtenstein">Liechtenstein</a></li><li><a href="/geopolitics/europe/central-europe/#poland">Poland</a></li><li><a href="/geopolitics/europe/central-europe/#slovakia">Slovakia</a></li><li><a href="/geopolitics/europe/central-europe/#slovenia">Slovenia</a></li><li><a href="/geopolitics/europe/central-europe/#switzerland">Switzerland</a></li></ul>
+      </div>
+    </div>
+          </div>
+    <p class="mega-note">Faroe Islands and Greenland are tracked under Northern Europe where relevant to coverage.</p>
+        </div>
+      </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-trigger" href="/geopolitics/middle-east-north-africa/" aria-expanded="false" aria-controls="m-middle-east-north-africa">Middle East &amp; North Africa<svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+
+      <div class="mega" id="m-middle-east-north-africa" data-open="false" aria-label="Middle East &amp; North Africa sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/geopolitics/middle-east-north-africa/">Middle East &amp; North Africa</a>
+            <span class="mega-sub">All middle east &amp; north africa coverage</span>
+          </div>
+          <div class="mega-cols">
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/middle-east-north-africa/gulf/">Gulf</a>
+        <ul class="mega-list"><li><a href="/geopolitics/middle-east-north-africa/gulf/#bahrain">Bahrain</a></li><li><a href="/geopolitics/middle-east-north-africa/gulf/#kuwait">Kuwait</a></li><li><a href="/geopolitics/middle-east-north-africa/gulf/#oman">Oman</a></li><li><a href="/geopolitics/middle-east-north-africa/gulf/#qatar">Qatar</a></li><li><a href="/geopolitics/middle-east-north-africa/gulf/#saudi-arabia">Saudi Arabia</a></li><li><a href="/geopolitics/middle-east-north-africa/gulf/#united-arab-emirates">United Arab Emirates</a></li></ul>
+      </div>
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/middle-east-north-africa/eastern-mediterranean/">Eastern Mediterranean</a>
+        <ul class="mega-list"><li><a href="/geopolitics/middle-east-north-africa/eastern-mediterranean/#cyprus">Cyprus</a></li><li><a href="/geopolitics/middle-east-north-africa/eastern-mediterranean/#greece">Greece</a></li><li><a href="/geopolitics/middle-east-north-africa/eastern-mediterranean/#israel">Israel</a></li><li><a href="/geopolitics/middle-east-north-africa/eastern-mediterranean/#turkey">Turkey</a></li></ul>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/middle-east-north-africa/levant/">Levant</a>
+        <ul class="mega-list"><li><a href="/geopolitics/middle-east-north-africa/levant/#jordan">Jordan</a></li><li><a href="/geopolitics/middle-east-north-africa/levant/#lebanon">Lebanon</a></li><li><a href="/geopolitics/middle-east-north-africa/levant/#palestinian-territories">Palestinian territories</a></li><li><a href="/geopolitics/middle-east-north-africa/levant/#syria">Syria</a></li></ul>
+      </div>
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/middle-east-north-africa/iran-iraq/">Iran &amp; Iraq</a>
+        <ul class="mega-list"><li><a href="/geopolitics/middle-east-north-africa/iran-iraq/#iran">Iran</a></li><li><a href="/geopolitics/middle-east-north-africa/iran-iraq/#iraq">Iraq</a></li></ul>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/middle-east-north-africa/north-africa/">North Africa</a>
+        <ul class="mega-list"><li><a href="/geopolitics/middle-east-north-africa/north-africa/#algeria">Algeria</a></li><li><a href="/geopolitics/middle-east-north-africa/north-africa/#egypt">Egypt</a></li><li><a href="/geopolitics/middle-east-north-africa/north-africa/#libya">Libya</a></li><li><a href="/geopolitics/middle-east-north-africa/north-africa/#morocco">Morocco</a></li><li><a href="/geopolitics/middle-east-north-africa/north-africa/#sudan">Sudan</a></li><li><a href="/geopolitics/middle-east-north-africa/north-africa/#tunisia">Tunisia</a></li><li><a href="/geopolitics/middle-east-north-africa/north-africa/#mauritania">Mauritania</a></li></ul>
+      </div>
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/middle-east-north-africa/turkey-anatolia/">Turkey &amp; Anatolia</a>
+        <ul class="mega-list"><li><a href="/geopolitics/middle-east-north-africa/turkey-anatolia/#turkey">Turkey</a></li></ul>
+      </div>
+    </div>
+          </div>
+
+        </div>
+      </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-trigger" href="/geopolitics/sub-saharan-africa/" aria-expanded="false" aria-controls="m-sub-saharan-africa">Sub-Saharan Africa<svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+
+      <div class="mega" id="m-sub-saharan-africa" data-open="false" aria-label="Sub-Saharan Africa sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/geopolitics/sub-saharan-africa/">Sub-Saharan Africa</a>
+            <span class="mega-sub">All sub-saharan africa coverage</span>
+          </div>
+          <div class="mega-cols">
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/sub-saharan-africa/west-africa/">West Africa</a>
+        <ul class="mega-list"><li><a href="/geopolitics/sub-saharan-africa/west-africa/#benin">Benin</a></li><li><a href="/geopolitics/sub-saharan-africa/west-africa/#burkina-faso">Burkina Faso</a></li><li><a href="/geopolitics/sub-saharan-africa/west-africa/#cabo-verde">Cabo Verde</a></li><li><a href="/geopolitics/sub-saharan-africa/west-africa/#cote-d-ivoire">Cote d&#x27;Ivoire</a></li><li><a href="/geopolitics/sub-saharan-africa/west-africa/#gambia">Gambia</a></li><li><a href="/geopolitics/sub-saharan-africa/west-africa/#ghana">Ghana</a></li><li><a href="/geopolitics/sub-saharan-africa/west-africa/#guinea">Guinea</a></li><li><a href="/geopolitics/sub-saharan-africa/west-africa/#guinea-bissau">Guinea-Bissau</a></li><li><a href="/geopolitics/sub-saharan-africa/west-africa/#liberia">Liberia</a></li><li><a href="/geopolitics/sub-saharan-africa/west-africa/#mali">Mali</a></li><li><a href="/geopolitics/sub-saharan-africa/west-africa/#niger">Niger</a></li><li><a href="/geopolitics/sub-saharan-africa/west-africa/#nigeria">Nigeria</a></li><li><a href="/geopolitics/sub-saharan-africa/west-africa/#senegal">Senegal</a></li><li><a href="/geopolitics/sub-saharan-africa/west-africa/#sierra-leone">Sierra Leone</a></li><li><a href="/geopolitics/sub-saharan-africa/west-africa/#togo">Togo</a></li></ul>
+      </div>
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/sub-saharan-africa/central-africa/">Central Africa</a>
+        <ul class="mega-list"><li><a href="/geopolitics/sub-saharan-africa/central-africa/#cameroon">Cameroon</a></li><li><a href="/geopolitics/sub-saharan-africa/central-africa/#central-african-republic">Central African Republic</a></li><li><a href="/geopolitics/sub-saharan-africa/central-africa/#chad">Chad</a></li><li><a href="/geopolitics/sub-saharan-africa/central-africa/#republic-of-the-congo">Republic of the Congo</a></li><li><a href="/geopolitics/sub-saharan-africa/central-africa/#democratic-republic-of-the-congo">Democratic Republic of the Congo</a></li><li><a href="/geopolitics/sub-saharan-africa/central-africa/#equatorial-guinea">Equatorial Guinea</a></li><li><a href="/geopolitics/sub-saharan-africa/central-africa/#gabon">Gabon</a></li><li><a href="/geopolitics/sub-saharan-africa/central-africa/#sao-tome-and-principe">Sao Tome and Principe</a></li></ul>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/sub-saharan-africa/east-africa/">East Africa</a>
+        <ul class="mega-list"><li><a href="/geopolitics/sub-saharan-africa/east-africa/#kenya">Kenya</a></li><li><a href="/geopolitics/sub-saharan-africa/east-africa/#tanzania">Tanzania</a></li><li><a href="/geopolitics/sub-saharan-africa/east-africa/#uganda">Uganda</a></li><li><a href="/geopolitics/sub-saharan-africa/east-africa/#rwanda">Rwanda</a></li><li><a href="/geopolitics/sub-saharan-africa/east-africa/#burundi">Burundi</a></li><li><a href="/geopolitics/sub-saharan-africa/east-africa/#ethiopia">Ethiopia</a></li><li><a href="/geopolitics/sub-saharan-africa/east-africa/#south-sudan">South Sudan</a></li><li><a href="/geopolitics/sub-saharan-africa/east-africa/#malawi">Malawi</a></li><li><a href="/geopolitics/sub-saharan-africa/east-africa/#zambia">Zambia</a></li><li><a href="/geopolitics/sub-saharan-africa/east-africa/#zimbabwe">Zimbabwe</a></li></ul>
+      </div>
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/sub-saharan-africa/southern-africa/">Southern Africa</a>
+        <ul class="mega-list"><li><a href="/geopolitics/sub-saharan-africa/southern-africa/#angola">Angola</a></li><li><a href="/geopolitics/sub-saharan-africa/southern-africa/#botswana">Botswana</a></li><li><a href="/geopolitics/sub-saharan-africa/southern-africa/#eswatini">Eswatini</a></li><li><a href="/geopolitics/sub-saharan-africa/southern-africa/#lesotho">Lesotho</a></li><li><a href="/geopolitics/sub-saharan-africa/southern-africa/#mauritius">Mauritius</a></li><li><a href="/geopolitics/sub-saharan-africa/southern-africa/#mozambique">Mozambique</a></li><li><a href="/geopolitics/sub-saharan-africa/southern-africa/#namibia">Namibia</a></li><li><a href="/geopolitics/sub-saharan-africa/southern-africa/#south-africa">South Africa</a></li><li><a href="/geopolitics/sub-saharan-africa/southern-africa/#zambia">Zambia</a></li><li><a href="/geopolitics/sub-saharan-africa/southern-africa/#zimbabwe">Zimbabwe</a></li></ul>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/sub-saharan-africa/horn-of-africa/">Horn of Africa</a>
+        <ul class="mega-list"><li><a href="/geopolitics/sub-saharan-africa/horn-of-africa/#djibouti">Djibouti</a></li><li><a href="/geopolitics/sub-saharan-africa/horn-of-africa/#eritrea">Eritrea</a></li><li><a href="/geopolitics/sub-saharan-africa/horn-of-africa/#ethiopia">Ethiopia</a></li><li><a href="/geopolitics/sub-saharan-africa/horn-of-africa/#somalia">Somalia</a></li></ul>
+      </div>
+    </div>
+          </div>
+    <p class="mega-note">Mauritania also appears under North Africa, which is where its primary structural coverage sits.</p>
+        </div>
+      </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-trigger" href="/geopolitics/asia/" aria-expanded="false" aria-controls="m-asia">Asia<svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+
+      <div class="mega" id="m-asia" data-open="false" aria-label="Asia sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/geopolitics/asia/">Asia</a>
+            <span class="mega-sub">All asia coverage</span>
+          </div>
+          <div class="mega-cols">
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/asia/central-asia/">Central Asia</a>
+        <ul class="mega-list"><li><a href="/geopolitics/asia/central-asia/#kazakhstan">Kazakhstan</a></li><li><a href="/geopolitics/asia/central-asia/#kyrgyzstan">Kyrgyzstan</a></li><li><a href="/geopolitics/asia/central-asia/#tajikistan">Tajikistan</a></li><li><a href="/geopolitics/asia/central-asia/#turkmenistan">Turkmenistan</a></li><li><a href="/geopolitics/asia/central-asia/#uzbekistan">Uzbekistan</a></li></ul>
+      </div>
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/asia/southeast-asia/">Southeast Asia</a>
+        <ul class="mega-list"><li><a href="/geopolitics/asia/southeast-asia/#brunei">Brunei</a></li><li><a href="/geopolitics/asia/southeast-asia/#cambodia">Cambodia</a></li><li><a href="/geopolitics/asia/southeast-asia/#indonesia">Indonesia</a></li><li><a href="/geopolitics/asia/southeast-asia/#laos">Laos</a></li><li><a href="/geopolitics/asia/southeast-asia/#malaysia">Malaysia</a></li><li><a href="/geopolitics/asia/southeast-asia/#myanmar">Myanmar</a></li><li><a href="/geopolitics/asia/southeast-asia/#philippines">Philippines</a></li><li><a href="/geopolitics/asia/southeast-asia/#singapore">Singapore</a></li><li><a href="/geopolitics/asia/southeast-asia/#thailand">Thailand</a></li><li><a href="/geopolitics/asia/southeast-asia/#timor-leste">Timor-Leste</a></li><li><a href="/geopolitics/asia/southeast-asia/#vietnam">Vietnam</a></li></ul>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/asia/east-asia/">East Asia</a>
+        <ul class="mega-list"><li><a href="/geopolitics/asia/east-asia/#china">China</a></li><li><a href="/geopolitics/asia/east-asia/#japan">Japan</a></li><li><a href="/geopolitics/asia/east-asia/#mongolia">Mongolia</a></li><li><a href="/geopolitics/asia/east-asia/#north-korea">North Korea</a></li><li><a href="/geopolitics/asia/east-asia/#south-korea">South Korea</a></li><li><a href="/geopolitics/asia/east-asia/#taiwan">Taiwan</a></li></ul>
+      </div>
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/asia/caucasus/">Caucasus</a>
+        <ul class="mega-list"><li><a href="/geopolitics/asia/caucasus/#armenia">Armenia</a></li><li><a href="/geopolitics/asia/caucasus/#azerbaijan">Azerbaijan</a></li><li><a href="/geopolitics/asia/caucasus/#georgia">Georgia</a></li></ul>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/asia/south-asia/">South Asia</a>
+        <ul class="mega-list"><li><a href="/geopolitics/asia/south-asia/#afghanistan">Afghanistan</a></li><li><a href="/geopolitics/asia/south-asia/#bangladesh">Bangladesh</a></li><li><a href="/geopolitics/asia/south-asia/#bhutan">Bhutan</a></li><li><a href="/geopolitics/asia/south-asia/#india">India</a></li><li><a href="/geopolitics/asia/south-asia/#maldives">Maldives</a></li><li><a href="/geopolitics/asia/south-asia/#nepal">Nepal</a></li><li><a href="/geopolitics/asia/south-asia/#pakistan">Pakistan</a></li><li><a href="/geopolitics/asia/south-asia/#sri-lanka">Sri Lanka</a></li></ul>
+      </div>
+    </div>
+          </div>
+
+        </div>
+      </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-trigger" href="/geopolitics/oceania-pacific/" aria-expanded="false" aria-controls="m-oceania-pacific">Oceania &amp; Pacific<svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+
+      <div class="mega" id="m-oceania-pacific" data-open="false" aria-label="Oceania &amp; Pacific sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/geopolitics/oceania-pacific/">Oceania &amp; Pacific</a>
+            <span class="mega-sub">All oceania &amp; pacific coverage</span>
+          </div>
+          <div class="mega-cols">
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/oceania-pacific/australia-new-zealand/">Australia &amp; New Zealand</a>
+        <ul class="mega-list"><li><a href="/geopolitics/oceania-pacific/australia-new-zealand/#australia">Australia</a></li><li><a href="/geopolitics/oceania-pacific/australia-new-zealand/#new-zealand">New Zealand</a></li></ul>
+      </div>
+    </div>
+    <div class="mega-col">
+      <div class="mega-group">
+        <a class="mega-group-name" href="/geopolitics/oceania-pacific/pacific-islands/">Pacific Islands</a>
+        <ul class="mega-list"><li><a href="/geopolitics/oceania-pacific/pacific-islands/#fiji">Fiji</a></li><li><a href="/geopolitics/oceania-pacific/pacific-islands/#kiribati">Kiribati</a></li><li><a href="/geopolitics/oceania-pacific/pacific-islands/#marshall-islands">Marshall Islands</a></li><li><a href="/geopolitics/oceania-pacific/pacific-islands/#micronesia">Micronesia</a></li><li><a href="/geopolitics/oceania-pacific/pacific-islands/#nauru">Nauru</a></li><li><a href="/geopolitics/oceania-pacific/pacific-islands/#palau">Palau</a></li><li><a href="/geopolitics/oceania-pacific/pacific-islands/#samoa">Samoa</a></li><li><a href="/geopolitics/oceania-pacific/pacific-islands/#solomon-islands">Solomon Islands</a></li><li><a href="/geopolitics/oceania-pacific/pacific-islands/#tonga">Tonga</a></li><li><a href="/geopolitics/oceania-pacific/pacific-islands/#tuvalu">Tuvalu</a></li><li><a href="/geopolitics/oceania-pacific/pacific-islands/#vanuatu">Vanuatu</a></li><li><a href="/geopolitics/oceania-pacific/pacific-islands/#papua-new-guinea">Papua New Guinea</a></li></ul>
+      </div>
+    </div>
+          </div>
+
+        </div>
+      </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-trigger" href="/geopolitics/global/" aria-expanded="false" aria-controls="m-global">Global<svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+
+      <div class="mega" id="m-global" data-open="false" aria-label="Global sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/geopolitics/global/">Global</a>
+            <span class="mega-sub">Stories not primarily associated with one region.</span>
+          </div>
+          <div class="mega-cols mega-cols-topic">
+            <div class="mega-col">
+      <ul class="mega-list mega-list-topic"><li><a href="/geopolitics/global/world/">World</a><span class="mega-item-scope">Cross-border developments with no single national home.</span></li><li><a href="/geopolitics/global/global-economy/">Global Economy</a><span class="mega-item-scope">Global growth, trade-weighted output, and synchronised cycles.</span></li><li><a href="/geopolitics/global/global-trade/">Global Trade</a><span class="mega-item-scope">Tariff action, supply chains, and trade agreement negotiation.</span></li><li><a href="/geopolitics/global/international-organizations/">International Organizations</a><span class="mega-item-scope">WTO, IMF, UN and multilateral institution positions.</span></li><li><a href="/geopolitics/global/climate-energy/">Climate &amp; Energy</a><span class="mega-item-scope">Energy transition, grid investment, and carbon policy.</span></li><li><a href="/geopolitics/global/global-security/">Global Security</a><span class="mega-item-scope">Defence posture, alliances, and arms transfers.</span></li><li><a href="/geopolitics/global/global-technology/">Global Technology</a><span class="mega-item-scope">Export controls, semiconductor capacity, and platform regulation.</span></li></ul>
+            </div>
+          </div>
+          
+
+        </div>
+      </div>
+      </li>
         </ul>
-        <button class="search-toggle" type="button" aria-label="Search" aria-expanded="false">&#9906;</button>
-        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
       </div>
     </nav>
-    <div class="searchbar wrap" hidden>
-      <form id="search-form" role="search" action="/latest/" method="get">
-        <label class="visually-hidden" for="search-query">Search articles</label>
-        <input id="search-query" type="search" name="q" placeholder="Search headlines, topics, regions&hellip;"
-               autocomplete="off" spellcheck="false">
-        <button type="submit">Search</button>
-      </form>
-      <p id="search-count" class="meta" style="margin-top:8px"></p>
-      <div id="search-results" hidden></div>
+    <nav class="topic-nav" aria-label="Topics">
+      <div class="wrap">
+        <ul class="nav-list nav-list-topic">
+      <li class="nav-item">
+        <a class="nav-trigger" href="/markets/" aria-expanded="false" aria-controls="m-markets">Markets<svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+
+      <div class="mega" id="m-markets" data-open="false" aria-label="Markets sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/markets/">Markets</a>
+            <span class="mega-sub">How macro and geopolitical developments price into assets.</span>
+          </div>
+          <div class="mega-cols mega-cols-topic">
+            <div class="mega-col">
+      <ul class="mega-list mega-list-topic"><li><a href="/markets/stocks/">Stocks</a><span class="mega-item-scope">Equity index and single-name analysis.</span></li><li><a href="/markets/indices/">Indices</a><span class="mega-item-scope">Index construction, concentration and rebalancing.</span></li><li><a href="/markets/bonds/">Bonds</a><span class="mega-item-scope">Sovereign and corporate credit, curves and issuance.</span></li><li><a href="/markets/commodities/">Commodities</a><span class="mega-item-scope">Energy, metals and agricultural pricing.</span></li><li><a href="/markets/currencies/">Currencies</a><span class="mega-item-scope">FX regimes, carry, and cross-rates.</span></li><li><a href="/markets/crypto/">Crypto</a><span class="mega-item-scope">Digital assets as a macro and liquidity proxy.</span></li><li><a href="/markets/companies/">Companies</a><span class="mega-item-scope">Filings, guidance, and capital allocation.</span></li><li><a href="/markets/sectors/">Sectors</a><span class="mega-item-scope">Cross-company industry structure.</span></li></ul>
+            </div>
+          </div>
+          
+
+        </div>
+      </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-trigger" href="/macro/" aria-expanded="false" aria-controls="m-macro">Macro<svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+
+      <div class="mega" id="m-macro" data-open="false" aria-label="Macro sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/macro/">Macro</a>
+            <span class="mega-sub">The aggregate economy: prices, output, labour and policy.</span>
+          </div>
+          <div class="mega-cols mega-cols-topic">
+            <div class="mega-col">
+      <ul class="mega-list mega-list-topic"><li><a href="/macro/inflation/">Inflation</a><span class="mega-item-scope">Headline and core, supply versus demand drivers.</span></li><li><a href="/macro/gdp/">GDP</a><span class="mega-item-scope">Growth accounting and revisions.</span></li><li><a href="/macro/interest-rates/">Interest Rates</a><span class="mega-item-scope">Policy paths, curve shape and term premia.</span></li><li><a href="/macro/monetary-policy/">Monetary Policy</a><span class="mega-item-scope">Balance sheets, frameworks and credibility.</span></li><li><a href="/macro/fiscal-policy/">Fiscal Policy</a><span class="mega-item-scope">Budgets, debt sustainability and sovereign issuance.</span></li><li><a href="/macro/employment/">Employment</a><span class="mega-item-scope">Labour markets, wages and participation.</span></li><li><a href="/macro/trade/">Trade</a><span class="mega-item-scope">Tariffs, current accounts and re-exports.</span></li><li><a href="/macro/currencies/">Currencies</a><span class="mega-item-scope">Exchange-rate pass-through to prices.</span></li></ul>
+            </div>
+          </div>
+          
+
+        </div>
+      </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-trigger" href="/research/" aria-expanded="false" aria-controls="m-research">Research<svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+
+      <div class="mega" id="m-research" data-open="false" aria-label="Research sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/research/">Research</a>
+            <span class="mega-sub">Longer-form notes with stated methodology and named sources.</span>
+          </div>
+          <div class="mega-cols mega-cols-topic">
+            <div class="mega-col">
+      <ul class="mega-list mega-list-topic"><li><a href="/research/macro-research/">Macro Research</a><span class="mega-item-scope">Cross-country macro frameworks.</span></li><li><a href="/research/geopolitical-research/">Geopolitical Research</a><span class="mega-item-scope">Structural and thematic geopolitical work.</span></li><li><a href="/research/sector-research/">Sector Research</a><span class="mega-item-scope">Industry structure and profitability.</span></li><li><a href="/research/market-research/">Market Research</a><span class="mega-item-scope">Pricing behaviour and cross-asset allocation.</span></li><li><a href="/research/data-statistics/">Data &amp; Statistics</a><span class="mega-item-scope">Primary data notes and series construction.</span></li></ul>
+            </div>
+          </div>
+          
+
+        </div>
+      </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-trigger" href="/blog/" aria-expanded="false" aria-controls="m-blog">Blog<svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+
+      <div class="mega" id="m-blog" data-open="false" aria-label="Blog sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/blog/">Blog</a>
+            <span class="mega-sub">Analysis, opinion, explainers and commentary — labelled as opinion, never as reporting.</span>
+          </div>
+          <div class="mega-cols mega-cols-topic">
+            <div class="mega-col">
+      <ul class="mega-list mega-list-topic"><li><a href="/blog/analysis/">Analysis</a><span class="mega-item-scope">Our interpretation of data and events.</span></li><li><a href="/blog/opinion/">Opinion</a><span class="mega-item-scope">Argument and commentary, clearly held to our own view.</span></li><li><a href="/blog/explainers/">Explainers</a><span class="mega-item-scope">Mechanics, written to be understood.</span></li><li><a href="/blog/commentary/">Commentary</a><span class="mega-item-scope">Reactions to the week&#x27;s developments.</span></li><li><a href="/blog/research-notes/">Research Notes</a><span class="mega-item-scope">Method-documented research documents.</span></li></ul>
+            </div>
+          </div>
+          <div class="mega-types"><span class="type-chip" data-type="news">News</span><span class="type-chip" data-type="analysis">Analysis</span><span class="type-chip" data-type="explainer">Explainer</span><span class="type-chip" data-type="research">Research Note</span></div>
+    <p class="mega-note">Blog content is analysis, opinion and explainers. It is never presented as event reporting.</p>
+        </div>
+      </div>
+      </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu" data-open="false" aria-hidden="true" data-accordion data-build="mega">
+      <ul class="acc-list acc-list-root acc-fallback">
+        <li class="acc-leaf"><a href="/latest/">Latest</a></li>
+        <li class="acc-leaf"><a href="/geopolitics/global/">Global</a></li>
+        <li class="acc-leaf"><a href="/geopolitics/north-america/">North America</a></li>
+        <li class="acc-leaf"><a href="/geopolitics/latin-america/">Latin America &amp; Caribbean</a></li>
+        <li class="acc-leaf"><a href="/geopolitics/europe/">Europe</a></li>
+        <li class="acc-leaf"><a href="/geopolitics/middle-east-north-africa/">Middle East &amp; North Africa</a></li>
+        <li class="acc-leaf"><a href="/geopolitics/sub-saharan-africa/">Sub-Saharan Africa</a></li>
+        <li class="acc-leaf"><a href="/geopolitics/asia/">Asia</a></li>
+        <li class="acc-leaf"><a href="/geopolitics/oceania-pacific/">Oceania &amp; Pacific</a></li>
+        <li class="acc-leaf"><a href="/markets/">Markets</a></li>
+        <li class="acc-leaf"><a href="/macro/">Macro</a></li>
+        <li class="acc-leaf"><a href="/research/">Research</a></li>
+        <li class="acc-leaf"><a href="/blog/">Blog</a></li>
+      </ul>
+      <div class="mobile-foot">
+        <a href="/about/index.html">About</a>
+        <a href="/contact/index.html">Contact</a>
+        <a href="/editorial-policy/index.html">Editorial Policy</a>
+        <a href="/privacy/index.html">Privacy</a>
+        <a href="/search/index.html">Search</a>
+      </div>
     </div>
   </header>
   <main id="main">
