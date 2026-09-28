@@ -7,6 +7,10 @@
    reader can never confuse Y-Square's own analysis with a reported event. */
 
 :root {
+  /* Live header height, published by nav.js from the rendered element. The
+     144px fallback is the desktop value and is only used if the script
+     does not run; the sticky ad slot and anchor offsets read it. */
+  --header-h: 144px;
   --ink:        #11181f;
   --ink-2:      #33404d;
   --muted:      #5d6875;
@@ -71,7 +75,7 @@ h1, h2, h3, h4, h5 {
 /* ---------- layout primitives ---------- */
 .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
 .wrap-narrow { max-width: 900px; }
-main { display: block; min-height: 50vh; }
+main { display: block; min-height: 100vh; }  /* see the .ad-top note: the sticky ad travels inside this box */
 [hidden] { display: none !important; }
 
 .skip-link {
@@ -139,6 +143,46 @@ main { display: block; min-height: 50vh; }
 .ad-slot::before {
   content: attr(data-ad-label);
   display: block; padding: 6px 0 2px;
+}
+
+/* The top slot rides under the sticky header, the way the main nav does.
+
+   The offset is NOT hardcoded. The header is not one height: sweeping the
+   viewport showed 144px at 1440, 136 at 1000, 129 at 860, 173 at 768, 186 at
+   390 and 268 at 320 -- six bands, because the region row wraps to a different
+   number of lines at different widths. Any hardcoded value was wrong at four of
+   those six, leaving the ad floating below the nav (or under it) exactly where
+   an ad-blocked slot would look identical.
+
+   Instead the header publishes its own height as a custom property and the ad
+   reads it. --header-h is set on :root by nav.css, which is the only place
+   that knows how tall the header is, and nav.js recomputes it on resize and on
+   orientation change. No media query can drift from reality this way, because
+   there is no second copy of the number.
+
+   A fallback of 0 keeps the ad usable if the script never runs: it then pins
+   to the top of the document rather than to a wrong offset. */
+.ad-top {
+  position: sticky;
+  top: var(--header-h, 0px);
+  z-index: 90;                 /* below the header's 120: the nav is never covered */
+  background: var(--paper);
+  box-shadow: 0 1px 0 var(--line-2);
+}
+
+/* A sticky element can only travel inside its PARENT's box. The slot is a
+   direct child of <main>, and <main> is only min-height:50vh, so the ad had
+   almost no room to move and scrolled away within a few hundred pixels --
+   position:sticky was set, the offset was right, and it still did not stick.
+
+   Giving <main> min-height:100vh makes the travel range the whole viewport, so
+   the ad stays pinned from the top of the article to the bottom of it and then
+   releases with the page rather than following the reader off the end. The
+   container is display:block, so this costs nothing but a minimum. */
+main { min-height: 100vh; }
+
+@media print {
+  .ad-top { position: static; box-shadow: none; }  /* sticky is meaningless on paper */
 }
 
 /* ---------- states ---------- */

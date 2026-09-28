@@ -9,7 +9,7 @@ explicit empty state until real reporting is added. Only analysis / explainer /
 research prose is authored, and it is labelled as such on every page.
 """
 
-import os, re, html, json, datetime
+import hashlib, os, re, html, json, datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://y-squre.com"
@@ -54,6 +54,29 @@ def esc(s):
     return html.escape(str(s), quote=True)
 
 
+# Asset cache busting. The server sends Cache-Control: max-age=604800 on
+# /assets, so a stylesheet or script change is invisible to a returning reader
+# for seven days -- which is exactly how a fixed nav.js can sit on disk and
+# still not run. Every asset URL therefore carries ?v=<hash> of that file's own
+# contents: change the bytes and every reference changes with them, and an
+# unchanged file keeps its URL so the cache still works.
+#
+# Computed at import time from the files on disk, so there is no version string
+# to forget to bump.
+def _build_id(rel):
+    p = os.path.join(ROOT, rel.lstrip("/"))
+    try:
+        with open(p, "rb") as fh:
+            return hashlib.md5(fh.read()).hexdigest()[:8]
+    except OSError:
+        return "0" * 8
+
+
+def asset(rel):
+    """Return /assets/... with a content hash appended."""
+    return "%s?v=%s" % (rel, _build_id(rel))
+
+
 def head(title, desc, url, *, ctype="website", published="", updated="",
          section="", tags=None, noindex=False, extra_css=()):
     """Standard <head>. OG + Twitter + article metadata per the brief."""
@@ -73,7 +96,7 @@ def head(title, desc, url, *, ctype="website", published="", updated="",
         if tags:
             art += "".join(f'\n    <meta property="article:tag" content="{esc(t)}">' for t in tags)
     rob = '\n    <meta name="robots" content="noindex, follow">' if noindex else ""
-    css = "".join(f'\n    <link rel="stylesheet" href="{c}">' for c in
+    css = "".join('\n    <link rel="stylesheet" href="%s">' % asset(c) for c in
                   ["/assets/css/base.css", "/assets/css/layout.css",
                    "/assets/css/article.css", "/assets/css/nav.css", "/assets/css/sections.css",
                    "/assets/css/responsive.css"])
@@ -87,7 +110,7 @@ def head(title, desc, url, *, ctype="website", published="", updated="",
   <title>{esc(title)}</title>
   <meta name="description" content="{esc(desc)}">{kw}{rob}
   <link rel="canonical" href="{canonical}">{css}
-  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="{asset('/assets/icons/favicon.svg')}" type="image/svg+xml">
   <meta name="google-adsense-account" content="{CLIENT}">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={CLIENT}"
           crossorigin="anonymous"></script>
@@ -104,10 +127,10 @@ def head(title, desc, url, *, ctype="website", published="", updated="",
   <meta name="twitter:title" content="{esc(title)}">
   <meta name="twitter:description" content="{esc(desc)}">
   <meta name="twitter:image" content="{ogimg}">{art}
-  <script src="/assets/js/main.js" defer></script>
-  <script src="/assets/js/nav.js" defer></script>
-  <script src="/assets/js/consent.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
+  <script src="{asset('/assets/js/main.js')}" defer></script>
+  <script src="{asset('/assets/js/nav.js')}" defer></script>
+  <script src="{asset('/assets/js/consent.js')}" defer></script>
+  <script src="{asset('/assets/js/search.js')}" defer></script>
 </head>
 <body>
 """
@@ -158,7 +181,7 @@ def footer():
        blocks, never overlays, never hides content. Endpoint is empty by
        default, so this collects nothing and sends nothing until a first-party
        reporting path is set. Deferred so it never competes with first paint. -->
-  <script src="/assets/js/adblock-measure.js" defer></script>
+  <script src="{asset('/assets/js/adblock-measure.js')}" defer></script>
 </body>
 </html>
 """

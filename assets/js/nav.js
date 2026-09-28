@@ -253,6 +253,39 @@
     }
   }
 
+  /* Publish the header's real height as --header-h on :root.
+
+     The sticky ad slot pins itself to this. The header is not one height --
+     the region row wraps to a different number of lines at different widths,
+     and a sweep found six distinct heights between 320px and 1440px -- so the
+     only version of this number that cannot be wrong is the one measured from
+     the rendered element. A hardcoded media-query value was wrong at four of
+     those six widths, which left the ad floating below the nav, or hidden
+     under it, in exactly the position an ad-blocked slot would occupy.
+
+     Kept in the file that already owns the header, rather than in a second
+     stylesheet that would have to be kept in sync by hand. */
+  function publishHeaderHeight() {
+    var h = document.querySelector('.site-header');
+    if (!h) return;
+    var px = Math.round(h.getBoundingClientRect().height);
+    if (px > 0) document.documentElement.style.setProperty('--header-h', px + 'px');
+  }
+
+  function initHeaderHeight() {
+    publishHeaderHeight();
+    window.addEventListener('resize', publishHeaderHeight);
+    window.addEventListener('orientationchange', publishHeaderHeight);
+    // Web fonts land after first paint and change the masthead height, so
+    // measure again once they have. Without this the offset is briefly wrong
+    // on a slow connection, which is where a sticky ad visibly jumps.
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(publishHeaderHeight)['catch'](function () {});
+    }
+  }
+
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initHeaderHeight);
+  else initHeaderHeight();
 }());
