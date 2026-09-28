@@ -75,6 +75,24 @@ h1, h2, h3, h4, h5 {
 /* ---------- layout primitives ---------- */
 .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
 .wrap-narrow { max-width: 900px; }
+/* padding-bottom is load-bearing for the sticky ad, not decoration.
+
+   A sticky element is clamped inside its parent's box, so at maximum scroll the
+   top ad is pinned at mainBottom - adHeight. On a short viewport the footer is
+   shorter than the 90px ad, so that clamp lands ABOVE the header and the ad
+   visibly slides up behind the nav on the last screenful -- measured at 48px
+   top against a header ending at 91px on a 593px-tall window.
+
+   Padding of at least one ad-height keeps main's bottom edge far enough down
+   that the clamp never rises above the header. 120px also gives the footer
+   breathing room from the last content block.
+
+   The ad is released by letting it slide under the header at the end of the
+   page, not by padding. A sticky element clamps to its parent's CONTENT box,
+   so padding-bottom on that parent moves the clamp UP, not down -- adding
+   120px of it made the overlap worse at every viewport height, which is what
+   an experiment measured rather than assumed. */
+
 main { display: block; min-height: 100vh; }  /* see the .ad-top note: the sticky ad travels inside this box */
 [hidden] { display: none !important; }
 
@@ -179,7 +197,6 @@ main { display: block; min-height: 100vh; }  /* see the .ad-top note: the sticky
    the ad stays pinned from the top of the article to the bottom of it and then
    releases with the page rather than following the reader off the end. The
    container is display:block, so this costs nothing but a minimum. */
-main { min-height: 100vh; }
 
 @media print {
   .ad-top { position: static; box-shadow: none; }  /* sticky is meaningless on paper */
