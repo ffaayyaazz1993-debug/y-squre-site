@@ -118,8 +118,13 @@ def mega_topic(topic):
     line stating these are analysis rather than event reporting where the
     brief asks for that distinction."""
     pid = _panel_id("m", topic["slug"])
+    # A child's own "url" wins when present: the Global panel mixes its native
+    # /geopolitics/global/... children with sections relocated from the deleted
+    # nav row, and prefixing topic["path"] onto those produced
+    # /geopolitics/global/stocks/ instead of /markets/stocks/.
     items = "".join(
-        f'<li><a href="{topic["path"]}{c["slug"]}/">{esc(c["name"])}</a>'
+        f'<li><a href="{esc(c.get("url") or (topic["path"] + c["slug"] + "/"))}">'
+        f'{esc(c["name"])}</a>'
         f'<span class="mega-item-scope">{esc(c["scope"])}</span></li>'
         for c in topic["children"])
 
@@ -178,23 +183,25 @@ def primary_nav(current=""):
         out.append(_trigger(r["name"], r["path"], pid))
         out.append(mega_region(r) + "\n      </li>")
 
-    global_topics = TOPICS["global"]
+    # The second nav row was removed: it duplicated the section hierarchy and
+    # pushed the lead story down. Markets, Macro, Research and Blog now live in
+    # the Global panel, which was already the row's catch-all, so all four stay
+    # one click from the header and nothing is stranded.
+    global_topics = dict(TOPICS["global"])
+    moved = []
+    for slug in ("markets", "macro", "research", "blog"):
+        t = TOPICS[slug]
+        moved.append({"name": t["name"], "slug": "", "scope": t["lede"],
+                      "url": t["path"]})
+        for c in t["children"]:
+            moved.append({"name": c["name"], "slug": c["slug"],
+                          "scope": c.get("scope", ""),
+                          "url": t["path"] + c["slug"] + "/"})
+    global_topics["children"] = list(global_topics["children"]) + moved
     pid = _panel_id("m", "global")
     out.append(_trigger(global_topics["name"], global_topics["path"], pid))
     out.append(mega_topic(global_topics) + "\n      </li>")
 
-    return "\n".join(out)
-
-
-def topic_bar(current=""):
-    """Second bar: the non-geographic sections. Separated from the region bar
-    so thirteen items never share one row at 1024px."""
-    out = []
-    for slug in ("markets", "macro", "research", "blog"):
-        t = TOPICS[slug]
-        pid = _panel_id("m", slug)
-        out.append(_trigger(t["name"], t["path"], pid))
-        out.append(mega_topic(t) + "\n      </li>")
     return "\n".join(out)
 
 
@@ -268,13 +275,7 @@ def header(current=""):
         </ul>
       </div>
     </nav>
-    <nav class="topic-nav" aria-label="Topics">
-      <div class="wrap">
-        <ul class="nav-list nav-list-topic">
-{topic_bar(current)}
-        </ul>
-      </div>
-    </nav>{mobile_menu()}
+{mobile_menu()}
   </header>
 '''
 

@@ -183,7 +183,7 @@
       // One accordion root per top-level section, matching the desktop order.
       var roots = [];
       roots.push(leaf('Latest', '/latest/'));
-      u.$$('.primary-nav .nav-item, .topic-nav .nav-item').forEach(function (item) {
+      u.$$('.primary-nav .nav-item').forEach(function (item) {
         var trig = u.$('.nav-trigger', item);
         var panel = trig && u.$('#' + trig.getAttribute('aria-controls'));
         if (!trig || !panel) return;

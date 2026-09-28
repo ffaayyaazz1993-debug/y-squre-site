@@ -35,19 +35,19 @@
   display: flex;
   align-items: center;
   gap: 18px;
-  min-height: 62px;
+  min-height: 44px;
   padding: 8px 0;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 7px;
   text-decoration: none;
   flex-shrink: 0;
 }
 .brand-mark {
-  width: 28px; height: 28px;
+  width: 22px; height: 22px;
   display: grid; place-items: center;
   background: var(--navy);
   color: #fff;
@@ -56,7 +56,7 @@
 }
 .brand-name {
   display: block;
-  font: 700 20px/1 var(--sans);
+  font: 700 17px/1 var(--sans);
   letter-spacing: .16em;
   color: var(--navy);
   text-transform: uppercase;
@@ -74,7 +74,7 @@
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
 }
 .util-link {
   display: inline-flex;
@@ -113,11 +113,11 @@
 }
 
 /* --------------------------------------------- 2. primary + topic bars */
-.primary-nav, .topic-nav {
+.primary-nav {
   background: var(--navy);
   border-bottom: 1px solid var(--navy-2);
 }
-.topic-nav { background: var(--navy-2); }
+
 
 .nav-list {
   display: flex;
@@ -164,7 +164,7 @@
 .nav-trigger[aria-expanded="true"] .nav-caret { transform: rotate(180deg); }
 
 /* ----------------------------------------------- 3. mega-menu */
-.primary-nav .wrap, .topic-nav .wrap { position: relative; }
+.primary-nav .wrap { position: relative; }
 
 .mega {
   /* display, not just visibility: a hidden-but-laid-out absolute panel past
@@ -414,17 +414,16 @@
      into the nav, the tagline drops, and the rows wrap to two or three lines.
      The hamburger is gone: it was hiding 13 of the 14 header links, which is
      not a responsive version of the desktop design but a different site. */
-  .masthead-inner { min-height: 0; flex-wrap: wrap; padding: 4px 0; gap: 8px; }
-  .brand-name { font-size: 18px; }
+  .masthead-inner { min-height: 0; flex-wrap: wrap; padding: 3px 0; gap: 8px; }
+  .brand-name { font-size: 16px; }
 
   /* Row 1: brand plus the utility links, right-aligned on the same line. */
   .masthead-utils { display: flex; order: 2; margin-left: auto; }
   .masthead-utils a { padding: 6px 8px; font-size: .68rem; }
 
   /* Row 2 and row 3: the two nav lists, full width, wrapping as needed. */
-  .primary-nav, .topic-nav { display: block; }
+  .primary-nav { display: block; }
   .primary-nav { order: 3; }
-  .topic-nav { order: 4; }
 
   .nav-list {
     display: flex;
@@ -447,7 +446,7 @@
     letter-spacing: .04em;
     border-bottom: 2px solid transparent;
   }
-  .primary-nav .nav-list, .topic-nav .nav-list { gap: 0 2px; }
+  .primary-nav .nav-list { gap: 0 2px; }
 
   .nav-trigger[aria-expanded="true"] { border-bottom-color: var(--accent); }
 
@@ -498,7 +497,7 @@
 }
 
 @media (max-width: 400px) {
-  .brand-name { font-size: 16px; letter-spacing: .12em; }
+  .brand-name { font-size: 15px; letter-spacing: .1em; }
   .nav-plain, .nav-trigger { padding: 7px 8px; font-size: .62rem; }
   .masthead-utils a { font-size: .64rem; padding: 6px 5px; }
 }
@@ -511,7 +510,7 @@
 /* Print: collapse the chrome, keep the breadcrumb trail which identifies
    the section in a printed or saved-as-PDF copy. */
 @media print {
-  .primary-nav, .topic-nav, .mobile-menu, .masthead-utils, .nav-toggle { display: none !important; }
+  .primary-nav, .mobile-menu, .masthead-utils, .nav-toggle { display: none !important; }
   .masthead { border-bottom: 1px solid #999; }
   .mega { position: static; visibility: visible; opacity: 1; box-shadow: none; display: none; }
   .crumbs a { color: #000; }
