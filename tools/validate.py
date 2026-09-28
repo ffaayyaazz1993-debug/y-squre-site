@@ -71,9 +71,14 @@ def resolve(base_rel, ref):
 
 
 html_files = []
+# Prune the walk rather than `continue`-ing: a `continue` skips the current
+# directory's own files but still descends into its children. tools/_stage is
+# a full copy of public_html that deploy_full.py builds and rewrites, so
+# descending into it validated every page twice and read the sitemap as
+# incomplete.
+SKIP_DIRS = {".git", "docs", "__pycache__", "tools", "_stage", "stage2", "stage3"}
 for dp, dn, fs in os.walk(ROOT):
-    if ".git" in dp or "docs" in dp:
-        continue
+    dn[:] = [d for d in dn if d not in SKIP_DIRS]
     for f in fs:
         if f.endswith(".html"):
             html_files.append(os.path.relpath(os.path.join(dp, f), ROOT).replace(os.sep, "/"))
@@ -162,7 +167,12 @@ for u in sm_urls:
     tgt = u or "index.html"
     if not os.path.exists(os.path.join(ROOT, tgt.replace("/", os.sep))):
         errors.append(f"sitemap: URL has no file -> /{u}")
-indexable = {h for h in html_files if h != "404.html"}
+# The error document must be reachable but never indexed: listing it invites a
+# crawler onto a URL that only ever returns 404. Matched by prefix because the
+# page moved from 404.html to 404/index.html to agree with the ErrorDocument
+# directive in .htaccess.
+indexable = {h for h in html_files
+             if h != "404.html" and not h.startswith("404/")}
 in_sm = {("" if h == "index.html" else h.replace("index.html", "")) for h in indexable}
 for miss in sorted(in_sm - sm_urls):
     errors.append(f"page not in sitemap: /{miss}")
