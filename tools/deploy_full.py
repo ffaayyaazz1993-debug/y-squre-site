@@ -18,11 +18,15 @@ deleted first (fileop, op=unlink) and then re-uploaded.
 
 import base64
 import json
+import os
 import re
+import sys
 import time
 import urllib.request
 
 import websocket
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 CDP = "http://127.0.0.1:9222"
 CPANEL_ORIGIN = "https://sh00021.bigrock.com:2083"

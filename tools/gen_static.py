@@ -404,8 +404,13 @@ simple("advertising/index.html", "Advertising | Y-Square Research",
             choice on this site.</p>""")
 
 # ------------------------------------------------------------------- 404 page
-PAGES.append(("404.html",
-              head("Page not found | Y-Square", "The page you requested does not exist on this site. Use the links below to reach the homepage, the latest articles, or any section index.", "/404.html",
+# .htaccess sets `ErrorDocument 404 /404/index.html`, so the page must live at
+# that path. It previously went to /404.html, which is why a bad URL returned a
+# bare server 406 instead of this page. Serving a .html file directly also means
+# the site would answer /404.html with HTTP 200, which is wrong for an error
+# document.
+PAGES.append(("404/index.html",
+              head("Page not found | Y-Square", "The page you requested does not exist on this site. Use the links below to reach the homepage, the latest articles, or any section index.", "/404/",
                    noindex=True)
               + header("")
               + '  <main id="main">\n'

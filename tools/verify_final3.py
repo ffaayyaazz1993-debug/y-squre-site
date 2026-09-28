@@ -102,7 +102,7 @@ geo = json.load(open(r"C:\Users\ffaay\y-squre-site\assets\data\geography.json", 
 checked = miss = 0
 for r in geo["regions"]:
     for sec in r["sections"]:
-        page = f"/{r['top']}/{r['slug']}/{sec['slug']}/"
+        page = r["path"] + sec["slug"] + "/"
         c = code(page)
         if c != 200:
             miss += 1

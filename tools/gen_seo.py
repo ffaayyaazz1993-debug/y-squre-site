@@ -53,7 +53,7 @@ def priority_of(p):
         return "0.9", "daily"
     if re.search(r"/20\d\d/\d\d/\d\d/", p):
         return "0.7", "monthly"
-    if p == "404.html":
+    if p == "404.html" or p.startswith("404/"):
         return None, None
     return "0.5", "monthly"
 
