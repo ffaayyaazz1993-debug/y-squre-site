@@ -239,6 +239,11 @@ STALE = [
     "geopolitics/asia/north-asia/index.html",
     "geopolitics/north-america/central-america/index.html",
     "geopolitics/north-america/caribbean/index.html",
+    # Latin America & Caribbean withdrawn from the nav; pages deleted. The
+    # .htaccess 301s send these to /geopolitics/.
+    "geopolitics/latin-america/south-america/index.html",
+    "geopolitics/latin-america/central-america-latam/index.html",
+    "geopolitics/latin-america/caribbean-latam/index.html",
     "macro/currencies-macro/index.html",
 ]
 print("=== removing superseded files ===")

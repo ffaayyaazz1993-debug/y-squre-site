@@ -1,7 +1,7 @@
 """Upload .htaccess through the SAME /execute/Fileman/upload_files path the
 deploy driver uses, so the result is directly comparable. Reports the server's
 verbatim reply."""
-import base64, json, re, time, urllib.request, websocket
+import base64, json, os, re, time, urllib.request, websocket
 
 tabs = json.loads(urllib.request.urlopen("http://127.0.0.1:9222/json", timeout=8).read())
 fmm = next(t for t in tabs if "filemanager" in t.get("url", ""))
@@ -55,7 +55,8 @@ def js_unlink(abspath):
     })()""" % json.dumps(abspath)
 
 
-raw = open(r"C:\Users\ffaay\AppData\Local\hermes\cache\scratch\stage3\.htaccess", "rb").read()
+raw = open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        "_stage", ".htaccess"), "rb").read()
 b64 = base64.b64encode(raw).decode()
 print(f"local .htaccess: {len(raw)} bytes\n")
 

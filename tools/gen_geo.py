@@ -71,25 +71,6 @@ TAXONOMY = {
              "USMCA compliance, tariff and trade-policy actions, and the monetary and "
              "fiscal divergence between the three.")]),
 
-        R("latin-america", "Latin America & Caribbean",
-          "Commodity export dependence, fiscal stress, monetary credibility and electoral "
-          "and constitutional developments. Debt and capital-flow dynamics are the "
-          "recurring transmission channel.",
-          [S("south-america", "South America",
-             ["Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador",
-              "Guyana", "Paraguay", "Peru", "Suriname", "Uruguay", "Venezuela"],
-             "Commodity terms of trade, sovereign spreads and currency regimes."),
-           S("central-america-latam", "Central America",
-             ["Belize", "Costa Rica", "El Salvador", "Guatemala", "Honduras",
-              "Nicaragua", "Panama"],
-             "Canal and shipping exposure, remittance dependence, and fiscal stress."),
-           S("caribbean-latam", "Caribbean",
-             ["Antigua and Barbuda", "Bahamas", "Barbados", "Cuba", "Dominica",
-              "Dominican Republic", "Grenada", "Haiti", "Jamaica",
-              "Saint Kitts and Nevis", "Saint Lucia",
-              "Saint Vincent and the Grenadines", "Trinidad and Tobago"],
-             "Tourism dependence, energy import costs, and debt restructuring.")]),
-
         R("europe", "Europe",
           "Energy security, the sanctions architecture, fiscal fragmentation, and monetary "
           "policy divergence between the euro area and the periphery. Classified by "

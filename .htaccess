@@ -34,11 +34,16 @@
   # "North Asia" held Russia alone, which is already in Eastern Europe.
   RewriteRule ^geopolitics/asia/north-asia/?$  /geopolitics/europe/eastern-europe/   [R=301,L]
 
-  # Central America and the Caribbean are now filed once, under Latin America
-  # & Caribbean. Their North America pages are retired, not deleted, so the old
-  # URLs keep resolving.
-  RewriteRule ^geopolitics/north-america/central-america/?$ /geopolitics/latin-america/central-america-latam/ [R=301,L]
-  RewriteRule ^geopolitics/north-america/caribbean/?$      /geopolitics/latin-america/caribbean-latam/      [R=301,L]
+  # Latin America & Caribbean was withdrawn from the navigation and its pages
+  # deleted. The 32 countries it covered have no other regional home, so the
+  # old URLs redirect to the section index rather than 404 -- a reader arriving
+  # from an external link lands on the list of regions still published. The
+  # north-america rules above now point here too, since their old targets were
+  # part of the same withdrawn region.
+  RewriteRule ^geopolitics/latin-america/?$                   /geopolitics/  [R=301,L]
+  RewriteRule ^geopolitics/latin-america/(south-america|central-america-latam|caribbean-latam)/?$ /geopolitics/ [R=301,L]
+  RewriteRule ^geopolitics/north-america/central-america/?$   /geopolitics/  [R=301,L]
+  RewriteRule ^geopolitics/north-america/caribbean/?$         /geopolitics/  [R=301,L]
 
   # /geopolitics/ is now a section index, not a redirect.
 </IfModule>
