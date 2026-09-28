@@ -18,6 +18,30 @@ from gen_lib import *  # noqa
 BYLINE = "Y-Square Research"
 
 # --------------------------------------------------------------------- helpers
+def photo_figure(img, index):
+    """One Commons photograph with its licence rendered in the caption.
+
+    CC BY / CC BY-SA attribution must be visible to the reader, not filed on a
+    separate credits page, so author, licence name and a link to the source file
+    all sit in the figcaption. The first image is the featured one and carries
+    the article's own alt text; the rest are supplementary.
+    """
+    credit = esc(img["author"])
+    if img.get("licence_url"):
+        credit += (f' &#183; <a class="img-credit-link" rel="license noopener" '
+                   f'href="{esc(img["licence_url"])}">{esc(img["licence"])}</a>')
+    else:
+        credit += f' &#183; {esc(img["licence"])}'
+    src = (f'        <a class="img-link" href="{esc(img["page"])}" '
+           f'rel="noopener"><img src="{esc(img["url"])}" '
+           f'alt="{esc(img["alt"])}" loading="{("eager" if index == 0 else "lazy")}" '
+           f'width="1400" height="{img["h"]}"></a>\n'
+           f'        <figcaption>{esc(img["title"])}. '
+           f'Photograph via Wikimedia Commons, by {credit}.</figcaption>')
+    cls = "art-fig art-fig-photo" + (" art-fig-featured" if index == 0 else "")
+    return f'      <figure class="{cls}">\n{src}\n      </figure>'
+
+
 def share_row():
     return """      <div class="share">
         <span class="share-label">Share</span>
@@ -29,7 +53,8 @@ def share_row():
 def article_page(*, path, title, deck, kicker, ctype, ctype_label, body,
                  published, updated="", section="", section_href="",
                  topics=None, sources=None, keypoints=None, timeline=None,
-                 what_to_watch=None, related=None, sidebar=None, author=BYLINE):
+                 what_to_watch=None, related=None, sidebar=None, author=BYLINE,
+                 images=None):
     topics = topics or []
     url = "/" + path
     b = head(title, deck, url, ctype="article", published=published,
@@ -59,6 +84,8 @@ def article_page(*, path, title, deck, kicker, ctype, ctype_label, body,
             </div>
           </header>
 """
+    if images:
+        b += photo_figure(images[0], 0) + "\n"
     if keypoints:
         lis = "\n".join(f"          <li>{k}</li>" for k in keypoints)
         b += f"""          <section class="keypoints">
@@ -69,6 +96,9 @@ def article_page(*, path, title, deck, kicker, ctype, ctype_label, body,
           </section>
 """
     b += f'          <div class="prose" data-prose>\n{body}\n          </div>\n'
+    if images and len(images) > 1:
+        for _i, _im in enumerate(images[1:], start=1):
+            b += photo_figure(_im, _i) + "\n"
     if what_to_watch:
         b += f"""          <section class="prose">
             <h2>What to watch</h2>
@@ -358,6 +388,7 @@ EXPLAINER_BODY = """            <p>&ldquo;The currency fell&rdquo; is a statemen
 FILES = {}
 
 FILES["research/2026/09/26/central-bank-balance-sheets.html"] = article_page(
+    images=article_images("research/2026/09/26/central-bank-balance-sheets.html", "central bank balance sheets"),
     path="research/2026/09/26/central-bank-balance-sheets.html",
     title="The balance sheet is the policy: reading central banks",
     deck="Markets price the rate decision, then react to what the central bank did to its "
@@ -387,6 +418,7 @@ FILES["research/2026/09/26/central-bank-balance-sheets.html"] = article_page(
 )
 
 FILES["blog/2026/09/26/reading-central-bank-intent.html"] = article_page(
+    images=article_images("blog/2026/09/26/reading-central-bank-intent.html", "reading central bank policy intent"),
     path="blog/2026/09/26/reading-central-bank-intent.html",
     title="What a central bank balance sheet tells you that the rate does not",
     deck="The judgement calls on top of the mechanics — and the three situations "
@@ -413,6 +445,7 @@ FILES["blog/2026/09/26/reading-central-bank-intent.html"] = article_page(
 )
 
 FILES["blog/2026/09/26/understanding-currency-depreciation.html"] = article_page(
+    images=article_images("blog/2026/09/26/understanding-currency-depreciation.html", "currency depreciation"),
     path="blog/2026/09/26/understanding-currency-depreciation.html",
     title="Understanding currency depreciation: a mechanics explainer",
     deck="A falling currency is a number, not a mechanism. Three distinct channels produce it, "

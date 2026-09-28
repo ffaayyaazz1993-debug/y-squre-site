@@ -467,6 +467,7 @@ def build():
                 {"kind": "primary", "name": "National accounts and balance-of-payments releases", "url": ""},
                 {"kind": "primary", "name": "Central bank and finance ministry policy statements", "url": ""},
             ],
+            images=article_images(f"explainer/{sl}/macro-transmission.html", name),
             sidebar=GA.side_block("More on transmission", [
                 ("/blog/2026/09/26/reading-central-bank-intent.html", "What the asset side adds"),
                 ("/blog/2026/09/26/understanding-currency-depreciation.html", "How a currency falls"),

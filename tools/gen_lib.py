@@ -187,3 +187,32 @@ def write(path, content):
 def page_head(h1, lede=None):
     p = f"      <p>{lede}</p>\n" if lede else ""
     return f'  <div class="page-head">\n    <div class="wrap">\n      <h1>{h1}</h1>\n{p}    </div>\n  </div>\n'
+
+
+def article_images(page_path, subject):
+    """Commons photographs for an article, with alt text written from the
+    article's own subject. Returns [] when the fetch found nothing that passed
+    the relevance gate -- the article then publishes without an image, which is
+    the specified behaviour, not a fallback.
+
+    Alt text describes the photograph for a reader who cannot see it. It is not
+    a caption of what the article argues: these are pictures of the places the
+    article is about, not illustrations of the argument.
+    """
+    import json as _json
+    _m = os.path.join(ROOT, "assets", "img", "manifest.json")
+    if not os.path.exists(_m):
+        return []
+    _all = _json.load(open(_m, encoding="utf-8"))
+    _got = _all.get(page_path) or []
+    out = []
+    for _i, _g in enumerate(_got):
+        out.append({
+            "url": _g["url"], "page": _g["page"], "title": _g["title"],
+            "author": _g["author"], "licence": _g["licence"],
+            "licence_url": _g.get("licence_url", ""),
+            "h": 900,
+            "alt": (f"A Wikimedia Commons photograph of {_g['title'].rsplit('.', 1)[0]}, "
+                    f"used in Y-Square coverage of {subject}."),
+        })
+    return out

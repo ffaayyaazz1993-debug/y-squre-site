@@ -18,6 +18,15 @@
 */
 
 /* ---------------------------------------------------------- 1. masthead */
+/* The masthead and the navy nav bar travel together and stay put on scroll.
+   Sticking the whole .site-header rather than just the nav bar keeps the two
+   from separating, and keeps the mega-menu anchored to the bar it belongs to. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 120;
+}
+
 .masthead {
   background: var(--paper);
   border-bottom: 1px solid var(--line);
@@ -424,4 +433,22 @@
   .masthead { border-bottom: 1px solid #999; }
   .mega { position: static; visibility: visible; opacity: 1; box-shadow: none; display: none; }
   .crumbs a { color: #000; }
+}
+
+
+/* A stuck header covers the top of the document, so any in-page jump (the
+   country anchors in the mega-menu, and the skip link) needs the target
+   offset by the header's height or the reader lands under it. */
+:target,
+[id] { scroll-margin-top: 132px; }
+
+@media (max-width: 860px) {
+  :target,
+  [id] { scroll-margin-top: 68px; }
+}
+
+/* On a short viewport a full masthead plus nav bar would eat the page, so the
+   tagline goes once the bar sticks. It is decoration; the wordmark stays. */
+@media (max-height: 620px) {
+  .site-header .tagline { display: none; }
 }

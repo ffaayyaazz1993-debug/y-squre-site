@@ -172,3 +172,32 @@
   line-height: 1.5;
   color: var(--faint);
 }
+
+
+/* Commons photographs. The caption carries a licence credit, so it is set at
+   caption size rather than body size, and the link is the way back to the
+   source file. The featured image is capped so a 7200px original cannot blow
+   the measure on a wide monitor. */
+.art-fig-photo { margin: 1.75rem 0 2.25rem; }
+
+.art-fig-photo .img-link { display: block; line-height: 0; }
+
+.art-fig-photo img {
+  display: block;
+  width: 100%;
+  max-width: 820px;
+  height: auto;
+  border: 1px solid var(--line);
+}
+
+.art-fig-featured img { max-width: 100%; }
+
+.art-fig-photo figcaption {
+  margin-top: .7rem;
+  max-width: 820px;
+  font-size: .8rem;
+  line-height: 1.55;
+  color: var(--faint);
+}
+
+.img-credit-link { color: var(--accent); }
