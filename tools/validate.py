@@ -150,7 +150,9 @@ ads = open(os.path.join(ROOT, "ads.txt"), encoding="utf-8").read()
 if ads.strip() != "google.com, pub-9461123152614358, DIRECT, f08c47fec0942fa0":
     errors.append(f"ads.txt changed: {ads!r}")
 if os.path.exists(os.path.join(ROOT, "ads.txt")) and \
-        len([f for dp, _, fs in os.walk(ROOT) for f in fs if f == "ads.txt"]) != 1:
+        len([f for dp, _, fs in os.walk(ROOT)
+             if not (set(os.path.normpath(dp).split(os.sep)) & SKIP_DIRS)
+             for f in fs if f == "ads.txt"]) != 1:
     errors.append("ads.txt duplicated in more than one directory")
 
 # dev files that must never reach production

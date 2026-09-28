@@ -55,27 +55,45 @@ def _panel_id(prefix, slug):
 
 def mega_region(region):
     """Mega-menu for a geographic region: subregion columns, each listing
-    its countries as deep links into that subregion's country table."""
-    secs = region["sections"]
-    # Aim for 3 columns; a region with few subregions uses fewer, never more.
-    ncols = min(MAX_COLS, max(2, (len(secs) + 1) // 2))
-    ncols = min(ncols, len(secs))
-    groups = _cols(secs, ncols)
+    its countries as deep links into that subregion's country table.
 
-    cols = []
-    for g in groups:
-        blocks = []
-        for s in g:
-            base = f"/geopolitics/{region['slug']}/{s['slug']}/"
-            items = "".join(
-                f'<li><a href="{base}#{c["anchor"]}">{esc(c["name"])}</a></li>'
-                for c in s["countries"])
-            blocks.append(
-                f'      <div class="mega-group">\n'
-                f'        <a class="mega-group-name" href="{base}">{esc(s["name"])}</a>\n'
+    A flat region has no meaningful subregion unit, so its countries are listed
+    directly against the region page with no subregion heading -- one list under
+    a name the reader already sees in the trigger.
+    """
+    secs = region["sections"]
+    if region.get("flat"):
+        base = region["path"]
+        items = "".join(
+            f'<li><a href="{base}#{c["anchor"]}">{esc(c["name"])}</a></li>'
+            for c in secs[0]["countries"])
+        cols = ['    <div class="mega-col">\n'
+                '      <div class="mega-group">\n'
+                f'        <a class="mega-group-name" href="{base}">'
+                f'{esc(region["name"])}</a>\n'
                 f'        <ul class="mega-list">{items}</ul>\n'
-                f'      </div>')
-        cols.append('    <div class="mega-col">\n' + "\n".join(blocks) + "\n    </div>")
+                '      </div>\n'
+                '    </div>']
+    else:
+        # Aim for 3 columns; a region with few subregions uses fewer, never more.
+        ncols = min(MAX_COLS, max(2, (len(secs) + 1) // 2))
+        ncols = min(ncols, len(secs))
+        groups = _cols(secs, ncols)
+
+        cols = []
+        for g in groups:
+            blocks = []
+            for s_ in g:
+                base = f"/geopolitics/{region['slug']}/{s_['slug']}/"
+                items = "".join(
+                    f'<li><a href="{base}#{c["anchor"]}">{esc(c["name"])}</a></li>'
+                    for c in s_["countries"])
+                blocks.append(
+                    f'      <div class="mega-group">\n'
+                    f'        <a class="mega-group-name" href="{base}">{esc(s_["name"])}</a>\n'
+                    f'        <ul class="mega-list">{items}</ul>\n'
+                    f'      </div>')
+            cols.append('    <div class="mega-col">\n' + "\n".join(blocks) + "\n    </div>")
 
     also = ""
     if region.get("also"):

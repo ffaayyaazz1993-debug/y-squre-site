@@ -30,6 +30,12 @@ for c in g["children"]:
 for r in N.REGIONS:
     add(r["name"], r["path"], "region", "Region")
     for s in r["sections"]:
+        # A flat region has no subregion page, so its countries must index
+        # against the region page -- which is where their anchors now live.
+        if r.get("flat"):
+            for c in s["countries"]:
+                add(c["name"], f'{r["path"]}#{c["anchor"]}', "country", r["name"])
+            continue
         base = f"/geopolitics/{r['slug']}/{s['slug']}/"
         add(s["name"], base, "subregion", r["name"])
         for c in s["countries"]:

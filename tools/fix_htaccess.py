@@ -55,8 +55,7 @@ def js_unlink(abspath):
     })()""" % json.dumps(abspath)
 
 
-raw = open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                        "_stage", ".htaccess"), "rb").read()
+raw = open(os.path.join(r"C:\Users\ffaay\AppData\Local\hermes\cache\scratch\stage_ysq", ".htaccess"), "rb").read()
 b64 = base64.b64encode(raw).decode()
 print(f"local .htaccess: {len(raw)} bytes\n")
 

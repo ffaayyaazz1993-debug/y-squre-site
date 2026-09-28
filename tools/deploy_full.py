@@ -30,7 +30,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 CDP = "http://127.0.0.1:9222"
 CPANEL_ORIGIN = "https://sh00021.bigrock.com:2083"
-STAGE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_stage")
+STAGE = r"C:\Users\ffaay\AppData\Local\hermes\cache\scratch\stage_ysq"
 
 
 def page_ws(url_substr, exclude=()):
@@ -244,6 +244,16 @@ STALE = [
     "geopolitics/latin-america/south-america/index.html",
     "geopolitics/latin-america/central-america-latam/index.html",
     "geopolitics/latin-america/caribbean-latam/index.html",
+    # European subregions retired when Europe was narrowed to Western Europe.
+    # The .htaccess 301s point these at /geopolitics/europe/.
+    "geopolitics/europe/northern-europe/index.html",
+    "geopolitics/europe/southern-europe/index.html",
+    "geopolitics/europe/eastern-europe/index.html",
+    "geopolitics/europe/balkans/index.html",
+    "geopolitics/europe/baltics/index.html",
+    "geopolitics/europe/central-europe/index.html",
+    # Europe is flat: the Western Europe subregion is no longer a page.
+    "geopolitics/europe/western-europe/index.html",
     "macro/currencies-macro/index.html",
 ]
 print("=== removing superseded files ===")

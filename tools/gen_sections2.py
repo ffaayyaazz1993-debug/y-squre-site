@@ -40,22 +40,61 @@ def _nav_siblings(region):
 
 def region_page(region):
     slug, name = region["slug"], region["name"]
+    flat = region.get("flat")
 
-    # Subregion cards, each with its country count and scope line.
-    cards = []
-    for s in region["sections"]:
-        n = len(s["countries"])
-        cards.append(f'''
-        <a class="sec-card" href="/geopolitics/{slug}/{s["slug"]}/">
-          <h3>{esc(s["name"])}</h3>
-          <p class="sec-card-scope">{esc(s["scope"])}</p>
+    if flat:
+        # No subregion layer: the region IS the list. The country table lives
+        # here so the mega-menu anchors resolve on this page.
+        sec = region["sections"][0]
+        rows = "\n".join(
+            f'''        <tr id="{c["anchor"]}">
+          <th scope="row"><a href="{region["path"]}#{c["anchor"]}">{esc(c["name"])}</a></th>
+          <td>{esc(sec["scope"])}</td>
+          <td class="td-empty">No verified report yet</td>
+        </tr>'''
+            for c in sec["countries"])
+        body = f'''  <main id="main" class="wrap page">
+{N.breadcrumb([("Home", "/"), ("Geopolitics", "/geopolitics/"), (name, None)])}
+    <h1>{esc(name)}</h1>
+    <p class="page-lede">{esc(region["lede"])}</p>
+
+    <div class="empty-state">
+      <p class="empty-kicker">No verified reports published yet</p>
+      <p>Event reporting appears here only when it can be attributed to a
+      named, checkable source. Nothing has been published for {esc(name)} yet.</p>
+    </div>
+
+    <h2 class="section-h">Countries in {esc(name)}</h2>
+    <p class="table-note">{len(sec["countries"])} countries. Each links to its
+    row. Y-Square tracks all of them; it reports on a country when a
+    development is verifiable and material.</p>
+    <table class="country-table">
+      <caption class="sr-only">Countries in {esc(name)}</caption>
+      <thead>
+        <tr><th scope="col">Country</th><th scope="col">Y-Square scope</th>
+            <th scope="col">Latest</th></tr>
+      </thead>
+      <tbody>
+{rows}
+      </tbody>
+    </table>
+'''
+    else:
+        # Subregion cards, each with its country count and scope line.
+        cards = []
+        for s_ in region["sections"]:
+            n = len(s_["countries"])
+            cards.append(f'''
+        <a class="sec-card" href="/geopolitics/{slug}/{s_["slug"]}/">
+          <h3>{esc(s_["name"])}</h3>
+          <p class="sec-card-scope">{esc(s_["scope"])}</p>
           <p class="sec-card-meta">{n} countr{"y" if n == 1 else "ies"}</p>
         </a>''')
 
-    crumbs = N.breadcrumb([("Home", "/"), ("Geopolitics", "/geopolitics/"),
-                           (name, None)])
+        crumbs = N.breadcrumb([("Home", "/"), ("Geopolitics", "/geopolitics/"),
+                               (name, None)])
 
-    body = f'''  <main id="main" class="wrap page">
+        body = f'''  <main id="main" class="wrap page">
 {crumbs}
     <h1>{esc(name)}</h1>
     <p class="page-lede">{esc(region["lede"])}</p>
@@ -302,6 +341,12 @@ def build_all():
     pages = [geopolitics_index()]
     for r in N.REGIONS:
         pages.append(region_page(r))
+        # A flat region publishes no subregion page: its single subregion is
+        # not a level in the hierarchy, and the country table already sits on
+        # the region page. Emitting one would leave an orphan page whose only
+        # job is to repeat the region.
+        if r.get("flat"):
+            continue
         for s in r["sections"]:
             pages.append(subregion_page(r, s))
     for t in N.TOPICS.values():

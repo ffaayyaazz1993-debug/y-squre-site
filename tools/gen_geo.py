@@ -24,9 +24,15 @@ ROOT = r"C:\Users\ffaay\y-squre-site"
 OUT = os.path.join(ROOT, "assets", "data", "geography.json")
 
 
-def R(slug, name, lede, sections, also=None):
+def R(slug, name, lede, sections, also=None, flat=False):
+    """A region is "flat" when its single subregion is not a meaningful
+    editorial unit -- one subregion holding four countries is a list with an
+    extra label on it, not a hierarchy. Flat regions put the country table on
+    the region page itself, publish no subregion page, and show the countries
+    in the mega-menu with no subregion heading."""
     return {"slug": slug, "name": name, "path": f"/geopolitics/{slug}/",
-            "lede": lede, "sections": sections, "also": also or []}
+            "lede": lede, "sections": sections, "also": also or [],
+            "flat": flat}
 
 
 def S(slug, name, countries, scope):
@@ -73,41 +79,20 @@ TAXONOMY = {
 
         R("europe", "Europe",
           "Energy security, the sanctions architecture, fiscal fragmentation, and monetary "
-          "policy divergence between the euro area and the periphery. Classified by "
-          "geographic subregion; the placement of individual states is an editorial "
-          "choice and is revised rather than treated as settled.",
+          "policy divergence between the euro area and the periphery. Coverage is currently "
+          "narrowed to the four largest euro-area economies plus the United Kingdom, at the "
+          "editor's direction; the remaining European states are not yet covered and are "
+          "deliberately absent rather than stubbed.",
           [S("western-europe", "Western Europe",
-             ["Austria", "Belgium", "France", "Germany", "Ireland", "Luxembourg",
-              "Netherlands", "Switzerland", "United Kingdom"],
-             "Euro area policy, sovereign issuance and energy pricing. "
-             "The UK is covered here; see the analysis section for sterling "
-             "and gilt mechanics."),
-           S("northern-europe", "Northern Europe",
-             ["Denmark", "Finland", "Iceland", "Norway", "Sweden"],
-             "Nordic policy divergence, energy exports, and currency hedging."),
-           S("southern-europe", "Southern Europe",
-             ["Andorra", "Cyprus", "Greece", "Italy", "Malta", "Portugal",
-              "San Marino", "Spain", "Vatican City"],
-             "Debt sustainability, bank-sovereign loops, and euro-area convergence. "
-             "Balkan states are listed under Balkans & Southeastern Europe."),
-           S("central-europe", "Central Europe",
-             ["Austria", "Czechia", "Germany", "Hungary", "Liechtenstein", "Poland",
-              "Slovakia", "Slovenia", "Switzerland"],
-             "Industrial exposure, energy imports, and EU fiscal rules."),
-           S("eastern-europe", "Eastern Europe",
-             ["Belarus", "Moldova", "Romania", "Russia", "Ukraine"],
-             "War economy, sanctions exposure, and currency management. "
-             "Central European members appear under Central Europe."),
-           S("balkans", "Balkans & Southeastern Europe",
-             ["Albania", "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Kosovo",
-              "Montenegro", "North Macedonia", "Serbia", "Slovenia"],
-             "EU accession process, energy interconnection, and political risk."),
-           S("baltics", "Baltic States",
-             ["Estonia", "Latvia", "Lithuania"],
-             "Euro adoption, energy independence from Russia, and sanctions compliance."),
-           ],
-          also=["Faroe Islands and Greenland are tracked under Northern Europe where "
-                "relevant to coverage."]),
+             ["France", "Germany", "Switzerland", "United Kingdom"],
+             "Euro-area fiscal and monetary policy, energy security, and the sanctions "
+             "architecture. This is a partial list, not the full subregion: the other "
+             "European states are not currently in scope.")],
+          also=["European coverage is a four-country subset for now. The subregions that "
+                "previously existed here -- Northern Europe, Southern Europe, Eastern "
+                "Europe, the Balkans, the Baltics and Central Europe -- are retired and "
+                "redirect to /geopolitics/europe/."],
+          flat=True),
 
         R("middle-east-north-africa", "Middle East & North Africa",
           "Conflict spillovers, energy chokepoints, sanctions regimes, and water and "

@@ -28,26 +28,19 @@
      "scope": "USMCA compliance, tariff and trade-policy actions, and the monetary and fiscal divergence between the three."
     }
    ],
-   "also": []
+   "also": [],
+   "flat": false
   },
   {
    "slug": "europe",
    "name": "Europe",
    "path": "/geopolitics/europe/",
-   "lede": "Energy security, the sanctions architecture, fiscal fragmentation, and monetary policy divergence between the euro area and the periphery. Classified by geographic subregion; the placement of individual states is an editorial choice and is revised rather than treated as settled.",
+   "lede": "Energy security, the sanctions architecture, fiscal fragmentation, and monetary policy divergence between the euro area and the periphery. Coverage is currently narrowed to the four largest euro-area economies plus the United Kingdom, at the editor's direction; the remaining European states are not yet covered and are deliberately absent rather than stubbed.",
    "sections": [
     {
      "slug": "western-europe",
      "name": "Western Europe",
      "countries": [
-      {
-       "name": "Austria",
-       "anchor": "austria"
-      },
-      {
-       "name": "Belgium",
-       "anchor": "belgium"
-      },
       {
        "name": "France",
        "anchor": "france"
@@ -55,18 +48,6 @@
       {
        "name": "Germany",
        "anchor": "germany"
-      },
-      {
-       "name": "Ireland",
-       "anchor": "ireland"
-      },
-      {
-       "name": "Luxembourg",
-       "anchor": "luxembourg"
-      },
-      {
-       "name": "Netherlands",
-       "anchor": "netherlands"
       },
       {
        "name": "Switzerland",
@@ -77,214 +58,13 @@
        "anchor": "united-kingdom"
       }
      ],
-     "scope": "Euro area policy, sovereign issuance and energy pricing. The UK is covered here; see the analysis section for sterling and gilt mechanics."
-    },
-    {
-     "slug": "northern-europe",
-     "name": "Northern Europe",
-     "countries": [
-      {
-       "name": "Denmark",
-       "anchor": "denmark"
-      },
-      {
-       "name": "Finland",
-       "anchor": "finland"
-      },
-      {
-       "name": "Iceland",
-       "anchor": "iceland"
-      },
-      {
-       "name": "Norway",
-       "anchor": "norway"
-      },
-      {
-       "name": "Sweden",
-       "anchor": "sweden"
-      }
-     ],
-     "scope": "Nordic policy divergence, energy exports, and currency hedging."
-    },
-    {
-     "slug": "southern-europe",
-     "name": "Southern Europe",
-     "countries": [
-      {
-       "name": "Andorra",
-       "anchor": "andorra"
-      },
-      {
-       "name": "Cyprus",
-       "anchor": "cyprus"
-      },
-      {
-       "name": "Greece",
-       "anchor": "greece"
-      },
-      {
-       "name": "Italy",
-       "anchor": "italy"
-      },
-      {
-       "name": "Malta",
-       "anchor": "malta"
-      },
-      {
-       "name": "Portugal",
-       "anchor": "portugal"
-      },
-      {
-       "name": "San Marino",
-       "anchor": "san-marino"
-      },
-      {
-       "name": "Spain",
-       "anchor": "spain"
-      },
-      {
-       "name": "Vatican City",
-       "anchor": "vatican-city"
-      }
-     ],
-     "scope": "Debt sustainability, bank-sovereign loops, and euro-area convergence. Balkan states are listed under Balkans & Southeastern Europe."
-    },
-    {
-     "slug": "central-europe",
-     "name": "Central Europe",
-     "countries": [
-      {
-       "name": "Austria",
-       "anchor": "austria"
-      },
-      {
-       "name": "Czechia",
-       "anchor": "czechia"
-      },
-      {
-       "name": "Germany",
-       "anchor": "germany"
-      },
-      {
-       "name": "Hungary",
-       "anchor": "hungary"
-      },
-      {
-       "name": "Liechtenstein",
-       "anchor": "liechtenstein"
-      },
-      {
-       "name": "Poland",
-       "anchor": "poland"
-      },
-      {
-       "name": "Slovakia",
-       "anchor": "slovakia"
-      },
-      {
-       "name": "Slovenia",
-       "anchor": "slovenia"
-      },
-      {
-       "name": "Switzerland",
-       "anchor": "switzerland"
-      }
-     ],
-     "scope": "Industrial exposure, energy imports, and EU fiscal rules."
-    },
-    {
-     "slug": "eastern-europe",
-     "name": "Eastern Europe",
-     "countries": [
-      {
-       "name": "Belarus",
-       "anchor": "belarus"
-      },
-      {
-       "name": "Moldova",
-       "anchor": "moldova"
-      },
-      {
-       "name": "Romania",
-       "anchor": "romania"
-      },
-      {
-       "name": "Russia",
-       "anchor": "russia"
-      },
-      {
-       "name": "Ukraine",
-       "anchor": "ukraine"
-      }
-     ],
-     "scope": "War economy, sanctions exposure, and currency management. Central European members appear under Central Europe."
-    },
-    {
-     "slug": "balkans",
-     "name": "Balkans & Southeastern Europe",
-     "countries": [
-      {
-       "name": "Albania",
-       "anchor": "albania"
-      },
-      {
-       "name": "Bosnia and Herzegovina",
-       "anchor": "bosnia-and-herzegovina"
-      },
-      {
-       "name": "Bulgaria",
-       "anchor": "bulgaria"
-      },
-      {
-       "name": "Croatia",
-       "anchor": "croatia"
-      },
-      {
-       "name": "Kosovo",
-       "anchor": "kosovo"
-      },
-      {
-       "name": "Montenegro",
-       "anchor": "montenegro"
-      },
-      {
-       "name": "North Macedonia",
-       "anchor": "north-macedonia"
-      },
-      {
-       "name": "Serbia",
-       "anchor": "serbia"
-      },
-      {
-       "name": "Slovenia",
-       "anchor": "slovenia"
-      }
-     ],
-     "scope": "EU accession process, energy interconnection, and political risk."
-    },
-    {
-     "slug": "baltics",
-     "name": "Baltic States",
-     "countries": [
-      {
-       "name": "Estonia",
-       "anchor": "estonia"
-      },
-      {
-       "name": "Latvia",
-       "anchor": "latvia"
-      },
-      {
-       "name": "Lithuania",
-       "anchor": "lithuania"
-      }
-     ],
-     "scope": "Euro adoption, energy independence from Russia, and sanctions compliance."
+     "scope": "Euro-area fiscal and monetary policy, energy security, and the sanctions architecture. This is a partial list, not the full subregion: the other European states are not currently in scope."
     }
    ],
    "also": [
-    "Faroe Islands and Greenland are tracked under Northern Europe where relevant to coverage."
-   ]
+    "European coverage is a four-country subset for now. The subregions that previously existed here -- Northern Europe, Southern Europe, Eastern Europe, the Balkans, the Baltics and Central Europe -- are retired and redirect to /geopolitics/europe/."
+   ],
+   "flat": true
   },
   {
    "slug": "middle-east-north-africa",
@@ -431,7 +211,8 @@
      "scope": "Inflation credibility, lira policy, and regional economic influence."
     }
    ],
-   "also": []
+   "also": [],
+   "flat": false
   },
   {
    "slug": "sub-saharan-africa",
@@ -665,7 +446,8 @@
    ],
    "also": [
     "Mauritania also appears under North Africa, which is where its primary structural coverage sits."
-   ]
+   ],
+   "flat": false
   },
   {
    "slug": "asia",
@@ -841,7 +623,8 @@
      "scope": "Corridors and pipeline leverage, and the sanctions environment around the South Caucasus routes. The Gulf, Levant and Anatolia sit under Middle East & North Africa, which holds their structural coverage."
     }
    ],
-   "also": []
+   "also": [],
+   "flat": false
   },
   {
    "slug": "oceania-pacific",
@@ -920,7 +703,8 @@
      "scope": "Climate finance, shipping-route risk, and resource projects."
     }
    ],
-   "also": []
+   "also": [],
+   "flat": false
   }
  ],
  "topics": [

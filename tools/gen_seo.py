@@ -5,10 +5,15 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gen_lib import *  # noqa
 
 # ------------------------------------------------------------------- inventory
+# Prune the walk rather than `continue`-ing: `continue` skips the current
+# directory's own files but still descends into its children. tools/_stage is
+# a full copy of the site that deploy_full.py builds, so descending into it put
+# every URL into the sitemap a second time under /tools/_stage/.
+_SKIP = {".git", "docs", "__pycache__", "tools", "_stage", "stage2", "stage3"}
+
 PAGES = []
-for dp, _, fs in os.walk(ROOT):
-    if ".git" in dp:
-        continue
+for dp, dn, fs in os.walk(ROOT):
+    dn[:] = [d for d in dn if d not in _SKIP]
     for f in fs:
         if f.endswith(".html"):
             rel = os.path.relpath(os.path.join(dp, f), ROOT).replace(os.sep, "/")

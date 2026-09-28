@@ -18,21 +18,22 @@
   # rather than a dedicated "British Isles" subregion: that subregion held only
   # Ireland and the UK, both of which Western Europe already lists, so keeping
   # it would have shown the same two countries twice in one menu.
-  RewriteRule ^geopolitics/united-kingdom/?$    /geopolitics/europe/western-europe/  [R=301,L]
+  RewriteRule ^geopolitics/united-kingdom/?$    /geopolitics/europe/  [R=301,L]
 
   # --- subregions removed when overlapping country lists were merged -------
   # "Nordic Countries" listed the same five states as Northern Europe, and
   # "British Isles" repeated Ireland and the UK from Western Europe.
-  RewriteRule ^geopolitics/europe/nordics/?$      /geopolitics/europe/northern-europe/  [R=301,L]
-  RewriteRule ^geopolitics/europe/british-isles/?$ /geopolitics/europe/western-europe/ [R=301,L]
+  RewriteRule ^geopolitics/europe/nordics/?$      /geopolitics/europe/  [R=301,L]
+  RewriteRule ^geopolitics/europe/british-isles/?$ /geopolitics/europe/ [R=301,L]
 
   # "West Asia" re-listed the whole Middle East as a second home for countries
   # already filed under MENA. Only the Caucasus states are genuinely West Asian,
   # so that is what the region keeps.
   RewriteRule ^geopolitics/asia/west-asia/?$   /geopolitics/asia/caucasus/           [R=301,L]
 
-  # "North Asia" held Russia alone, which is already in Eastern Europe.
-  RewriteRule ^geopolitics/asia/north-asia/?$  /geopolitics/europe/eastern-europe/   [R=301,L]
+  # "North Asia" held Russia alone. Russia is in no published European
+# subregion any more, so this lands on the Europe index.
+  RewriteRule ^geopolitics/asia/north-asia/?$  /geopolitics/europe/   [R=301,L]
 
   # Latin America & Caribbean was withdrawn from the navigation and its pages
   # deleted. The 32 countries it covered have no other regional home, so the
@@ -44,6 +45,12 @@
   RewriteRule ^geopolitics/latin-america/(south-america|central-america-latam|caribbean-latam)/?$ /geopolitics/ [R=301,L]
   RewriteRule ^geopolitics/north-america/central-america/?$   /geopolitics/  [R=301,L]
   RewriteRule ^geopolitics/north-america/caribbean/?$         /geopolitics/  [R=301,L]
+
+  # European coverage is narrowed to Western Europe (France, Germany,
+  # Switzerland, United Kingdom). The other subregions are retired and their
+  # pages deleted; they redirect to the Europe index so an inbound link lands
+  # on what is actually published instead of a 404.
+  RewriteRule ^geopolitics/europe/(western-europe|northern-europe|southern-europe|eastern-europe|balkans|baltics|central-europe)/?$ /geopolitics/europe/ [R=301,L]
 
   # /geopolitics/ is now a section index, not a redirect.
 </IfModule>
