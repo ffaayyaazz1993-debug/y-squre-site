@@ -67,12 +67,10 @@ def mega_region(region):
         items = "".join(
             f'<li><a href="{base}#{c["anchor"]}">{esc(c["name"])}</a></li>'
             for c in secs[0]["countries"])
+        # No group name: the panel head already says "Europe", and a flat
+        # region has no subregion to name. The list goes straight under it.
         cols = ['    <div class="mega-col">\n'
-                '      <div class="mega-group">\n'
-                f'        <a class="mega-group-name" href="{base}">'
-                f'{esc(region["name"])}</a>\n'
-                f'        <ul class="mega-list">{items}</ul>\n'
-                '      </div>\n'
+                f'      <ul class="mega-list">{items}</ul>\n'
                 '    </div>']
     else:
         # Aim for 3 columns; a region with few subregions uses fewer, never more.
