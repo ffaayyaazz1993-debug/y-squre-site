@@ -2,6 +2,7 @@
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gen_lib import *  # noqa
+import gen_latest as GL
 
 # The three published pieces, newest first. This list is the single source
 # for the homepage, /latest/, /blog/, /research/ and the sitemap.
@@ -253,10 +254,9 @@ def latest():
     b += '  <main id="main">\n' + ad("Advertisement", "ad-top")
     b += page_head("Latest", "Every published article and note, newest first. News items carry "
                              "a publication and update time; analysis carries a reading time.")
-    b += f"""    <div class="wrap" style="padding-top:26px">
-      <div class="index-list">
-{chr(10).join(index_row(a) for a in ARTICLES)}
-      </div>
+    _grid, _n, _sec, _rest = GL.latest_body(ARTICLES, GL.load_manifest())
+    b += f'''    <div class="wrap" style="padding-top:26px">
+{_grid}
       <section class="sect" style="margin-top:34px">
         <div class="sect-head"><h2>Reporting sections</h2></div>
         <div class="empty-state">
@@ -273,7 +273,7 @@ def latest():
       </section>
     </div>
   </main>
-"""
+'''
     b += footer()
     return b
 

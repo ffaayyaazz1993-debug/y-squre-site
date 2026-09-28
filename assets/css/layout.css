@@ -178,3 +178,223 @@
 .footer-caution { border-left: 2px solid var(--caution); padding-left: 13px; margin-bottom: 14px; }
 .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
                  border-top: 1px solid #1e3450; padding-top: 14px; font-size: .78rem; }
+
+
+/* ==========================================================================
+   /latest/ editorial grid.
+
+   The layout is two columns on desktop: the lead takes the left, the secondary
+   rail the right, stacked. Below 1000px the rail becomes a horizontal row of
+   equal cards, and below 620px everything is one column.
+
+   Roles come from rank, not from markup, so a new article changes the ordering
+   without anyone touching this file. The lead is the only large image, which is
+   what makes it read as the lead: at 16:9 against 4:3 secondaries, the eye
+   goes there first without a size label being needed.
+   ========================================================================== */
+
+.lg {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 30px 34px;
+  align-items: start;
+}
+
+/* ---- lead ---- */
+.lg-lead { margin: 0; }
+
+.lg-img {
+  display: block;
+  line-height: 0;
+  background: var(--paper-2, #f2f4f7);
+  border: 1px solid var(--line);
+}
+
+.lg-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.lg-body { padding-top: 16px; }
+
+.lg-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.lg-type,
+.sec-type,
+.gc-type {
+  font: 600 .7rem/1 var(--sans);
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.lg-headline {
+  margin: 0 0 10px;
+  font: 700 2.05rem/1.16 var(--serif);
+  letter-spacing: -.012em;
+}
+
+.lg-headline a { color: var(--navy); text-decoration: none; }
+.lg-headline a:hover,
+.lg-headline a:focus-visible { text-decoration: underline; }
+
+.lg-summary {
+  margin: 0 0 12px;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--ink, #26313d);
+  max-width: 46em;
+}
+
+.lg-meta,
+.sec-meta,
+.gc-meta {
+  margin: 0;
+  font-size: .78rem;
+  color: var(--faint);
+}
+
+.lg-updated { color: var(--accent); font-weight: 600; }
+
+/* ---- secondary rail ---- */
+.sec-rail {
+  display: grid;
+  gap: 18px;
+  padding-left: 34px;
+  border-left: 1px solid var(--line);
+}
+
+.sec-card-lg { margin: 0; }
+
+.sec-img {
+  display: block;
+  line-height: 0;
+  background: var(--paper-2, #f2f4f7);
+  border: 1px solid var(--line);
+}
+
+.sec-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.sec-body-lg { padding-top: 11px; }
+
+.sec-kicker,
+.gc-kicker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 7px;
+}
+
+.sec-headline {
+  margin: 0 0 7px;
+  font: 700 1.12rem/1.26 var(--serif);
+}
+
+.sec-headline a,
+.gc-headline a { color: var(--navy); text-decoration: none; }
+.sec-headline a:hover,
+.sec-headline a:focus-visible,
+.gc-headline a:hover,
+.gc-headline a:focus-visible { text-decoration: underline; }
+
+.sec-summary,
+.gc-summary {
+  margin: 0 0 9px;
+  font-size: .92rem;
+  line-height: 1.55;
+  color: var(--ink, #26313d);
+}
+
+/* A card with no image must not collapse to nothing, and must not leave a gap
+   where the image would be. The headline simply starts at the top. */
+.sec-card-lg:not(:has(.sec-img)) .sec-body-lg,
+.grid-card:not(:has(.gc-img)) .gc-body { padding-top: 0; }
+
+/* ---- the "earlier" grid ---- */
+.gc-section { margin-top: 40px; padding-top: 26px; border-top: 2px solid var(--navy); }
+
+.gc-h {
+  margin: 0 0 18px;
+  font: 700 .82rem/1 var(--sans);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 26px 24px;
+}
+
+.grid-card { margin: 0; }
+
+.gc-img {
+  display: block;
+  line-height: 0;
+  background: var(--paper-2, #f2f4f7);
+  border: 1px solid var(--line);
+}
+
+.gc-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.gc-headline {
+  margin: 0 0 6px;
+  font: 700 1.02rem/1.3 var(--serif);
+}
+
+.gc-summary {
+  font-size: .88rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ---- responsive: no manual rearrangement needed, the grid does it ---- */
+@media (max-width: 1000px) {
+  .lg { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+
+  .sec-rail {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    padding-left: 0;
+    padding-top: 24px;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 620px) {
+  .lg-headline { font-size: 1.6rem; }
+  .lg-summary { font-size: .97rem; }
+  .lg-img img { aspect-ratio: 3 / 2; }
+  .sec-rail { grid-template-columns: minmax(0, 1fr); }
+  .grid-cards { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+}
+
+/* ---- print: the lead's image is noise on paper, the text is not ---- */
+@media print {
+  .lg-img, .sec-img, .gc-img { display: none; }
+  .lg { grid-template-columns: 1fr; }
+}
