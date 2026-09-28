@@ -408,17 +408,99 @@
 }
 
 @media (max-width: 860px) {
-  .masthead-utils { display: none; }
-  .nav-toggle { display: flex; }
-  .primary-nav, .topic-nav { display: none; }
-  .masthead-inner { min-height: 56px; }
-  .mobile-menu { top: 56px; }
+  /* The desktop header is the same on a phone: both nav rows stay visible and
+     the mega-panels still work, because the markup is identical. The only
+     concessions are the ones a 390px screen forces -- the utility links fold
+     into the nav, the tagline drops, and the rows wrap to two or three lines.
+     The hamburger is gone: it was hiding 13 of the 14 header links, which is
+     not a responsive version of the desktop design but a different site. */
+  .masthead-inner { min-height: 0; flex-wrap: wrap; padding: 4px 0; gap: 8px; }
   .brand-name { font-size: 18px; }
+
+  /* Row 1: brand plus the utility links, right-aligned on the same line. */
+  .masthead-utils { display: flex; order: 2; margin-left: auto; }
+  .masthead-utils a { padding: 6px 8px; font-size: .68rem; }
+
+  /* Row 2 and row 3: the two nav lists, full width, wrapping as needed. */
+  .primary-nav, .topic-nav { display: block; }
+  .primary-nav { order: 3; }
+  .topic-nav { order: 4; }
+
+  .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 0;
+  }
+  .nav-item { flex: 0 0 auto; }
+
+  /* 44px is the smallest comfortable touch target. The desktop row is 40px
+     tall; going below that on a phone is what made the nav feel broken. */
+  /* 44px is the touch minimum, but padding on top of a 44px min-height pushed
+     the two nav rows to 230px -- 27% of a phone screen, permanently. The row
+     keeps the 44px target and drops the extra vertical padding. */
+  .nav-plain, .nav-trigger {
+    height: auto;
+    min-height: 44px;
+    padding: 0 10px;
+    font-size: .68rem;
+    letter-spacing: .04em;
+    border-bottom: 2px solid transparent;
+  }
+  .primary-nav .nav-list, .topic-nav .nav-list { gap: 0 2px; }
+
+  .nav-trigger[aria-expanded="true"] { border-bottom-color: var(--accent); }
+
+  /* The panels are full-bleed on desktop; on a phone they have to sit inside
+     the viewport, so they anchor to the item and are clamped to the screen. */
+  .mega {
+    left: 0;
+    right: 0;
+    max-width: 100vw;
+  }
+  .mega-inner { padding: 10px 14px 14px; }
+  .mega-cols { grid-template-columns: 1fr; }
+  .mega-head { margin-bottom: 6px; }
+  .mega-title { font-size: .95rem; }
+  .mega-sub, .mega-note { font-size: .72rem; }
+  /* 44px minimum per row. These links measured 15px tall at 6px padding, which
+     is why the menu felt unusable on a phone. */
+  .mega-list a { display: flex; align-items: center; min-height: 44px; padding: 8px 0; font-size: .84rem; }
+  .mega-item-scope { display: block; font-size: .7rem; margin-top: -2px; }
+  .mega-group-name { min-height: 44px; display: flex; align-items: center; }
+
+  /* The hamburger and its drawer are no longer used. Hidden rather than
+     removed, so a no-JS reader still has the full tree. */
+  .nav-toggle { display: none; }
+  .mobile-menu { display: none; }
 }
 
-@media (max-width: 380px) {
-  .nav-toggle-text { display: none; }
+/* The region row measured 133px because 7 items wrapped onto 3 lines.
+   "Middle East & North Africa" is the longest label by a wide margin and is
+   what forces the third line, so below 520px it takes the short form. Two
+   lines instead of three keeps the header near 180px rather than 230px, which
+   is a quarter of a phone screen. The full name stays in the accessible name,
+   so the panel title and screen readers are unchanged. This block is top-level
+   on purpose: an @media nested inside another @media is invalid and silently
+   dropped, which is why the first attempt changed nothing. */
+@media (max-width: 520px) {
+  /* font-size:0 alone did not work: the caret and the generated text still
+     occupied 222px, because only the original text node was zeroed. Hiding the
+     long label and sizing the box from the short one is what actually removes
+     the width. */
+  .nav-long > .nav-label { display: none; }
+  .nav-long::before {
+    content: "MENA";
+    font-size: .68rem;
+    letter-spacing: .04em;
+  }
+  .nav-long { padding: 0 8px; }
+}
+
+@media (max-width: 400px) {
   .brand-name { font-size: 16px; letter-spacing: .12em; }
+  .nav-plain, .nav-trigger { padding: 7px 8px; font-size: .62rem; }
+  .masthead-utils a { font-size: .64rem; padding: 6px 5px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -443,8 +525,10 @@
 [id] { scroll-margin-top: 132px; }
 
 @media (max-width: 860px) {
+  /* The sticky header is several rows tall on a phone now, so the offset is
+     measured from the real element instead of guessed at. */
   :target,
-  [id] { scroll-margin-top: 68px; }
+  [id] { scroll-margin-top: 190px; }
 }
 
 /* On a short viewport a full masthead plus nav bar would eat the page, so the

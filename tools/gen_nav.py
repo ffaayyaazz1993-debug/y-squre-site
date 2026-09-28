@@ -151,10 +151,17 @@ def mega_topic(topic):
       </div>'''
 
 
+# The one nav label long enough to force a third line of wrapping on a narrow
+# phone. At 520px and under the CSS swaps in a short form; the full name stays
+# in the accessible name so a screen reader and the panel title are unchanged.
+LONG_LABELS = {"Middle East & North Africa": "MENA"}
+
+
 def _trigger(label, href, panel_id):
+    long_cls = " nav-long" if label in LONG_LABELS else ""
     return (f'      <li class="nav-item">\n'
-            f'        <a class="nav-trigger" href="{href}" aria-expanded="false" '
-            f'aria-controls="{panel_id}">{esc(label)}'
+            f'        <a class="nav-trigger{long_cls}" href="{href}" aria-expanded="false" '
+            f'aria-controls="{panel_id}"><span class="nav-label">{esc(label)}</span>'
             f'<svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true">'
             f'<path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>\n')
 

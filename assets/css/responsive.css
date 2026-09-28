@@ -22,15 +22,11 @@
 
 /* ---------- large phones + small tablets (480–699) ---------- */
 @media (max-width: 699px) {
-  .nav-list {
-    display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 60;
-    background: var(--navy); flex-direction: column; align-items: stretch;
-    border-bottom: 3px solid var(--accent); box-shadow: 0 6px 14px rgba(0,0,0,.18);
-  }
-  .nav-list.open { display: flex; }
-  .nav-list a { border-bottom: 1px solid #1e3450; padding: 12px 20px; }
-  .nav-list a[aria-current="page"] { border-bottom-color: var(--accent); border-left: 3px solid var(--accent); }
-  .nav-toggle { display: block; }
+  /* The old rule here collapsed .nav-list into a full-width dropdown and hid
+     it behind .open, which is a different navigation design from the desktop
+     one and is what made mobile look unlike desktop. nav.css now keeps the
+     real nav rows, so the rule is removed rather than overridden -- leaving it
+     in place is how the two systems came to disagree in the first place. */
   .searchbar form { flex-direction: column; }
   .lead { grid-template-columns: 1fr; gap: 18px; }
   .lead-brief { order: 2; }
