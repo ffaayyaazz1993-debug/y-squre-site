@@ -314,12 +314,7 @@
   </nav>
   <main id="main">
   <div class="ad-slot ad-top" data-ad-label="Advertisement"></div>
-  <div class="page-head">
-    <div class="wrap">
-      <h1>Latest</h1>
-      <p>Every published article and note, newest first. News items carry a publication and update time; analysis carries a reading time.</p>
-    </div>
-  </div>
+  <h1 class="visually-hidden">Latest</h1>
     <div class="wrap" style="padding-top:26px">
     <section class="lg" aria-label="Lead story">
     <article class="lg-lead">
@@ -439,5 +434,10 @@
       </div>
     </div>
   </footer>
+  <!-- Blocked-advertising measurement. Detection and counting only: it never
+       blocks, never overlays, never hides content. Endpoint is empty by
+       default, so this collects nothing and sends nothing until a first-party
+       reporting path is set. Deferred so it never competes with first paint. -->
+  <script src="/assets/js/adblock-measure.js" defer></script>
 </body>
 </html>

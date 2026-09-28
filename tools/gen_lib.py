@@ -154,6 +154,11 @@ def footer():
       </div>
     </div>
   </footer>
+  <!-- Blocked-advertising measurement. Detection and counting only: it never
+       blocks, never overlays, never hides content. Endpoint is empty by
+       default, so this collects nothing and sends nothing until a first-party
+       reporting path is set. Deferred so it never competes with first paint. -->
+  <script src="/assets/js/adblock-measure.js" defer></script>
 </body>
 </html>
 """

@@ -414,7 +414,8 @@ PAGES.append(("404/index.html",
                    noindex=True)
               + header("")
               + '  <main id="main">\n'
-                '    <div class="wrap" style="padding:60px 0 80px">\n'
+              + ad("Advertisement", "ad-top")
+              + '    <div class="wrap" style="padding:60px 0 80px">\n'
                 '      <div class="prose">\n'
                 '        <h1>Page not found</h1>\n'
                 '        <p class="lede">That URL does not exist on this site. It may have '

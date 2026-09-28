@@ -252,8 +252,13 @@ def latest():
     # never sectioned. Removed rather than restyled.
     b += crumbs([("/", "Home"), ("/latest/", "Latest")])
     b += '  <main id="main">\n' + ad("Advertisement", "ad-top")
-    b += page_head("Latest", "Every published article and note, newest first. News items carry "
-                             "a publication and update time; analysis carries a reading time.")
+    # The "Latest" title block that sat here duplicated the breadcrumb directly
+    # above it and pushed the first story 145px down the page. It was also the
+    # only thing between the header and the lead story, so the ad slot had no
+    # room to be seen. Removed: the breadcrumb and the lead headline both say
+    # where you are. The <h1> is kept for structure and screen readers, so the
+    # page is not left without a top-level heading.
+    b += '  <h1 class="visually-hidden">Latest</h1>\n'
     _grid, _n, _sec, _rest = GL.latest_body(ARTICLES, GL.load_manifest())
     b += f'''    <div class="wrap" style="padding-top:26px">
 {_grid}
