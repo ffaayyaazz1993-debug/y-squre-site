@@ -90,6 +90,17 @@ for dirpath, _, names in os.walk(STAGE):
 files.sort()
 print(f"staged {len(files)} files")
 
+# Every directory in the staged tree must exist on the server before a file can
+# be uploaded into it. upload_files will not create parents, so a new tree (the
+# country explainer directories, for instance) fails every file until its
+# directories are made first. Walk parents shallowest-first and mkdir each.
+dirs = set()
+for rel, _ in files:
+    parts = rel.split("/")[:-1]
+    for d in range(1, len(parts) + 1):
+        dirs.add("/".join(parts[:d]))
+
+
 
 # ---- JS payloads -------------------------------------------------------------
 def js_mkdir(rel):
@@ -118,6 +129,23 @@ def js_list(d):
         return (e.type==='dir'?'[D] ':'    ')+e.file+' '+(e.humansize||e.size||'');
       }).join('\\n');
     })()""" % json.dumps(d)
+
+
+# ---- create the directory tree before uploading into it ---------------------
+_dirs = set()
+for _rel, _ in files:
+    _parts = _rel.split("/")[:-1]
+    for _d in range(1, len(_parts) + 1):
+        _dirs.add("/".join(_parts[:_d]))
+_dirs = sorted(_dirs, key=lambda x: (x.count("/"), x))
+_made = 0
+for _d in _dirs:
+    _r = ev(js_mkdir(_d)) or {}
+    if isinstance(_r, dict) and _r.get("errors"):
+        print(f"  mkdir FAIL {_d}: {_r['errors'][0]}")
+    else:
+        _made += 1
+print(f"  ensured {_made}/{len(_dirs)} directories")
 
 
 def _split(rel):

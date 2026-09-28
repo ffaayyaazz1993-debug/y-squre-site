@@ -38,6 +38,27 @@ def _nav_siblings(region):
         for s in region["sections"] if s["slug"] != region.get("_cur"))
 
 
+def explorer_cell(country_name):
+    """The 'Latest' cell for a country. With no verified event report there is
+    one to link, so it points at the structural explainer instead of showing an
+    empty state -- and says which kind of piece it is, so a reader never
+    mistakes analysis for a news report."""
+    href = explainer_href(country_name)
+    if not href:
+        return '<span class="td-empty">No verified report yet</span>'
+    return f'<a class="row-explainer" href="{href}">Explainer &#8594;</a>'
+
+
+def explainer_href(country_name):
+    """Link to that country's explainer, if one was generated. Returns "" when
+    the country has no explainer yet, and the caller omits the cell."""
+    from gen_country_profiles import COUNTRY_SLUGS
+    sl = COUNTRY_SLUGS.get(country_name)
+    if not sl:
+        return ""
+    return f"/explainer/{sl}/macro-transmission.html"
+
+
 def region_page(region):
     slug, name = region["slug"], region["name"]
     flat = region.get("flat")
@@ -50,7 +71,7 @@ def region_page(region):
             f'''        <tr id="{c["anchor"]}">
           <th scope="row"><a href="{region["path"]}#{c["anchor"]}">{esc(c["name"])}</a></th>
           <td>{esc(sec["scope"])}</td>
-          <td class="td-empty">No verified report yet</td>
+          <td>{explorer_cell(c["name"])}</td>
         </tr>'''
             for c in sec["countries"])
         body = f'''  <main id="main" class="wrap page">
@@ -139,9 +160,9 @@ def subregion_page(region, sec):
     rows = []
     for c in sec["countries"]:
         rows.append(f'''        <tr id="{c["anchor"]}">
-          <th scope="row"><a href="{base}#{c["anchor"]}">{esc(c["name"])}</a></th>
+          <th scope="row"><a href="{base}#{c["anchor"]}">{esc(c["name"])}</a>
           <td>{esc(sec["scope"])}</td>
-          <td class="td-empty">No verified report yet</td>
+          <td>{explorer_cell(c["name"])}</td>
         </tr>''')
 
     # Other subregions, for crawl depth and reader context.
