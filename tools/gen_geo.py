@@ -109,69 +109,29 @@ TAXONOMY = {
                 "Eastern Mediterranean, and Iran & Iraq were withdrawn and redirect to "
                 "/geopolitics/middle-east-north-africa/."]),
 
-        R("sub-saharan-africa", "Sub-Saharan Africa",
-          "Commodity and debt dynamics, resource-exporter fiscal dependence, and regional "
-          "trade blocs. Coverage is Sub-Saharan; North African states are covered under "
-          "Middle East & North Africa.",
-          [S("west-africa", "West Africa",
-             ["Benin", "Burkina Faso", "Cabo Verde", "Cote d'Ivoire", "Gambia", "Ghana",
-              "Guinea", "Guinea-Bissau", "Liberia", "Mali", "Niger", "Nigeria",
-              "Senegal", "Sierra Leone", "Togo"],
-             "CFA franc arrangements, commodity terms of trade, and fiscal consolidation."),
-           S("east-africa", "East Africa",
-             ["Kenya", "Tanzania", "Uganda", "Rwanda", "Burundi", "Ethiopia",
-              "South Sudan", "Malawi", "Zambia", "Zimbabwe"],
-             "Inflation, exchange-rate regimes, and regional market integration."),
-           S("horn-of-africa", "Horn of Africa",
-             ["Djibouti", "Eritrea", "Ethiopia", "Somalia"],
-             "Shipping-route risk, trade corridor disruption, and drought exposure."),
-           S("central-africa", "Central Africa",
-             ["Cameroon", "Central African Republic", "Chad",
-              "Republic of the Congo", "Democratic Republic of the Congo",
-              "Equatorial Guinea", "Gabon", "Sao Tome and Principe"],
-             "Oil and mineral rents, and conflict-affected corridors."),
-           S("southern-africa", "Southern Africa",
-             ["Angola", "Botswana", "Eswatini", "Lesotho", "Mauritius",
-              "Mozambique", "Namibia", "South Africa", "Zambia", "Zimbabwe"],
-             "Currency crises, reserve accumulation, and power supply.")],
-          also=["Mauritania also appears under North Africa, which is where its "
-                "primary structural coverage sits."]),
-
         R("asia", "Asia",
-          "Regional trade architecture, semiconductor and energy supply chains, maritime "
-          "disputes, and currency policy across the largest growth block in the world.",
-          [S("central-asia", "Central Asia",
-             ["Kazakhstan", "Kyrgyzstan", "Tajikistan", "Turkmenistan", "Uzbekistan"],
-             "Commodity export revenue, and trade corridors through Russia and China."),
-           S("east-asia", "East Asia",
-             ["China", "Japan", "Mongolia", "North Korea", "South Korea", "Taiwan"],
-             "Semiconductor supply chains, export controls, and the yen/yuan regime."),
-           S("south-asia", "South Asia",
-             ["Afghanistan", "Bangladesh", "Bhutan", "India", "Maldives", "Nepal",
-              "Pakistan", "Sri Lanka"],
-             "Trade measures, energy import dependence, and reserve management."),
-           S("southeast-asia", "Southeast Asia",
-             ["Brunei", "Cambodia", "Indonesia", "Laos", "Malaysia", "Myanmar",
-              "Philippines", "Singapore", "Thailand", "Timor-Leste", "Vietnam"],
-             "Electronics assembly, critical-mineral processing, and ASEAN tariff policy."),
-           S("caucasus", "Caucasus",
-             ["Armenia", "Azerbaijan", "Georgia"],
-             "Corridors and pipeline leverage, and the sanctions environment around the "
-             "South Caucasus routes. The Gulf, Levant and Anatolia sit under Middle East "
-             "& North Africa, which holds their structural coverage."),
-           ]),
+          "India, China, Russia and Japan alongside the Southeast Asian manufacturing "
+          "base: semiconductor and critical-mineral supply chains, trade architecture, "
+          "and maritime supply routes. Central Asia, the Caucasus, Korea, Taiwan, "
+          "Mongolia and the rest of South Asia are out of scope for now.",
+          [S("asia-countries", "Asia",
+             ["China", "India", "Japan", "Russia"] + ["Brunei", "Cambodia", "Indonesia", "Laos", "Malaysia", "Myanmar", "Philippines", "Singapore", "Thailand", "Timor-Leste", "Vietnam"],
+             "Commodity demand, energy exports and import dependence, sanctions exposure, "
+             "manufacturing share, and export policy.")],
+          also=["Coverage here is limited to China, India, Japan, Russia and the eleven "
+                "Southeast Asian states. Central Asia, the Caucasus, North and South Korea, "
+                "Taiwan, Mongolia, and the rest of South Asia were withdrawn."],
+          flat=True),
 
         R("oceania-pacific", "Oceania & Pacific",
-          "Pacific security architecture, supply-chain reconfiguration, and the fiscal "
-          "and climate exposure of small island states.",
+          "Commodity exports, RBA policy, and Pacific financing arrangements. The Pacific "
+          "island states are out of scope for now and are not represented here.",
           [S("australia-new-zealand", "Australia & New Zealand",
              ["Australia", "New Zealand"],
-             "Commodity exports, RBA policy, and Pacific financing arrangements."),
-           S("pacific-islands", "Pacific Islands",
-             ["Fiji", "Kiribati", "Marshall Islands", "Micronesia", "Nauru", "Palau",
-              "Samoa", "Solomon Islands", "Tonga", "Tuvalu", "Vanuatu",
-              "Papua New Guinea"],
-             "Climate finance, shipping-route risk, and resource projects.")]),
+             "Commodity exports, RBA policy, and Pacific financing arrangements.")],
+          also=["Coverage here is limited to Australia and New Zealand. The Pacific island "
+                "states were withdrawn and redirect to /geopolitics/oceania-pacific/."],
+          flat=True),
     ],
 
     # ------------------------------------------------------------------ topical

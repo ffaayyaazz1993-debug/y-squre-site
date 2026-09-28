@@ -29,11 +29,10 @@
   # "West Asia" re-listed the whole Middle East as a second home for countries
   # already filed under MENA. Only the Caucasus states are genuinely West Asian,
   # so that is what the region keeps.
-  RewriteRule ^geopolitics/asia/west-asia/?$   /geopolitics/asia/caucasus/           [R=301,L]
+  RewriteRule ^geopolitics/asia/west-asia/?$   /geopolitics/asia/                       [R=301,L]
 
-  # "North Asia" held Russia alone. Russia is in no published European
-# subregion any more, so this lands on the Europe index.
-  RewriteRule ^geopolitics/asia/north-asia/?$  /geopolitics/europe/   [R=301,L]
+  # "North Asia" held Russia alone. Russia is covered under Asia, not Europe.
+  RewriteRule ^geopolitics/asia/north-asia/?$  /geopolitics/asia/    [R=301,L]
 
   # Latin America & Caribbean was withdrawn from the navigation and its pages
   # deleted. The 32 countries it covered have no other regional home, so the
@@ -45,6 +44,20 @@
   RewriteRule ^geopolitics/latin-america/(south-america|central-america-latam|caribbean-latam)/?$ /geopolitics/ [R=301,L]
   RewriteRule ^geopolitics/north-america/central-america/?$   /geopolitics/  [R=301,L]
   RewriteRule ^geopolitics/north-america/caribbean/?$         /geopolitics/  [R=301,L]
+
+  # Sub-Saharan Africa is withdrawn entirely. The region page and its five
+  # subregions are deleted; they land on the section index, which lists the
+  # five regions still published.
+  RewriteRule ^geopolitics/sub-saharan-africa(/.*)?$ /geopolitics/ [R=301,L]
+
+  # Asia is flat now: China, India, Japan, Russia and the Southeast Asian states
+  # are listed directly on /geopolitics/asia/, so none of its subregion pages
+  # exist any more. Central Asia and the Caucasus are withdrawn too.
+  RewriteRule ^geopolitics/asia/(central-asia|caucasus|india|china|russia|southeast-asia)/?$ /geopolitics/asia/ [R=301,L]
+
+  # Oceania is flat: Australia and New Zealand only. The Pacific island states
+  # are withdrawn, and Australia & New Zealand is no longer its own page.
+  RewriteRule ^geopolitics/oceania-pacific/(pacific-islands|australia-new-zealand)/?$ /geopolitics/oceania-pacific/ [R=301,L]
 
   # MENA is narrowed to the Gulf and North Africa. The Levant, the Eastern
   # Mediterranean, and Iran & Iraq are withdrawn; their pages are deleted and

@@ -259,6 +259,22 @@ STALE = [
     "geopolitics/middle-east-north-africa/eastern-mediterranean/index.html",
     "geopolitics/middle-east-north-africa/iran-iraq/index.html",
     "geopolitics/middle-east-north-africa/turkey-anatolia/index.html",
+    # Sub-Saharan Africa withdrawn; Asia and Oceania narrowed.
+    "geopolitics/sub-saharan-africa/index.html",
+    "geopolitics/sub-saharan-africa/west-africa/index.html",
+    "geopolitics/sub-saharan-africa/east-africa/index.html",
+    "geopolitics/sub-saharan-africa/horn-of-africa/index.html",
+    "geopolitics/sub-saharan-africa/central-africa/index.html",
+    "geopolitics/sub-saharan-africa/southern-africa/index.html",
+    "geopolitics/asia/central-asia/index.html",
+    "geopolitics/asia/caucasus/index.html",
+    "geopolitics/oceania-pacific/pacific-islands/index.html",
+    "geopolitics/oceania-pacific/australia-new-zealand/index.html",
+    # Asia is flat; its subregion pages no longer exist.
+    "geopolitics/asia/india/index.html",
+    "geopolitics/asia/china/index.html",
+    "geopolitics/asia/russia/index.html",
+    "geopolitics/asia/southeast-asia/index.html",
     "macro/currencies-macro/index.html",
 ]
 print("=== removing superseded files ===")

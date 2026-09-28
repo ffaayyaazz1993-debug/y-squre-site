@@ -145,347 +145,31 @@
    "flat": false
   },
   {
-   "slug": "sub-saharan-africa",
-   "name": "Sub-Saharan Africa",
-   "path": "/geopolitics/sub-saharan-africa/",
-   "lede": "Commodity and debt dynamics, resource-exporter fiscal dependence, and regional trade blocs. Coverage is Sub-Saharan; North African states are covered under Middle East & North Africa.",
-   "sections": [
-    {
-     "slug": "west-africa",
-     "name": "West Africa",
-     "countries": [
-      {
-       "name": "Benin",
-       "anchor": "benin"
-      },
-      {
-       "name": "Burkina Faso",
-       "anchor": "burkina-faso"
-      },
-      {
-       "name": "Cabo Verde",
-       "anchor": "cabo-verde"
-      },
-      {
-       "name": "Cote d'Ivoire",
-       "anchor": "cote-d-ivoire"
-      },
-      {
-       "name": "Gambia",
-       "anchor": "gambia"
-      },
-      {
-       "name": "Ghana",
-       "anchor": "ghana"
-      },
-      {
-       "name": "Guinea",
-       "anchor": "guinea"
-      },
-      {
-       "name": "Guinea-Bissau",
-       "anchor": "guinea-bissau"
-      },
-      {
-       "name": "Liberia",
-       "anchor": "liberia"
-      },
-      {
-       "name": "Mali",
-       "anchor": "mali"
-      },
-      {
-       "name": "Niger",
-       "anchor": "niger"
-      },
-      {
-       "name": "Nigeria",
-       "anchor": "nigeria"
-      },
-      {
-       "name": "Senegal",
-       "anchor": "senegal"
-      },
-      {
-       "name": "Sierra Leone",
-       "anchor": "sierra-leone"
-      },
-      {
-       "name": "Togo",
-       "anchor": "togo"
-      }
-     ],
-     "scope": "CFA franc arrangements, commodity terms of trade, and fiscal consolidation."
-    },
-    {
-     "slug": "east-africa",
-     "name": "East Africa",
-     "countries": [
-      {
-       "name": "Kenya",
-       "anchor": "kenya"
-      },
-      {
-       "name": "Tanzania",
-       "anchor": "tanzania"
-      },
-      {
-       "name": "Uganda",
-       "anchor": "uganda"
-      },
-      {
-       "name": "Rwanda",
-       "anchor": "rwanda"
-      },
-      {
-       "name": "Burundi",
-       "anchor": "burundi"
-      },
-      {
-       "name": "Ethiopia",
-       "anchor": "ethiopia"
-      },
-      {
-       "name": "South Sudan",
-       "anchor": "south-sudan"
-      },
-      {
-       "name": "Malawi",
-       "anchor": "malawi"
-      },
-      {
-       "name": "Zambia",
-       "anchor": "zambia"
-      },
-      {
-       "name": "Zimbabwe",
-       "anchor": "zimbabwe"
-      }
-     ],
-     "scope": "Inflation, exchange-rate regimes, and regional market integration."
-    },
-    {
-     "slug": "horn-of-africa",
-     "name": "Horn of Africa",
-     "countries": [
-      {
-       "name": "Djibouti",
-       "anchor": "djibouti"
-      },
-      {
-       "name": "Eritrea",
-       "anchor": "eritrea"
-      },
-      {
-       "name": "Ethiopia",
-       "anchor": "ethiopia"
-      },
-      {
-       "name": "Somalia",
-       "anchor": "somalia"
-      }
-     ],
-     "scope": "Shipping-route risk, trade corridor disruption, and drought exposure."
-    },
-    {
-     "slug": "central-africa",
-     "name": "Central Africa",
-     "countries": [
-      {
-       "name": "Cameroon",
-       "anchor": "cameroon"
-      },
-      {
-       "name": "Central African Republic",
-       "anchor": "central-african-republic"
-      },
-      {
-       "name": "Chad",
-       "anchor": "chad"
-      },
-      {
-       "name": "Republic of the Congo",
-       "anchor": "republic-of-the-congo"
-      },
-      {
-       "name": "Democratic Republic of the Congo",
-       "anchor": "democratic-republic-of-the-congo"
-      },
-      {
-       "name": "Equatorial Guinea",
-       "anchor": "equatorial-guinea"
-      },
-      {
-       "name": "Gabon",
-       "anchor": "gabon"
-      },
-      {
-       "name": "Sao Tome and Principe",
-       "anchor": "sao-tome-and-principe"
-      }
-     ],
-     "scope": "Oil and mineral rents, and conflict-affected corridors."
-    },
-    {
-     "slug": "southern-africa",
-     "name": "Southern Africa",
-     "countries": [
-      {
-       "name": "Angola",
-       "anchor": "angola"
-      },
-      {
-       "name": "Botswana",
-       "anchor": "botswana"
-      },
-      {
-       "name": "Eswatini",
-       "anchor": "eswatini"
-      },
-      {
-       "name": "Lesotho",
-       "anchor": "lesotho"
-      },
-      {
-       "name": "Mauritius",
-       "anchor": "mauritius"
-      },
-      {
-       "name": "Mozambique",
-       "anchor": "mozambique"
-      },
-      {
-       "name": "Namibia",
-       "anchor": "namibia"
-      },
-      {
-       "name": "South Africa",
-       "anchor": "south-africa"
-      },
-      {
-       "name": "Zambia",
-       "anchor": "zambia"
-      },
-      {
-       "name": "Zimbabwe",
-       "anchor": "zimbabwe"
-      }
-     ],
-     "scope": "Currency crises, reserve accumulation, and power supply."
-    }
-   ],
-   "also": [
-    "Mauritania also appears under North Africa, which is where its primary structural coverage sits."
-   ],
-   "flat": false
-  },
-  {
    "slug": "asia",
    "name": "Asia",
    "path": "/geopolitics/asia/",
-   "lede": "Regional trade architecture, semiconductor and energy supply chains, maritime disputes, and currency policy across the largest growth block in the world.",
+   "lede": "India, China, Russia and Japan alongside the Southeast Asian manufacturing base: semiconductor and critical-mineral supply chains, trade architecture, and maritime supply routes. Central Asia, the Caucasus, Korea, Taiwan, Mongolia and the rest of South Asia are out of scope for now.",
    "sections": [
     {
-     "slug": "central-asia",
-     "name": "Central Asia",
-     "countries": [
-      {
-       "name": "Kazakhstan",
-       "anchor": "kazakhstan"
-      },
-      {
-       "name": "Kyrgyzstan",
-       "anchor": "kyrgyzstan"
-      },
-      {
-       "name": "Tajikistan",
-       "anchor": "tajikistan"
-      },
-      {
-       "name": "Turkmenistan",
-       "anchor": "turkmenistan"
-      },
-      {
-       "name": "Uzbekistan",
-       "anchor": "uzbekistan"
-      }
-     ],
-     "scope": "Commodity export revenue, and trade corridors through Russia and China."
-    },
-    {
-     "slug": "east-asia",
-     "name": "East Asia",
+     "slug": "asia-countries",
+     "name": "Asia",
      "countries": [
       {
        "name": "China",
        "anchor": "china"
       },
       {
-       "name": "Japan",
-       "anchor": "japan"
-      },
-      {
-       "name": "Mongolia",
-       "anchor": "mongolia"
-      },
-      {
-       "name": "North Korea",
-       "anchor": "north-korea"
-      },
-      {
-       "name": "South Korea",
-       "anchor": "south-korea"
-      },
-      {
-       "name": "Taiwan",
-       "anchor": "taiwan"
-      }
-     ],
-     "scope": "Semiconductor supply chains, export controls, and the yen/yuan regime."
-    },
-    {
-     "slug": "south-asia",
-     "name": "South Asia",
-     "countries": [
-      {
-       "name": "Afghanistan",
-       "anchor": "afghanistan"
-      },
-      {
-       "name": "Bangladesh",
-       "anchor": "bangladesh"
-      },
-      {
-       "name": "Bhutan",
-       "anchor": "bhutan"
-      },
-      {
        "name": "India",
        "anchor": "india"
       },
       {
-       "name": "Maldives",
-       "anchor": "maldives"
+       "name": "Japan",
+       "anchor": "japan"
       },
       {
-       "name": "Nepal",
-       "anchor": "nepal"
+       "name": "Russia",
+       "anchor": "russia"
       },
-      {
-       "name": "Pakistan",
-       "anchor": "pakistan"
-      },
-      {
-       "name": "Sri Lanka",
-       "anchor": "sri-lanka"
-      }
-     ],
-     "scope": "Trade measures, energy import dependence, and reserve management."
-    },
-    {
-     "slug": "southeast-asia",
-     "name": "Southeast Asia",
-     "countries": [
       {
        "name": "Brunei",
        "anchor": "brunei"
@@ -531,36 +215,19 @@
        "anchor": "vietnam"
       }
      ],
-     "scope": "Electronics assembly, critical-mineral processing, and ASEAN tariff policy."
-    },
-    {
-     "slug": "caucasus",
-     "name": "Caucasus",
-     "countries": [
-      {
-       "name": "Armenia",
-       "anchor": "armenia"
-      },
-      {
-       "name": "Azerbaijan",
-       "anchor": "azerbaijan"
-      },
-      {
-       "name": "Georgia",
-       "anchor": "georgia"
-      }
-     ],
-     "scope": "Corridors and pipeline leverage, and the sanctions environment around the South Caucasus routes. The Gulf, Levant and Anatolia sit under Middle East & North Africa, which holds their structural coverage."
+     "scope": "Commodity demand, energy exports and import dependence, sanctions exposure, manufacturing share, and export policy."
     }
    ],
-   "also": [],
-   "flat": false
+   "also": [
+    "Coverage here is limited to China, India, Japan, Russia and the eleven Southeast Asian states. Central Asia, the Caucasus, North and South Korea, Taiwan, Mongolia, and the rest of South Asia were withdrawn."
+   ],
+   "flat": true
   },
   {
    "slug": "oceania-pacific",
    "name": "Oceania & Pacific",
    "path": "/geopolitics/oceania-pacific/",
-   "lede": "Pacific security architecture, supply-chain reconfiguration, and the fiscal and climate exposure of small island states.",
+   "lede": "Commodity exports, RBA policy, and Pacific financing arrangements. The Pacific island states are out of scope for now and are not represented here.",
    "sections": [
     {
      "slug": "australia-new-zealand",
@@ -576,65 +243,12 @@
       }
      ],
      "scope": "Commodity exports, RBA policy, and Pacific financing arrangements."
-    },
-    {
-     "slug": "pacific-islands",
-     "name": "Pacific Islands",
-     "countries": [
-      {
-       "name": "Fiji",
-       "anchor": "fiji"
-      },
-      {
-       "name": "Kiribati",
-       "anchor": "kiribati"
-      },
-      {
-       "name": "Marshall Islands",
-       "anchor": "marshall-islands"
-      },
-      {
-       "name": "Micronesia",
-       "anchor": "micronesia"
-      },
-      {
-       "name": "Nauru",
-       "anchor": "nauru"
-      },
-      {
-       "name": "Palau",
-       "anchor": "palau"
-      },
-      {
-       "name": "Samoa",
-       "anchor": "samoa"
-      },
-      {
-       "name": "Solomon Islands",
-       "anchor": "solomon-islands"
-      },
-      {
-       "name": "Tonga",
-       "anchor": "tonga"
-      },
-      {
-       "name": "Tuvalu",
-       "anchor": "tuvalu"
-      },
-      {
-       "name": "Vanuatu",
-       "anchor": "vanuatu"
-      },
-      {
-       "name": "Papua New Guinea",
-       "anchor": "papua-new-guinea"
-      }
-     ],
-     "scope": "Climate finance, shipping-route risk, and resource projects."
     }
    ],
-   "also": [],
-   "flat": false
+   "also": [
+    "Coverage here is limited to Australia and New Zealand. The Pacific island states were withdrawn and redirect to /geopolitics/oceania-pacific/."
+   ],
+   "flat": true
   }
  ],
  "topics": [
