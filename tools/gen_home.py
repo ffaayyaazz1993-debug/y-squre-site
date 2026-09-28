@@ -244,12 +244,12 @@ def latest():
     b = head("Latest | Y-Square Research",
              "Every article, explainer and research note published by Y-Square, newest first, with publication times, content labels and reading times.", "/latest/")
     b += header("/latest/")
-    b += '  <nav class="topicnav" aria-label="Sections"><div class="wrap"><ul>\n' + \
-         "\n".join(f'          <li><a href="{u}">{t}</a></li>' for t, u in
-                   [("Geopolitics", "/geopolitics/"), ("Macro", "/macro/"),
-                    ("Markets", "/markets/"), ("Analysis", "/blog/"),
-                    ("Research", "/research/")]) + \
-         "\n        </ul></div></nav>\n"
+    # The topic bar that used to sit here -- Geopolitics, Macro, Markets,
+    # Analysis, Research -- duplicated items already present in the two nav rows
+    # above it (Markets, Macro, Research and Blog are top-level; Geopolitics is
+    # reachable from every region panel). A third row restating them was noise,
+    # and on the Latest page it read as a section header for content that was
+    # never sectioned. Removed rather than restyled.
     b += crumbs([("/", "Home"), ("/latest/", "Latest")])
     b += '  <main id="main">\n' + ad("Advertisement", "ad-top")
     b += page_head("Latest", "Every published article and note, newest first. News items carry "

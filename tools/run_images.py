@@ -105,6 +105,22 @@ CAPITALS = {
 COVERED = {c.lower() for c in CAPITALS}
 
 
+def used_urls(manifest, exclude=()):
+    """Every image file already claimed by another page.
+
+    The same photograph appearing on two pages is a visible defect on /latest/,
+    where both cards sit next to each other in the same rail. Two articles about
+    the same institution will otherwise match the same obvious building, so the
+    second one has to be told to look elsewhere."""
+    out = set()
+    for path, imgs in manifest.items():
+        if path in exclude:
+            continue
+        for g in imgs:
+            out.add(g["url"].split("?")[0])
+    return out
+
+
 def run():
     manifest = {}
     if os.path.exists(OUT):
@@ -133,8 +149,12 @@ def run():
         # so the file has to name one of them, and no disallowed city counts.
         place_re = build_place_regex(terms)
         page_ban = build_page_ban(label)
-        got, meta = fetch_for(path, terms, banned, want=WANT, budget_s=BUDGET,
+        taken = used_urls(manifest, exclude=(path,))
+        raw, meta = fetch_for(path, terms, banned, want=WANT + 3, budget_s=BUDGET,
                               place=place_re, page_ban=page_ban)
+        # Drop anything already used on another page, then take the first WANT.
+        raw = [g for g in raw if g["url"].split("?")[0] not in taken]
+        got = raw[:WANT]
         clean = []
         for g in got:
             if not g["author"]:
@@ -142,6 +162,8 @@ def run():
                 continue
             clean.append({k: g[k] for k in
                           ("url", "page", "author", "licence", "licence_url", "title")})
+        for g in raw[WANT:]:
+            print(f"    skipped (already used elsewhere): {g['title'][:44]}")
         if clean:
             manifest[path] = clean
         else:

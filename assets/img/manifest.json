@@ -1,14 +1,4 @@
 {
- "research/2026/09/26/central-bank-balance-sheets.html": [
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/London_MMB_%C2%BB2M1_Threadneedle_Street.jpg/1920px-London_MMB_%C2%BB2M1_Threadneedle_Street.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File%3ALondon_MMB_%C2%BB2M1_Threadneedle_Street.jpg",
-   "author": "mattbuck ( category )",
-   "licence": "CC BY-SA 4.0",
-   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "title": "London MMB \u00bb2M1 Threadneedle Street.jpg"
-  }
- ],
  "blog/2026/09/26/reading-central-bank-intent.html": [
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/London_MMB_%C2%BB2M1_Threadneedle_Street.jpg/1920px-London_MMB_%C2%BB2M1_Threadneedle_Street.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -677,6 +667,24 @@
    "licence": "CC BY-SA 4.0",
    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
    "title": "Parliament House, Wellington, New Zealand (2010).jpg"
+  }
+ ],
+ "research/2026/09/26/central-bank-balance-sheets.html": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Buildings_on_Threadneedle_Street_-_geograph.org.uk_-_2165404.jpg/1920px-Buildings_on_Threadneedle_Street_-_geograph.org.uk_-_2165404.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File%3ABuildings_on_Threadneedle_Street_-_geograph.org.uk_-_2165404.jpg",
+   "author": "Bill Boaden",
+   "licence": "CC BY-SA 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "title": "Buildings on Threadneedle Street - geograph.org.uk - 2165404.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Threadneedle_Street%2C_London_-_geograph.org.uk_-_3646036.jpg/1920px-Threadneedle_Street%2C_London_-_geograph.org.uk_-_3646036.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File%3AThreadneedle_Street%2C_London_-_geograph.org.uk_-_3646036.jpg",
+   "author": "Helen Steed",
+   "licence": "CC BY-SA 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "title": "Threadneedle Street, London - geograph.org.uk - 3646036.jpg"
   }
  ]
 }

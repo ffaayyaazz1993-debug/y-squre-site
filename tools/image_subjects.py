@@ -116,6 +116,16 @@ EVENT = re.compile(
     r"\bpigeon\b|\bstatue\b|sculpture|monument|"
     r"portrait of|selfie)", re.I)
 
+# Street works and construction are pictures of a building site, not of an
+# institution. "Roadworks in Threadneedle Street" matched the Bank of England
+# article because the street name matched, which is the whole failure in one
+# example: correct place, wrong subject.
+WORKS = re.compile(
+    r"(roadworks|road work|construction|construction site|scaffolding|"
+    r"scaffold|demolition|excavation|road closure|works on|"
+    r"graffiti|derelict|abandoned building|demolished|"
+    r"traffic|car park|parking|flytip|skip hire)", re.I)
+
 DISALLOWED = {
     "france": ["nice", "lyon", "marseille", "bordeaux", "toulouse"],
     "united-kingdom": ["manchester", "liverpool", "edinburgh", "glasgow", "sheffield"],

@@ -167,6 +167,8 @@ def pick(cands, must_terms, banned_terms, budget_s, place=None, page_ban=None):
             continue
         if IMG_SUBJ.EVENT.search(blob):
             continue
+        if IMG_SUBJ.WORKS.search(blob):
+            continue
         # The subject must actually be named in the file.
         #
         # It is enough for ANY of the subject terms to appear, not just the
