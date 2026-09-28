@@ -6,9 +6,11 @@ Attribution is stored per image so the page generator can render it. A file with
 no author string is dropped rather than shown with a blank credit, because
 "Photo: " with nothing after it is not a credit.
 """
-import json, os, sys
+import json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fetch_images import fetch_for, slug
+import fetch_images
+import image_subjects as IMG_SUBJ
 import gen_country_profiles as GCP
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,10 +30,58 @@ CONCEPT = {
          "same subject as the balance-sheet note",
          ["japan", "china", "eurozone"]),
     "blog/2026/09/26/understanding-currency-depreciation.html":
-        (["Bank of Japan", "Nihonbashi", "Tokyo"],
-         "a depreciating currency; the banknote-issuing institution is the subject",
-         ["japan" ]),
+        (["banknote", "euro note", "euro banknote", "bank note", "currency note"],
+         "the article explains how a currency loses value, so the currency is "
+         "the subject. Not a place: a street in Tokyo is a picture of Tokyo, "
+         "not a picture of depreciation.",
+         ["japan"]),
 }
+
+# Spellings Commons actually uses. "Washington" alone also matches Washington
+# State, so the D.C. forms are listed too, and for the United States the
+# alternative cities that genuinely depict its economy.
+def build_page_ban(country_name):
+    """Cities and states that must not stand in for THIS country page.
+
+    Kept separate from the global ban because a city can be the subject of one
+    page and disqualifying on another: New York belongs on the United States
+    page and is not a reason to reject it there, while Zurich is not the
+    subject of the Switzerland page."""
+    slug = None
+    for sl, (name, *_rest) in GCP.COUNTRIES.items():
+        if name == country_name:
+            slug = sl
+            break
+    cities = IMG_SUBJ.DISALLOWED.get(slug or "", [])
+    if not cities:
+        return None
+    return r"\b(?:" + "|".join(re.escape(c) for c in cities) + r")\b"
+
+
+def build_place_regex(terms):
+    """One alternation over every accepted spelling of the capital, so a file
+    titled "Washington, D.C." and one titled "New York" both satisfy the place
+    gate for the United States, while a disallowed city never does."""
+    alts = [t for t in terms[1:] if t]
+    if not alts:
+        return None
+    body = "|".join(re.escape(a) for a in alts)
+    return re.compile(r"\b(?:" + body + r")\b", re.I)
+
+
+def capital_terms(name):
+    """[country, capital, ...accepted spellings] for the gate."""
+    terms = [name, CAPITALS[name]]
+    for cap, alts in IMG_SUBJ.CAPITALS.values():
+        if cap == CAPITALS[name]:
+            terms += alts
+            break
+    seen, out = set(), []
+    for t in terms:
+        if t.lower() not in seen:
+            seen.add(t.lower())
+            out.append(t)
+    return out
 
 # Every other article is a country explainer, so the country and its capital are
 # the subject. Capital first, because it is the more reliable search term and it
@@ -69,13 +119,22 @@ def run():
             print(f"  SKIP {name}: no capital mapped")
             continue
         banned = sorted(COVERED - {name.lower()})
-        jobs.append((f"explainer/{sl}/macro-transmission.html", [name, cap], banned, name))
+        terms = capital_terms(name)
+        jobs.append((f"explainer/{sl}/macro-transmission.html", terms, banned, name))
 
     for path, terms, banned, label in jobs:
         if path in manifest and len(manifest[path]) >= 1:
             print(f"  cached  {path:<52} {len(manifest[path])}")
             continue
-        got, meta = fetch_for(path, terms, banned, want=WANT, budget_s=BUDGET)
+        # The place gate needs a regex, not a single string, because a capital
+        # has several spellings ("Washington" / "Washington, D.C." / "New
+        # York"). Passing only the first one rejected files titled with the
+        # others. build_place_regex turns the accepted set into one alternation
+        # so the file has to name one of them, and no disallowed city counts.
+        place_re = build_place_regex(terms)
+        page_ban = build_page_ban(label)
+        got, meta = fetch_for(path, terms, banned, want=WANT, budget_s=BUDGET,
+                              place=place_re, page_ban=page_ban)
         clean = []
         for g in got:
             if not g["author"]:

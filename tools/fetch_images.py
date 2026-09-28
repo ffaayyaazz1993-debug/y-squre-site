@@ -26,6 +26,8 @@ to the Commons file page. The licence and author are rendered in the figcaption,
 not hidden in a credits page, because CC BY-SA attribution must be visible.
 """
 import json, os, re, sys, time, unicodedata, urllib.parse, urllib.request
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import image_subjects as IMG_SUBJ
 
 UA = ("Y-Square/1.0 (https://y-squre.com; static site build) "
       "python-urllib/3 (contact: site owner)")
@@ -104,28 +106,42 @@ def search(term, limit=12, timeout=12):
 
 
 OTHER_CITY = re.compile(
-    r"\b(shanghai|shenzhen|guangzhou|hong kong|macau|chongqing|"
-    r"utah|texas|california|new york|florida|chicago|seattle|"
+    r"\b(guangzhou|hong kong|macau|chongqing|"
+    r"utah|texas|california|florida|oregon|kentucky|seattle|"
     r"chiang mai|phuket|penang|johor|"
     r"kabul|karachi|lahore|dhaka|colombo|kathmandu|"
     r"ho chi minh|da nang|bandung|surabaya|medan|"
-    r"zhangjiajie|huangshan|"
+    r"zhangjiajie|huangshan|guilin|"
     r"sheffield|manchester|liverpool|edinburgh|"
     r"marseille|lyon|munich|hamburg|frankfurt|barcelona|madrid|"
     r"venice|milan|naples|"
-    r"quebec|montreal|toronto|vancouver)\b", re.I)
+    r"quebec|montreal|vancouver|"
+    # New York, Chicago, Toronto, Mumbai, Shanghai, Zurich, Geneva and Basel are
+    # deliberately ABSENT, even though they appear on some country's accepted
+    # list. A single global list cannot both accept "Lower Manhattan" for the
+    # United States and reject a foreign file that mentions New York in
+    # passing -- the two rules contradict and the file loses. Anything
+    # disallowed only for a particular country now lives in that country's
+    # page_ban instead, so the ban is applied where it is actually true.
+    r"nice|bordeaux|toulouse|glasgow|osaka|kyoto|nagoya|"
+    r"bangalore|chennai|kolkata|vladivostok|sochi|"
+    r"krabi|perth|brisbane|adelaide|hoi an|phu quoc|bali)\b", re.I)
 
+# Words that mark a file as being about somewhere, as opposed to being about an
+# object, a person or an abstract idea. Used to tell "a photograph of Paris"
+# from "a photograph of a bridge", when deciding whether a disallowed city name
+# in the description is disqualifying or incidental.
 PLACEWORDS = re.compile(
-    r"\b(skyline|sky line|cityscape|panorama|downtown|waterfront|"
-    r"port\b|harbour|harbor|airport|financial district|central bank|"
-    r"stock exchange|market|parliament|government house|presidential palace|"
-    r"city centre|city center|capital)\b", re.I)
+    r"\b(city|town|village|skyline|harbour|harbor|port|portrait|street|"
+    r"square|district|province|region|island|capital|downtown|old town|"
+    r"medina|borough|municipality|pano|panorama|landscape|river|coast|"
+    r"bay|lake|mountain|bridge|building|station|airport)\b", re.I)
 
 # Subjects that are genuinely not a place, so PLACEWORDS must not be required.
 NONPLACE = re.compile(r"\b(bank|central bank|stock exchange)\b", re.I)
 
 
-def pick(cands, must_terms, banned_terms, budget_s, place=None):
+def pick(cands, must_terms, banned_terms, budget_s, place=None, page_ban=None):
     """Accept only files that name the article's own subject.
 
     `place` is the specific city or landmark the query is about. When given,
@@ -144,26 +160,59 @@ def pick(cands, must_terms, banned_terms, budget_s, place=None):
             continue
         if REJECT.search(blob):
             continue
-        # the subject must actually be named in the file
-        if not re.search(rf"\b{re.escape(must_terms[0])}\b", blob, re.I):
+        # Artwork and archival prints are excluded outright. They can be
+        # perfectly on-topic by place name and still say nothing about a modern
+        # economy, which is the failure mode this whole gate exists to prevent.
+        if IMG_SUBJ.ERA.search(blob):
+            continue
+        if IMG_SUBJ.EVENT.search(blob):
+            continue
+        # The subject must actually be named in the file.
+        #
+        # It is enough for ANY of the subject terms to appear, not just the
+        # first. Requiring the country name specifically was wrong: Commons
+        # titles a photograph of Paris "Paris, Notre Dame", not "France, Notre
+        # Dame", so requiring "France" rejected every good photograph of the
+        # capital and left the France, Tunisia and United States pages with no
+        # image at all. The capital is the subject; the country name is only
+        # one way the subject may be written. What still has to hold is that a
+        # DISALLOWED city never counts as a match -- see the OTHER_CITY check
+        # below, which is what stops "Washington, Utah" standing in for the
+        # United States.
+        if not any(re.search(rf"\b{re.escape(t)}\b", blob, re.I) for t in must_terms):
             continue
         # a photograph of somewhere else is not relevant to this country
         if any(re.search(rf"\b{re.escape(b)}\b", blob, re.I) for b in banned_terms):
             continue
-        if place and not NONPLACE.search(place):
+        if place and not (hasattr(place, "search") and place.search("bank")):
             # The place must be named in the file. Falling back to "some place
             # word appeared" is what let Zhangjiajie onto the China page and a
             # heron onto Malaysia, so there is no fallback: no capital in the
             # title or description means it is a picture of somewhere else.
-            if not re.search(rf"\b{re.escape(place)}\b", blob, re.I):
+            # `place` may be a plain string or a compiled alternation of every
+            # accepted spelling of the capital. Match either without wrapping a
+            # regex in re.escape, which would turn it into a literal.
+            pat = place if hasattr(place, "search") else \
+                re.compile(rf"\b{re.escape(place)}\b", re.I)
+            if not pat.search(blob):
                 continue
-            # Ambiguous place names: "Washington, Utah" is not the US capital,
-            # and a country plus a different city is not the capital either.
-            bare = must_terms[0]
-            if re.search(rf"\b{re.escape(bare)}\b", blob, re.I):
-                if OTHER_CITY.search(blob):
-                    continue
-            elif PLACEWORDS.search(blob) and OTHER_CITY.search(blob):
+            # A named place is not enough on its own: "Washington, Utah" and
+            # "Little Venice in Colmar" both name a place this site covers
+            # under a different country or a different place entirely. If the
+            # file names ANY disallowed city or a US state, it is not the
+            # subject, whatever else it says.
+            #
+            # This has to be unconditional. Checking it only when some other
+            # term was absent let "Washington, Utah, United States" through,
+            # because the description happened to contain "United States" and
+            # so took a branch that skipped the disambiguation entirely.
+            if OTHER_CITY.search(blob):
+                continue
+            # Per-page ban. The global list cannot hold every disallowed city,
+            # because some of them are the subject of a different page. This is
+            # the list that is specific to the article being fetched, so the
+            # United States page rejects Utah while still accepting New York.
+            if page_ban and re.search(page_ban, blob, re.I):
                 continue
         # usable resolution and sane aspect
         if c["mime"] not in ("image/jpeg", "image/png"):
@@ -180,8 +229,16 @@ def pick(cands, must_terms, banned_terms, budget_s, place=None):
     return accepted
 
 
-def fetch_for(article_key, terms, banned, want=2, budget_s=90, max_calls=3):
-    """Try progressively more specific queries. Stops on the time budget."""
+def fetch_for(article_key, terms, banned, want=2, budget_s=90, max_calls=3,
+              place=None, page_ban=None):
+    """Try progressively more specific queries. Stops on the time budget.
+
+    `place` is the specific city the article is about, and is passed separately
+    because `terms` now carries several accepted spellings. Taking terms[-1] as
+    the place was wrong: with alternate spellings appended, the last term is
+    whichever alternative sorted last, so a United States page was gated on
+    "chicago" and rejected every photograph of Washington.
+    """
     t0, calls, got, tried = time.time(), 0, [], set()
     for term in terms:
         if time.time() - t0 > budget_s or len(got) >= want or calls >= max_calls:
@@ -192,12 +249,11 @@ def fetch_for(article_key, terms, banned, want=2, budget_s=90, max_calls=3):
         except Exception as e:
             print(f"    query failed ({e.__class__.__name__})")
             continue
-        # must_terms is EVERY term that must be present. A Qatar page must not
-        # accept a file that only happens to say "Doha" in a description about
-        # a visiting head of state, so the primary subject term is required and
-        # any other-country hit disqualifies outright.
+        # must_terms is every spelling of the subject that is acceptable. A file
+        # has to name at least one of them, and must not name a place this site
+        # covers under a different country.
         for c in pick(cands, terms, banned, budget_s - (time.time() - t0),
-                      place=terms[-1] if len(terms) > 1 else None):
+                      place=place, page_ban=page_ban):
             if c["url"] not in tried:
                 tried.add(c["url"])
                 got.append(c)

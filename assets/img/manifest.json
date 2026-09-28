@@ -19,7 +19,6 @@
    "title": "London MMB \u00bb2M1 Threadneedle Street.jpg"
   }
  ],
- "blog/2026/09/26/understanding-currency-depreciation.html": [],
  "explainer/china/macro-transmission.html": [
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Beijing_China_Woman-cleaning-West-Lake-01.jpg/1920px-Beijing_China_Woman-cleaning-West-Lake-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -282,7 +281,6 @@
    "title": "2021-05-13 Timor-Leste 2.jpg"
   }
  ],
- "explainer/france/macro-transmission.html": [],
  "explainer/germany/macro-transmission.html": [
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Brandenburg_Gate_-_Brandenburger_Tor_-_Berlin_-_Germany_-_02.jpg/1920px-Brandenburg_Gate_-_Brandenburger_Tor_-_Berlin_-_Germany_-_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -317,24 +315,6 @@
    "licence": "CC BY-SA 3.0",
    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
    "title": "Bern Panorama von Rosengarten 20211007.jpg"
-  }
- ],
- "explainer/united-kingdom/macro-transmission.html": [
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Common_pigeon_at_Waterlow_Park%2C_London%2C_United_Kingdom_01.jpg/1920px-Common_pigeon_at_Waterlow_Park%2C_London%2C_United_Kingdom_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File%3ACommon_pigeon_at_Waterlow_Park%2C_London%2C_United_Kingdom_01.jpg",
-   "author": "Satdeep Gill",
-   "licence": "CC BY-SA 4.0",
-   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
-   "title": "Common pigeon at Waterlow Park, London, United Kingdom 01.jpg"
-  },
-  {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Supreme_Court_of_the_United_Kingdom%2C_Court_1_Interior%2C_London%2C_UK_-_Diliff.jpg/1920px-Supreme_Court_of_the_United_Kingdom%2C_Court_1_Interior%2C_London%2C_UK_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File%3ASupreme_Court_of_the_United_Kingdom%2C_Court_1_Interior%2C_London%2C_UK_-_Diliff.jpg",
-   "author": "Diliff",
-   "licence": "CC BY-SA 3.0",
-   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
-   "title": "Supreme Court of the United Kingdom, Court 1 Interior, London, UK - Diliff.jpg"
   }
  ],
  "explainer/saudi-arabia/macro-transmission.html": [
@@ -491,7 +471,6 @@
    "title": "Olympic Stadium, Rabat (13).jpg"
   }
  ],
- "explainer/tunisia/macro-transmission.html": [],
  "explainer/libya/macro-transmission.html": [
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/LIBYA-Tripoli.jpg/1920px-LIBYA-Tripoli.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -564,7 +543,6 @@
    "title": "Ottawa, Ontario, Canada.jpg"
   }
  ],
- "explainer/united-states/macro-transmission.html": [],
  "explainer/mexico/macro-transmission.html": [
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Ciudad.de.Mexico.City.Distrito.Federal.DF.Paseo.Reforma.Skyline.jpg/1920px-Ciudad.de.Mexico.City.Distrito.Federal.DF.Paseo.Reforma.Skyline.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -601,14 +579,96 @@
    "title": "Australian House of Representatives - Parliament of Australia.jpg"
   }
  ],
- "explainer/new-zealand/macro-transmission.html": [
+ "explainer/tunisia/macro-transmission.html": [
   {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Memorial_Day_Commemoration%2C_Wellington%2C_New_Zealand_on_31_May_2022_-_1.jpg/1920px-Memorial_Day_Commemoration%2C_Wellington%2C_New_Zealand_on_31_May_2022_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File%3AMemorial_Day_Commemoration%2C_Wellington%2C_New_Zealand_on_31_May_2022_-_1.jpg",
-   "author": "US Embassy New Zealand",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Canal_Tunis_-_Rad%C3%A8s.jpg/1920px-Canal_Tunis_-_Rad%C3%A8s.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File%3ACanal_Tunis_-_Rad%C3%A8s.jpg",
+   "author": "Smailtn Camera location 36\u00b0 48\u2032 00.01\u2033 N, 10\u00b0 12\u2032 27.5\u2033 E View this and other nearby images on: OpenStreetMap 36.800004;",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "title": "Canal Tunis - Rad\u00e8s.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Coucher_du_Soleil_sur_le_Lac_de_Tunis.jpg/1920px-Coucher_du_Soleil_sur_le_Lac_de_Tunis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File%3ACoucher_du_Soleil_sur_le_Lac_de_Tunis.jpg",
+   "author": "Smailtn Camera location 36\u00b0 47\u2032 37.36\u2033 N, 10\u00b0 15\u2032 53.18\u2033 E View this and other nearby images on: OpenStreetMap 36.793712",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "title": "Coucher du Soleil sur le Lac de Tunis.jpg"
+  }
+ ],
+ "blog/2026/09/26/understanding-currency-depreciation.html": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Specimen_500_euro_note%2C_Europe%2C_2002._Lent_by_the_Bank_of_England%3B_it%27s_no_longer_available_in_the_UK._On_display_at_the_British_Museum_in_London.jpg/1920px-Specimen_500_euro_note%2C_Europe%2C_2002._Lent_by_the_Bank_of_England%3B_it%27s_no_longer_available_in_the_UK._On_display_at_the_British_Museum_in_London.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File%3ASpecimen_500_euro_note%2C_Europe%2C_2002._Lent_by_the_Bank_of_England%3B_it%27s_no_longer_available_in_the_UK._On_display_at_the_British_Museum_in_London.jpg",
+   "author": "Osama Shukir Muhammed Amin FRCP(Glasg)",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "title": "Specimen 500 euro note, Europe, 2002. Lent by the Bank of England; it's no longer available in the UK. On display at the British Museum in London.jpg"
+  }
+ ],
+ "explainer/france/macro-transmission.html": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Paris_from_the_Arc_de_Triomphe%2C_17_October_2019.jpg/1920px-Paris_from_the_Arc_de_Triomphe%2C_17_October_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File%3AParis_from_the_Arc_de_Triomphe%2C_17_October_2019.jpg",
+   "author": "Pierre Blach\u00e9 from Paris, France",
+   "licence": "CC0",
+   "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "title": "Paris from the Arc de Triomphe, 17 October 2019.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Paris_75005_Quai_de_Montebello_Bouquinistes_20071014.jpg/1920px-Paris_75005_Quai_de_Montebello_Bouquinistes_20071014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File%3AParis_75005_Quai_de_Montebello_Bouquinistes_20071014.jpg",
+   "author": "Benh LIEU SONG",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "title": "Paris 75005 Quai de Montebello Bouquinistes 20071014.jpg"
+  }
+ ],
+ "explainer/united-kingdom/macro-transmission.html": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Palace_of_Westminster_from_the_dome_on_Methodist_Central_Hall.jpg/1920px-Palace_of_Westminster_from_the_dome_on_Methodist_Central_Hall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File%3APalace_of_Westminster_from_the_dome_on_Methodist_Central_Hall.jpg",
+   "author": "Colin",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "title": "Palace of Westminster from the dome on Methodist Central Hall.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Supreme_Court_of_the_United_Kingdom%2C_Court_1_Interior%2C_London%2C_UK_-_Diliff.jpg/1920px-Supreme_Court_of_the_United_Kingdom%2C_Court_1_Interior%2C_London%2C_UK_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File%3ASupreme_Court_of_the_United_Kingdom%2C_Court_1_Interior%2C_London%2C_UK_-_Diliff.jpg",
+   "author": "Diliff",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "title": "Supreme Court of the United Kingdom, Court 1 Interior, London, UK - Diliff.jpg"
+  }
+ ],
+ "explainer/united-states/macro-transmission.html": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Aerial_view_of_White_House_and_downtown%2C_Washington%2C_D.C_LCCN2010630891.jpg/1920px-Aerial_view_of_White_House_and_downtown%2C_Washington%2C_D.C_LCCN2010630891.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File%3AAerial_view_of_White_House_and_downtown%2C_Washington%2C_D.C_LCCN2010630891.jpg",
+   "author": "Carol M. Highsmith",
    "licence": "Public domain",
    "licence_url": "",
-   "title": "Memorial Day Commemoration, Wellington, New Zealand on 31 May 2022 - 1.jpg"
+   "title": "Aerial view of White House and downtown, Washington, D.C LCCN2010630891.jpg"
+  },
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Great_Hall%2C_Washington_Union_Station_%282024%29-L1005585.jpg/1920px-Great_Hall%2C_Washington_Union_Station_%282024%29-L1005585.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File%3AGreat_Hall%2C_Washington_Union_Station_%282024%29-L1005585.jpg",
+   "author": "Frank Schulenburg",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "title": "Great Hall, Washington Union Station (2024)-L1005585.jpg"
+  }
+ ],
+ "explainer/new-zealand/macro-transmission.html": [
+  {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Law_Courts_during_blue_hour%2C_Christchurch%2C_New_Zealand.jpg/1920px-Law_Courts_during_blue_hour%2C_Christchurch%2C_New_Zealand.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File%3ALaw_Courts_during_blue_hour%2C_Christchurch%2C_New_Zealand.jpg",
+   "author": "Michal Klajban",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "title": "Law Courts during blue hour, Christchurch, New Zealand.jpg"
   },
   {
    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Parliament_House%2C_Wellington%2C_New_Zealand_%282010%29.jpg/1920px-Parliament_House%2C_Wellington%2C_New_Zealand_%282010%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",

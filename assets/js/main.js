@@ -161,3 +161,63 @@
     YSQ.init();
   }
 })();
+
+
+/* Relative timestamps on /latest/.
+   The build writes the absolute date, because a build-time "6 mins ago" is a
+   lie by the time anyone reads the page. Here we recompute the interval from
+   the datetime attribute, which is the one thing that stays true. Anything
+   older than a week is left as a date: "3 weeks ago" on a 2019 explainer is
+   noise, and a stale-looking archive date is honest. */
+(function () {
+  // Thresholds, not divisors. A naive loop switches to hours at 60 minutes and
+  // then rounds, which reports 90 minutes as "2 hours ago" -- an overstatement
+  // by half an hour, in the one place a reader is trusting the number. Units
+  // step up only at twice the smaller unit, and the count always rounds down,
+  // so "ago" is never applied to a larger interval than actually elapsed.
+  var UNITS = [
+    [120, "min", 60],
+    [7200, "hour", 3600],
+    [172800, "day", 86400]
+  ];
+
+  function rel(iso) {
+    var t = Date.parse(iso);
+    if (isNaN(t)) return null;
+    var secs = (Date.now() - t) / 1000;
+    if (secs < 0 || secs > 604800) return null;   // future, or over a week old
+    if (secs < 90) return "just now";
+    for (var i = 0; i < UNITS.length; i++) {
+      var size = UNITS[i][0], name = UNITS[i][1];
+      if (secs < size) {
+        var n = Math.max(1, Math.floor(secs / UNITS[i][2]));
+        return n + " " + name + (n === 1 ? "" : "s") + " ago";
+      }
+    }
+    var d = Math.round(secs / 86400);
+    return d + " day" + (d === 1 ? "" : "s") + " ago";
+  }
+
+  function run() {
+    var nodes = document.querySelectorAll("time[datetime]");
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      if (el.getAttribute("data-rel") === "done") continue;
+      var txt = rel(el.getAttribute("datetime"));
+      if (!txt) { el.setAttribute("data-rel", "done"); continue; }
+      // Keep the true date reachable: it stays in the title and the datetime
+      // attribute, so a hover or a screen reader still gets the exact instant.
+      el.setAttribute("title", el.textContent.trim());
+      el.textContent = txt;
+      el.setAttribute("data-rel", "done");
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", run);
+  } else {
+    run();
+  }
+  // Stale again if the tab is left open overnight.
+  setInterval(run, 60000);
+})();

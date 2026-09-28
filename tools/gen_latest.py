@@ -60,8 +60,22 @@ def when(a, long=False):
     return dt.strftime("%d %b %Y, %H:%M")
 
 
+def reltime(a):
+    """Absolute date in the markup; main.js rewrites it to "6 mins ago".
+
+    Rendering relative text at build time would freeze it -- a page generated on
+    Monday would still claim "6 mins ago" on Sunday. Shipping the absolute date
+    and letting JS compute the interval means the number is right whenever the
+    page is actually read, and no-JS readers get a true date rather than a
+    stale one."""
+    return (a.get("published") or a.get("updated") or "")
+
+
 def lead_card(a, img):
     """Rank 0. The image is the point of the lead, so it leads the card."""
+    # Text first, image second. The reference puts the headline and summary
+    # above the photograph in the lead block, so the story is legible before any
+    # image loads and the image reads as evidence for a claim already made.
     if img:
         figure = (f'      <a class="lg-img" href="{a["url"]}" tabindex="-1" aria-hidden="true">'
                   f'<img src="{esc(img["url"])}" alt="" loading="eager" width="1400" height="900">'
@@ -70,9 +84,9 @@ def lead_card(a, img):
         figure = ""
     updated = ""
     if a.get("updated"):
-        updated = (f'<span class="lg-updated">Updated {esc(when(a, True))}</span>')
+        updated = f'<span class="lg-updated">Updated {esc(when(a, True))}</span>'
     return f"""    <article class="lg-lead">
-{figure}      <div class="lg-body">
+      <div class="lg-body">
         <div class="lg-kicker">
           <a class="kicker {a['kicker']}" href="{a['sect_href']}">{esc(a['section'])}</a>
           <span class="lg-type">{esc(a['type'])}</span>
@@ -85,7 +99,7 @@ def lead_card(a, img):
           <span class="meta-sep">/</span>{esc(a['read'])}
         </p>
       </div>
-    </article>"""
+{figure}    </article>"""
 
 
 def secondary_card(a, img):

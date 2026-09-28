@@ -195,7 +195,7 @@
 
 .lg {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 65fr) minmax(0, 35fr);
   gap: 30px 34px;
   align-items: start;
 }
@@ -218,7 +218,12 @@
   object-fit: cover;
 }
 
-.lg-body { padding-top: 16px; }
+.lg-body { padding-bottom: 18px; }
+
+/* The lead is a text-first block: headline, summary, timestamp, then the
+   photograph. The image is evidence for a claim already made, so it never
+   sits above the words. */
+.lg-lead .lg-img { margin-top: 2px; }
 
 .lg-kicker {
   display: flex;
@@ -238,8 +243,9 @@
 
 .lg-headline {
   margin: 0 0 10px;
-  font: 700 2.05rem/1.16 var(--serif);
-  letter-spacing: -.012em;
+  font: 700 2.55rem/1.1 var(--serif);
+  letter-spacing: -.018em;
+  text-wrap: balance;
 }
 
 .lg-headline a { color: var(--navy); text-decoration: none; }
@@ -301,7 +307,7 @@
 
 .sec-headline {
   margin: 0 0 7px;
-  font: 700 1.12rem/1.26 var(--serif);
+  font: 700 1.04rem/1.28 var(--serif);
 }
 
 .sec-headline a,
@@ -397,4 +403,28 @@
 @media print {
   .lg-img, .sec-img, .gc-img { display: none; }
   .lg { grid-template-columns: 1fr; }
+}
+
+
+/* Section label in the reference style. "Commentary" there is a small,
+   letter-spaced, coloured label sitting above its headline -- a tag, not a
+   heading. Y-Square's accent stands in for Reuters' link blue. */
+.sec-kicker .kicker,
+.gc-kicker .kicker,
+.lg-kicker .kicker {
+  font: 700 .68rem/1 var(--sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.lg-kicker { margin-bottom: 12px; }
+
+/* Timestamps. Absolute date ships in the markup; main.js rewrites it to a
+   relative interval on load, so a page generated on Monday does not still
+   claim "6 mins ago" on Sunday. */
+.lg-meta, .sec-meta, .gc-meta { font-variant-numeric: tabular-nums; }
+.lg-meta time, .sec-meta time, .gc-meta time { white-space: nowrap; }
+
+@media (max-width: 620px) {
+  .lg-headline { font-size: 1.78rem; }
 }
