@@ -95,28 +95,19 @@ TAXONOMY = {
           flat=True),
 
         R("middle-east-north-africa", "Middle East & North Africa",
-          "Conflict spillovers, energy chokepoints, sanctions regimes, and water and "
-          "labour migration. Kept as distinct subregions because a single flat list "
-          "hides the Gulf/Levant distinction that drives the pricing.",
+          "Gulf energy policy and North African sovereign economics. The Levant, the "
+          "Eastern Mediterranean, and Iran & Iraq are out of scope for now and are not "
+          "represented here; this is a deliberate editorial cut, not an oversight.",
           [S("gulf", "Gulf",
              ["Bahrain", "Kuwait", "Oman", "Qatar", "Saudi Arabia",
               "United Arab Emirates"],
              "Oil production policy, OPEC+ compliance, and regional capital flows."),
-           S("levant", "Levant",
-             ["Jordan", "Lebanon", "Palestinian territories", "Syria"],
-             "Refugee and aid flows, reconstruction financing, and border economics."),
            S("north-africa", "North Africa",
              ["Algeria", "Egypt", "Libya", "Morocco", "Sudan", "Tunisia", "Mauritania"],
-             "Sovereign debt, energy subsidies, and Mediterranean supply routes."),
-           S("eastern-mediterranean", "Eastern Mediterranean",
-             ["Cyprus", "Greece", "Israel", "Turkey"],
-             "Maritime boundaries, energy transit, and military posture."),
-           S("iran-iraq", "Iran & Iraq",
-             ["Iran", "Iraq"],
-             "Sanctions enforcement, oil exports, and militia-linked supply risk."),
-           S("turkey-anatolia", "Turkey & Anatolia",
-             ["Turkey"],
-             "Inflation credibility, lira policy, and regional economic influence.")]),
+             "Sovereign debt, energy subsidies, and Mediterranean supply routes.")],
+          also=["Coverage here is limited to the Gulf and North Africa. The Levant, the "
+                "Eastern Mediterranean, and Iran & Iraq were withdrawn and redirect to "
+                "/geopolitics/middle-east-north-africa/."]),
 
         R("sub-saharan-africa", "Sub-Saharan Africa",
           "Commodity and debt dynamics, resource-exporter fiscal dependence, and regional "

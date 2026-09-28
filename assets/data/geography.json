@@ -70,7 +70,7 @@
    "slug": "middle-east-north-africa",
    "name": "Middle East & North Africa",
    "path": "/geopolitics/middle-east-north-africa/",
-   "lede": "Conflict spillovers, energy chokepoints, sanctions regimes, and water and labour migration. Kept as distinct subregions because a single flat list hides the Gulf/Levant distinction that drives the pricing.",
+   "lede": "Gulf energy policy and North African sovereign economics. The Levant, the Eastern Mediterranean, and Iran & Iraq are out of scope for now and are not represented here; this is a deliberate editorial cut, not an oversight.",
    "sections": [
     {
      "slug": "gulf",
@@ -102,29 +102,6 @@
       }
      ],
      "scope": "Oil production policy, OPEC+ compliance, and regional capital flows."
-    },
-    {
-     "slug": "levant",
-     "name": "Levant",
-     "countries": [
-      {
-       "name": "Jordan",
-       "anchor": "jordan"
-      },
-      {
-       "name": "Lebanon",
-       "anchor": "lebanon"
-      },
-      {
-       "name": "Palestinian territories",
-       "anchor": "palestinian-territories"
-      },
-      {
-       "name": "Syria",
-       "anchor": "syria"
-      }
-     ],
-     "scope": "Refugee and aid flows, reconstruction financing, and border economics."
     },
     {
      "slug": "north-africa",
@@ -160,58 +137,11 @@
       }
      ],
      "scope": "Sovereign debt, energy subsidies, and Mediterranean supply routes."
-    },
-    {
-     "slug": "eastern-mediterranean",
-     "name": "Eastern Mediterranean",
-     "countries": [
-      {
-       "name": "Cyprus",
-       "anchor": "cyprus"
-      },
-      {
-       "name": "Greece",
-       "anchor": "greece"
-      },
-      {
-       "name": "Israel",
-       "anchor": "israel"
-      },
-      {
-       "name": "Turkey",
-       "anchor": "turkey"
-      }
-     ],
-     "scope": "Maritime boundaries, energy transit, and military posture."
-    },
-    {
-     "slug": "iran-iraq",
-     "name": "Iran & Iraq",
-     "countries": [
-      {
-       "name": "Iran",
-       "anchor": "iran"
-      },
-      {
-       "name": "Iraq",
-       "anchor": "iraq"
-      }
-     ],
-     "scope": "Sanctions enforcement, oil exports, and militia-linked supply risk."
-    },
-    {
-     "slug": "turkey-anatolia",
-     "name": "Turkey & Anatolia",
-     "countries": [
-      {
-       "name": "Turkey",
-       "anchor": "turkey"
-      }
-     ],
-     "scope": "Inflation credibility, lira policy, and regional economic influence."
     }
    ],
-   "also": [],
+   "also": [
+    "Coverage here is limited to the Gulf and North Africa. The Levant, the Eastern Mediterranean, and Iran & Iraq were withdrawn and redirect to /geopolitics/middle-east-north-africa/."
+   ],
    "flat": false
   },
   {

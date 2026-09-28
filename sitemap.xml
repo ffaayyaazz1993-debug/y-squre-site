@@ -181,12 +181,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://y-squre.com/geopolitics/middle-east-north-africa/eastern-mediterranean/</loc>
-    <lastmod>2026-09-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://y-squre.com/geopolitics/middle-east-north-africa/gulf/</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -199,25 +193,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://y-squre.com/geopolitics/middle-east-north-africa/iran-iraq/</loc>
-    <lastmod>2026-09-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://y-squre.com/geopolitics/middle-east-north-africa/levant/</loc>
-    <lastmod>2026-09-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://y-squre.com/geopolitics/middle-east-north-africa/north-africa/</loc>
-    <lastmod>2026-09-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://y-squre.com/geopolitics/middle-east-north-africa/turkey-anatolia/</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

@@ -46,6 +46,11 @@
   RewriteRule ^geopolitics/north-america/central-america/?$   /geopolitics/  [R=301,L]
   RewriteRule ^geopolitics/north-america/caribbean/?$         /geopolitics/  [R=301,L]
 
+  # MENA is narrowed to the Gulf and North Africa. The Levant, the Eastern
+  # Mediterranean, and Iran & Iraq are withdrawn; their pages are deleted and
+  # these land on the region index rather than a 404.
+  RewriteRule ^geopolitics/middle-east-north-africa/(levant|eastern-mediterranean|iran-iraq|turkey-anatolia)/?$ /geopolitics/middle-east-north-africa/ [R=301,L]
+
   # European coverage is narrowed to Western Europe (France, Germany,
   # Switzerland, United Kingdom). The other subregions are retired and their
   # pages deleted; they redirect to the Europe index so an inbound link lands

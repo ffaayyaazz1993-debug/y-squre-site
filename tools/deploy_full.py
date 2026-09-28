@@ -254,6 +254,11 @@ STALE = [
     "geopolitics/europe/central-europe/index.html",
     # Europe is flat: the Western Europe subregion is no longer a page.
     "geopolitics/europe/western-europe/index.html",
+    # MENA narrowed to the Gulf and North Africa.
+    "geopolitics/middle-east-north-africa/levant/index.html",
+    "geopolitics/middle-east-north-africa/eastern-mediterranean/index.html",
+    "geopolitics/middle-east-north-africa/iran-iraq/index.html",
+    "geopolitics/middle-east-north-africa/turkey-anatolia/index.html",
     "macro/currencies-macro/index.html",
 ]
 print("=== removing superseded files ===")
