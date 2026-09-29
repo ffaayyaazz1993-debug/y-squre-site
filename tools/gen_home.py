@@ -250,7 +250,15 @@ def latest():
     # reachable from every region panel). A third row restating them was noise,
     # and on the Latest page it read as a section header for content that was
     # never sectioned. Removed rather than restyled.
-    b += crumbs([("/latest/", "Home"), ("/latest/", "Latest")])
+    # No breadcrumb on the front page. It read "Home > Latest" with BOTH crumbs
+    # pointing at /latest/ -- a trail that went nowhere and told a reader on the
+    # newest-stories page that they were somewhere deeper. A breadcrumb earns its
+    # space by showing where you are in a hierarchy; at the root of one there is
+    # no hierarchy left to show. The 96 pages that sit below the front page keep
+    # their trails, which are real.
+    #
+    # <h1> stays. The page still needs one heading for structure and for screen
+    # readers; only the visible trail is gone.
     b += '  <main id="main">\n' + ad("Advertisement", "ad-top")
     # The "Latest" title block that sat here duplicated the breadcrumb directly
     # above it and pushed the first story 145px down the page. It was also the
