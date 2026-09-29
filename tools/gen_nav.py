@@ -104,9 +104,16 @@ def mega_region(region):
                     f'      </div>')
             cols.append('    <div class="mega-col">\n' + "\n".join(blocks) + "\n    </div>")
 
-    also = ""
-    if region.get("also"):
-        also = ('    <p class="mega-note">' + esc(region["also"][0]) + "</p>")
+    # The "also" note used to be repeated at the foot of every region panel:
+    # "European coverage is a four-country subset for now. The subregions that
+    # previously existed here -- Northern Europe, ... -- are retired and
+    # redirect to /geopolitics/europe/." It is editorial housekeeping about the
+    # site's own taxonomy, and it sat inside the control a reader opens to find
+    # country links. The same text is already on the region page itself as a
+    # page-note, where it belongs, so nothing is lost by dropping the duplicate.
+    #
+    # The field stays in geography.json: gen_sections2.py renders it on the
+    # region page. Only the mega-panel copy is removed.
 
     pid = _panel_id("m", region["slug"])
     return f'''
@@ -119,7 +126,6 @@ def mega_region(region):
           <div class="mega-cols">
 {chr(10).join(cols)}
           </div>
-{also}
         </div>
       </div>'''
 
@@ -139,15 +145,16 @@ def mega_topic(topic):
         f'<span class="mega-item-scope">{esc(c["scope"])}</span></li>'
         for c in topic["children"])
 
-    if topic["slug"] == "blog":
-        kinds = "".join(
-            f'<span class="type-chip" data-type="{c["id"]}">{esc(c["label"])}</span>'
-            for c in CONTENT_TYPES)
-        note = ('    <p class="mega-note">Blog content is analysis, opinion and '
-                'explainers. It is never presented as event reporting.</p>')
-    else:
-        kinds = ""
-        note = ""
+    # The content-type chips and the "never event reporting" note used to be
+    # gated on topic["slug"] == "blog". No panel with that slug is ever built:
+    # the only topic panel is the Global one, whose slug is "global", because
+    # Blog is a child inside it rather than a panel of its own. The branch was
+    # unreachable, so the chips and the note never rendered on any page.
+    #
+    # The distinction it made is still made where a reader actually meets it --
+    # in the Blog section page and on the articles themselves -- so nothing is
+    # lost by deleting an arm that could not execute.
+    kinds = ""
 
     return f'''
       <div class="mega" id="{pid}" data-open="false" aria-label="{esc(topic["name"])} sections">
@@ -161,8 +168,6 @@ def mega_topic(topic):
       <ul class="mega-list mega-list-topic">{items}</ul>
             </div>
           </div>
-          {kinds and f'<div class="mega-types">{kinds}</div>'}
-{note}
         </div>
       </div>'''
 

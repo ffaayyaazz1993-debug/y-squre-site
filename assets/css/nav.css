@@ -232,6 +232,10 @@
 
 .mega-group { margin-bottom: 16px; }
 
+.mega-types { margin-top: 12px; display: flex; gap: 7px; flex-wrap: wrap; }
+
+.type-chip { font: 600 .68rem/1 var(--sans); letter-spacing: .06em; text-transform: uppercase; padding: 5px 8px; border: 1px solid var(--line); color: var(--faint); }
+
 .mega-list { list-style: none; margin: 0; padding: 0; }
 .mega-list li { margin: 0; }
 .mega-list a {
@@ -262,25 +266,6 @@
   letter-spacing: 0;
   color: var(--faint);
   line-height: 1.4;
-}
-
-.mega-note {
-  margin: 4px 0 0;
-  padding-top: 11px;
-  border-top: 1px solid var(--line);
-  font-size: .76rem;
-  color: var(--faint);
-  max-width: 78ch;
-}
-
-.mega-types { margin-top: 12px; display: flex; gap: 7px; flex-wrap: wrap; }
-.type-chip {
-  font: 600 .68rem/1 var(--sans);
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  padding: 5px 8px;
-  border: 1px solid var(--line);
-  color: var(--faint);
 }
 
 /* --------------------------------------------------- 4. mobile menu */
@@ -455,7 +440,7 @@
   .mega-cols { grid-template-columns: 1fr; }
   .mega-head { margin-bottom: 6px; }
   .mega-title { font-size: .95rem; }
-  .mega-sub, .mega-note { font-size: .72rem; }
+
   /* 44px minimum per row. These links measured 15px tall at 6px padding, which
      is why the menu felt unusable on a phone. */
   .mega-list a { display: flex; align-items: center; min-height: 44px; padding: 8px 0; font-size: .84rem; }
