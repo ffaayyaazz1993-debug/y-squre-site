@@ -172,12 +172,16 @@ def _trigger(label, href, panel_id):
 
 
 def primary_nav(current=""):
-    """Primary bar: Latest, then every region."""
+    """Primary bar: every region.
+
+    "Latest" used to be the first item here. It is the front page now (see the
+    301 at / in .htaccess), and a nav item that links to the page you are
+    already on is noise, so it moved to the wordmark: the logo carries that
+    destination instead. That is the one place a reader looks for "go to the
+    front page", which is why the logo had to become a real link rather than
+    just losing its href.
+    """
     out = []
-    out.append('      <li class="nav-item">\n'
-               f'        <a class="nav-plain" href="/latest/"'
-               f'{"" if current == "latest" else ""}>Latest</a>\n'
-               '      </li>')
     for r in REGIONS:
         pid = _panel_id("m", r["slug"])
         out.append(_trigger(r["name"], r["path"], pid))
@@ -216,7 +220,9 @@ def mobile_menu():
     What ships as HTML is the top-level fallback: the region and topic links
     themselves, so a no-JS mobile reader can still navigate the site.
     """
-    rows = ['<li class="acc-leaf"><a href="/latest/">Latest</a></li>']
+    # No "Latest" leaf: the wordmark directly above this drawer links to the
+    # front page, so a second control for the same destination is a duplicate.
+    rows = []
     g = TOPICS["global"]
     rows.append(f'<li class="acc-leaf"><a href="{g["path"]}">{esc(g["name"])}</a></li>')
     for r in REGIONS:
@@ -247,10 +253,10 @@ def header(current=""):
   <header class="site-header">
     <div class="masthead">
       <div class="wrap masthead-inner">
-        <span class="brand" role="img" aria-label="Y-Squre">
+        <a class="brand" href="/latest/">
           <span class="brand-mark" aria-hidden="true">Y</span>
           <span class="brand-text"><span class="brand-name">Y-SQURE</span></span>
-        </span>
+        </a>
         <p class="tagline">Global News, Data &amp; Analysis</p>
         <div class="masthead-utils">
           <a class="util-link" href="/search/index.html">

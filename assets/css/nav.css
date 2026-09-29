@@ -39,16 +39,19 @@
   padding: 8px 0;
 }
 
-/* The wordmark is deliberately NOT a link. A span, not an anchor: it is not
-   focusable, has no href, and cannot be activated. role="img" with an
-   aria-label keeps it announced as the site name rather than as stray text.
+/* The wordmark is the front-page control. "Latest" used to be the first item
+   in the primary bar and was removed from the nav; its destination moved here,
+   because the logo is where readers look for "back to the front". It is a real
+   anchor, so it is focusable and announces as a link.
 
-   cursor:default is explicit here. Without it the area keeps the text caret,
-   which reads as "you can select this" but also, next to a real nav, looks
-   like a control that failed to become one. The homepage stays reachable
-   through the breadcrumb's Home link. */
+   pointer and the underline are explicit: the flex display and gap come from
+   the shared .brand rule, and a bare <a> in a flex row otherwise picks up
+   UA link styling that shifts the wordmark off the masthead's baseline. */
 .brand { display: flex; align-items: center; gap: 7px; text-decoration: none;
-         cursor: default; user-select: none; }
+         cursor: pointer; flex-shrink: 0; }
+.brand:hover .brand-name, .brand:focus-visible .brand-name { color: var(--navy-2); }
+.brand:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px;
+                       border-radius: 2px; }
 .brand-mark {
   width: 22px; height: 22px;
   display: grid; place-items: center;
@@ -136,7 +139,7 @@
 }
 .nav-item { position: static; }   /* panels anchor to the bar, see .mega */
 
-.nav-plain, .nav-trigger {
+.nav-trigger {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -153,7 +156,7 @@
   white-space: nowrap;
   border-bottom: 3px solid transparent;
 }
-.nav-plain:hover, .nav-trigger:hover {
+.nav-trigger:hover {
   color: #fff;
   background: rgba(255, 255, 255, .07);
   border-bottom-color: var(--accent);
@@ -393,11 +396,11 @@
    burger. Wrapping is preferred over horizontal scroll: a nav you have to
    swipe sideways hides half the sections. */
 @media (max-width: 1560px) {
-  .nav-plain, .nav-trigger { padding: 0 9px; font-size: .73rem; letter-spacing: .015em; }
+  .nav-trigger { padding: 0 9px; font-size: .73rem; letter-spacing: .015em; }
 }
 
 @media (max-width: 1180px) {
-  .nav-plain, .nav-trigger { padding: 0 7px; font-size: .69rem; letter-spacing: 0; }
+  .nav-trigger { padding: 0 7px; font-size: .69rem; letter-spacing: 0; }
   .mega-cols { grid-template-columns: repeat(2, minmax(160px, 1fr)); gap: 2px 24px; }
 }
 
@@ -406,7 +409,7 @@
   /* Two-row nav in the narrow-desktop band. Each trigger keeps its own
      mega-menu, so wrapping costs height, not function. */
   .nav-list { flex-wrap: wrap; }
-  .nav-plain, .nav-trigger { height: 36px; }
+  .nav-trigger { height: 36px; }
   .nav-item { flex: 0 0 auto; }
 }
 
@@ -441,7 +444,7 @@
   /* 44px is the touch minimum, but padding on top of a 44px min-height pushed
      the two nav rows to 230px -- 27% of a phone screen, permanently. The row
      keeps the 44px target and drops the extra vertical padding. */
-  .nav-plain, .nav-trigger {
+  .nav-trigger {
     height: auto;
     min-height: 44px;
     padding: 0 10px;
@@ -501,7 +504,7 @@
 
 @media (max-width: 400px) {
   .brand-name { font-size: 15px; letter-spacing: .1em; }
-  .nav-plain, .nav-trigger { padding: 7px 8px; font-size: .62rem; }
+  .nav-trigger { padding: 7px 8px; font-size: .62rem; }
   .masthead-utils a { font-size: .64rem; padding: 6px 5px; }
 }
 
