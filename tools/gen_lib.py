@@ -157,7 +157,7 @@ def footer():
     return f"""  <footer class="footer">
     <div class="wrap footer-top">
       <div>
-        <div class="footer-brand">Y<span>-</span>Square</div>
+        <div class="footer-brand">Y<span>-</span>Squre</div>
         <p style="font-size:.86rem;line-height:1.6">Independent research on macroeconomics,
         geopolitics and markets. Original analysis, primary sources, stated assumptions.</p>
         <p style="font-size:.86rem;margin-top:10px">

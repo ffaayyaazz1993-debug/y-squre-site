@@ -75,7 +75,7 @@ def region_page(region):
         </tr>'''
             for c in sec["countries"])
         body = f'''  <main id="main" class="wrap page">
-{N.breadcrumb([("Home", "/"), ("Geopolitics", "/geopolitics/"), (name, None)])}
+{N.breadcrumb([("Home", "/latest/"), ("Geopolitics", "/geopolitics/"), (name, None)])}
     <h1>{esc(name)}</h1>
     <p class="page-lede">{esc(region["lede"])}</p>
 
@@ -112,7 +112,7 @@ def region_page(region):
           <p class="sec-card-meta">{n} countr{"y" if n == 1 else "ies"}</p>
         </a>''')
 
-        crumbs = N.breadcrumb([("Home", "/"), ("Geopolitics", "/geopolitics/"),
+        crumbs = N.breadcrumb([("Home", "/latest/"), ("Geopolitics", "/geopolitics/"),
                                (name, None)])
 
         body = f'''  <main id="main" class="wrap page">
@@ -171,7 +171,7 @@ def subregion_page(region, sec):
         f'          <li><a href="/geopolitics/{slug}/{s["slug"]}/">{esc(s["name"])}</a></li>'
         for s in others)
 
-    crumbs = N.breadcrumb([("Home", "/"), ("Geopolitics", "/geopolitics/"),
+    crumbs = N.breadcrumb([("Home", "/latest/"), ("Geopolitics", "/geopolitics/"),
                            (name, region["path"]), (sec["name"], None)])
 
     body = f'''  <main id="main" class="wrap page">
@@ -246,7 +246,7 @@ def topic_page(topic):
     else:
         note = ""
 
-    crumbs = N.breadcrumb([("Home", "/"), (topic["name"], None)])
+    crumbs = N.breadcrumb([("Home", "/latest/"), (topic["name"], None)])
     body = f'''  <main id="main" class="wrap page">
 {crumbs}
     <h1>{esc(topic["name"])}</h1>
@@ -271,7 +271,7 @@ def topic_page(topic):
 
 def topic_child_page(topic, child):
     base = f"{topic['path']}{child['slug']}/"
-    crumbs = N.breadcrumb([("Home", "/"), (topic["name"], topic["path"]),
+    crumbs = N.breadcrumb([("Home", "/latest/"), (topic["name"], topic["path"]),
                            (child["name"], None)])
     is_blog = topic["slug"] == "blog"
     lead = (f'{esc(child["name"])} is part of {topic["name"].lower()} content: '
@@ -327,7 +327,7 @@ def geopolitics_index():
         </a>''')
 
     body = f'''  <main id="main" class="wrap page">
-{N.breadcrumb([("Home", "/"), ("Geopolitics", None)])}
+{N.breadcrumb([("Home", "/latest/"), ("Geopolitics", None)])}
     <h1>Geopolitics</h1>
     <p class="page-lede">Coverage organised by region, then subregion, then
     country. Each region page lists its subregions; each subregion page lists

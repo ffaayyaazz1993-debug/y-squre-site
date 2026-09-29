@@ -74,6 +74,14 @@
 </IfModule>
 
 # --- serving ---------------------------------------------------------------
+# The front page is /latest/ . The site used to ship a second, bespoke
+# home page at the root as well; two canonical front pages is duplicate
+# content on the most valuable URL. 301 so old links and search results
+# pass their signal to the page that replaced it. Declared before
+# DirectoryIndex so it is answered first, and exact-anchored (^/$) so it
+# cannot touch /latest/ or anything else.
+RedirectMatch 301 ^/$ /latest/
+
 DirectoryIndex index.html
 
 <IfModule mod_deflate.c>

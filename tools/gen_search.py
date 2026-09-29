@@ -65,7 +65,7 @@ for c in entries:
 
 body = '''  <main id="main" class="wrap page">
     <nav class="crumbs" aria-label="Breadcrumb"><ol>
-      <li><a href="/">Home</a></li>
+      <li><a href="/latest/">Home</a></li>
       <li><span aria-current="page">Search</span></li>
     </ol></nav>
     <h1>Search</h1>

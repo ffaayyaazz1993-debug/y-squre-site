@@ -39,13 +39,16 @@
   padding: 8px 0;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  text-decoration: none;
-  flex-shrink: 0;
-}
+/* The wordmark is deliberately NOT a link. A span, not an anchor: it is not
+   focusable, has no href, and cannot be activated. role="img" with an
+   aria-label keeps it announced as the site name rather than as stray text.
+
+   cursor:default is explicit here. Without it the area keeps the text caret,
+   which reads as "you can select this" but also, next to a real nav, looks
+   like a control that failed to become one. The homepage stays reachable
+   through the breadcrumb's Home link. */
+.brand { display: flex; align-items: center; gap: 7px; text-decoration: none;
+         cursor: default; user-select: none; }
 .brand-mark {
   width: 22px; height: 22px;
   display: grid; place-items: center;

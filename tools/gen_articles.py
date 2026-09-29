@@ -60,7 +60,7 @@ def article_page(*, path, title, deck, kicker, ctype, ctype_label, body,
     b = head(title, deck, url, ctype="article", published=published,
              updated=updated, section=section or ctype_label, tags=topics)
     b += header(section_href)
-    bc = [("/", "Home")]
+    bc = [("/latest/", "Home")]
     if section_href:
         bc.append((section_href, section))
     bc.append(("", title[:48] + ("…" if len(title) > 48 else "")))

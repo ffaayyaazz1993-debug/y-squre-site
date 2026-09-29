@@ -247,10 +247,10 @@ def header(current=""):
   <header class="site-header">
     <div class="masthead">
       <div class="wrap masthead-inner">
-        <a class="brand" href="/">
+        <span class="brand" role="img" aria-label="Y-Squre">
           <span class="brand-mark" aria-hidden="true">Y</span>
           <span class="brand-text"><span class="brand-name">Y-SQURE</span></span>
-        </a>
+        </span>
         <p class="tagline">Global News, Data &amp; Analysis</p>
         <div class="masthead-utils">
           <a class="util-link" href="/search/index.html">

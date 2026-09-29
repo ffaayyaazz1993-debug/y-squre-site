@@ -10,7 +10,7 @@ PAGES = []
 def simple(path, title, desc, h1, lede, blocks, active="", extra_script=""):
     b = head(title, desc, "/" + path, section=h1)
     b += header(active)
-    b += crumbs([("/", "Home"), ("/" + path, h1)])
+    b += crumbs([("/latest/", "Home"), ("/" + path, h1)])
     b += '  <main id="main">\n' + ad("Advertisement", "ad-top")
     b += page_head(esc(h1), lede)
     b += f'    <div class="wrap" style="padding-top:26px">\n      <div class="prose">\n{blocks}\n      </div>\n    </div>\n  </main>\n'
@@ -53,7 +53,7 @@ simple("account/index.html", "Account | Y-Squre",
             <p>Use the navigation to reach any region, market, macro, research or blog
             section directly. Every page is public and needs no sign-in.</p>
 
-            <p><a href="/">Return to the front page</a> or browse
+            <p><a href="/latest/">Return to the front page</a> or browse
             <a href="/geopolitics/">geopolitical coverage</a> and
             <a href="/macro/">macroeconomic analysis</a>.</p>""")
 
@@ -421,7 +421,7 @@ PAGES.append(("404/index.html",
                 '        <p class="lede">That URL does not exist on this site. It may have '
                 'moved, or the link that brought you here may be wrong.</p>\n'
                 '        <ul>\n'
-                '          <li><a href="/">Homepage</a></li>\n'
+                '          <li><a href="/latest/">Homepage</a></li>\n'
                 '          <li><a href="/latest/">Latest articles</a></li>\n'
                 '          <li><a href="/geopolitics/">Geopolitics</a></li>\n'
                 '          <li><a href="/macro/">Macroeconomics</a></li>\n'

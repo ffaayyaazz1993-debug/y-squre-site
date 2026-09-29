@@ -250,7 +250,7 @@ def latest():
     # reachable from every region panel). A third row restating them was noise,
     # and on the Latest page it read as a section header for content that was
     # never sectioned. Removed rather than restyled.
-    b += crumbs([("/", "Home"), ("/latest/", "Latest")])
+    b += crumbs([("/latest/", "Home"), ("/latest/", "Latest")])
     b += '  <main id="main">\n' + ad("Advertisement", "ad-top")
     # The "Latest" title block that sat here duplicated the breadcrumb directly
     # above it and pushed the first story 145px down the page. It was also the
@@ -288,7 +288,7 @@ def listing(slug, title, lede, kind_label, note):
     items = [a for a in ARTICLES if a["section"].lower() == slug.rstrip("/")]
     b = head(f"{title} | Y-Squre Research & Analysis", lede, f"/{slug}/", section=title)
     b += header(f"/{slug}/")
-    b += crumbs([("/", "Home"), (f"/{slug}/", title)])
+    b += crumbs([("/latest/", "Home"), (f"/{slug}/", title)])
     b += '  <main id="main">\n' + ad("Advertisement", "ad-top")
     b += page_head(esc(title), esc(lede))
     rows = "\n".join(index_row(a) for a in items)
@@ -309,7 +309,9 @@ def listing(slug, title, lede, kind_label, note):
 if __name__ == "__main__":
     n = 0
     for path, content in [
-        ("index.html", homepage()),
+        # The root page is retired: / 301s to /latest/, which is the
+    # canonical front page. See the redirect in .htaccess .
+    # ("index.html", homepage()),
         ("latest/index.html", latest()),
         ("blog/index.html", listing(
             "blog", "Blog",
