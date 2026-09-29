@@ -22,7 +22,7 @@ PAGES.sort()
 print(f"html pages found: {len(PAGES)}")
 
 # ------------------------------------------------------------------ robots.txt
-ROBOTS = """# Y-Square — https://y-squre.com
+ROBOTS = """# Y-Squre — https://y-squre.com
 # Robots are not blocked. AdSense review requires crawlable content.
 
 User-agent: *
@@ -85,7 +85,7 @@ n = write("sitemap.xml", SITEMAP)
 print(f"  sitemap.xml {n}B  ({len(urlset)} urls)")
 
 # -------------------------------------------------------------------- favicon
-FAVICON = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Y-Square">
+FAVICON = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Y-Squre">
   <rect width="64" height="64" fill="#0d2036"/>
   <rect x="6" y="58" width="52" height="4" fill="#c8471f"/>
   <text x="32" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="30"
@@ -100,7 +100,7 @@ OG = """<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBo
   <rect width="1200" height="630" fill="#0d2036"/>
   <rect x="0" y="600" width="1200" height="30" fill="#c8471f"/>
   <text x="80" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="104"
-        font-weight="700" fill="#ffffff">Y-Square</text>
+        font-weight="700" fill="#ffffff">Y-Squre</text>
   <text x="80" y="372" font-family="Helvetica, Arial, sans-serif" font-size="34"
         fill="#93a3b8" letter-spacing="2">MACROECONOMICS &#183; GEOPOLITICS &#183; MARKETS</text>
   <text x="80" y="500" font-family="Helvetica, Arial, sans-serif" font-size="26"
@@ -115,7 +115,7 @@ print("  og-default", write("assets/images/logo/og-default.svg", OG), "B")
 # a live page: doing so would require inventing an event, a timeline and sources,
 # which section 20 forbids. Publish it by filling every {{FIELD}}.
 TEMPLATE = """<!--
-Y-SQUARE — GEOPOLITICAL EVENT REPORT TEMPLATE
+Y-SQURE — GEOPOLITICAL EVENT REPORT TEMPLATE
 =========================================
 Copy to:  public_html/geopolitics/<region>/<YYYY>/<MM>/<DD>/<slug>.html
 Do NOT publish this file as-is. Every {{FIELD}} must be replaced with
@@ -150,7 +150,7 @@ LABELLING RULE
 
 ATTRIBUTION RULE
   Write "according to <source>" for anything sourced. Never write a claim in
-  the voice of Y-Square that we have only read elsewhere.
+  the voice of Y-Squre that we have only read elsewhere.
 
 URL SCHEME
   /geopolitics/<region>/<YYYY>/<MM>/<DD>/<slug>.html
@@ -158,7 +158,7 @@ URL SCHEME
 """
 print("  event template", write("docs/TEMPLATES/geopolitical-event-report.template.html", TEMPLATE), "B")
 print("  blog template  ", write("docs/TEMPLATES/analysis-article.template.md",
-      "# Y-Square — analysis / explainer article\n\n"
+      "# Y-Squre — analysis / explainer article\n\n"
       "Path:  public_html/blog/<YYYY>/<MM>/<DD>/<slug>.html\n\n"
       "Required front matter:\n"
       "  title, deck, ctype (analysis|explainer), section, published, updated,\n"

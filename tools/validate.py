@@ -1,4 +1,4 @@
-"""Pre-deploy validation for the Y-Square static site.
+"""Pre-deploy validation for the Y-Squre static site.
 
 Checks, in order of what actually breaks sites:
   1. every internal href/src resolves to a real file on disk

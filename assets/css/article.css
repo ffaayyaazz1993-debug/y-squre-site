@@ -1,4 +1,4 @@
-/* Y-Square — article.css
+/* Y-Squre — article.css
    Article reading experience: single measure column, optional sidebar,
    key-points / timeline / source blocks used by event reports. */
 
@@ -22,7 +22,7 @@
 .byline a { color: var(--muted); }
 
 /* Content-type label. This is the site's core editorial guarantee:
-   a reader can always tell reported fact from Y-Square analysis. */
+   a reader can always tell reported fact from Y-Squre analysis. */
 .ctype {
   display: inline-block; font-size: .68rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: .1em;

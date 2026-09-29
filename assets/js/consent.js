@@ -1,4 +1,4 @@
-/* Y-Square — consent.js
+/* Y-Squre — consent.js
    Cookie notice + stored preference.
 
    Scope, stated plainly so the privacy page can describe it accurately:

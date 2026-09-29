@@ -1,4 +1,4 @@
-# Y-Square — https://y-squre.com
+# Y-Squre — https://y-squre.com
 # Robots are not blocked. AdSense review requires crawlable content.
 
 User-agent: *

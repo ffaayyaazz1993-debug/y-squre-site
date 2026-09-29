@@ -1,5 +1,5 @@
 """Build /assets/data/geography.json — the single source of truth for the
-Y-Square geographic and topical taxonomy.
+Y-Squre geographic and topical taxonomy.
 
 This one file drives:
   - the desktop mega-menu markup        (generated into every page)

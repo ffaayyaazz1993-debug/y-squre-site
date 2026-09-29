@@ -1,10 +1,10 @@
-/* Y-Square — news & research publication
+/* Y-Squre — news & research publication
    base.css — design tokens, reset, typography, utilities
    ---------------------------------------------------------------------------
    Editorial wire-service system. Dense, restrained, high legibility.
    Content ethics are enforced in the markup: .story-fact for reported
    material, .story-analysis for opinion. They are visually distinct so a
-   reader can never confuse Y-Square's own analysis with a reported event. */
+   reader can never confuse Y-Squre's own analysis with a reported event. */
 
 :root {
   /* Live header height, published by nav.js from the rendered element. The

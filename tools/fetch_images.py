@@ -29,7 +29,7 @@ import json, os, re, sys, time, unicodedata, urllib.parse, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import image_subjects as IMG_SUBJ
 
-UA = ("Y-Square/1.0 (https://y-squre.com; static site build) "
+UA = ("Y-Squre/1.0 (https://y-squre.com; static site build) "
       "python-urllib/3 (contact: site owner)")
 API = "https://commons.wikimedia.org/w/api.php"
 

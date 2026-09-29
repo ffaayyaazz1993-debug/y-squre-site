@@ -77,7 +77,7 @@ def index_row(a):
 # ================================================================= homepage
 def homepage():
     lead = ARTICLES[0]
-    b = head("Y-Square | Macro, Geopolitics & Markets Research",
+    b = head("Y-Squre | Macro, Geopolitics & Markets Research",
              "Independent research on macroeconomics, geopolitics and markets. Original "
              "analysis, primary sources, stated assumptions and named limitations.",
              "/")
@@ -95,7 +95,7 @@ def homepage():
           <p class="meta">
             <time datetime="{lead['published']}" data-ago="{lead['published']}">{lead['published'][:10]}</time>
             <span class="meta-sep">/</span>{lead['read']}
-            <span class="meta-sep">/</span>Y-Square Research
+            <span class="meta-sep">/</span>Y-Squre Research
           </p>
           <p style="margin-top:14px"><a class="btn" href="{lead['url']}">Read more</a></p>
         </div>
@@ -193,7 +193,7 @@ def homepage():
           <h2>Analysis &amp; opinion</h2>
           <a class="more" href="/blog/">All analysis &rarr;</a>
         </div>
-        <p class="meta" style="margin-bottom:12px">Y-Square's own views. Not reporting.</p>
+        <p class="meta" style="margin-bottom:12px">Y-Squre's own views. Not reporting.</p>
         <div class="cards">
 {card(ARTICLES[1])}
         </div>
@@ -224,7 +224,7 @@ def homepage():
           <aside class="sidebar">
             <h3>Elsewhere</h3>
             <ul class="side-list">
-              <li><a href="/about/index.html">About Y-Square</a></li>
+              <li><a href="/about/index.html">About Y-Squre</a></li>
               <li><a href="/editorial-policy/index.html">Editorial policy</a></li>
               <li><a href="/contact/index.html">Contact</a></li>
               <li><a href="/advertising/index.html">Advertising</a></li>
@@ -241,8 +241,8 @@ def homepage():
 
 # ================================================================== latest
 def latest():
-    b = head("Latest | Y-Square Research",
-             "Every article, explainer and research note published by Y-Square, newest first, with publication times, content labels and reading times.", "/latest/")
+    b = head("Latest | Y-Squre Research",
+             "Every article, explainer and research note published by Y-Squre, newest first, with publication times, content labels and reading times.", "/latest/")
     b += header("/latest/")
     # The topic bar that used to sit here -- Geopolitics, Macro, Markets,
     # Analysis, Research -- duplicated items already present in the two nav rows
@@ -286,7 +286,7 @@ def latest():
 # ============================================ blog / research index (real lists)
 def listing(slug, title, lede, kind_label, note):
     items = [a for a in ARTICLES if a["section"].lower() == slug.rstrip("/")]
-    b = head(f"{title} | Y-Square Research & Analysis", lede, f"/{slug}/", section=title)
+    b = head(f"{title} | Y-Squre Research & Analysis", lede, f"/{slug}/", section=title)
     b += header(f"/{slug}/")
     b += crumbs([("/", "Home"), (f"/{slug}/", title)])
     b += '  <main id="main">\n' + ad("Advertisement", "ad-top")
@@ -313,10 +313,10 @@ if __name__ == "__main__":
         ("latest/index.html", latest()),
         ("blog/index.html", listing(
             "blog", "Blog",
-            "Y-Square analysis, explainers and commentary. Every item is opinion or analysis, "
+            "Y-Squre analysis, explainers and commentary. Every item is opinion or analysis, "
             "never reported fact, and each is labelled accordingly.",
             "Analysis",
-            "Everything on this page is Y-Square's own analysis. It is not reporting and "
+            "Everything on this page is Y-Squre's own analysis. It is not reporting and "
             "should not be cited as a description of events. Where we refer to what others "
             "have said, the source is named and the claim is attributed rather than asserted.")),
         ("research/index.html", listing(

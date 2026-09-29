@@ -25,12 +25,12 @@ def simple(path, title, desc, h1, lede, blocks, active="", extra_script=""):
 # system, so rather than ship a link to a page that does not exist -- or a
 # fake login form that collects credentials it cannot use -- this states
 # plainly what the slot is reserved for.
-simple("account/index.html", "Account | Y-Square",
-       "The Y-Square account area. There is no reader account or login service "
+simple("account/index.html", "Account | Y-Squre",
+       "The Y-Squre account area. There is no reader account or login service "
        "yet; this page records what the space is reserved for.",
        "Account",
        "Reader accounts are not switched on. This page records what the area is reserved for.",
-       """            <p>Y-Square does not have reader accounts, and there is nothing to sign in to.
+       """            <p>Y-Squre does not have reader accounts, and there is nothing to sign in to.
             No login form is shown here deliberately: a form that could not do anything
             would be worse than none.</p>
 
@@ -45,7 +45,7 @@ simple("account/index.html", "Account | Y-Square",
             </ul>
 
             <h2>What we are not doing in the meantime</h2>
-            <p>Y-Square does not ask for a password, does not run a newsletter sign-up that
+            <p>Y-Squre does not ask for a password, does not run a newsletter sign-up that
             stores a profile behind it, and does not sell or share reader data. Nothing on
             this site requires an account to read.</p>
 
@@ -58,11 +58,11 @@ simple("account/index.html", "Account | Y-Square",
             <a href="/macro/">macroeconomic analysis</a>.</p>""")
 
 # ---------------------------------------------------------------------- about
-simple("about/index.html", "About Y-Square | Y-Square Research",
-       "What Y-Square is, how its research is produced and labelled, and the editorial standards it holds itself to.",
-       "About Y-Square",
+simple("about/index.html", "About Y-Squre | Y-Squre Research",
+       "What Y-Squre is, how its research is produced and labelled, and the editorial standards it holds itself to.",
+       "About Y-Squre",
        "An independent research practice working on macroeconomics, geopolitics and markets.",
-       """            <p>Y-Square is an independent investment research and analysis practice. We
+       """            <p>Y-Squre is an independent investment research and analysis practice. We
             publish work on macroeconomics, geopolitics and markets, and we do not manage
             money, sell products, or accept a commission for a view.</p>
 
@@ -104,8 +104,8 @@ simple("about/index.html", "About Y-Square | Y-Square Research",
             are noted on the article with a timestamp rather than silently edited.</p>""")
 
 # -------------------------------------------------------------------- contact
-simple("contact/index.html", "Contact | Y-Square Research",
-       "Contact Y-Square about questions, corrections, research requests or advertising. We reply to enquiries within two business days.",
+simple("contact/index.html", "Contact | Y-Squre Research",
+       "Contact Y-Squre about questions, corrections, research requests or advertising. We reply to enquiries within two business days.",
        "Contact",
        "Questions, corrections, or a specific research request. We reply within two business days.",
        f"""            <p>We read everything that arrives. The fastest way to reach us is email.</p>
@@ -129,7 +129,7 @@ simple("contact/index.html", "Contact | Y-Square Research",
               <li>Comment on an individual holding or a personal financial situation.</li>
               <li>Provide data we have not verified, or a source we have not read.</li>
             </ul>
-            <p>Y-Square is not a SEBI-registered investment adviser. Nothing we publish is a
+            <p>Y-Squre is not a SEBI-registered investment adviser. Nothing we publish is a
             solicitation to buy or sell any security.</p>""")
 
 # -------------------------------------------------------------------- privacy
@@ -142,7 +142,7 @@ PRIVACY = """            <h2>Summary</h2>
             on this site.</p>
 
             <h2>Who we are</h2>
-            <p>Y-Square is an independent research practice. Contact:
+            <p>Y-Squre is an independent research practice. Contact:
             <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
 
             <h2>What we collect directly</h2>
@@ -192,7 +192,7 @@ PRIVACY = """            <h2>Summary</h2>
             <p>California residents have the right to know what personal information is
             collected, to request deletion, to request correction, to opt out of sale or
             sharing of personal information, and to limit use of sensitive personal
-            information. <strong>Y-Square does not sell or share personal information as those
+            information. <strong>Y-Squre does not sell or share personal information as those
             terms are defined by the CCPA.</strong> Advertising cookies are set by Google; to
             opt out of interest-based advertising, use the
             <a href="https://www.google.com/settings/ads" rel="noopener nofollow"
@@ -225,17 +225,17 @@ PRIVACY = """            <h2>Summary</h2>
 
             <h2>Contact</h2>
             <p>Questions about this policy: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>"""
-simple("privacy/index.html", "Privacy Policy | Y-Square Research",
-       "What Y-Square collects, what it does not, and the choices you have under the GDPR and the CCPA, including how to opt out of advertising cookies.",
+simple("privacy/index.html", "Privacy Policy | Y-Squre Research",
+       "What Y-Squre collects, what it does not, and the choices you have under the GDPR and the CCPA, including how to opt out of advertising cookies.",
        "Privacy Policy", "Last updated 26 September 2026. Written to describe what actually "
        "happens on this site, not to satisfy a template.", PRIVACY)
 
 # ---------------------------------------------------------------------- terms
-simple("terms/index.html", "Terms of Use | Y-Square Research",
-       "The terms governing use of the Y-Square website: no investment advice, no offer, market risk, and the limits of what this site provides.",
+simple("terms/index.html", "Terms of Use | Y-Squre Research",
+       "The terms governing use of the Y-Squre website: no investment advice, no offer, market risk, and the limits of what this site provides.",
        "Terms of Use", "Last updated 26 September 2026.",
        f"""            <h2>1. What this site is</h2>
-            <p>Y-Square publishes research, analysis and educational material. It is not a
+            <p>Y-Squre publishes research, analysis and educational material. It is not a
             brokerage, not an investment adviser, and not a provider of personalised financial
             services. It is not a SEBI-registered investment adviser.</p>
 
@@ -266,7 +266,7 @@ simple("terms/index.html", "Terms of Use | Y-Square Research",
             current. We may change, suspend or withdraw any part of it at any time.</p>
 
             <h2>7. Limitation of liability</h2>
-            <p>To the extent permitted by law, Y-Square is not liable for any loss arising
+            <p>To the extent permitted by law, Y-Squre is not liable for any loss arising
             from use of, or reliance on, anything published here.</p>
 
             <h2>8. Governing law</h2>
@@ -277,8 +277,8 @@ simple("terms/index.html", "Terms of Use | Y-Square Research",
             <p>Questions about these terms: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>""")
 
 # ----------------------------------------------------------------- disclaimer
-simple("disclaimer/index.html", "Investment Disclaimer | Y-Square Research",
-       "The Y-Square investment risk disclaimer: market risk, no personal advice, no offer, regulatory status, and the limits of forecasts and opinion.",
+simple("disclaimer/index.html", "Investment Disclaimer | Y-Squre Research",
+       "The Y-Squre investment risk disclaimer: market risk, no personal advice, no offer, regulatory status, and the limits of forecasts and opinion.",
        "Investment Disclaimer", "Last updated 26 September 2026.",
        f"""            <div class="notice">
               <p>{FOOTER_DISCLAIMER}</p>
@@ -301,7 +301,7 @@ simple("disclaimer/index.html", "Investment Disclaimer | Y-Square Research",
             any security, financial instrument or product, in any jurisdiction.</p>
 
             <h2>Regulatory status</h2>
-            <p><strong>Y-Square is not a SEBI-registered investment adviser.</strong> We do not
+            <p><strong>Y-Squre is not a SEBI-registered investment adviser.</strong> We do not
             manage portfolios, do not receive transaction-based compensation, and do not give
             personalised investment recommendations.</p>
 
@@ -322,8 +322,8 @@ simple("disclaimer/index.html", "Investment Disclaimer | Y-Square Research",
             are not responsible for their content.</p>""")
 
 # ----------------------------------------------------------- editorial policy
-simple("editorial-policy/index.html", "Editorial Policy | Y-Square Research",
-       "How Y-Square selects, writes, labels, sources and corrects its work: what counts as reporting, what counts as analysis, and what we refuse to publish.",
+simple("editorial-policy/index.html", "Editorial Policy | Y-Squre Research",
+       "How Y-Squre selects, writes, labels, sources and corrects its work: what counts as reporting, what counts as analysis, and what we refuse to publish.",
        "Editorial Policy", "Last updated 26 September 2026. This is the standard we hold "
        "ourselves to, and the standard a reader can hold us to.",
        """            <h2>What we publish</h2>
@@ -367,15 +367,15 @@ simple("editorial-policy/index.html", "Editorial Policy | Y-Square Research",
             made; if we disagree, we will say why.</p>
 
             <h2>Independence and conflicts</h2>
-            <p>Y-Square does not manage client money and does not take a commission on anything
+            <p>Y-Squre does not manage client money and does not take a commission on anything
             it covers, so there is no position to recommend in any security discussed.</p>""")
 
 # ----------------------------------------------------------------- advertising
-simple("advertising/index.html", "Advertising | Y-Square Research",
-       "Advertising on Y-Square, and how it is kept separate from editorial work.",
+simple("advertising/index.html", "Advertising | Y-Squre Research",
+       "Advertising on Y-Squre, and how it is kept separate from editorial work.",
        "Advertising", "Last updated 26 September 2026.",
        f"""            <h2>We do advertise</h2>
-            <p>Y-Square is supported by advertising served through <strong>Google AdSense</strong>.
+            <p>Y-Squre is supported by advertising served through <strong>Google AdSense</strong>.
             Ads are clearly separated from editorial content, labelled, and kept out of the
             reading column so they do not interrupt an article.</p>
 
@@ -410,7 +410,7 @@ simple("advertising/index.html", "Advertising | Y-Square Research",
 # the site would answer /404.html with HTTP 200, which is wrong for an error
 # document.
 PAGES.append(("404/index.html",
-              head("Page not found | Y-Square", "The page you requested does not exist on this site. Use the links below to reach the homepage, the latest articles, or any section index.", "/404/",
+              head("Page not found | Y-Squre", "The page you requested does not exist on this site. Use the links below to reach the homepage, the latest articles, or any section index.", "/404/",
                    noindex=True)
               + header("")
               + '  <main id="main">\n'

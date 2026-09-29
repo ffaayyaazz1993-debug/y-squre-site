@@ -1,4 +1,4 @@
-"""Deploy the Y-Square tree to BigRock cPanel.
+"""Deploy the Y-Squre tree to BigRock cPanel.
 
 Two things this driver gets right that the earlier ones got wrong:
 

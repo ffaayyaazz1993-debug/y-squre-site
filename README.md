@@ -1,6 +1,6 @@
-# Y-Square — y-squre.com
+# Y-Squre — y-squre.com
 
-Static marketing site for **Y-Square**, an independent investment research and advisory practice.
+Static marketing site for **Y-Squre**, an independent investment research and advisory practice.
 
 ## Stack
 
@@ -40,7 +40,7 @@ Body font: Georgia serif. UI/headings: Segoe UI stack.
 1. **Footer disclaimer stays.** SEBI / market-risk disclaimer is compliance-critical. Never delete
    or weaken it.
 2. **AdSense client id stays** `ca-pub-9461123152614358` when editing `<head>`.
-3. **Two spellings are both correct:** domain `y-squre.com`, brand `Y-Square`. Never normalise
+3. **Two spellings are both correct:** domain `y-squre.com`, brand `Y-Squre`. Never normalise
    one to the other.
 4. **Contact email:** `ffaayyaazz1993@gmail.com`, reply promise 2 business days.
 5. **No new runtime dependencies.** If a feature seems to need one, it is mis-scoped.

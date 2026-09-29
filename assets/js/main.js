@@ -1,4 +1,4 @@
-/* Y-Square — main.js
+/* Y-Squre — main.js
    Shared runtime. Vanilla ES5-compatible, no libraries, no trackers.
    Loaded with `defer` on every page. */
 (function () {
@@ -7,7 +7,7 @@
   var YSQ = window.YSQ = window.YSQ || {};
 
   YSQ.config = {
-    siteName: 'Y-Square',
+    siteName: 'Y-Squre',
     // Bump when the article set changes so the client-side search index
     // cache is invalidated. A future server-side index supersedes this file.
     searchIndexVersion: '2026-09-26',

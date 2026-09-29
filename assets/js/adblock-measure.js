@@ -1,4 +1,4 @@
-/* Y-Square — blocked-advertising measurement.
+/* Y-Squre — blocked-advertising measurement.
    ------------------------------------------------------------------
    DETECTION ONLY. This file never blocks, never overlays, never hides
    content. It counts and reports, so we can decide with a real number

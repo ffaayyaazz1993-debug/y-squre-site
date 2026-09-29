@@ -1,4 +1,4 @@
-# Y-Square — analysis / explainer article
+# Y-Squre — analysis / explainer article
 
 Path:  public_html/blog/<YYYY>/<MM>/<DD>/<slug>.html
 

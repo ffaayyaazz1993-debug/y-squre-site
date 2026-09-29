@@ -1,4 +1,4 @@
-"""Shared page assembly for the Y-Square generators.
+"""Shared page assembly for the Y-Squre generators.
 
 One place that stitches head() + header() + body + footer() so a new page type
 cannot forget a piece. Every generator builds a dict and calls render().

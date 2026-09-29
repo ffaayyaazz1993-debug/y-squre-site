@@ -1,4 +1,4 @@
-"""Y-Square site generator.
+"""Y-Squre site generator.
 
 One source of truth for every page so nav, footer, SEO and consent wiring can
 never drift between 40+ files. Output is plain static HTML — no build step is
@@ -26,7 +26,7 @@ FOOTER_COLS = [
     ("Sections", [("/latest/", "Latest"), ("/geopolitics/", "Geopolitics"),
                   ("/macro/", "Macro"), ("/markets/", "Markets"),
                   ("/blog/", "Blog"), ("/research/", "Research")]),
-    ("About", [("/about/index.html", "About Y-Square"), ("/contact/index.html", "Contact"),
+    ("About", [("/about/index.html", "About Y-Squre"), ("/contact/index.html", "Contact"),
                ("/editorial-policy/index.html", "Editorial Policy"),
                ("/advertising/index.html", "Advertising"), ("/sitemap.xml", "Sitemap")]),
     ("Legal", [("/privacy/index.html", "Privacy Policy"), ("/terms/index.html", "Terms of Use"),
@@ -37,13 +37,13 @@ FOOTER_COLS = [
 DISCLAIMER_SHORT = ("Information and education only. Not investment advice and not an offer to "
                     "buy or sell any security. Investments in securities markets are subject to "
                     "market risks. Past performance is not indicative of future results. "
-                    "Y-Square is not a SEBI-registered investment adviser.")
+                    "Y-Squre is not a SEBI-registered investment adviser.")
 
 FOOTER_DISCLAIMER = ("<strong>Disclaimer:</strong> Investments in securities markets are subject to "
                      "market risks. Read all related documents carefully before investing. Content "
                      "on this website is for information and education only and does not constitute "
                      "investment advice or a solicitation to buy or sell any security. Past "
-                     "performance is not indicative of future results. Y-Square is not a "
+                     "performance is not indicative of future results. Y-Squre is not a "
                      "SEBI-registered investment adviser.")
 
 NAV_HTML = "\n".join(
@@ -88,7 +88,7 @@ def head(title, desc, url, *, ctype="website", published="", updated="",
         art = (
             '\n    <meta property="article:published_time" content="%s">'
             '\n    <meta property="article:section" content="%s">'
-            '\n    <meta property="article:author" content="Y-Square Research">'
+            '\n    <meta property="article:author" content="Y-Squre Research">'
             % (published, esc(section or "Analysis"))
         )
         if updated:
@@ -117,7 +117,7 @@ def head(title, desc, url, *, ctype="website", published="", updated="",
   <meta name="theme-color" content="#0d2036">
 
   <meta property="og:type" content="{ctype}">
-  <meta property="og:site_name" content="Y-Square">
+  <meta property="og:site_name" content="Y-Squre">
   <meta property="og:title" content="{esc(title)}">
   <meta property="og:description" content="{esc(desc)}">
   <meta property="og:url" content="{canonical}">
@@ -169,7 +169,7 @@ def footer():
     <div class="wrap">
       <p class="footer-note footer-caution">{FOOTER_DISCLAIMER}</p>
       <div class="footer-bottom">
-        <span>&copy; {TODAY[:4]} Y-Square. All rights reserved.</span>
+        <span>&copy; {TODAY[:4]} Y-Squre. All rights reserved.</span>
         <span>
           <a href="#" onclick="window.ysqResetConsent(); return false;">Cookie choices</a>
           &nbsp;&middot;&nbsp; <a href="/sitemap.xml">Sitemap</a>
@@ -241,6 +241,6 @@ def article_images(page_path, subject):
             "licence_url": _g.get("licence_url", ""),
             "h": 900,
             "alt": (f"A Wikimedia Commons photograph of {_g['title'].rsplit('.', 1)[0]}, "
-                    f"used in Y-Square coverage of {subject}."),
+                    f"used in Y-Squre coverage of {subject}."),
         })
     return out

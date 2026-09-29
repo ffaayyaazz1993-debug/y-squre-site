@@ -1,4 +1,4 @@
-"""Generate the Y-Square article pages.
+"""Generate the Y-Squre article pages.
 
 Only three kinds of prose are authored here, and all three are labelled as
 opinion/analysis on the page itself:
@@ -15,7 +15,7 @@ import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gen_lib import *  # noqa
 
-BYLINE = "Y-Square Research"
+BYLINE = "Y-Squre Research"
 
 # --------------------------------------------------------------------- helpers
 def photo_figure(img, index):

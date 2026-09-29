@@ -1,4 +1,4 @@
-/* Y-Square — search.js
+/* Y-Squre — search.js
    Static-hosting search over headline, category, summary and tags.
    No database, no server round-trip.
 

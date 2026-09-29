@@ -1,4 +1,4 @@
-"""Render the Y-Square header from assets/data/geography.json.
+"""Render the Y-Squre header from assets/data/geography.json.
 
 Produces, for every page:
   - masthead        logo, tagline, search, sign in
@@ -249,7 +249,7 @@ def header(current=""):
       <div class="wrap masthead-inner">
         <a class="brand" href="/">
           <span class="brand-mark" aria-hidden="true">Y</span>
-          <span class="brand-text"><span class="brand-name">Y-SQUARE</span></span>
+          <span class="brand-text"><span class="brand-name">Y-SQURE</span></span>
         </a>
         <p class="tagline">Global News, Data &amp; Analysis</p>
         <div class="masthead-utils">

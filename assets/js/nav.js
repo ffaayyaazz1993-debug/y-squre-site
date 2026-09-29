@@ -1,4 +1,4 @@
-/* Y-Square — nav.js
+/* Y-Squre — nav.js
    Mega-menu + mobile accordion behaviour.
 
    The header MARKUP is generated at build time from assets/data/geography.json

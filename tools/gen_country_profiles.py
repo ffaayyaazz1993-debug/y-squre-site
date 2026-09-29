@@ -24,7 +24,7 @@ from gen_lib import *  # noqa
 import gen_articles as GA
 import gen_nav as N
 
-BYLINE = "Y-Square Research"
+BYLINE = "Y-Squre Research"
 IMG_DIR = os.path.join(ROOT, "assets", "img", "country")
 
 # --------------------------------------------------------------------- palette

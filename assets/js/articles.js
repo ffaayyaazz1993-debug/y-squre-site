@@ -1,4 +1,4 @@
-/* Y-Square — articles.js
+/* Y-Squre — articles.js
    The client-side search index. This is the single source of truth for
    article metadata and doubles as the feed a future CMS/API would replace.
 
@@ -9,7 +9,7 @@
         readingTime, sources[]} ] }
 
    `type` is one of: news | analysis | explainer | research
-   and is what separates reported fact from Y-Square opinion.
+   and is what separates reported fact from Y-Squre opinion.
 */
 window.YSQ_ARTICLES = {
   version: '2026-09-26',
@@ -27,7 +27,7 @@ window.YSQ_ARTICLES = {
       country: '',
       topics: ['Monetary policy', 'Central banks', 'Quantitative easing', 'Interest rates'],
       summary: 'Markets price the rate decision, then react to what the central bank actually did to its portfolio. Those are not the same event, and the gap between them is where most of the mispricing sits.',
-      author: 'Y-Square Research',
+      author: 'Y-Squre Research',
       published: '2026-09-26T11:00:00+05:30',
       updated: '',
       readingTime: '8 min read',
@@ -48,7 +48,7 @@ window.YSQ_ARTICLES = {
       country: '',
       topics: ['Monetary policy', 'Analysis', 'Asset prices'],
       summary: 'The rate is the fastest-moving expression of policy and the most closely watched. It is also, on its own, an incomplete one. This note sets out where the asset side of the balance sheet adds information, and where it misleads.',
-      author: 'Y-Square Research',
+      author: 'Y-Squre Research',
       published: '2026-09-26T14:30:00+05:30',
       updated: '',
       readingTime: '6 min read',
@@ -68,7 +68,7 @@ window.YSQ_ARTICLES = {
       country: '',
       topics: ['Currencies', 'Explainer', 'Inflation', 'Trade'],
       summary: 'Why a currency falls is rarely one thing. This explainer separates the balance-of-payments mechanism from the interest-rate channel and the risk-premium channel, and shows why the same depreciation can mean opposite things for an economy.',
-      author: 'Y-Square Research',
+      author: 'Y-Squre Research',
       published: '2026-09-26T16:00:00+05:30',
       updated: '',
       readingTime: '7 min read',

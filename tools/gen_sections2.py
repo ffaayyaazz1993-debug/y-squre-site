@@ -19,7 +19,7 @@ from gen_lib import esc, write
 EMPTY_NEWS = '''
       <div class="empty-state">
         <p class="empty-kicker">No verified reports published yet</p>
-        <p>Y-Square publishes event reporting only when it can be attributed to
+        <p>Y-Squre publishes event reporting only when it can be attributed to
         a named, checkable source. Nothing has been published under
         {label} yet, and we would rather show you an empty section than fill
         it with material we cannot stand behind.</p>
@@ -87,12 +87,12 @@ def region_page(region):
 
     <h2 class="section-h">Countries in {esc(name)}</h2>
     <p class="table-note">{len(sec["countries"])} countries. Each links to its
-    row. Y-Square tracks all of them; it reports on a country when a
+    row. Y-Squre tracks all of them; it reports on a country when a
     development is verifiable and material.</p>
     <table class="country-table">
       <caption class="sr-only">Countries in {esc(name)}</caption>
       <thead>
-        <tr><th scope="col">Country</th><th scope="col">Y-Square scope</th>
+        <tr><th scope="col">Country</th><th scope="col">Y-Squre scope</th>
             <th scope="col">Latest</th></tr>
       </thead>
       <tbody>
@@ -140,10 +140,10 @@ def region_page(region):
     return {
         "path": f"/geopolitics/{slug}/index.html",
         "url": f"/geopolitics/{slug}/",
-        "title": f"{name} Geopolitics & Economic Coverage | Y-Square",
+        "title": f"{name} Geopolitics & Economic Coverage | Y-Squre",
         "desc": (f"Geopolitical and economic coverage across {name.lower()}, "
                  f"organised by subregion. Subregion hubs list every country "
-                 f"Y-Square tracks and what it covers there."),
+                 f"Y-Squre tracks and what it covers there."),
         "h1": name,
         "body": body,
         "section": "geopolitics",
@@ -155,7 +155,7 @@ def subregion_page(region, sec):
     base = f"/geopolitics/{slug}/{sec['slug']}/"
 
     # The country table. One id per country, matching the anchor the mega-menu
-    # links to. Each row states what Y-Square covers for that country, so the
+    # links to. Each row states what Y-Squre covers for that country, so the
     # deep link lands on real editorial scope rather than a bare name.
     rows = []
     for c in sec["countries"]:
@@ -189,12 +189,12 @@ def subregion_page(region, sec):
 
     <h2 class="section-h">Countries in {esc(sec["name"])}</h2>
     <p class="table-note">{len(sec["countries"])} countries. Each links to its
-    row. Y-Square tracks all of them; it reports on a country when a
+    row. Y-Squre tracks all of them; it reports on a country when a
     development is verifiable and material.</p>
     <table class="country-table">
       <caption class="sr-only">Countries in {esc(sec["name"])}</caption>
       <thead>
-        <tr><th scope="col">Country</th><th scope="col">Y-Square scope</th>
+        <tr><th scope="col">Country</th><th scope="col">Y-Squre scope</th>
             <th scope="col">Latest</th></tr>
       </thead>
       <tbody>
@@ -211,7 +211,7 @@ def subregion_page(region, sec):
     return {
         "path": base + "index.html",
         "url": base,
-        "title": f"{sec['name']} — {name} | Y-Square",
+        "title": f"{sec['name']} — {name} | Y-Squre",
         "desc": (f"{sec['name']} coverage: {sec['scope'][:120].rstrip()} "
                  f"Country-by-country scope for {name.lower()}."),
         "h1": sec["name"],
@@ -261,7 +261,7 @@ def topic_page(topic):
     return {
         "path": topic["path"] + "index.html",
         "url": topic["path"],
-        "title": f"{topic['name']} | Y-Square",
+        "title": f"{topic['name']} | Y-Squre",
         "desc": topic["lede"][:155],
         "h1": topic["name"],
         "body": body,
@@ -277,7 +277,7 @@ def topic_child_page(topic, child):
     lead = (f'{esc(child["name"])} is part of {topic["name"].lower()} content: '
             f'analysis, opinion and explainers, not event reporting.'
             if is_blog else
-            f'Y-Square coverage of {child["name"].lower()} under {topic["name"].lower()}.')
+            f'Y-Squre coverage of {child["name"].lower()} under {topic["name"].lower()}.')
 
     body = f'''  <main id="main" class="wrap page">
 {crumbs}
@@ -300,7 +300,7 @@ def topic_child_page(topic, child):
     return {
         "path": base + "index.html",
         "url": base,
-        "title": f"{child['name']} — {topic['name']} | Y-Square",
+        "title": f"{child['name']} — {topic['name']} | Y-Squre",
         "desc": child["scope"][:155],
         "h1": child["name"],
         "body": body,
@@ -331,7 +331,7 @@ def geopolitics_index():
     <h1>Geopolitics</h1>
     <p class="page-lede">Coverage organised by region, then subregion, then
     country. Each region page lists its subregions; each subregion page lists
-    every country Y-Square tracks there and states what it covers.</p>
+    every country Y-Squre tracks there and states what it covers.</p>
 
     <div class="empty-state">
       <p class="empty-kicker">No verified reports published yet</p>
@@ -349,7 +349,7 @@ def geopolitics_index():
     return {
         "path": "/geopolitics/index.html",
         "url": "/geopolitics/",
-        "title": "Geopolitics by Region | Y-Square",
+        "title": "Geopolitics by Region | Y-Squre",
         "desc": ("Geopolitical coverage organised by region, subregion and "
                  "country. Region hubs, subregion country tables and coverage scope."),
         "h1": "Geopolitics",

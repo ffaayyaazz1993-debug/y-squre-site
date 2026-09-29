@@ -1,4 +1,4 @@
-/* Y-Square — layout.css
+/* Y-Squre — layout.css
    Header, navigation, homepage modules, footer, cards, story lists. */
 
 .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
@@ -408,7 +408,7 @@
 
 /* Section label in the reference style. "Commentary" there is a small,
    letter-spaced, coloured label sitting above its headline -- a tag, not a
-   heading. Y-Square's accent stands in for Reuters' link blue. */
+   heading. Y-Squre's accent stands in for Reuters' link blue. */
 .sec-kicker .kicker,
 .gc-kicker .kicker,
 .lg-kicker .kicker {

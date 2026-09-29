@@ -167,7 +167,7 @@ def latest_body(articles, manifest):
         out.append('    <section class="lg" aria-label="Lead story">')
         out.append(lead_card(lead[0], img_for(lead[0])))
         if secondary:
-            out.append('      <div class="sec-rail" aria-label="More from Y-Square">')
+            out.append('      <div class="sec-rail" aria-label="More from Y-Squre">')
             for a in secondary:
                 out.append(secondary_card(a, img_for(a)))
             out.append("      </div>")
