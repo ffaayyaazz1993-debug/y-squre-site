@@ -121,7 +121,6 @@ def mega_region(region):
         <div class="mega-inner">
           <div class="mega-head">
             <a class="mega-title" href="{region["path"]}">{esc(region["name"])}</a>
-            <span class="mega-sub">All {esc(region["name"].lower())} coverage</span>
           </div>
           <div class="mega-cols">
 {chr(10).join(cols)}
