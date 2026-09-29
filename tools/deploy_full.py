@@ -247,7 +247,12 @@ print(f"\nuploaded {ok}, failed {fail}")
 # Explicit list, never a wildcard: an unlink typo must not be able to take out a
 # live file. Each path is checked for existence first and reported either way.
 STALE = [
-    "privacy.html",                       # moved to /privacy/index.html
+    # The old bespoke front page. / is now a 301 to /latest/, so leaving this
+    # file on the server would keep serving a second, duplicate homepage at the
+    # root -- exactly what the redirect exists to remove. Apache would serve it
+    # for / before the redirect mattered to anyone reading the raw file.
+    "index.html",
+    "privacy.html",  # moved to /privacy/index.html
     "insights/central-bank-balance-sheets.html",  # moved to /research/2026/...
     "assets/css/style.css",               # replaced by the four-file CSS system
     "assets/js/navigation.js",            # legacy header script, replaced by nav.js
