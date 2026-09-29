@@ -86,9 +86,20 @@ def mega_region(region):
                 items = "".join(
                     f'<li><a href="{base}#{c["anchor"]}">{esc(c["name"])}</a></li>'
                     for c in s_["countries"])
+                # The subregion name used to be a heading link above this list.
+                # Removed: the panel head already names the region, and the
+                # subregion label was mostly a restatement of it -- "North
+                # America" directly above "Canada, United States & Mexico" is
+                # one idea said twice, and it pushed the country links down.
+                #
+                # It was also the ONLY nav link to the three subregion pages
+                # (canada-united-states-mexico, gulf, north-africa), so it is
+                # not simply deleted: the subregion page is linked from every
+                # country explainer in it and from its own region's page, which
+                # is 694 inbound links for /gulf/ alone. Those pages stay
+                # reachable and stay in the sitemap.
                 blocks.append(
                     f'      <div class="mega-group">\n'
-                    f'        <a class="mega-group-name" href="{base}">{esc(s_["name"])}</a>\n'
                     f'        <ul class="mega-list">{items}</ul>\n'
                     f'      </div>')
             cols.append('    <div class="mega-col">\n' + "\n".join(blocks) + "\n    </div>")
