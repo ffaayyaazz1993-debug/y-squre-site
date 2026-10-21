@@ -6,28 +6,8 @@
    "slug": "north-america",
    "name": "North America",
    "path": "/geopolitics/north-america/",
-   "lede": "Trade and tariff policy, alliance commitments, border and immigration policy, and the fiscal and monetary divergence across Canada, the United States and Mexico.",
-   "sections": [
-    {
-     "slug": "canada-united-states-mexico",
-     "name": "Canada, United States & Mexico",
-     "countries": [
-      {
-       "name": "Canada",
-       "anchor": "canada"
-      },
-      {
-       "name": "Mexico",
-       "anchor": "mexico"
-      },
-      {
-       "name": "United States",
-       "anchor": "united-states"
-      }
-     ],
-     "scope": "USMCA compliance, tariff and trade-policy actions, and the monetary and fiscal divergence between the three."
-    }
-   ],
+   "lede": "Trade and tariff policy, alliance commitments, border and immigration policy, and fiscal and monetary divergence across the region.",
+   "sections": [],
    "also": [],
    "flat": false
   },
@@ -70,78 +50,9 @@
    "slug": "middle-east-north-africa",
    "name": "Middle East & North Africa",
    "path": "/geopolitics/middle-east-north-africa/",
-   "lede": "Gulf energy policy and North African sovereign economics. The Levant, the Eastern Mediterranean, and Iran & Iraq are out of scope for now and are not represented here; this is a deliberate editorial cut, not an oversight.",
-   "sections": [
-    {
-     "slug": "gulf",
-     "name": "Gulf",
-     "countries": [
-      {
-       "name": "Bahrain",
-       "anchor": "bahrain"
-      },
-      {
-       "name": "Kuwait",
-       "anchor": "kuwait"
-      },
-      {
-       "name": "Oman",
-       "anchor": "oman"
-      },
-      {
-       "name": "Qatar",
-       "anchor": "qatar"
-      },
-      {
-       "name": "Saudi Arabia",
-       "anchor": "saudi-arabia"
-      },
-      {
-       "name": "United Arab Emirates",
-       "anchor": "united-arab-emirates"
-      }
-     ],
-     "scope": "Oil production policy, OPEC+ compliance, and regional capital flows."
-    },
-    {
-     "slug": "north-africa",
-     "name": "North Africa",
-     "countries": [
-      {
-       "name": "Algeria",
-       "anchor": "algeria"
-      },
-      {
-       "name": "Egypt",
-       "anchor": "egypt"
-      },
-      {
-       "name": "Libya",
-       "anchor": "libya"
-      },
-      {
-       "name": "Morocco",
-       "anchor": "morocco"
-      },
-      {
-       "name": "Sudan",
-       "anchor": "sudan"
-      },
-      {
-       "name": "Tunisia",
-       "anchor": "tunisia"
-      },
-      {
-       "name": "Mauritania",
-       "anchor": "mauritania"
-      }
-     ],
-     "scope": "Sovereign debt, energy subsidies, and Mediterranean supply routes."
-    }
-   ],
-   "also": [
-    "Coverage here is limited to the Gulf and North Africa. The Levant, the Eastern Mediterranean, and Iran & Iraq were withdrawn and redirect to /geopolitics/middle-east-north-africa/."
-   ],
+   "lede": "Energy policy, sovereign economics and trade across the Middle East and North Africa.",
+   "sections": [],
+   "also": [],
    "flat": false
   },
   {

@@ -101,17 +101,9 @@ def region_page(region):
     </table>
 '''
     else:
-        # Subregion cards, each with its country count and scope line.
-        cards = []
-        for s_ in region["sections"]:
-            n = len(s_["countries"])
-            cards.append(f'''
-        <a class="sec-card" href="/geopolitics/{slug}/{s_["slug"]}/">
-          <h3>{esc(s_["name"])}</h3>
-          <p class="sec-card-scope">{esc(s_["scope"])}</p>
-          <p class="sec-card-meta">{n} countr{"y" if n == 1 else "ies"}</p>
-        </a>''')
-
+        # Subregions removed: continent page shows only the heading, lede,
+        # and empty state. Country-level detail lives on the subregion pages
+        # reached via the mega-menu and sitemap.
         crumbs = N.breadcrumb([("Home", "/latest/"), ("Geopolitics", "/geopolitics/"),
                                (name, None)])
 
@@ -125,17 +117,12 @@ def region_page(region):
       <p>Event reporting appears here only when it can be attributed to a
       named, checkable source. Nothing has been published for {esc(name)} yet.</p>
     </div>
-
-    <h2 class="section-h">Subregions</h2>
-    <div class="sec-grid">
-{chr(10).join(cards)}
-    </div>
 '''
-    if region.get("also"):
-        body += f'''
+        if region.get("also"):
+            body += f'''
     <p class="page-note"><strong>Note on classification.</strong> {esc(region["also"][0])}</p>
 '''
-    body += "  </main>\n"
+        body += "  </main>\n"
 
     return {
         "path": f"/geopolitics/{slug}/index.html",

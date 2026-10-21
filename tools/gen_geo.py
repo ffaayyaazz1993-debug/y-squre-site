@@ -70,12 +70,8 @@ TAXONOMY = {
     "regions": [
         R("north-america", "North America",
           "Trade and tariff policy, alliance commitments, border and immigration policy, "
-          "and the fiscal and monetary divergence across Canada, the United States and "
-          "Mexico.",
-          [S("canada-united-states-mexico", "Canada, United States & Mexico",
-             ["Canada", "Mexico", "United States"],
-             "USMCA compliance, tariff and trade-policy actions, and the monetary and "
-             "fiscal divergence between the three.")]),
+          "and fiscal and monetary divergence across the region.",
+          []),
 
         R("europe", "Europe",
           "Energy security, the sanctions architecture, fiscal fragmentation, and monetary "
@@ -95,19 +91,9 @@ TAXONOMY = {
           flat=True),
 
         R("middle-east-north-africa", "Middle East & North Africa",
-          "Gulf energy policy and North African sovereign economics. The Levant, the "
-          "Eastern Mediterranean, and Iran & Iraq are out of scope for now and are not "
-          "represented here; this is a deliberate editorial cut, not an oversight.",
-          [S("gulf", "Gulf",
-             ["Bahrain", "Kuwait", "Oman", "Qatar", "Saudi Arabia",
-              "United Arab Emirates"],
-             "Oil production policy, OPEC+ compliance, and regional capital flows."),
-           S("north-africa", "North Africa",
-             ["Algeria", "Egypt", "Libya", "Morocco", "Sudan", "Tunisia", "Mauritania"],
-             "Sovereign debt, energy subsidies, and Mediterranean supply routes.")],
-          also=["Coverage here is limited to the Gulf and North Africa. The Levant, the "
-                "Eastern Mediterranean, and Iran & Iraq were withdrawn and redirect to "
-                "/geopolitics/middle-east-north-africa/."]),
+          "Energy policy, sovereign economics and trade across the Middle East and "
+          "North Africa.",
+          []),
 
         R("asia", "Asia",
           "India, China, Russia and Japan alongside the Southeast Asian manufacturing "
