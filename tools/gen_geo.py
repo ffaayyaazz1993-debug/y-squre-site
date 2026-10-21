@@ -75,20 +75,8 @@ TAXONOMY = {
 
         R("europe", "Europe",
           "Energy security, the sanctions architecture, fiscal fragmentation, and monetary "
-          "policy divergence between the euro area and the periphery. Coverage is currently "
-          "narrowed to the four largest euro-area economies plus the United Kingdom, at the "
-          "editor's direction; the remaining European states are not yet covered and are "
-          "deliberately absent rather than stubbed.",
-          [S("western-europe", "Western Europe",
-             ["France", "Germany", "Switzerland", "United Kingdom"],
-             "Euro-area fiscal and monetary policy, energy security, and the sanctions "
-             "architecture. This is a partial list, not the full subregion: the other "
-             "European states are not currently in scope.")],
-          also=["European coverage is a four-country subset for now. The subregions that "
-                "previously existed here -- Northern Europe, Southern Europe, Eastern "
-                "Europe, the Balkans, the Baltics and Central Europe -- are retired and "
-                "redirect to /geopolitics/europe/."],
-          flat=True),
+          "policy divergence between the euro area and the periphery.",
+          []),
 
         R("middle-east-north-africa", "Middle East & North Africa",
           "Energy policy, sovereign economics and trade across the Middle East and "
@@ -96,28 +84,13 @@ TAXONOMY = {
           []),
 
         R("asia", "Asia",
-          "India, China, Russia and Japan alongside the Southeast Asian manufacturing "
-          "base: semiconductor and critical-mineral supply chains, trade architecture, "
-          "and maritime supply routes. Central Asia, the Caucasus, Korea, Taiwan, "
-          "Mongolia and the rest of South Asia are out of scope for now.",
-          [S("asia-countries", "Asia",
-             ["China", "India", "Japan", "Russia"] + ["Brunei", "Cambodia", "Indonesia", "Laos", "Malaysia", "Myanmar", "Philippines", "Singapore", "Thailand", "Timor-Leste", "Vietnam"],
-             "Commodity demand, energy exports and import dependence, sanctions exposure, "
-             "manufacturing share, and export policy.")],
-          also=["Coverage here is limited to China, India, Japan, Russia and the eleven "
-                "Southeast Asian states. Central Asia, the Caucasus, North and South Korea, "
-                "Taiwan, Mongolia, and the rest of South Asia were withdrawn."],
-          flat=True),
+          "Commodity demand, energy exports and import dependence, sanctions exposure, "
+          "manufacturing share, and export policy.",
+          []),
 
         R("oceania-pacific", "Oceania & Pacific",
-          "Commodity exports, RBA policy, and Pacific financing arrangements. The Pacific "
-          "island states are out of scope for now and are not represented here.",
-          [S("australia-new-zealand", "Australia & New Zealand",
-             ["Australia", "New Zealand"],
-             "Commodity exports, RBA policy, and Pacific financing arrangements.")],
-          also=["Coverage here is limited to Australia and New Zealand. The Pacific island "
-                "states were withdrawn and redirect to /geopolitics/oceania-pacific/."],
-          flat=True),
+          "Commodity exports, RBA policy, and Pacific financing arrangements.",
+          []),
     ],
 
     # ------------------------------------------------------------------ topical

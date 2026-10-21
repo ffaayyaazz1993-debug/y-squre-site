@@ -15,36 +15,10 @@
    "slug": "europe",
    "name": "Europe",
    "path": "/geopolitics/europe/",
-   "lede": "Energy security, the sanctions architecture, fiscal fragmentation, and monetary policy divergence between the euro area and the periphery. Coverage is currently narrowed to the four largest euro-area economies plus the United Kingdom, at the editor's direction; the remaining European states are not yet covered and are deliberately absent rather than stubbed.",
-   "sections": [
-    {
-     "slug": "western-europe",
-     "name": "Western Europe",
-     "countries": [
-      {
-       "name": "France",
-       "anchor": "france"
-      },
-      {
-       "name": "Germany",
-       "anchor": "germany"
-      },
-      {
-       "name": "Switzerland",
-       "anchor": "switzerland"
-      },
-      {
-       "name": "United Kingdom",
-       "anchor": "united-kingdom"
-      }
-     ],
-     "scope": "Euro-area fiscal and monetary policy, energy security, and the sanctions architecture. This is a partial list, not the full subregion: the other European states are not currently in scope."
-    }
-   ],
-   "also": [
-    "European coverage is a four-country subset for now. The subregions that previously existed here -- Northern Europe, Southern Europe, Eastern Europe, the Balkans, the Baltics and Central Europe -- are retired and redirect to /geopolitics/europe/."
-   ],
-   "flat": true
+   "lede": "Energy security, the sanctions architecture, fiscal fragmentation, and monetary policy divergence between the euro area and the periphery.",
+   "sections": [],
+   "also": [],
+   "flat": false
   },
   {
    "slug": "middle-east-north-africa",
@@ -59,107 +33,19 @@
    "slug": "asia",
    "name": "Asia",
    "path": "/geopolitics/asia/",
-   "lede": "India, China, Russia and Japan alongside the Southeast Asian manufacturing base: semiconductor and critical-mineral supply chains, trade architecture, and maritime supply routes. Central Asia, the Caucasus, Korea, Taiwan, Mongolia and the rest of South Asia are out of scope for now.",
-   "sections": [
-    {
-     "slug": "asia-countries",
-     "name": "Asia",
-     "countries": [
-      {
-       "name": "China",
-       "anchor": "china"
-      },
-      {
-       "name": "India",
-       "anchor": "india"
-      },
-      {
-       "name": "Japan",
-       "anchor": "japan"
-      },
-      {
-       "name": "Russia",
-       "anchor": "russia"
-      },
-      {
-       "name": "Brunei",
-       "anchor": "brunei"
-      },
-      {
-       "name": "Cambodia",
-       "anchor": "cambodia"
-      },
-      {
-       "name": "Indonesia",
-       "anchor": "indonesia"
-      },
-      {
-       "name": "Laos",
-       "anchor": "laos"
-      },
-      {
-       "name": "Malaysia",
-       "anchor": "malaysia"
-      },
-      {
-       "name": "Myanmar",
-       "anchor": "myanmar"
-      },
-      {
-       "name": "Philippines",
-       "anchor": "philippines"
-      },
-      {
-       "name": "Singapore",
-       "anchor": "singapore"
-      },
-      {
-       "name": "Thailand",
-       "anchor": "thailand"
-      },
-      {
-       "name": "Timor-Leste",
-       "anchor": "timor-leste"
-      },
-      {
-       "name": "Vietnam",
-       "anchor": "vietnam"
-      }
-     ],
-     "scope": "Commodity demand, energy exports and import dependence, sanctions exposure, manufacturing share, and export policy."
-    }
-   ],
-   "also": [
-    "Coverage here is limited to China, India, Japan, Russia and the eleven Southeast Asian states. Central Asia, the Caucasus, North and South Korea, Taiwan, Mongolia, and the rest of South Asia were withdrawn."
-   ],
-   "flat": true
+   "lede": "Commodity demand, energy exports and import dependence, sanctions exposure, manufacturing share, and export policy.",
+   "sections": [],
+   "also": [],
+   "flat": false
   },
   {
    "slug": "oceania-pacific",
    "name": "Oceania & Pacific",
    "path": "/geopolitics/oceania-pacific/",
-   "lede": "Commodity exports, RBA policy, and Pacific financing arrangements. The Pacific island states are out of scope for now and are not represented here.",
-   "sections": [
-    {
-     "slug": "australia-new-zealand",
-     "name": "Australia & New Zealand",
-     "countries": [
-      {
-       "name": "Australia",
-       "anchor": "australia"
-      },
-      {
-       "name": "New Zealand",
-       "anchor": "new-zealand"
-      }
-     ],
-     "scope": "Commodity exports, RBA policy, and Pacific financing arrangements."
-    }
-   ],
-   "also": [
-    "Coverage here is limited to Australia and New Zealand. The Pacific island states were withdrawn and redirect to /geopolitics/oceania-pacific/."
-   ],
-   "flat": true
+   "lede": "Commodity exports, RBA policy, and Pacific financing arrangements.",
+   "sections": [],
+   "also": [],
+   "flat": false
   }
  ],
  "topics": [

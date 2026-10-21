@@ -53,7 +53,7 @@
   # Asia is flat now: China, India, Japan, Russia and the Southeast Asian states
   # are listed directly on /geopolitics/asia/, so none of its subregion pages
   # exist any more. Central Asia and the Caucasus are withdrawn too.
-  RewriteRule ^geopolitics/asia/(central-asia|caucasus|india|china|russia|southeast-asia)/?$ /geopolitics/asia/ [R=301,L]
+  RewriteRule ^geopolitics/asia/(central-asia|caucasus|india|china|russia|southeast-asia|asia-countries)/?$ /geopolitics/asia/ [R=301,L]
 
   # Oceania is flat: Australia and New Zealand only. The Pacific island states
   # are withdrawn, and Australia & New Zealand is no longer its own page.
