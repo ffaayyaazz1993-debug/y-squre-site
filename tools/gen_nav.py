@@ -300,18 +300,6 @@ def header(current=""):
         </ul>
       </div>
     </nav>
-    <nav class="region-strip region-strip-header" aria-label="Regions">
-      <div class="wrap">
-        <ul class="region-strip-list region-strip-list-header">
-          <li><a class="region-strip-link" href="/geopolitics/north-america/">North America</a></li>
-          <li><a class="region-strip-link" href="/geopolitics/europe/">Europe</a></li>
-          <li><a class="region-strip-link" href="/geopolitics/middle-east-north-africa/">Middle East &amp; North Africa</a></li>
-          <li><a class="region-strip-link" href="/geopolitics/asia/">Asia</a></li>
-          <li><a class="region-strip-link" href="/geopolitics/oceania-pacific/">Oceania &amp; Pacific</a></li>
-          <li><a class="region-strip-link" href="/geopolitics/global/">Global</a></li>
-        </ul>
-      </div>
-    </nav>
 {mobile_menu()}
   </header>
 '''
