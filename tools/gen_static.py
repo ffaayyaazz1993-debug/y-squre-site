@@ -55,7 +55,7 @@ simple("account/index.html", "Account | Y-Squre",
 
             <p><a href="/latest/">Return to the front page</a> or browse
             <a href="/geopolitics/">geopolitical coverage</a> and
-            <a href="/macro/">macroeconomic analysis</a>.</p>""")
+            macroeconomic analysis.</p>""")
 
 # ---------------------------------------------------------------------- about
 simple("about/index.html", "About Y-Squre | Y-Squre Research",
@@ -424,7 +424,6 @@ PAGES.append(("404/index.html",
                 '          <li><a href="/latest/">Homepage</a></li>\n'
                 '          <li><a href="/latest/">Latest articles</a></li>\n'
                 '          <li><a href="/geopolitics/">Geopolitics</a></li>\n'
-                '          <li><a href="/macro/">Macroeconomics</a></li>\n'
                 '          <li><a href="/markets/">Markets</a></li>\n'
                 '          <li><a href="/blog/">Analysis and blog</a></li>\n'
                 '          <li><a href="/sitemap.xml">Sitemap</a></li>\n'

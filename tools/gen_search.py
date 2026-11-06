@@ -41,7 +41,7 @@ for r in N.REGIONS:
         for c in s["countries"]:
             add(c["name"], f"{base}#{c['anchor']}", "country", s["name"])
 
-for slug in ("markets", "macro", "research", "blog"):
+for slug in ("markets", "research", "blog"):
     t = N.TOPICS[slug]
     add(t["name"], t["path"], "section", t["name"])
     for c in t["children"]:

@@ -8,6 +8,11 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # The Macro section is retired: /macro/ and its child pages land on the
+  # front page. Files are removed from the repo; this rule keeps old links
+  # (search results, the research index) from returning a bare 404.
+  RewriteRule ^macro(?:/|$) /latest/ [R=301,L]
+
   # --- renamed geopolitical sections -------------------------------------
   RewriteRule ^geopolitics/middle-east/?$        /geopolitics/middle-east-north-africa/ [R=301,L]
   RewriteRule ^geopolitics/africa/?$            /geopolitics/sub-saharan-africa/    [R=301,L]

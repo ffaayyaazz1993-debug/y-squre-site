@@ -280,7 +280,6 @@ def latest():
         </div>
         <ul class="chips" style="margin-top:14px">
           <li><a class="chip" href="/geopolitics/">Geopolitics</a></li>
-          <li><a class="chip" href="/macro/">Macro</a></li>
           <li><a class="chip" href="/markets/">Markets</a></li>
         </ul>
       </section>

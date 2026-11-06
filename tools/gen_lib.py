@@ -19,12 +19,12 @@ EMAIL = "ffaayyaazz1993@gmail.com"
 PUB = "pub-9461123152614358"
 CLIENT = "ca-pub-9461123152614358"
 
-NAV = [("/latest/", "Latest"), ("/geopolitics/", "Geopolitics"), ("/macro/", "Macro"),
+NAV = [("/latest/", "Latest"), ("/geopolitics/", "Geopolitics"),
        ("/markets/", "Markets"), ("/blog/", "Blog"), ("/research/", "Research")]
 
 FOOTER_COLS = [
     ("Sections", [("/latest/", "Latest"), ("/geopolitics/", "Geopolitics"),
-                  ("/macro/", "Macro"), ("/markets/", "Markets"),
+                  ("/markets/", "Markets"),
                   ("/blog/", "Blog"), ("/research/", "Research")]),
     ("About", [("/about/index.html", "About Y-Squre"), ("/contact/index.html", "Contact"),
                ("/editorial-policy/index.html", "Editorial Policy"),

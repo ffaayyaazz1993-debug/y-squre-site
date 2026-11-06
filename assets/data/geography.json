@@ -161,54 +161,6 @@
    ]
   },
   {
-   "slug": "macro",
-   "name": "Macro",
-   "path": "/macro/",
-   "lede": "The aggregate economy: prices, output, labour and policy.",
-   "children": [
-    {
-     "slug": "inflation",
-     "name": "Inflation",
-     "scope": "Headline and core, supply versus demand drivers."
-    },
-    {
-     "slug": "gdp",
-     "name": "GDP",
-     "scope": "Growth accounting and revisions."
-    },
-    {
-     "slug": "interest-rates",
-     "name": "Interest Rates",
-     "scope": "Policy paths, curve shape and term premia."
-    },
-    {
-     "slug": "monetary-policy",
-     "name": "Monetary Policy",
-     "scope": "Balance sheets, frameworks and credibility."
-    },
-    {
-     "slug": "fiscal-policy",
-     "name": "Fiscal Policy",
-     "scope": "Budgets, debt sustainability and sovereign issuance."
-    },
-    {
-     "slug": "employment",
-     "name": "Employment",
-     "scope": "Labour markets, wages and participation."
-    },
-    {
-     "slug": "trade",
-     "name": "Trade",
-     "scope": "Tariffs, current accounts and re-exports."
-    },
-    {
-     "slug": "currencies",
-     "name": "Currencies",
-     "scope": "Exchange-rate pass-through to prices."
-    }
-   ]
-  },
-  {
    "slug": "research",
    "name": "Research",
    "path": "/research/",

@@ -218,7 +218,30 @@ def primary_nav(current=""):
       '        </div>\n'
       '      </div>\n'
       '      </li>')
-    for label, href in (("Business", "/macro/"), ("Market", "/markets/")):
+    # Business: fresh start. No destination pages yet, so the trigger opens
+    # its panel (first click) and has nowhere to go (second click). The
+    # economy categories are placeholders until the Business section exists.
+    biz_pid = "m-business"
+    out.append(_trigger("Business", "#", biz_pid))
+    biz_items = "".join(
+        '<li><a href="#">' + esc(n) + '</a></li>'
+        for n in ("Developed Economies", "Emerging Economies",
+                  "Potential Economies", "Non-Performing Economies"))
+    out.append(
+      '<div class="mega" id="' + biz_pid + '" data-open="false" aria-label="Business sections">\n'
+      '        <div class="mega-inner">\n'
+      '          <div class="mega-head">\n'
+      '            <a class="mega-title" href="#">Business</a>\n'
+      '          </div>\n'
+      '          <div class="mega-cols">\n'
+      '            <div class="mega-col">\n'
+      '      <ul class="mega-list">' + biz_items + '</ul>\n'
+      '            </div>\n'
+      '          </div>\n'
+      '        </div>\n'
+      '      </div>\n'
+      '      </li>')
+    for label, href in (("Market", "/markets/"),):
         out.append(
             '      <li class="nav-item">\n'
             '        <a class="nav-trigger" href="' + href + '">'
@@ -246,7 +269,7 @@ def mobile_menu():
     rows.append(f'<li class="acc-leaf"><a href="{g["path"]}">{esc(g["name"])}</a></li>')
     for r in REGIONS:
         rows.append(f'<li class="acc-leaf"><a href="{r["path"]}">{esc(r["name"])}</a></li>')
-    for slug in ("markets", "macro", "research", "blog"):
+    for slug in ("markets", "research", "blog"):
         t = TOPICS[slug]
         rows.append(f'<li class="acc-leaf"><a href="{t["path"]}">{esc(t["name"])}</a></li>')
 
