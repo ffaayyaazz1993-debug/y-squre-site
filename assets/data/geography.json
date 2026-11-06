@@ -7,7 +7,27 @@
    "name": "North America",
    "path": "/geopolitics/north-america/",
    "lede": "Trade and tariff policy, alliance commitments, border and immigration policy, and fiscal and monetary divergence across the region.",
-   "sections": [],
+   "sections": [
+    {
+     "slug": "canada-united-states-mexico",
+     "name": "Canada, United States & Mexico",
+     "countries": [
+      {
+       "name": "Canada",
+       "anchor": "canada"
+      },
+      {
+       "name": "Mexico",
+       "anchor": "mexico"
+      },
+      {
+       "name": "United States",
+       "anchor": "united-states"
+      }
+     ],
+     "scope": "USMCA compliance, tariff and trade-policy actions, and the monetary and fiscal divergence between the three."
+    }
+   ],
    "also": [],
    "flat": false
   },
