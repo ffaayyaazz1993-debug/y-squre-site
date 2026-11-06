@@ -266,11 +266,23 @@ def topic_child_page(topic, child):
             if is_blog else
             f'Y-Squre coverage of {child["name"].lower()} under {topic["name"].lower()}.')
 
+    side = ""
+    if child.get("children"):
+        items = "".join(
+            f'      <li><a href="{base}{s_["slug"]}/">{esc(s_["name"])}</a></li>\n'
+            for s_ in child["children"])
+        side = f'''
+    <aside class="side-dropdown">
+      <h2 class="section-h">{esc(child["name"])}</h2>
+      <ul class="link-list">
+{items}      </ul>
+    </aside>
+'''
     body = f'''  <main id="main" class="wrap page">
 {crumbs}
     <h1>{esc(child["name"])}</h1>
     <p class="page-lede">{esc(child["scope"])}</p>
-
+{side}
     <div class="empty-state">
       <p class="empty-kicker">No verified reports published yet</p>
       <p>{lead} Nothing has been published here that we could attribute to a
@@ -290,6 +302,53 @@ def topic_child_page(topic, child):
         "title": f"{child['name']} — {topic['name']} | Y-Squre",
         "desc": child["scope"][:155],
         "h1": child["name"],
+        "body": body,
+        "section": topic["slug"],
+    }
+
+
+def topic_sub_page(topic, child, sub):
+    """A child of a child: /markets/stock-market/us/. Renders the same shape
+    as topic_child_page, plus a side dropdown back to its siblings."""
+    base = f"{topic['path']}{child['slug']}/{sub['slug']}/"
+    crumbs = N.breadcrumb([("Home", "/latest/"), (topic["name"], topic["path"]),
+                           (child["name"], f"{topic['path']}{child['slug']}/"),
+                           (sub["name"], None)])
+    lead = (f"Y-Squre coverage of {sub['name'].lower()} equities under "
+            f"{child['name'].lower()}.")
+    sibs = "".join(
+        f'      <li><a href="{topic["path"]}{child["slug"]}/{s_["slug"]}/">{esc(s_["name"])}</a></li>\n'
+        for s_ in child["children"] if s_["slug"] != sub["slug"])
+    body = f'''  <main id="main" class="wrap page">
+{crumbs}
+    <h1>{esc(sub["name"])} — {esc(child["name"])}</h1>
+    <p class="page-lede">{esc(sub["scope"])}</p>
+
+    <aside class="side-dropdown">
+      <h2 class="section-h">{esc(child["name"])}</h2>
+      <ul class="link-list">
+{sibs}      </ul>
+    </aside>
+
+    <div class="empty-state">
+      <p class="empty-kicker">No verified reports published yet</p>
+      <p>{lead} Nothing has been published here that we could attribute to a
+      named source, so this page carries no reports rather than a placeholder.</p>
+    </div>
+
+    <h2 class="section-h">Related sections</h2>
+    <ul class="link-list">
+      <li><a href="{topic['path']}{child['slug']}/">All {esc(child["name"])}</a></li>
+      <li><a href="{topic['path']}">All {esc(topic["name"])}</a></li>
+    </ul>
+  </main>
+'''
+    return {
+        "path": base + "index.html",
+        "url": base,
+        "title": f"{sub['name']} — {child['name']} | Y-Squre",
+        "desc": sub["scope"][:155],
+        "h1": sub["name"],
         "body": body,
         "section": topic["slug"],
     }
@@ -361,6 +420,8 @@ def build_all():
         pages.append(topic_page(t))
         for c in t["children"]:
             pages.append(topic_child_page(t, c))
+            for s_ in c.get("children", []):
+                pages.append(topic_sub_page(t, c, s_))
     return pages
 
 

@@ -161,7 +161,29 @@
     {
      "slug": "stock-market",
      "name": "Stock Market",
-     "scope": "Equity markets: listings, valuations and index behaviour."
+     "scope": "Equity markets: listings, valuations and index behaviour.",
+     "children": [
+      {
+       "slug": "us",
+       "name": "US",
+       "scope": "US equities: NYSE, Nasdaq, indices and single names."
+      },
+      {
+       "slug": "uk",
+       "name": "UK",
+       "scope": "UK equities: FTSE listings and UK market structure."
+      },
+      {
+       "slug": "europe",
+       "name": "Europe",
+       "scope": "European equities: continental exchanges and index behaviour."
+      },
+      {
+       "slug": "asia",
+       "name": "Asia",
+       "scope": "Asian equities: regional exchanges and cross-market flows."
+      }
+     ]
     },
     {
      "slug": "forex-market",
