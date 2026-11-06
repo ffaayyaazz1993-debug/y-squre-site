@@ -101,9 +101,9 @@
       t.addEventListener('focus', function () { if (openId) open(id, false); });
 
       t.addEventListener('click', function (e) {
-        // On desktop, the first click opens rather than navigating. Following
-        // activation (Enter on an open trigger) still follows the link.
-        if (isOpen(id)) { e.preventDefault(); close(false); }
+        // First click opens the panel; a second click (or Enter on an open
+        // trigger) follows the link through to its href.
+        if (isOpen(id)) { close(false); }
         else { e.preventDefault(); open(id, false); }
       });
 

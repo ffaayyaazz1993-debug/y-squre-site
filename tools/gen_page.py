@@ -26,7 +26,7 @@ def render(p):
     if 'class="ad-slot ad-top"' not in body:
         # Right after the opening <main ...>: below the header, above the
         # first heading, which is where the slot is meant to sit.
-        m = re.search(r"<main\b[^>]*>", body)
+        m = re.search(r"<main[^>]*>", body)
         if m:
             body = (body[:m.end()] + "\n" + ad("Advertisement", "ad-top").strip()
                     + body[m.end():])
@@ -43,8 +43,37 @@ def render(p):
         )
         + header(p.get("section", ""))
         + body
+        + "<script>\n"
+        + "(function(){\n"
+        + "  var lastY=window.scrollY||0;\n"
+        + "  var hidden=false;\n"
+        + "  var rs=document.querySelector('.region-strip');\n"
+        + "  var ads=document.querySelectorAll('.ad-slot');\n"
+        + "  function apply(hide){\n"
+        + "    if(hide===hidden) return;\n"
+        + "    hidden=hide;\n"
+        + "    if(rs){\n"
+        + "      rs.style.maxHeight=hide?'0':'';\n"
+        + "      rs.style.opacity=hide?'0':'';\n"
+        + "      rs.style.pointerEvents=hide?'none':'';\n"
+        + "    }\n"
+        + "    ads.forEach(function(a){\n"
+        + "      a.style.opacity=hide?'0':'';\n"
+        + "      a.style.visibility=hide?'hidden':'';\n"
+        + "      a.style.pointerEvents=hide?'none':'';\n"
+        + "    });\n"
+        + "  }\n"
+        + "  window.addEventListener('scroll',function(){\n"
+        + "    var y=window.scrollY||0;\n"
+        + "    if(y>lastY+4 && y>120) apply(true);\n"
+        + "    else if(y<lastY-4 || y<80) apply(false);\n"
+        + "    lastY=y;\n"
+        + "  },{passive:true});\n"
+        + "})();\n"
+        + "</script>\n"
         + footer()
     )
+
 
 
 def emit(pages):

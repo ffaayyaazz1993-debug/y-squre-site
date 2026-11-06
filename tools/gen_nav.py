@@ -187,40 +187,44 @@ def _trigger(label, href, panel_id):
 
 
 def primary_nav(current=""):
-    """Primary bar: every region.
+    """Primary bar: top-level tabs.
 
-    "Latest" used to be the first item here. It is the front page now (see the
-    301 at / in .htaccess), and a nav item that links to the page you are
-    already on is noise, so it moved to the wordmark: the logo carries that
-    destination instead. That is the one place a reader looks for "go to the
-    front page", which is why the logo had to become a real link rather than
-    just losing its href.
+    The geographic triggers moved off the bar and into the section-front
+    region strip. The bar now carries the three top-level tabs: Global News,
+    Business, and Market.
     """
     out = []
-    for r in REGIONS:
-        pid = _panel_id("m", r["slug"])
-        out.append(_trigger(r["name"], r["path"], pid))
-        out.append(mega_region(r) + "\n      </li>")
-
-    # The second nav row was removed: it duplicated the section hierarchy and
-    # pushed the lead story down. Markets, Macro, Research and Blog now live in
-    # the Global panel, which was already the row's catch-all, so all four stay
-    # one click from the header and nothing is stranded.
-    global_topics = dict(TOPICS["global"])
-    moved = []
-    for slug in ("markets", "macro", "research", "blog"):
-        t = TOPICS[slug]
-        moved.append({"name": t["name"], "slug": "", "scope": t["lede"],
-                      "url": t["path"]})
-        for c in t["children"]:
-            moved.append({"name": c["name"], "slug": c["slug"],
-                          "scope": c.get("scope", ""),
-                          "url": t["path"] + c["slug"] + "/"})
-    global_topics["children"] = list(global_topics["children"]) + moved
-    pid = _panel_id("m", "global")
-    out.append(_trigger(global_topics["name"], global_topics["path"], pid))
-    out.append(mega_topic(global_topics) + "\n      </li>")
-
+    # Global News carries a mega panel: clicking it opens the region list
+    # (North America first); a second click follows the href to "/".
+    # Without aria-controls + a panel, nav.js never binds the trigger and
+    # the click just navigates -- North America never appears.
+    pid = "m-global-news"
+    out.append(_trigger("Global News", "/", pid))
+    items = "".join(
+        '<li><a href="' + r["path"] + '">' + esc(r["name"]) + '</a></li>'
+        for r in REGIONS)
+    items += '<li><a href="/geopolitics/global/">Global</a></li>'
+    out.append(
+      '<div class="mega" id="' + pid + '" data-open="false" aria-label="Global News regions">\n'
+      '        <div class="mega-inner">\n'
+      '          <div class="mega-head">\n'
+      '            <a class="mega-title" href="/">Global News</a>\n'
+      '          </div>\n'
+      '          <div class="mega-cols">\n'
+      '            <div class="mega-col">\n'
+      '      <ul class="mega-list">' + items + '</ul>\n'
+      '            </div>\n'
+      '          </div>\n'
+      '        </div>\n'
+      '      </div>\n'
+      '      </li>')
+    for label, href in (("Business", "/macro/"), ("Market", "/markets/")):
+        out.append(
+            '      <li class="nav-item">\n'
+            '        <a class="nav-trigger" href="' + href + '">'
+            '<span class="nav-label">' + esc(label) + '</span></a>\n'
+            '      </li>'
+        )
     return "\n".join(out)
 
 
@@ -268,7 +272,7 @@ def header(current=""):
   <header class="site-header">
     <div class="masthead">
       <div class="wrap masthead-inner">
-        <a class="brand" href="/latest/">
+        <a class="brand" href="/">
           <span class="brand-mark" aria-hidden="true">Y</span>
           <span class="brand-text"><span class="brand-name">Y-SQURE</span></span>
         </a>
@@ -293,6 +297,18 @@ def header(current=""):
       <div class="wrap">
         <ul class="nav-list nav-list-geo">
 {primary_nav(current)}
+        </ul>
+      </div>
+    </nav>
+    <nav class="region-strip region-strip-header" aria-label="Regions">
+      <div class="wrap">
+        <ul class="region-strip-list region-strip-list-header">
+          <li><a class="region-strip-link" href="/geopolitics/north-america/">North America</a></li>
+          <li><a class="region-strip-link" href="/geopolitics/europe/">Europe</a></li>
+          <li><a class="region-strip-link" href="/geopolitics/middle-east-north-africa/">Middle East &amp; North Africa</a></li>
+          <li><a class="region-strip-link" href="/geopolitics/asia/">Asia</a></li>
+          <li><a class="region-strip-link" href="/geopolitics/oceania-pacific/">Oceania &amp; Pacific</a></li>
+          <li><a class="region-strip-link" href="/geopolitics/global/">Global</a></li>
         </ul>
       </div>
     </nav>

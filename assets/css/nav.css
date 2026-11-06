@@ -513,3 +513,55 @@
 @media (max-height: 620px) {
   .site-header .tagline { display: none; }
 }
+
+.region-strip-header {
+  max-height: 60px;
+  transition: max-height .25s ease, opacity .25s ease, padding .25s ease, border-width .25s ease;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.region-strip-list-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 18px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.region-strip-link {
+  font: 600 .78rem/1 var(--sans);
+  letter-spacing: .045em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.region-strip-link:hover,
+.region-strip-link:focus-visible {
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+
+.region-strip-header {
+  transition: max-height .25s ease, opacity .25s ease, padding .25s ease, transform .25s ease;
+  overflow: hidden;
+}
+
+.region-strip-header.region-hidden {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+  transform: translateY(-100%);
+  visibility: hidden;
+}
+
+.ad-slot.ad-hidden {
+  display: none !important;
+}

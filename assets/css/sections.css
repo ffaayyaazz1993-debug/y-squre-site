@@ -197,19 +197,33 @@
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  gap: 12px;
 }
+.link-list li {
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+.link-list li:last-child { border-bottom: none; }
 .link-list a {
-  display: inline-block;
-  padding: 7px 11px;
-  border: 1px solid var(--line);
-  font-size: .82rem;
+  display: block;
+  padding: 0;
+  border: none;
+  font-size: .92rem;
   font-weight: 600;
   color: var(--navy);
   text-decoration: none;
+  line-height: 1.4;
 }
-.link-list a:hover { border-color: var(--accent); color: var(--accent); }
+.link-list a:hover { border-color: transparent; color: var(--accent); text-decoration: underline; }
+.link-list time {
+  display: block;
+  margin-top: 2px;
+  color: #666;
+  font-size: .8rem;
+  font-weight: 400;
+}
 
 /* ----------------------------------------------------- type legend */
 .type-legend { margin: 0 0 8px; }

@@ -86,7 +86,7 @@
 # pass their signal to the page that replaced it. Declared before
 # DirectoryIndex so it is answered first, and exact-anchored (^/$) so it
 # cannot touch /latest/ or anything else.
-RedirectMatch 301 ^/$ /latest/
+RewriteRule ^$ /latest/ [L]
 
 DirectoryIndex index.html
 

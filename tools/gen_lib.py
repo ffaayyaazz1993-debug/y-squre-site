@@ -100,6 +100,8 @@ def head(title, desc, url, *, ctype="website", published="", updated="",
                   ["/assets/css/base.css", "/assets/css/layout.css",
                    "/assets/css/article.css", "/assets/css/nav.css", "/assets/css/sections.css",
                    "/assets/css/responsive.css"])
+    for c in extra_css:
+        css += '\n    <link rel="stylesheet" href="%s">' % asset(c)
     # OG image is a real, on-server asset (SVG) so crawlers have something to fetch.
     ogimg = SITE + "/assets/images/logo/og-default.svg"
     return f"""<!DOCTYPE html>
