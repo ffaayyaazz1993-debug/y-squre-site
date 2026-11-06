@@ -243,13 +243,27 @@ def primary_nav(current=""):
       '        </div>\n'
       '      </div>\n'
       '      </li>')
-    for label, href in (("Market", "/markets/"),):
-        out.append(
-            '      <li class="nav-item">\n'
-            '        <a class="nav-trigger" href="' + href + '">'
-            '<span class="nav-label">' + esc(label) + '</span></a>\n'
-            '      </li>'
-        )
+    # Market: home tab with a two-item dropdown, same pattern as Business.
+    mkt_pid = "m-markets"
+    out.append(_trigger("Market", "/markets/", mkt_pid))
+    mkt_items = "".join(
+        '<li><a href="/markets/' + sl + '/">' + esc(n) + '</a></li>'
+        for n, sl in (("Stock Market", "stock-market"),
+                      ("Forex Market", "forex-market")))
+    out.append(
+      '<div class="mega" id="' + mkt_pid + '" data-open="false" aria-label="Market sections">\n'
+      '        <div class="mega-inner">\n'
+      '          <div class="mega-head">\n'
+      '            <a class="mega-title" href="/markets/">Market</a>\n'
+      '          </div>\n'
+      '          <div class="mega-cols">\n'
+      '            <div class="mega-col">\n'
+      '      <ul class="mega-list">' + mkt_items + '</ul>\n'
+      '            </div>\n'
+      '          </div>\n'
+      '        </div>\n'
+      '      </div>\n'
+      '      </li>')
     return "\n".join(out)
 
 

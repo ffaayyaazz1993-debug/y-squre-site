@@ -97,7 +97,20 @@
       </div>
       </li>
       <li class="nav-item">
-        <a class="nav-trigger" href="/markets/"><span class="nav-label">Market</span></a>
+        <a class="nav-trigger" href="/markets/" aria-expanded="false" aria-controls="m-markets"><span class="nav-label">Market</span><svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+<div class="mega" id="m-markets" data-open="false" aria-label="Market sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/markets/">Market</a>
+          </div>
+          <div class="mega-cols">
+            <div class="mega-col">
+      <ul class="mega-list"><li><a href="/markets/stock-market/">Stock Market</a></li><li><a href="/markets/forex-market/">Forex Market</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
       </li>
         </ul>
       </div>
@@ -146,6 +159,8 @@
       <li><a href="/markets/currencies/">Currencies</a></li>
       <li><a href="/markets/companies/">Companies</a></li>
       <li><a href="/markets/sectors/">Sectors</a></li>
+      <li><a href="/markets/stock-market/">Stock Market</a></li>
+      <li><a href="/markets/forex-market/">Forex Market</a></li>
     </ul>
   </main>
 <script>

@@ -157,6 +157,16 @@
      "slug": "sectors",
      "name": "Sectors",
      "scope": "Cross-company industry structure."
+    },
+    {
+     "slug": "stock-market",
+     "name": "Stock Market",
+     "scope": "Equity markets: listings, valuations and index behaviour."
+    },
+    {
+     "slug": "forex-market",
+     "name": "Forex Market",
+     "scope": "Currency markets: exchange rates, carry and intervention."
     }
    ]
   },

@@ -97,7 +97,20 @@
       </div>
       </li>
       <li class="nav-item">
-        <a class="nav-trigger" href="/markets/"><span class="nav-label">Market</span></a>
+        <a class="nav-trigger" href="/markets/" aria-expanded="false" aria-controls="m-markets"><span class="nav-label">Market</span><svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+<div class="mega" id="m-markets" data-open="false" aria-label="Market sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/markets/">Market</a>
+          </div>
+          <div class="mega-cols">
+            <div class="mega-col">
+      <ul class="mega-list"><li><a href="/markets/stock-market/">Stock Market</a></li><li><a href="/markets/forex-market/">Forex Market</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
       </li>
         </ul>
       </div>
@@ -163,6 +176,14 @@
         <a class="sec-card" href="/markets/sectors/">
           <h3>Sectors</h3>
           <p class="sec-card-scope">Cross-company industry structure.</p>
+        </a>
+        <a class="sec-card" href="/markets/stock-market/">
+          <h3>Stock Market</h3>
+          <p class="sec-card-scope">Equity markets: listings, valuations and index behaviour.</p>
+        </a>
+        <a class="sec-card" href="/markets/forex-market/">
+          <h3>Forex Market</h3>
+          <p class="sec-card-scope">Currency markets: exchange rates, carry and intervention.</p>
         </a>
     </div>
   </main>
