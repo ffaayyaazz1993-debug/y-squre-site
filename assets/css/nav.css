@@ -599,3 +599,6 @@
 }
 .mega-flyout a:hover { color: var(--accent); text-decoration: underline; }
 .mega-list li.has-flyout.open > .mega-flyout { display: block; }
+/* The Market panel's flyout must escape the inner scroll box, otherwise
+   the panel clips Europe/Asia and grows its own scrollbars. */
+#m-markets .mega-inner { max-height: none; overflow: visible; }
