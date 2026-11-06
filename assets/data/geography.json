@@ -225,6 +225,34 @@
      "scope": "Method-documented research documents."
     }
    ]
+  },
+  {
+   "slug": "business",
+   "name": "Business",
+   "path": "/business/",
+   "lede": "Business coverage by economy type: developed, emerging, potential and non-performing economies.",
+   "children": [
+    {
+     "slug": "developed-economies",
+     "name": "Developed Economies",
+     "scope": "Advanced, high-income economies: output, policy and standards."
+    },
+    {
+     "slug": "emerging-economies",
+     "name": "Emerging Economies",
+     "scope": "Growing markets: convergence, capital flows and policy frameworks."
+    },
+    {
+     "slug": "potential-economies",
+     "name": "Potential Economies",
+     "scope": "Economies with unrealised growth capacity and reform headroom."
+    },
+    {
+     "slug": "non-performing-economies",
+     "name": "Non-Performing Economies",
+     "scope": "Distressed or stagnating economies: debt, inflation and recovery."
+    }
+   ]
   }
  ],
  "content_types": [
