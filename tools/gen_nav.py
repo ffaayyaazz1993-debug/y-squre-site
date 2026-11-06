@@ -218,12 +218,6 @@ def primary_nav(current=""):
       '        </div>\n'
       '      </div>\n'
       '      </li>')
-    # Old North America bar, restored: a primary-nav trigger whose panel
-    # lists the region's countries (Canada, Mexico, United States).
-    na = next(r for r in REGIONS if r["slug"] == "north-america")
-    na_pid = _panel_id("m", na["slug"])
-    out.append(_trigger(na["name"], na["path"], na_pid))
-    out.append(mega_region(na) + "\n      </li>")
     for label, href in (("Business", "/macro/"), ("Market", "/markets/")):
         out.append(
             '      <li class="nav-item">\n'
