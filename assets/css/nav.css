@@ -605,3 +605,8 @@
 /* The Market panel trims to where its text ends (Stock/Forex Market);
    the flyout anchors to the panel's right edge, so it follows the trim. */
 #m-markets { max-width: 195px; }
+/* Flyout attaches to the panel's right edge, aligned with the Stock
+   Market item, instead of hanging off the grid cell with a gap. */
+#m-markets .mega-cols { grid-template-columns: max-content; }
+#m-markets li.has-flyout { position: static; }
+#m-markets .mega-flyout { left: 100%; top: 70px; }
