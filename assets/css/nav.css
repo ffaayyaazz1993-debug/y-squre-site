@@ -179,10 +179,14 @@
   display: none;
   position: absolute;
   left: 0;
-  right: 0;
   top: 100%;
   z-index: 60;
-  min-width: 0;          /* full-width: left:0/right:0 sizes it to the bar */
+  /* Compact panel sized to its list, anchored to the bar start. right:0 here
+     stretched it to the full bar width, so it covered the page content below
+     instead of hugging the dropdown list. */
+  right: auto;
+  width: max-content;
+  max-width: min(92vw, 340px);
   background: var(--paper);
   border: 1px solid var(--line);
   border-top: 3px solid var(--accent);
