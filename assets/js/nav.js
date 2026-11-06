@@ -60,6 +60,12 @@
 
     function open(id, focusFirst) {
       if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+      // A panel opening must never show a flyout by itself: the flyout is
+      // gated on the Stock Market item's own hover/click, so reset any
+      // leftover touch-open state from a previous visit.
+      u.$$('.mega-list li.has-flyout.open').forEach(function (o) {
+        o.classList.remove('open');
+      });
       Object.keys(panels).forEach(function (k) {
         var on = k === id;
         panels[k].panel.setAttribute('data-open', on ? 'true' : 'false');
