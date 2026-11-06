@@ -62,12 +62,10 @@
   # North America is now a single continent page: the Canada, United States &
   # Mexico subregion was withdrawn, so its page is deleted and lands on the
   # region index.
-  RewriteRule ^geopolitics/north-america/canada-united-states-mexico/?$ /geopolitics/north-america/ [R=301,L]
 
   # MENA is narrowed to a single continent page: the Gulf and North Africa
   # subregions were withdrawn, so their pages are deleted and land on the
   # region index.
-  RewriteRule ^geopolitics/middle-east-north-africa/(gulf|north-africa)/?$ /geopolitics/middle-east-north-africa/ [R=301,L]
   RewriteRule ^geopolitics/middle-east-north-africa/(levant|eastern-mediterranean|iran-iraq|turkey-anatolia)/?$ /geopolitics/middle-east-north-africa/ [R=301,L]
 
   # European coverage is narrowed to Western Europe (France, Germany,
