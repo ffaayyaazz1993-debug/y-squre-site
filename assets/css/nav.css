@@ -602,3 +602,6 @@
 /* The Market panel's flyout must escape the inner scroll box, otherwise
    the panel clips Europe/Asia and grows its own scrollbars. */
 #m-markets .mega-inner { max-height: none; overflow: visible; }
+/* The Market panel trims to where its text ends (Stock/Forex Market);
+   the flyout anchors to the panel's right edge, so it follows the trim. */
+#m-markets { max-width: 195px; }
