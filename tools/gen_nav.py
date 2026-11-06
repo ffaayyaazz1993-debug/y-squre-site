@@ -246,10 +246,16 @@ def primary_nav(current=""):
     # Market: home tab with a two-item dropdown, same pattern as Business.
     mkt_pid = "m-markets"
     out.append(_trigger("Market", "/markets/", mkt_pid))
-    mkt_items = "".join(
-        '<li><a href="/markets/' + sl + '/">' + esc(n) + '</a></li>'
-        for n, sl in (("Stock Market", "stock-market"),
-                      ("Forex Market", "forex-market")))
+    # Stock Market carries a side flyout (US, UK, Europe, Asia) that stays
+    # open while the Market dropdown is open.
+    sm_fly = "".join(
+        '<li><a href="/markets/stock-market/' + sl + '/">' + esc(n) + '</a></li>'
+        for n, sl in (("US", "us"), ("UK", "uk"),
+                      ("Europe", "europe"), ("Asia", "asia")))
+    mkt_items = (
+        '<li class="has-flyout"><a href="/markets/stock-market/">Stock Market</a>'
+        '<ul class="mega-flyout">' + sm_fly + '</ul></li>'
+        '<li><a href="/markets/forex-market/">Forex Market</a></li>')
     out.append(
       '<div class="mega" id="' + mkt_pid + '" data-open="false" aria-label="Market sections">\n'
       '        <div class="mega-inner">\n'

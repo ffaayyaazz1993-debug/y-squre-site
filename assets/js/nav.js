@@ -136,6 +136,22 @@
       if (openId && !nav.contains(e.relatedTarget)) close(false);
     });
 
+    // Side flyout (Stock Market -> US/UK/Europe/Asia): hover shows it on
+    // desktop; on touch the first tap opens it and the second follows the
+    // link, mirroring the top-level trigger behaviour.
+    u.$$('.mega-list li.has-flyout').forEach(function (li) {
+      var link = u.$('a', li);
+      if (!link) return;
+      link.addEventListener('click', function (e) {
+        if (li.classList.contains('open')) return;
+        e.preventDefault();
+        u.$$('.mega-list li.has-flyout.open').forEach(function (o) {
+          o.classList.remove('open');
+        });
+        li.classList.add('open');
+      });
+    });
+
     // Build the mobile accordion FROM the mega-panels.
     //
     // The region > subregion > country tree ships once, in the panels. Building
