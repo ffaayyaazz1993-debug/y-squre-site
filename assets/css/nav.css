@@ -609,4 +609,4 @@
    Market item, instead of hanging off the grid cell with a gap. */
 #m-markets .mega-cols { grid-template-columns: max-content; }
 #m-markets li.has-flyout { position: static; }
-#m-markets .mega-flyout { left: 100%; top: 70px; }
+#m-markets .mega-flyout { left: 100%; top: 88px; }
