@@ -137,7 +137,9 @@
   padding: 0;
   gap: 0;
 }
-.nav-item { position: static; }   /* panels anchor to the bar, see .mega */
+/* Each item anchors its own panel, so the dropdown sits under the trigger
+   that opened it (Market under Market, not under the bar's left edge). */
+.nav-item { position: relative; }
 
 .nav-trigger {
   display: flex;
