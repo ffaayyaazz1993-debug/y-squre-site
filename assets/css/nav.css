@@ -615,3 +615,6 @@
 /* Crypto panel trims to its text, like Market. */
 #m-crypto { max-width: 180px; }
 #m-crypto .mega-cols { grid-template-columns: max-content; }
+/* Global News and Business trim to their content, like Market/Crypto. */
+#m-global-news { max-width: 420px; }
+#m-business { max-width: 420px; }
