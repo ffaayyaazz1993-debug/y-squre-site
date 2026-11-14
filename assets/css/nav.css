@@ -618,5 +618,5 @@
 /* Global News and Business trim to their content, like Market/Crypto. */
 #m-global-news { max-width: 210px; }
 #m-global-news .mega-cols { grid-template-columns: max-content; }
-#m-business { max-width: 180px; }
+#m-business { max-width: max-content; }
 #m-business .mega-cols { grid-template-columns: max-content; }
