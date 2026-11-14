@@ -1,0 +1,113 @@
+{
+ "generated": "build",
+ "articles": [
+  {
+   "title": "Brazil Election: Bolsonaro Refuses to Concede to Lula",
+   "desc": "Flavio Bolsonaro refuses to concede Brazil election to Lula, raising protest risks and market turmoil. Analysis of international and economic fallout.",
+   "published": "2026-10-26T12:37:00+05:30",
+   "ctype": "analysis",
+   "h1": "Brazil Election: Bolsonaro Refuses to Concede to Lula",
+   "deck": "Flavio Bolsonaro refuses to concede Brazil election to Lula, raising protest risks and market turmoil. Analysis of international and economic fallout.",
+   "url": "/geopolitics/global/world/2026/10/26/brazil-heads-back-future-flavio-bolsonaro-refuses.html",
+   "region": "global",
+   "subregion": "world",
+   "section": "global"
+  },
+  {
+   "title": "Understanding currency depreciation: a mechanics explainer",
+   "desc": "A falling currency is a number, not a mechanism. Three distinct channels produce it, and the same move means opposite things depending on which one is running.",
+   "published": "2026-09-26T16:00:00+05:30",
+   "ctype": "explainer",
+   "h1": "Understanding currency depreciation: a mechanics explainer",
+   "deck": "A falling currency is a number, not a mechanism. Three distinct channels produce it, and the same move means opposite things depending on which one is running.",
+   "url": "/blog/2026/09/26/understanding-currency-depreciation.html",
+   "region": "",
+   "subregion": "",
+   "section": "blog"
+  },
+  {
+   "title": "What a central bank balance sheet tells you that the rate does not",
+   "desc": "The judgement calls on top of the mechanics — and the three situations where the framework should be abandoned rather than used.",
+   "published": "2026-09-26T14:30:00+05:30",
+   "ctype": "analysis",
+   "h1": "What a central bank balance sheet tells you that the rate does not",
+   "deck": "The judgement calls on top of the mechanics — and the three situations where the framework should be abandoned rather than used.",
+   "url": "/blog/2026/09/26/reading-central-bank-intent.html",
+   "region": "",
+   "subregion": "",
+   "section": "blog"
+  },
+  {
+   "title": "The balance sheet is the policy: reading central banks",
+   "desc": "Markets price the rate decision, then react to what the central bank did to its portfolio. The gap between those two events is where the mispricing sits.",
+   "published": "2026-09-26T11:00:00+05:30",
+   "ctype": "research",
+   "h1": "The balance sheet is the policy: reading central banks",
+   "deck": "Markets price the rate decision, then react to what the central bank did to its portfolio. The gap between those two events is where the mispricing sits.",
+   "url": "/research/2026/09/26/central-bank-balance-sheets.html",
+   "region": "",
+   "subregion": "",
+   "section": "research"
+  },
+  {
+   "title": "flydubai-cockpit-axe-incident.md",
+   "desc": "",
+   "published": "",
+   "ctype": "",
+   "h1": "Flydubai Cockpit Axe Attack Described as Attempted Terror (Curated)",
+   "deck": "",
+   "url": "/blog/research-notes/html/flydubai-cockpit-axe-incident.html",
+   "region": "",
+   "subregion": "",
+   "section": "blog"
+  },
+  {
+   "title": "kyiv-dnipro-bridge-strike.md",
+   "desc": "",
+   "published": "",
+   "ctype": "",
+   "h1": "Kyiv&#x27;s Dnipro Bridge Hit in Russian Strike (Curated)",
+   "deck": "",
+   "url": "/blog/research-notes/html/kyiv-dnipro-bridge-strike.html",
+   "region": "",
+   "subregion": "",
+   "section": "blog"
+  },
+  {
+   "title": "paris-suburb-student-protests.md",
+   "desc": "",
+   "published": "",
+   "ctype": "",
+   "h1": "Paris Suburb Protests Spark National Student Movement (Curated)",
+   "deck": "",
+   "url": "/blog/research-notes/html/paris-suburb-student-protests.html",
+   "region": "",
+   "subregion": "",
+   "section": "blog"
+  },
+  {
+   "title": "saudis-red-sea-houthis.md",
+   "desc": "",
+   "published": "",
+   "ctype": "",
+   "h1": "Saudis Plan Assault on Houthis to Break Red Sea Chokehold (Curated)",
+   "deck": "",
+   "url": "/blog/research-notes/html/saudis-red-sea-houthis.html",
+   "region": "",
+   "subregion": "",
+   "section": "blog"
+  },
+  {
+   "title": "spain-bar-collapse.md",
+   "desc": "",
+   "published": "",
+   "ctype": "",
+   "h1": "Bar Collapse in Northern Spain Injures Eleven (Curated)",
+   "deck": "",
+   "url": "/blog/research-notes/html/spain-bar-collapse.html",
+   "region": "",
+   "subregion": "",
+   "section": "blog"
+  }
+ ]
+}
