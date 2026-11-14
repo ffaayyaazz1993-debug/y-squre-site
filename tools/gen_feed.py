@@ -128,6 +128,15 @@ def main():
     payload = {"generated": "build", "articles": arts}
     write("assets/data/articles.json", json.dumps(payload, indent=1,
                                                   ensure_ascii=False))
+    # Per-app feeds: each Android app fetches only its own section.
+    os.makedirs(os.path.join(ROOT, "assets/data/feed"), exist_ok=True)
+    for slug, label in (("global", "Global News"), ("business", "Business"),
+                        ("market", "Markets"), ("crypto", "Crypto")):
+        sub = [a for a in arts if a["section"] == slug]
+        write(f"assets/data/feed/{slug}.json",
+              json.dumps({"section": slug, "label": label, "articles": sub},
+                         indent=1, ensure_ascii=False))
+        print(f"feed/{slug}.json: {len(sub)} articles")
     tax = taxonomy()
     write("assets/data/taxonomy.json", json.dumps(tax, indent=1,
                                                  ensure_ascii=False))
