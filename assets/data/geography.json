@@ -144,11 +144,6 @@
      "scope": "FX regimes, carry, and cross-rates."
     },
     {
-     "slug": "crypto",
-     "name": "Crypto",
-     "scope": "Digital assets as a macro and liquidity proxy."
-    },
-    {
      "slug": "companies",
      "name": "Companies",
      "scope": "Filings, guidance, and capital allocation."
@@ -283,6 +278,29 @@
      "slug": "non-performing-economies",
      "name": "Non-Performing Economies",
      "scope": "Distressed or stagnating economies: debt, inflation and recovery."
+    }
+   ]
+  },
+  {
+   "slug": "crypto",
+   "name": "Crypto",
+   "path": "/crypto/",
+   "lede": "Cryptocurrency coverage: major coins, alt-coins and NFTs.",
+   "children": [
+    {
+     "slug": "popular-coins",
+     "name": "Popular Coins",
+     "scope": "The two dominant assets: bitcoin and ethereum."
+    },
+    {
+     "slug": "alt-coins",
+     "name": "Alt-Coins",
+     "scope": "Alternative cryptocurrencies: solana, xrp, cardano, dogecoin and peers."
+    },
+    {
+     "slug": "nfts",
+     "name": "NFTs",
+     "scope": "Non-fungible tokens: collections, marketplaces and ownership records."
     }
    ]
   }

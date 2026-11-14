@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/assets/css/base.css?v=0f35057e">
     <link rel="stylesheet" href="/assets/css/layout.css?v=2c627bf7">
     <link rel="stylesheet" href="/assets/css/article.css?v=410d1f20">
-    <link rel="stylesheet" href="/assets/css/nav.css?v=826828a0">
+    <link rel="stylesheet" href="/assets/css/nav.css?v=28b59f4d">
     <link rel="stylesheet" href="/assets/css/sections.css?v=1743178f">
     <link rel="stylesheet" href="/assets/css/responsive.css?v=7e980876">
     <link rel="stylesheet" href="/assets/css/search.css?v=94965fb3">
@@ -31,7 +31,7 @@
   <meta name="twitter:description" content="Search Y-Squre across articles, regions, subregions, countries and topics.">
   <meta name="twitter:image" content="https://y-squre.com/assets/images/logo/og-default.svg">
   <script src="/assets/js/main.js?v=a985e399" defer></script>
-  <script src="/assets/js/nav.js?v=a16a9396" defer></script>
+  <script src="/assets/js/nav.js?v=54f27396" defer></script>
   <script src="/assets/js/consent.js?v=02a4b875" defer></script>
   <script src="/assets/js/search.js?v=42c25776" defer></script>
 </head>
@@ -82,23 +82,52 @@
       </div>
       </li>
       <li class="nav-item">
-        <a class="nav-trigger" href="#" aria-expanded="false" aria-controls="m-business"><span class="nav-label">Business</span><svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+        <a class="nav-trigger" href="/business/" aria-expanded="false" aria-controls="m-business"><span class="nav-label">Business</span><svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
 
 <div class="mega" id="m-business" data-open="false" aria-label="Business sections">
         <div class="mega-inner">
           <div class="mega-head">
-            <a class="mega-title" href="#">Business</a>
+            <a class="mega-title" href="/business/">Business</a>
           </div>
           <div class="mega-cols">
             <div class="mega-col">
-      <ul class="mega-list"><li><a href="#">Developed Economies</a></li><li><a href="#">Emerging Economies</a></li><li><a href="#">Potential Economies</a></li><li><a href="#">Non-Performing Economies</a></li></ul>
+      <ul class="mega-list"><li><a href="/business/developed-economies/">Developed Economies</a></li><li><a href="/business/emerging-economies/">Emerging Economies</a></li><li><a href="/business/potential-economies/">Potential Economies</a></li><li><a href="/business/non-performing-economies/">Non-Performing Economies</a></li></ul>
             </div>
           </div>
         </div>
       </div>
       </li>
       <li class="nav-item">
-        <a class="nav-trigger" href="/markets/"><span class="nav-label">Market</span></a>
+        <a class="nav-trigger" href="/markets/" aria-expanded="false" aria-controls="m-markets"><span class="nav-label">Market</span><svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+<div class="mega" id="m-markets" data-open="false" aria-label="Market sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/markets/">Market</a>
+          </div>
+          <div class="mega-cols">
+            <div class="mega-col">
+      <ul class="mega-list"><li class="has-flyout"><a href="/markets/stock-market/">Stock Market</a><ul class="mega-flyout"><li><a href="/markets/stock-market/us/">US</a></li><li><a href="/markets/stock-market/uk/">UK</a></li><li><a href="/markets/stock-market/europe/">Europe</a></li><li><a href="/markets/stock-market/asia/">Asia</a></li></ul></li><li><a href="/markets/forex-market/">Forex Market</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-trigger" href="/crypto/" aria-expanded="false" aria-controls="m-crypto"><span class="nav-label">Crypto</span><svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+<div class="mega" id="m-crypto" data-open="false" aria-label="Crypto sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/crypto/">Crypto</a>
+          </div>
+          <div class="mega-cols">
+            <div class="mega-col">
+      <ul class="mega-list"><li><a href="/crypto/popular-coins/">Popular Coins</a></li><li><a href="/crypto/alt-coins/">Alt-Coins</a></li><li><a href="/crypto/nfts/">NFTs</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
       </li>
         </ul>
       </div>
@@ -112,6 +141,8 @@
         <li class="acc-leaf"><a href="/geopolitics/middle-east-north-africa/">Middle East &amp; North Africa</a></li>
         <li class="acc-leaf"><a href="/geopolitics/asia/">Asia</a></li>
         <li class="acc-leaf"><a href="/geopolitics/oceania-pacific/">Oceania &amp; Pacific</a></li>
+        <li class="acc-leaf"><a href="/business/">Business</a></li>
+        <li class="acc-leaf"><a href="/crypto/">Crypto</a></li>
         <li class="acc-leaf"><a href="/markets/">Markets</a></li>
         <li class="acc-leaf"><a href="/research/">Research</a></li>
         <li class="acc-leaf"><a href="/blog/">Blog</a></li>
@@ -165,9 +196,10 @@
       <li><a href="/markets/bonds/">Bonds</a><span class="sug-kind">Markets</span></li>
       <li><a href="/markets/commodities/">Commodities</a><span class="sug-kind">Markets</span></li>
       <li><a href="/markets/currencies/">Currencies</a><span class="sug-kind">Markets</span></li>
-      <li><a href="/markets/crypto/">Crypto</a><span class="sug-kind">Markets</span></li>
       <li><a href="/markets/companies/">Companies</a><span class="sug-kind">Markets</span></li>
       <li><a href="/markets/sectors/">Sectors</a><span class="sug-kind">Markets</span></li>
+      <li><a href="/markets/stock-market/">Stock Market</a><span class="sug-kind">Markets</span></li>
+      <li><a href="/markets/forex-market/">Forex Market</a><span class="sug-kind">Markets</span></li>
       <li><a href="/research/">Research</a><span class="sug-kind">Research</span></li>
       <li><a href="/research/macro-research/">Macro Research</a><span class="sug-kind">Research</span></li>
       <li><a href="/research/geopolitical-research/">Geopolitical Research</a><span class="sug-kind">Research</span></li>

@@ -270,6 +270,28 @@ def primary_nav(current=""):
       '        </div>\n'
       '      </div>\n'
       '      </li>')
+    # Crypto: home tab with a three-item dropdown, same pattern as Market.
+    crypto_pid = "m-crypto"
+    out.append(_trigger("Crypto", "/crypto/", crypto_pid))
+    crypto_items = "".join(
+        '<li><a href="/crypto/' + sl + '/">' + esc(n) + '</a></li>'
+        for n, sl in (("Popular Coins", "popular-coins"),
+                      ("Alt-Coins", "alt-coins"),
+                      ("NFTs", "nfts")))
+    out.append(
+      '<div class="mega" id="' + crypto_pid + '" data-open="false" aria-label="Crypto sections">\n'
+      '        <div class="mega-inner">\n'
+      '          <div class="mega-head">\n'
+      '            <a class="mega-title" href="/crypto/">Crypto</a>\n'
+      '          </div>\n'
+      '          <div class="mega-cols">\n'
+      '            <div class="mega-col">\n'
+      '      <ul class="mega-list">' + crypto_items + '</ul>\n'
+      '            </div>\n'
+      '          </div>\n'
+      '        </div>\n'
+      '      </div>\n'
+      '      </li>')
     return "\n".join(out)
 
 
@@ -292,6 +314,7 @@ def mobile_menu():
     for r in REGIONS:
         rows.append(f'<li class="acc-leaf"><a href="{r["path"]}">{esc(r["name"])}</a></li>')
     rows.append('<li class="acc-leaf"><a href="/business/">Business</a></li>')
+    rows.append('<li class="acc-leaf"><a href="/crypto/">Crypto</a></li>')
     for slug in ("markets", "research", "blog"):
         t = TOPICS[slug]
         rows.append(f'<li class="acc-leaf"><a href="{t["path"]}">{esc(t["name"])}</a></li>')
