@@ -110,7 +110,28 @@ def taxonomy():
         {"slug": t["slug"], "name": t["name"], "path": t["path"]}
         for t in g["topics"]
     ]
-    return {"regions": regions, "sections": sections}
+    # Per-app dropdown menus, mirroring the site nav panels exactly.
+    def entries(items):
+        return [{"slug": sl, "name": n, "path": p_} for n, sl, p_ in items]
+    menu = {
+        "business": entries([
+            ("Developed Economies", "developed-economies", "/business/developed-economies/"),
+            ("Emerging Economies", "emerging-economies", "/business/emerging-economies/"),
+            ("Potential Economies", "potential-economies", "/business/potential-economies/"),
+            ("Non-Performing Economies", "non-performing-economies", "/business/non-performing-economies/"),
+        ]),
+        "market": entries([
+            ("Stock Market", "stock-market", "/markets/stock-market/"),
+            ("Forex Market", "forex-market", "/markets/forex-market/"),
+        ]),
+        "crypto": entries([
+            ("Crypto", "crypto", "/crypto/"),
+            ("Popular Coins", "popular-coins", "/crypto/popular-coins/"),
+            ("Alt-Coins", "alt-coins", "/crypto/alt-coins/"),
+            ("NFTs", "nfts", "/crypto/nfts/"),
+        ]),
+    }
+    return {"regions": regions, "sections": sections, "menu": menu}
 
 
 def main():

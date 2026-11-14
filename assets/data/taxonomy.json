@@ -87,5 +87,63 @@
    "name": "Crypto",
    "path": "/crypto/"
   }
- ]
+ ],
+ "menu": {
+  "business": [
+   {
+    "slug": "developed-economies",
+    "name": "Developed Economies",
+    "path": "/business/developed-economies/"
+   },
+   {
+    "slug": "emerging-economies",
+    "name": "Emerging Economies",
+    "path": "/business/emerging-economies/"
+   },
+   {
+    "slug": "potential-economies",
+    "name": "Potential Economies",
+    "path": "/business/potential-economies/"
+   },
+   {
+    "slug": "non-performing-economies",
+    "name": "Non-Performing Economies",
+    "path": "/business/non-performing-economies/"
+   }
+  ],
+  "market": [
+   {
+    "slug": "stock-market",
+    "name": "Stock Market",
+    "path": "/markets/stock-market/"
+   },
+   {
+    "slug": "forex-market",
+    "name": "Forex Market",
+    "path": "/markets/forex-market/"
+   }
+  ],
+  "crypto": [
+   {
+    "slug": "crypto",
+    "name": "Crypto",
+    "path": "/crypto/"
+   },
+   {
+    "slug": "popular-coins",
+    "name": "Popular Coins",
+    "path": "/crypto/popular-coins/"
+   },
+   {
+    "slug": "alt-coins",
+    "name": "Alt-Coins",
+    "path": "/crypto/alt-coins/"
+   },
+   {
+    "slug": "nfts",
+    "name": "NFTs",
+    "path": "/crypto/nfts/"
+   }
+  ]
+ }
 }
