@@ -36,6 +36,28 @@ def strip_tags(s):
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", s)).strip()
 
 
+def prose_html(path):
+    """Inner HTML of the article's prose block, extracted by div depth.
+
+    The body is shipped to the app as HTML so headings, lists and emphasis
+    survive; the app renders it with its own typography rather than loading the
+    site's page chrome.
+    """
+    s = open(path, encoding="utf-8").read()
+    start = s.find('<div class="prose" data-prose>')
+    if start < 0:
+        return ""
+    depth = 0
+    for m in re.finditer(r"<div\b|</div>", s[start:]):
+        depth += 1 if m.group(0) == "<div" else -1
+        if depth == 0:
+            # m.start() is relative to s[start:], so the inner block runs to
+            # start + m.start() in the full string.
+            inner = s[start:start + m.start()]
+            gt = inner.find(">")
+            return inner[gt + 1:].strip()
+    return ""
+
 def parse_article(path):
     s = open(path, encoding="utf-8").read()
     out = {}
@@ -45,6 +67,7 @@ def parse_article(path):
     # Paths from glob are absolute; the feed carries site-relative URLs.
     rel = os.path.relpath(path, ROOT).replace("\\", "/")
     out["url"] = "/" + rel
+    out["body"] = prose_html(path)
     # Region/subregion from the geopolitics path:
     #   geopolitics/<region>/<subregion?>/<...>/file.html
     rel = os.path.relpath(path, ROOT).replace("\\", "/")
