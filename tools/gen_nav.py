@@ -31,9 +31,9 @@ TOPICS = {t["slug"]: t for t in GEO["topics"]}
 # hub page. Kept separate from GEO["regions"] so the underlying taxonomy and
 # published article URLs stay intact.
 GLOBAL_NAV = [
-    ("Asia/Oceania/Pacific", "/geopolitics/asia-oceania-pacific/"),
-    ("Europe/UK/Middle East", "/geopolitics/europe-uk-middle-east/"),
-    ("North America", "/geopolitics/north-america/"),
+    ("Asia/Oceania/Pacific", "/asia-oceania-pacific/"),
+    ("Europe/UK/Middle East", "/europe-uk-middle-east/"),
+    ("North America", "/north-america/"),
 ]
 CONTENT_TYPES = GEO["content_types"]
 

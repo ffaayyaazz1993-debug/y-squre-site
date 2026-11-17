@@ -25,6 +25,8 @@ REGIONS = {
         "lede": "Commodity demand, energy exports and import dependence, sanctions exposure, "
                 "manufacturing share, Pacific financing and export policy across Asia, Oceania "
                 "and the Pacific.",
+        "path": "/asia-oceania-pacific/index.html",
+        "url": "/asia-oceania-pacific/",
         "title": "Asia, Oceania & Pacific Geopolitics | Y-Squre",
         "desc": "Geopolitical and economic coverage across Asia, Oceania and the Pacific: "
                 "commodity demand, energy exports, sanctions exposure, manufacturing share and "
@@ -34,6 +36,8 @@ REGIONS = {
         "name": "Europe/UK/Middle East",
         "lede": "Energy security, sanctions architecture, fiscal fragmentation and monetary "
                 "divergence across Europe, the UK and the Middle East.",
+        "path": "/europe-uk-middle-east/index.html",
+        "url": "/europe-uk-middle-east/",
         "title": "Europe, UK & Middle East Geopolitics | Y-Squre",
         "desc": "Geopolitical and economic coverage across Europe, the UK and the Middle East: "
                 "energy security, sanctions, fiscal fragmentation and monetary policy.",
@@ -42,6 +46,8 @@ REGIONS = {
         "name": "North America",
         "lede": "Trade and tariff policy, alliance commitments, border and immigration policy, "
                 "and fiscal and monetary divergence across the region.",
+        "path": "/north-america/index.html",
+        "url": "/north-america/",
         "title": "North America Geopolitics & Economic Coverage | Y-Squre",
         "desc": "Geopolitical and economic coverage across North America: trade and tariff policy, "
                 "alliances, border and immigration policy, and fiscal and monetary divergence.",
@@ -357,8 +363,8 @@ def generate(region_slug):
     cfg = REGIONS[region_slug]
     body_text = build_body(region_slug, items)
     page = {
-        "path": "/geopolitics/%s/index.html" % region_slug,
-        "url": "/geopolitics/%s/" % region_slug,
+        "path": cfg.get("path", "/geopolitics/%s/index.html" % region_slug),
+        "url": cfg.get("url", "/geopolitics/%s/" % region_slug),
         "title": cfg["title"],
         "desc": cfg["desc"],
         "body": body_text,
@@ -373,4 +379,4 @@ def generate(region_slug):
 if __name__ == "__main__":
     for slug in TARGETS:
         n = generate(slug)
-        print("wrote /geopolitics/%s/index.html articles: %d" % (slug, n))
+        print("wrote %s articles: %d" % (REGIONS[slug].get("path", "/geopolitics/%s/index.html" % slug), n))
