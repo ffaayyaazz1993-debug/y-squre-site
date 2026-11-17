@@ -22,6 +22,17 @@ from gen_lib import ROOT, write
 HERE = os.path.dirname(os.path.abspath(__file__))
 GEO = os.path.join(HERE, "..", "assets", "data", "geography.json")
 
+# Old region slugs -> the three grouped Global News hubs now used by the site
+# nav and by Globalwire. Generic /geopolitics/global/ stories stay "global" so
+# they still appear under "All" but do not pretend to belong to a region group.
+GROUP_REGION = {
+    "north-america": "north-america",
+    "europe": "europe-uk-middle-east",
+    "middle-east-north-africa": "europe-uk-middle-east",
+    "asia": "asia-oceania-pacific",
+    "oceania-pacific": "asia-oceania-pacific",
+}
+
 META = [
     ("title", r"<title>(.*?)</title>"),
     ("desc", r'<meta name="description" content="(.*?)"'),
@@ -73,7 +84,8 @@ def parse_article(path):
     rel = os.path.relpath(path, ROOT).replace("\\", "/")
     m = re.search(r"geopolitics/([^/]+)(?:/([^/]+))?/", rel)
     if m:
-        out["region"] = m.group(1)
+        old_region = m.group(1)
+        out["region"] = GROUP_REGION.get(old_region, old_region)
         out["subregion"] = m.group(2) or ""
         out["section"] = "global"
         return out
@@ -114,6 +126,9 @@ def taxonomy():
     def entries(items):
         return [{"slug": sl, "name": n, "path": p_} for n, sl, p_ in items]
     menu = {
+        "global": entries([
+            (name, path.strip("/"), path) for name, path in N.GLOBAL_NAV
+        ]),
         "business": entries([
             ("Developed Economies", "developed-economies", "/business/developed-economies/"),
             ("Emerging Economies", "emerging-economies", "/business/emerging-economies/"),

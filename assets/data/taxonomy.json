@@ -89,6 +89,23 @@
   }
  ],
  "menu": {
+  "global": [
+   {
+    "slug": "asia-oceania-pacific",
+    "name": "Asia/Oceania/Pacific",
+    "path": "/asia-oceania-pacific/"
+   },
+   {
+    "slug": "europe-uk-middle-east",
+    "name": "Europe/UK/Middle East",
+    "path": "/europe-uk-middle-east/"
+   },
+   {
+    "slug": "north-america",
+    "name": "North America",
+    "path": "/north-america/"
+   }
+  ],
   "business": [
    {
     "slug": "developed-economies",
