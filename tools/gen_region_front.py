@@ -12,7 +12,32 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import gen_lib as L
 import gen_page as P
 
+# Source regions for each grouped hub. Old region directories stay live so
+# published article URLs do not break; these pages simply aggregate them.
+GROUP_SOURCES = {
+    "asia-oceania-pacific": ["asia", "oceania-pacific"],
+    "europe-uk-middle-east": ["europe", "middle-east-north-africa"],
+}
+
 REGIONS = {
+    "asia-oceania-pacific": {
+        "name": "Asia/Oceania/Pacific",
+        "lede": "Commodity demand, energy exports and import dependence, sanctions exposure, "
+                "manufacturing share, Pacific financing and export policy across Asia, Oceania "
+                "and the Pacific.",
+        "title": "Asia, Oceania & Pacific Geopolitics | Y-Squre",
+        "desc": "Geopolitical and economic coverage across Asia, Oceania and the Pacific: "
+                "commodity demand, energy exports, sanctions exposure, manufacturing share and "
+                "Pacific financing.",
+    },
+    "europe-uk-middle-east": {
+        "name": "Europe/UK/Middle East",
+        "lede": "Energy security, sanctions architecture, fiscal fragmentation and monetary "
+                "divergence across Europe, the UK and the Middle East.",
+        "title": "Europe, UK & Middle East Geopolitics | Y-Squre",
+        "desc": "Geopolitical and economic coverage across Europe, the UK and the Middle East: "
+                "energy security, sanctions, fiscal fragmentation and monetary policy.",
+    },
     "north-america": {
         "name": "North America",
         "lede": "Trade and tariff policy, alliance commitments, border and immigration policy, "
@@ -59,8 +84,9 @@ REGIONS = {
     },
 }
 
-TARGETS = ["north-america", "europe", "middle-east-north-africa", "asia",
-           "oceania-pacific", "global"]
+TARGETS = ["asia-oceania-pacific", "europe-uk-middle-east", "north-america",
+           "europe", "middle-east-north-africa", "asia", "oceania-pacific",
+           "global"]
 
 GLOBAL_SECTIONS = [
     ("World", "/geopolitics/global/world/",
@@ -151,13 +177,15 @@ def parse_article(path):
 
 
 def load_articles(region_slug):
-    art_dir = os.path.join(ROOT, "geopolitics", region_slug)
+    sources = GROUP_SOURCES.get(region_slug, [region_slug])
     out = []
-    for root, _, files in os.walk(art_dir):
-        for name in files:
-            if not name.endswith(".html") or name == "index.html":
-                continue
-            out.append(parse_article(os.path.join(root, name)))
+    for src in sources:
+        art_dir = os.path.join(ROOT, "geopolitics", src)
+        for root, _, files in os.walk(art_dir):
+            for name in files:
+                if not name.endswith(".html") or name == "index.html":
+                    continue
+                out.append(parse_article(os.path.join(root, name)))
 
     def _sort_key(a):
         raw = a["published"] or ""

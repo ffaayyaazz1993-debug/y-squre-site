@@ -26,6 +26,15 @@ with open(GEO_PATH, encoding="utf-8") as f:
 
 REGIONS = GEO["regions"]
 TOPICS = {t["slug"]: t for t in GEO["topics"]}
+
+# Global News dropdown: exactly three grouped region links, each with its own
+# hub page. Kept separate from GEO["regions"] so the underlying taxonomy and
+# published article URLs stay intact.
+GLOBAL_NAV = [
+    ("Asia/Oceania/Pacific", "/geopolitics/asia-oceania-pacific/"),
+    ("Europe/UK/Middle East", "/geopolitics/europe-uk-middle-east/"),
+    ("North America", "/geopolitics/north-america/"),
+]
 CONTENT_TYPES = GEO["content_types"]
 
 # Megabyte-style column budget: cap how many subregions sit side by side so no
@@ -201,9 +210,8 @@ def primary_nav(current=""):
     pid = "m-global-news"
     out.append(_trigger("Global News", "/", pid))
     items = "".join(
-        '<li><a href="' + r["path"] + '">' + esc(r["name"]) + '</a></li>'
-        for r in REGIONS)
-    items += '<li><a href="/geopolitics/global/">Global</a></li>'
+        '<li><a href="' + path + '">' + esc(name) + '</a></li>'
+        for name, path in GLOBAL_NAV)
     out.append(
       '<div class="mega" id="' + pid + '" data-open="false" aria-label="Global News regions">\n'
       '        <div class="mega-inner">\n'
@@ -309,10 +317,8 @@ def mobile_menu():
     # No "Latest" leaf: the wordmark directly above this drawer links to the
     # front page, so a second control for the same destination is a duplicate.
     rows = []
-    g = TOPICS["global"]
-    rows.append(f'<li class="acc-leaf"><a href="{g["path"]}">{esc(g["name"])}</a></li>')
-    for r in REGIONS:
-        rows.append(f'<li class="acc-leaf"><a href="{r["path"]}">{esc(r["name"])}</a></li>')
+    for name, path in GLOBAL_NAV:
+        rows.append(f'<li class="acc-leaf"><a href="{path}">{esc(name)}</a></li>')
     rows.append('<li class="acc-leaf"><a href="/business/">Business</a></li>')
     rows.append('<li class="acc-leaf"><a href="/crypto/">Crypto</a></li>')
     for slug in ("markets", "research", "blog"):
@@ -398,7 +404,7 @@ if __name__ == "__main__":
     m = mobile_menu()
     print(f"  header():      {len(h):>6,} chars")
     print(f"  mobile_menu(): {len(m):>6,} chars")
-    print(f"  regions: {len(REGIONS)}  topic bar: 4  global: 1")
+    print(f"  global nav: {len(GLOBAL_NAV)}  regions: {len(REGIONS)}  topic bar: 4")
     # every trigger must have a matching panel id, and vice versa
     import re
     triggers = set(re.findall(r'aria-controls="(m-[\w-]+)"', h))

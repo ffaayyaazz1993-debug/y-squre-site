@@ -16,6 +16,10 @@ import gen_nav as N
 from gen_page import render, emit
 from gen_lib import esc, write
 
+# Grouped Global News hub pages have no taxonomy entry; keep their directories
+# alive so published article URLs under the source regions are not pruned.
+REGION_FRONT_GROUPS = ("asia-oceania-pacific", "europe-uk-middle-east")
+
 EMPTY_NEWS = '''
       <div class="empty-state">
         <p class="empty-kicker">No verified reports published yet</p>
@@ -436,7 +440,10 @@ def prune():
     import gen_nav as N
     from gen_lib import ROOT
     removed = []
-    want_region = {r["slug"] for r in N.REGIONS} | {"global"}
+    # Grouped Global News hub pages have no taxonomy entry of their own; they
+    # aggregate the old region directories, which stay live for published URLs.
+    want_region = ({r["slug"] for r in N.REGIONS} | {"global"}
+                   | set(REGION_FRONT_GROUPS))
     base = os.path.join(ROOT, "geopolitics")
     for d in sorted(os.listdir(base)):
         full = os.path.join(base, d)
