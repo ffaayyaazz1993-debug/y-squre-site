@@ -300,6 +300,42 @@ def primary_nav(current=""):
       '        </div>\n'
       '      </div>\n'
       '      </li>')
+    # Plain sections — no aria-controls, so nav.js leaves them as real links.
+    for label, href in (("News", "/latest/"), ("Analysis", "/blog/"),
+                        ("Research", "/research/")):
+        out.append(f'      <li class="nav-item"><a class="nav-link" href="{href}">{label}</a></li>')
+
+    def simple_panel(pid, title, href, rows):
+        lis = "".join(f'<li><a href="{u}">{esc(t)}</a></li>' for t, u in rows)
+        return (f'<div class="mega" id="{pid}" data-open="false" aria-label="{esc(title)}">\n'
+                '        <div class="mega-inner">\n'
+                '          <div class="mega-head">\n'
+                f'            <a class="mega-title" href="{href}">{esc(title)}</a>\n'
+                '          </div>\n'
+                '          <div class="mega-cols"><div class="mega-col">\n'
+                f'      <ul class="mega-list">{lis}</ul>\n'
+                '          </div></div>\n'
+                '        </div>\n'
+                '      </div>\n'
+                '      </li>')
+
+    tools_pid = "m-tools"
+    out.append(_trigger("Tools", "/search/index.html", tools_pid))
+    out.append(simple_panel(
+        tools_pid, "Tools", "/search/index.html",
+        [("Search", "/search/index.html"), ("Sitemap", "/sitemap.xml"),
+         ("All articles", "/latest/")]))
+
+    more_pid = "m-more"
+    out.append(_trigger("More", "/about/index.html", more_pid))
+    out.append(simple_panel(
+        more_pid, "More", "/about/index.html",
+        [("About", "/about/index.html"), ("Contact", "/contact/index.html"),
+         ("Editorial Policy", "/editorial-policy/index.html"),
+         ("Advertising", "/advertising/index.html"),
+         ("Privacy", "/privacy/index.html"), ("Terms", "/terms/index.html"),
+         ("Investment Disclaimer", "/disclaimer/index.html")]))
+
     return "\n".join(out)
 
 
@@ -375,27 +411,51 @@ def market_tape():
             f'<span class="tape-time">{html.escape(t)}</span></a>'
         )
     track = "".join(out)
-    sections = [
-        ("GLOBAL NEWS", "/"), ("WORLD ECONOMIES", "/business/"),
-        ("MARKET", "/markets/"), ("CRYPTO", "/crypto/"),
-    ]
-    nav = "".join(f'<a href="{href}">{label}</a>' for label, href in sections)
     return f'''
-    <div class="mkt-tape" aria-label="Main bar">
+    <div class="mkt-tape" aria-label="Latest headlines">
       <div class="wrap mkt-tape-inner">
-        <a class="mkt-brand" href="/">Y<span>-</span>SQURE</a>
-        <nav class="mkt-nav" aria-label="Sections">{nav}</nav>
+        <span class="mkt-tape-tag"><span class="mkt-tape-dot" aria-hidden="true"></span>Latest</span>
         <span class="mkt-tape-viewport"><span class="mkt-tape-track">{track}</span></span>
-        <span class="mkt-clock" data-mkt-clock>UTC --:--:--</span>
       </div>
     </div>'''
 
 
 def header(current=""):
-    """Single-bar header: the headline tape replaces the masthead + nav."""
+    """Investing.com-style header: top utility row, main nav bar, headline strip."""
     return f'''
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
+    <div class="masthead">
+      <div class="wrap masthead-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">Y</span>
+          <span class="brand-text"><span class="brand-name">Y-SQUARE</span></span>
+        </a>
+        <p class="tagline">Global News, Data &amp; Analysis</p>
+        <div class="masthead-utils">
+          <a class="util-link" href="/search/index.html">
+            <svg class="util-icon" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
+              <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M10.5 10.5L15 15" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span>Search</span>
+          </a>
+          <span class="masthead-clock" data-mkt-clock>UTC --:--:--</span>
+        </div>
+        <button class="nav-toggle" data-burger aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="nav-toggle-text">Menu</span>
+        </button>
+      </div>
+    </div>
+    <nav class="primary-nav" data-nav aria-label="Main sections">
+      <div class="wrap">
+        <ul class="nav-list nav-list-geo">
+{primary_nav(current)}
+        </ul>
+      </div>
+    </nav>
+{mobile_menu()}
 {market_tape()}
   </header>
 '''

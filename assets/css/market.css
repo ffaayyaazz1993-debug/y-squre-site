@@ -14,10 +14,25 @@
   --mkt-accent:   #f0843c;
 }
 
+/* ---------- Investing.com-style black header shell ---------- */
+.masthead { background: #000; border-bottom: 1px solid #222; }
+.masthead .brand-name, .masthead .tagline, .masthead .util-link { color: #fff; }
+.masthead-clock {
+  font: 600 .68rem/1 var(--mono); color: var(--mkt-dim);
+  font-variant-numeric: tabular-nums;
+}
+.primary-nav { background: #000; border-bottom: 1px solid #222; }
+.nav-trigger, .nav-link { color: #fff; }
+.nav-trigger:hover, .nav-link:hover { color: #fff; background: #111; }
+.nav-link {
+  display: flex; align-items: center; height: 40px; padding: 0 12px;
+  font-size: .74rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .04em; text-decoration: none;
+}
 /* ---------- headline tape (inside the sticky header) ---------- */
 .mkt-tape {
-  background: var(--navy);
-  border-top: 1px solid var(--navy-2);
+  background: #111;
+  border-top: 1px solid #222;
   color: var(--mkt-text);
   font-size: .78rem;
   overflow: hidden;
