@@ -250,7 +250,51 @@ def primary_nav(current=""):
                      '/account/index.html'))
     out.append(plain('<span class="nav-icon" aria-hidden="true">&#128293;</span> Investing Challenges',
                      '/blog/'))
-    out.append(plain("News", "/latest/"))
+    n_id = "m-news"
+    out.append(_trigger("News", "/latest/", n_id))
+
+    def news_col(title, rows):
+        lis = "".join(f'<li><a href="{u}">{esc(t)}</a></li>' for t, u in rows)
+        return (f'<div class="mega-col"><div class="mega-group">'
+                f'<h4>{esc(title)}</h4><ul class="mega-list">{lis}</ul>'
+                '</div></div>')
+
+    fin = news_col("Financial News", [
+        ("Stock Markets", "/markets/stock-market/"),
+        ("Earnings", "/markets/companies/"),
+        ("Analyst Ratings", "/research/market-research/"),
+        ("Transcripts", "/research/"),
+        ("Cryptocurrency", "/crypto/"),
+        ("Commodities", "/markets/commodities/"),
+        ("Currencies", "/markets/currencies/"),
+        ("Economy", "/business/"),
+        ("Economic Indicators", "/research/data-statistics/"),
+        ("Breaking News", "/latest/"),
+        ("Pro News", "/blog/"),
+    ])
+    more_news = news_col("More In News", [
+        ("Latest", "/latest/"),
+        ("Most Popular", "/latest/"),
+        ("Sports & General", "/latest/"),
+        ("World", "/geopolitics/global/"),
+        ("Politics", "/geopolitics/global/"),
+        ("Press Releases", "/blog/"),
+        ("Company News", "/markets/companies/"),
+        ("Insider Trading", "/research/market-research/"),
+        ("Investment Ideas", "/blog/"),
+        ("SEC Filings", "/research/"),
+        ("SWOT Analysis", "/research/sector-research/"),
+    ])
+    out.append(f'''<div class="mega" id="{n_id}" data-open="false" aria-label="News sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/latest/">News</a>
+          </div>
+          <div class="mega-cols mega-cols-2">{fin}{more_news}</div>
+        </div>
+      </div>
+      </li>''')
+
     out.append(plain("Analysis", "/blog/"))
     out.append(plain("Charts", "/markets/"))
     out.append(plain("Technical", "/research/"))

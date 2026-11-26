@@ -42,11 +42,12 @@
   <script src="/assets/js/nav.js?v=54f27396" defer></script>
   <script src="/assets/js/consent.js?v=02a4b875" defer></script>
   <script src="/assets/js/search.js?v=42c25776" defer></script>
-  <link rel="stylesheet" href="/assets/css/market.css?v=9ea6ce82">
+  <link rel="stylesheet" href="/assets/css/market.css?v=d8b8e9cb">
   <script src="/assets/js/market.js?v=1a8ce177" defer></script>
 </head>
 <body>
 
+  
   
   
   
@@ -96,7 +97,18 @@
       </li>
       <li class="nav-item"><a class="nav-link" href="/account/index.html"><span class="nav-icon" aria-hidden="true">★</span> My Watchlist</a></li>
       <li class="nav-item"><a class="nav-link" href="/blog/"><span class="nav-icon" aria-hidden="true">&#128293;</span> Investing Challenges</a></li>
-      <li class="nav-item"><a class="nav-link" href="/latest/">News</a></li>
+      <li class="nav-item">
+        <a class="nav-trigger" href="/latest/" aria-expanded="false" aria-controls="m-news"><span class="nav-label">News</span><svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
+
+<div class="mega" id="m-news" data-open="false" aria-label="News sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/latest/">News</a>
+          </div>
+          <div class="mega-cols mega-cols-2"><div class="mega-col"><div class="mega-group"><h4>Financial News</h4><ul class="mega-list"><li><a href="/markets/stock-market/">Stock Markets</a></li><li><a href="/markets/companies/">Earnings</a></li><li><a href="/research/market-research/">Analyst Ratings</a></li><li><a href="/research/">Transcripts</a></li><li><a href="/crypto/">Cryptocurrency</a></li><li><a href="/markets/commodities/">Commodities</a></li><li><a href="/markets/currencies/">Currencies</a></li><li><a href="/business/">Economy</a></li><li><a href="/research/data-statistics/">Economic Indicators</a></li><li><a href="/latest/">Breaking News</a></li><li><a href="/blog/">Pro News</a></li></ul></div></div><div class="mega-col"><div class="mega-group"><h4>More In News</h4><ul class="mega-list"><li><a href="/latest/">Latest</a></li><li><a href="/latest/">Most Popular</a></li><li><a href="/latest/">Sports &amp; General</a></li><li><a href="/geopolitics/global/">World</a></li><li><a href="/geopolitics/global/">Politics</a></li><li><a href="/blog/">Press Releases</a></li><li><a href="/markets/companies/">Company News</a></li><li><a href="/research/market-research/">Insider Trading</a></li><li><a href="/blog/">Investment Ideas</a></li><li><a href="/research/">SEC Filings</a></li><li><a href="/research/sector-research/">SWOT Analysis</a></li></ul></div></div></div>
+        </div>
+      </div>
+      </li>
       <li class="nav-item"><a class="nav-link" href="/blog/">Analysis</a></li>
       <li class="nav-item"><a class="nav-link" href="/markets/">Charts</a></li>
       <li class="nav-item"><a class="nav-link" href="/research/">Technical</a></li>
@@ -163,6 +175,7 @@
       </div>
     </div>
   </header>
+
 
 
 

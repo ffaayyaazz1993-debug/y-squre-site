@@ -39,6 +39,11 @@
   font-size: .64rem; letter-spacing: .02em;
 }
 .primary-nav .nav-caret { width: 6px; }
+.mega-cols-2 { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+.mega-group h4 {
+  margin: 0 0 6px; font: 700 .78rem/1 var(--sans);
+  text-transform: uppercase; letter-spacing: .06em; color: var(--navy);
+}
 @media (max-width: 1100px) {
   .primary-nav .nav-trigger,
   .primary-nav .nav-link { padding: 0 4px; font-size: .58rem; }
