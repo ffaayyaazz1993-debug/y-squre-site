@@ -45,14 +45,15 @@
 }
 /* News dropdown: hug the two columns, no scrollbars. */
 #m-news { width: max-content; max-width: min(94vw, 620px); }
-#m-news .mega-inner { max-height: none; overflow: visible; padding: 14px 18px 16px; }
-#m-news .mega-head { padding-bottom: 8px; margin-bottom: 10px; }
+#m-news .mega-inner { max-height: none; overflow: visible; padding: 18px 22px 20px; }
+#m-news .mega-head { padding-bottom: 10px; margin-bottom: 12px; }
 #m-news .mega-cols-2 {
   grid-template-columns: repeat(2, max-content);
-  gap: 2px 28px;
+  gap: 2px 36px;
 }
 #m-news .mega-group { margin-bottom: 0; }
-#m-news .mega-list a { padding: 1px 0; font-size: .78rem; line-height: 1.25; }
+#m-news .mega-group h4 { margin-bottom: 10px; font-size: .82rem; }
+#m-news .mega-list a { padding: 3px 0; font-size: .86rem; line-height: 1.5; }
 @media (max-width: 1100px) {
   .primary-nav .nav-trigger,
   .primary-nav .nav-link { padding: 0 4px; font-size: .58rem; }
