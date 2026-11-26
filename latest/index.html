@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/assets/css/article.css?v=410d1f20">
     <link rel="stylesheet" href="/assets/css/nav.css?v=7995591b">
     <link rel="stylesheet" href="/assets/css/sections.css?v=1743178f">
+    <link rel="stylesheet" href="/assets/css/market.css?v=0d872bcc">
     <link rel="stylesheet" href="/assets/css/responsive.css?v=7e980876">
   <link rel="icon" href="/assets/icons/favicon.svg?v=c94d2aa2" type="image/svg+xml">
   <meta name="google-adsense-account" content="ca-pub-9461123152614358">
@@ -33,191 +34,634 @@
   <script src="/assets/js/nav.js?v=54f27396" defer></script>
   <script src="/assets/js/consent.js?v=02a4b875" defer></script>
   <script src="/assets/js/search.js?v=42c25776" defer></script>
+  <script src="/assets/js/market.js?v=1a8ce177" defer></script>
 </head>
 <body>
 
-      <a class="skip-link" href="#main">Skip to content</a>
+  
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="masthead">
-      <div class="wrap masthead-inner">
-        <a class="brand" href="/">
-          <span class="brand-mark" aria-hidden="true">Y</span>
-          <span class="brand-text"><span class="brand-name">Y-SQURE</span></span>
-        </a>
-        <p class="tagline">Global News, Data &amp; Analysis</p>
-        <div class="masthead-utils">
-          <a class="util-link" href="/search/index.html">
-            <svg class="util-icon" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
-              <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M10.5 10.5L15 15" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-            </svg>
-            <span>Search</span>
-          </a>
-          <a class="util-link util-signin" href="/account/index.html">Sign In</a>
-        </div>
-        <button class="nav-toggle" data-burger aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-          <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span class="nav-toggle-text">Menu</span>
-        </button>
-      </div>
-    </div>
-    <nav class="primary-nav" data-nav aria-label="Sections">
-      <div class="wrap">
-        <ul class="nav-list nav-list-geo">
-      <li class="nav-item">
-        <a class="nav-trigger" href="/" aria-expanded="false" aria-controls="m-global-news"><span class="nav-label">Global News</span><svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
 
-<div class="mega" id="m-global-news" data-open="false" aria-label="Global News regions">
-        <div class="mega-inner">
-          <div class="mega-head">
-            <a class="mega-title" href="/">Global News</a>
-          </div>
-          <div class="mega-cols">
-            <div class="mega-col">
-      <ul class="mega-list"><li><a href="/asia-oceania-pacific/">Asia/Oceania/Pacific</a></li><li><a href="/europe-uk-middle-east/">Europe/UK/Middle East</a></li><li><a href="/north-america/">North America</a></li></ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-trigger" href="/business/" aria-expanded="false" aria-controls="m-business"><span class="nav-label">Business</span><svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
-
-<div class="mega" id="m-business" data-open="false" aria-label="Business sections">
-        <div class="mega-inner">
-          <div class="mega-head">
-            <a class="mega-title" href="/business/">Business</a>
-          </div>
-          <div class="mega-cols">
-            <div class="mega-col">
-      <ul class="mega-list"><li><a href="/business/developed-economies/">Developed Economies</a></li><li><a href="/business/emerging-economies/">Emerging Economies</a></li><li><a href="/business/potential-economies/">Potential Economies</a></li><li><a href="/business/non-performing-economies/">Non-Performing Economies</a></li></ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-trigger" href="/markets/" aria-expanded="false" aria-controls="m-markets"><span class="nav-label">Market</span><svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
-
-<div class="mega" id="m-markets" data-open="false" aria-label="Market sections">
-        <div class="mega-inner">
-          <div class="mega-head">
-            <a class="mega-title" href="/markets/">Market</a>
-          </div>
-          <div class="mega-cols">
-            <div class="mega-col">
-      <ul class="mega-list"><li class="has-flyout"><a href="/markets/stock-market/">Stock Market</a><ul class="mega-flyout"><li><a href="/markets/stock-market/us/">US</a></li><li><a href="/markets/stock-market/uk/">UK</a></li><li><a href="/markets/stock-market/europe/">Europe</a></li><li><a href="/markets/stock-market/asia/">Asia</a></li></ul></li><li><a href="/markets/forex-market/">Forex Market</a></li></ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-trigger" href="/crypto/" aria-expanded="false" aria-controls="m-crypto"><span class="nav-label">Crypto</span><svg class="nav-caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0l4 5 4-5z" fill="currentColor"/></svg></a>
-
-<div class="mega" id="m-crypto" data-open="false" aria-label="Crypto sections">
-        <div class="mega-inner">
-          <div class="mega-head">
-            <a class="mega-title" href="/crypto/">Crypto</a>
-          </div>
-          <div class="mega-cols">
-            <div class="mega-col">
-      <ul class="mega-list"><li><a href="/crypto/popular-coins/">Popular Coins</a></li><li><a href="/crypto/alt-coins/">Alt-Coins</a></li><li><a href="/crypto/nfts/">NFTs</a></li></ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      </li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="mobile-menu" id="mobile-menu" data-open="false" aria-hidden="true" data-accordion data-build="mega">
-      <ul class="acc-list acc-list-root acc-fallback">
-        <li class="acc-leaf"><a href="/asia-oceania-pacific/">Asia/Oceania/Pacific</a></li>
-        <li class="acc-leaf"><a href="/europe-uk-middle-east/">Europe/UK/Middle East</a></li>
-        <li class="acc-leaf"><a href="/north-america/">North America</a></li>
-        <li class="acc-leaf"><a href="/business/">Business</a></li>
-        <li class="acc-leaf"><a href="/crypto/">Crypto</a></li>
-        <li class="acc-leaf"><a href="/markets/">Markets</a></li>
-        <li class="acc-leaf"><a href="/research/">Research</a></li>
-        <li class="acc-leaf"><a href="/blog/">Blog</a></li>
-      </ul>
-      <div class="mobile-foot">
-        <a href="/about/index.html">About</a>
-        <a href="/contact/index.html">Contact</a>
-        <a href="/editorial-policy/index.html">Editorial Policy</a>
-        <a href="/privacy/index.html">Privacy</a>
-        <a href="/search/index.html">Search</a>
+    <div class="mkt-tape" aria-label="Main bar">
+      <div class="wrap mkt-tape-inner">
+        <a class="mkt-brand" href="/">Y<span>-</span>SQURE</a>
+        <nav class="mkt-nav" aria-label="Sections"><a href="/">GLOBAL NEWS</a><a href="/business/">WORLD ECONOMIES</a><a href="/markets/">MARKET</a><a href="/crypto/">CRYPTO</a></nav>
+        <span class="mkt-tape-viewport"><span class="mkt-tape-track"><a class="mkt-tape-item" href="/asia-oceania-pacific/2026/11/19/xi-trump-putin-summit.html"><span class="tape-kicker">GLOBAL NEWS</span><span>Why the China Summit May Stay Mostly Symbolic</span><span class="tape-time">03:24</span></a><a class="mkt-tape-item" href="/north-america/2026/11/19/elon-musk-midterms.html"><span class="tape-kicker">GLOBAL NEWS</span><span>Musk&#x27;s $446 Million Bet Meets a Changed Congress</span><span class="tape-time">03:05</span></a><a class="mkt-tape-item" href="/north-america/2026/11/19/canada-trade-diversification.html"><span class="tape-kicker">GLOBAL NEWS</span><span>Canada Builds Trade Options Beyond Washington</span><span class="tape-time">02:52</span></a><a class="mkt-tape-item" href="/asia-oceania-pacific/2026/11/19/024210_vietnam-russia-leaders-agree-deepen-021454770.html"><span class="tape-kicker">GLOBAL NEWS</span><span>Hanoi and Moscow Widen Energy Ties at Shenzhen Summit</span><span class="tape-time">02:14</span></a><a class="mkt-tape-item" href="/asia-oceania-pacific/2026/11/19/024105_unhcr-halts-refugee-registration-malaysia.html"><span class="tape-kicker">GLOBAL NEWS</span><span>Malaysia Refugee Registration Shifts to State Control</span><span class="tape-time">01:58</span></a><a class="mkt-tape-item" href="/asia-oceania-pacific/2026/11/19/024126_global-markets-wrapup-1.html"><span class="tape-kicker">GLOBAL NEWS</span><span>Anthropic Listing Puts AI Sentiment to the Test</span><span class="tape-time">01:53</span></a><a class="mkt-tape-item" href="/asia-oceania-pacific/2026/11/19/004917_us-department-justice-charges-russian-234724250.html"><span class="tape-kicker">GLOBAL NEWS</span><span>Russian National Indicted in Palantir Surveillance Case</span><span class="tape-time">00:35</span></a><a class="mkt-tape-item" href="/asia-oceania-pacific/2026/11/19/004939_takeaways-day-2-trumps-asia-213904763.html"><span class="tape-kicker">GLOBAL NEWS</span><span>Shenzhen Summit: Three Leaders, One Unpredictable Stage</span><span class="tape-time">00:31</span></a></span></span>
+        <span class="mkt-clock" data-mkt-clock>UTC --:--:--</span>
       </div>
     </div>
   </header>
+
   <main id="main">
   <div class="ad-slot ad-top" data-ad-label="Advertisement"></div>
   <h1 class="visually-hidden">Latest</h1>
-    <div class="wrap" style="padding-top:26px">
+    <div class="wrap" style="padding-top:22px">
+      <section class="mkt-deck" aria-label="Desks">
+      <div class="mkt-card is-markets">
+        <div class="mkt-card-head"><a href="/markets/"><strong>Market</strong></a><span>Desk</span></div>
+        <h3><a href="/asia-oceania-pacific/2026/11/19/xi-trump-putin-summit.html">Why the China Summit May Stay Mostly Symbolic</a></h3><p>The planned Xi, Trump and Putin meeting in Shenzhen may deliver careful images and a brief statement, while leaving harder disputes unresolved.</p>
+        <div class="mkt-card-foot"><span>From Global News</span><span>2026-11-19</span><a href="/markets/">Browse &rarr;</a></div>
+      </div>
+      <div class="mkt-card is-business">
+        <div class="mkt-card-head"><a href="/business/"><strong>World Economies</strong></a><span>Desk</span></div>
+        <h3><a href="/north-america/2026/11/19/elon-musk-midterms.html">Musk&#x27;s $446 Million Bet Meets a Changed Congress</a></h3><p>Elon Musk says his record midterm spending felt foolish after Republican losses, as Democrats take Congress and signal closer scrutiny of tech firms.</p>
+        <div class="mkt-card-foot"><span>From Global News</span><span>2026-11-19</span><a href="/business/">Browse &rarr;</a></div>
+      </div>
+      <div class="mkt-card is-crypto">
+        <div class="mkt-card-head"><a href="/crypto/"><strong>Crypto</strong></a><span>Desk</span></div>
+        <h3><a href="/north-america/2026/11/19/canada-trade-diversification.html">Canada Builds Trade Options Beyond Washington</a></h3><p>Mark Carney says a US trade agreement remains possible but complex, while Canada expands links with China, ASEAN, the Philippines and India.</p>
+        <div class="mkt-card-foot"><span>From Global News</span><span>2026-11-19</span><a href="/crypto/">Browse &rarr;</a></div>
+      </div>
+      <div class="mkt-card is-global">
+        <div class="mkt-card-head"><a href="/"><strong>Global News</strong></a><span>Desk</span></div>
+        <h3><a href="/asia-oceania-pacific/2026/11/19/xi-trump-putin-summit.html">Why the China Summit May Stay Mostly Symbolic</a></h3><p>The planned Xi, Trump and Putin meeting in Shenzhen may deliver careful images and a brief statement, while leaving harder disputes unresolved.</p>
+        <div class="mkt-card-foot"><span>Global News</span><span>2026-11-19</span><a href="/">Browse &rarr;</a></div>
+      </div>
+      </section>
     <section class="lg" aria-label="Lead story">
     <article class="lg-lead">
       <div class="lg-body">
         <div class="lg-kicker">
           <a class="kicker kicker-analysis" href="/blog/">Blog</a>
-          <span class="lg-type">Explainer</span>
+          <span class="lg-type">Analysis</span>
         </div>
-        <h2 class="lg-headline"><a href="/blog/2026/09/26/understanding-currency-depreciation.html">Understanding currency depreciation: a mechanics explainer</a></h2>
-        <p class="lg-summary">Why a currency falls is rarely one thing. The balance-of-payments mechanism, the interest-rate channel and the risk-premium channel are separated, with the diagnostic that tells them apart.</p>
+        <h2 class="lg-headline"><a href="/blog/research-notes/html/flydubai-cockpit-axe-incident.html">flydubai-cockpit-axe-incident.md</a></h2>
+        <p class="lg-summary"></p>
         <p class="lg-meta">
-          <time datetime="2026-09-26T16:00:00+05:30">26 Sep 2026, 16:00</time>
+          <time datetime=""></time>
           
-          <span class="meta-sep">/</span>7 min read
+          <span class="meta-sep">/</span>Article
         </p>
       </div>
-      <a class="lg-img" href="/blog/2026/09/26/understanding-currency-depreciation.html" tabindex="-1" aria-hidden="true"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Specimen_500_euro_note%2C_Europe%2C_2002._Lent_by_the_Bank_of_England%3B_it%27s_no_longer_available_in_the_UK._On_display_at_the_British_Museum_in_London.jpg/1920px-Specimen_500_euro_note%2C_Europe%2C_2002._Lent_by_the_Bank_of_England%3B_it%27s_no_longer_available_in_the_UK._On_display_at_the_British_Museum_in_London.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="" loading="eager" width="1400" height="900"></a>
     </article>
       <div class="sec-rail" aria-label="More from Y-Squre">
       <article class="sec-card-lg">
-        <a class="sec-img" href="/blog/2026/09/26/reading-central-bank-intent.html" tabindex="-1" aria-hidden="true"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/London_MMB_%C2%BB2M1_Threadneedle_Street.jpg/1920px-London_MMB_%C2%BB2M1_Threadneedle_Street.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="" loading="lazy" width="1400" height="900"></a>
         <div class="sec-body-lg">
           <div class="sec-kicker">
             <a class="kicker kicker-analysis" href="/blog/">Blog</a>
             <span class="sec-type">Analysis</span>
           </div>
-          <h3 class="sec-headline"><a href="/blog/2026/09/26/reading-central-bank-intent.html">What a central bank balance sheet tells you that the rate does not</a></h3>
-          <p class="sec-summary">Expansion and contraction are not symmetric signals. A framework that weights them equally will systematically over-read tightening.</p>
+          <h3 class="sec-headline"><a href="/blog/research-notes/html/kyiv-dnipro-bridge-strike.html">kyiv-dnipro-bridge-strike.md</a></h3>
+          <p class="sec-summary"></p>
           <p class="sec-meta">
-            <time datetime="2026-09-26T14:30:00+05:30">26 Sep 2026, 14:30</time>
-            <span class="meta-sep">/</span>6 min read
+            <time datetime=""></time>
+            <span class="meta-sep">/</span>Article
           </p>
         </div>
       </article>
       <article class="sec-card-lg">
-        <a class="sec-img" href="/research/2026/09/26/central-bank-balance-sheets.html" tabindex="-1" aria-hidden="true"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Buildings_on_Threadneedle_Street_-_geograph.org.uk_-_2165404.jpg/1920px-Buildings_on_Threadneedle_Street_-_geograph.org.uk_-_2165404.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="" loading="lazy" width="1400" height="900"></a>
         <div class="sec-body-lg">
           <div class="sec-kicker">
-            <a class="kicker kicker-research" href="/research/">Research</a>
-            <span class="sec-type">Research Note</span>
+            <a class="kicker kicker-analysis" href="/blog/">Blog</a>
+            <span class="sec-type">Analysis</span>
           </div>
-          <h3 class="sec-headline"><a href="/research/2026/09/26/central-bank-balance-sheets.html">The balance sheet is the policy: reading central banks past the rate decision</a></h3>
-          <p class="sec-summary">The asset side of a central bank balance sheet expresses intent. It has led comparable changes in rate stance by two to three quarters in the episodes examined, and it fails in identifiable ways.</p>
+          <h3 class="sec-headline"><a href="/blog/research-notes/html/paris-suburb-student-protests.html">paris-suburb-student-protests.md</a></h3>
+          <p class="sec-summary"></p>
           <p class="sec-meta">
-            <time datetime="2026-09-26T11:00:00+05:30">26 Sep 2026, 11:00</time>
-            <span class="meta-sep">/</span>8 min read
+            <time datetime=""></time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="sec-card-lg">
+        <div class="sec-body-lg">
+          <div class="sec-kicker">
+            <a class="kicker kicker-analysis" href="/blog/">Blog</a>
+            <span class="sec-type">Analysis</span>
+          </div>
+          <h3 class="sec-headline"><a href="/blog/research-notes/html/saudis-red-sea-houthis.html">saudis-red-sea-houthis.md</a></h3>
+          <p class="sec-summary"></p>
+          <p class="sec-meta">
+            <time datetime=""></time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="sec-card-lg">
+        <div class="sec-body-lg">
+          <div class="sec-kicker">
+            <a class="kicker kicker-analysis" href="/blog/">Blog</a>
+            <span class="sec-type">Analysis</span>
+          </div>
+          <h3 class="sec-headline"><a href="/blog/research-notes/html/spain-bar-collapse.html">spain-bar-collapse.md</a></h3>
+          <p class="sec-summary"></p>
+          <p class="sec-meta">
+            <time datetime=""></time>
+            <span class="meta-sep">/</span>Article
           </p>
         </div>
       </article>
       </div>
     </section>
-      <section class="sect" style="margin-top:34px">
-        <div class="sect-head"><h2>Reporting sections</h2></div>
-        <div class="empty-state">
-          <strong>No event reports published yet</strong>
-          Geopolitics, macro and markets reporting will appear here in reverse chronological
-          order. Sections exist and are linked below; they are empty because nothing has been
-          published, not because anything is hidden.
+    <section class="gc-section" aria-label="All articles">
+      <h2 class="gc-h">Earlier</h2>
+      <div class="grid-cards">
+      <article class="grid-card">
+          <a class="gc-img" href="/asia-oceania-pacific/2026/11/19/xi-trump-putin-summit.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/xi-trump-putin-summit.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/asia-oceania-pacific/2026/11/19/xi-trump-putin-summit.html">Why the China Summit May Stay Mostly Symbolic</a></h3>
+          <p class="gc-summary">The planned Xi, Trump and Putin meeting in Shenzhen may deliver careful images and a brief statement, while leaving harder disputes unresolved.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-19T03:24:00+00:00">19 Nov 2026, 03:24</time>
+            <span class="meta-sep">/</span>Article
+          </p>
         </div>
-        <ul class="chips" style="margin-top:14px">
-          <li><a class="chip" href="/geopolitics/">Geopolitics</a></li>
-          <li><a class="chip" href="/markets/">Markets</a></li>
-        </ul>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/north-america/2026/11/19/elon-musk-midterms.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/elon-musk-midterms.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/north-america/2026/11/19/elon-musk-midterms.html">Musk's $446 Million Bet Meets a Changed Congress</a></h3>
+          <p class="gc-summary">Elon Musk says his record midterm spending felt foolish after Republican losses, as Democrats take Congress and signal closer scrutiny of tech firms.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-19T03:05:00+00:00">19 Nov 2026, 03:05</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/north-america/2026/11/19/canada-trade-diversification.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/canada-trade-diversification.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/north-america/2026/11/19/canada-trade-diversification.html">Canada Builds Trade Options Beyond Washington</a></h3>
+          <p class="gc-summary">Mark Carney says a US trade agreement remains possible but complex, while Canada expands links with China, ASEAN, the Philippines and India.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-19T02:52:00+00:00">19 Nov 2026, 02:52</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/asia-oceania-pacific/2026/11/19/024210_vietnam-russia-leaders-agree-deepen-021454770.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/024210_vietnam-russia-leaders-agree-deepen-021454770.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/asia-oceania-pacific/2026/11/19/024210_vietnam-russia-leaders-agree-deepen-021454770.html">Hanoi and Moscow Widen Energy Ties at Shenzhen Summit</a></h3>
+          <p class="gc-summary">At the APEC summit in Shenzhen, Vietnam and Russia agreed to deepen energy ties, discussing oil, gas, renewables and a revived civilian nuclear program.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-19T02:14:00+00:00">19 Nov 2026, 02:14</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/asia-oceania-pacific/2026/11/19/024105_unhcr-halts-refugee-registration-malaysia.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/024105_unhcr-halts-refugee-registration-malaysia.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/asia-oceania-pacific/2026/11/19/024105_unhcr-halts-refugee-registration-malaysia.html">Malaysia Refugee Registration Shifts to State Control</a></h3>
+          <p class="gc-summary">Malaysia to run its own asylum system as UNHCR ends registration. Analysis of the roadmap, safeguards and the likely outcome for Rohingya refugees.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-19T01:58:00+00:00">19 Nov 2026, 01:58</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/asia-oceania-pacific/2026/11/19/024126_global-markets-wrapup-1.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/024126_global-markets-wrapup-1.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/asia-oceania-pacific/2026/11/19/024126_global-markets-wrapup-1.html">Anthropic Listing Puts AI Sentiment to the Test</a></h3>
+          <p class="gc-summary">Asian equities and US futures rose as Anthropic&amp;#x27;s $81 billion IPO set a fresh test for AI sentiment, with hot inflation data and softer oil also in focus.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-19T01:53:00+00:00">19 Nov 2026, 01:53</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/asia-oceania-pacific/2026/11/19/004917_us-department-justice-charges-russian-234724250.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/004917_us-department-justice-charges-russian-234724250.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/asia-oceania-pacific/2026/11/19/004917_us-department-justice-charges-russian-234724250.html">Russian National Indicted in Palantir Surveillance Case</a></h3>
+          <p class="gc-summary">A federal grand jury charged a Russian national with acting as a foreign agent who targeted Palantir and tracked its staff, according to court documents.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-19T00:35:00+00:00">19 Nov 2026, 00:35</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/asia-oceania-pacific/2026/11/19/004939_takeaways-day-2-trumps-asia-213904763.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/004939_takeaways-day-2-trumps-asia-213904763.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/asia-oceania-pacific/2026/11/19/004939_takeaways-day-2-trumps-asia-213904763.html">Shenzhen Summit: Three Leaders, One Unpredictable Stage</a></h3>
+          <p class="gc-summary">Analysis of the Shenzhen summit with Trump, Xi and Putin: what the dispatch reports, how three stated agendas diverge, and what may follow.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-19T00:31:00+00:00">19 Nov 2026, 00:31</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/asia-oceania-pacific/2026/11/18/024042_trumps-historic-meeting-with-xi-putin-headlines-asia-trip.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/024042_trumps-historic-meeting-with-xi-putin-headlines-asia-trip.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/asia-oceania-pacific/2026/11/18/024042_trumps-historic-meeting-with-xi-putin-headlines-asia-trip.html">Trump heads into Xi-Putin summit with agenda unsettled</a></h3>
+          <p class="gc-summary">Trump enters a summit with Xi and Putin with the agenda still unsettled, from Ukraine to nuclear disarmament and a NVIDIA dispute splitting his staff.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-18T23:05:00+00:00">18 Nov 2026, 23:05</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/asia-oceania-pacific/2026/11/18/mexicos-sheinbaum-says-she-had-130912970.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/mexicos-sheinbaum-says-she-had-130912970.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/asia-oceania-pacific/2026/11/18/mexicos-sheinbaum-says-she-had-130912970.html">Mexico and US Trade Talks Move Closer, Sheinbaum Says</a></h3>
+          <p class="gc-summary">Claudia Sheinbaum says talks with Washington are far along after an APEC meeting with Donald Trump, with tariffs and border pressures central.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-18T20:41:00+05:30">18 Nov 2026, 20:41</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/asia-oceania-pacific/2026/11/18/yankees-great-reacts-picking-last.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/yankees-great-reacts-picking-last.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/asia-oceania-pacific/2026/11/18/yankees-great-reacts-picking-last.html">Teixeira Turns Last House Office Pick Into a Joke</a></h3>
+          <p class="gc-summary">Mark Teixeira drew the final office chip in the House lottery, then turned the moment into a viral joke and a lesson in good humor.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-18T19:33:00+05:30">18 Nov 2026, 19:33</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/asia-oceania-pacific/2026/11/18/exclusive-saudis-preparing-yemen-campaign.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/exclusive-saudis-preparing-yemen-campaign.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/asia-oceania-pacific/2026/11/18/exclusive-saudis-preparing-yemen-campaign.html">Saudi Arabia Gears Up for a Long Yemen Campaign</a></h3>
+          <p class="gc-summary">Riyadh is preparing for Houthi operations to extend into 2027, betting on territorial gains and outside support before any talks.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-18T19:26:00+05:30">18 Nov 2026, 19:26</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/europe-uk-middle-east/2026/11/18/commemoration-italian-parliament-ex-fascist-leader-causes-uproar.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/commemoration-italian-parliament-ex-fascist-leader-causes-uproar.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/europe-uk-middle-east/2026/11/18/commemoration-italian-parliament-ex-fascist-leader-causes-uproar.html">Italy Removes Fascist Images From Parliament Exhibition</a></h3>
+          <p class="gc-summary">Italy&amp;#x27;s lower house ordered fascist imagery removed from an exhibition honouring Pino Rauti after opposition lawmakers objected.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-18T13:16:00Z">18 Nov 2026, 13:16</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/north-america/2026/11/18/canada-china-are-widening-access-each-others-financial-firms-carney-says.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/canada-china-are-widening-access-each-others-financial-firms-carney-says.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/north-america/2026/11/18/canada-china-are-widening-access-each-others-financial-firms-carney-says.html">Canada and China open financial channels in Shenzhen</a></h3>
+          <p class="gc-summary">Canada and China are widening access for each other&amp;#x27;s financial firms, renewing a currency swap and cutting Ottawa&amp;#x27;s reliance on the United States market.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-18T12:11:00+05:30">18 Nov 2026, 12:11</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/north-america/2026/11/18/democrat-peltola-wins-alaska-securing-56-44-us-senate-majority.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/democrat-peltola-wins-alaska-securing-56-44-us-senate-majority.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/north-america/2026/11/18/democrat-peltola-wins-alaska-securing-56-44-us-senate-majority.html">Peltola Wins Alaska, Handing Democrats a 56-44 Senate Edge</a></h3>
+          <p class="gc-summary">Mary Peltola defeated Dan Sullivan in Alaska, giving Democrats a 56-44 Senate majority and a ninth midterm flip. Here is what it means for the next two years.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-18T08:57:00+05:30">18 Nov 2026, 08:57</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/europe-uk-middle-east/2026/11/18/iran-attacks-us-bases-after-diplomatic-efforts.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/iran-attacks-us-bases-after-diplomatic-efforts.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/europe-uk-middle-east/2026/11/18/iran-attacks-us-bases-after-diplomatic-efforts.html">Iran strikes US bases in Gulf despite diplomacy</a></h3>
+          <p class="gc-summary">Gulf states intercepted Iranian drones and missiles after US strikes on Qeshm Island, as Trump weighed a threat to Washington and mediation continued.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-18T04:45:00+05:30">18 Nov 2026, 04:45</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/asia-oceania-pacific/2026/11/18/xi-jinping-apec-free-trade-appeal.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/xi-jinping-apec-free-trade-appeal.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/asia-oceania-pacific/2026/11/18/xi-jinping-apec-free-trade-appeal.html">Xi Jinping Opens APEC with a Free-Trade Appeal</a></h3>
+          <p class="gc-summary">Xi Jinping used the APEC CEO Summit in Shenzhen to call for free and open trade, while new US chip curbs and a planned three-way meeting raised the stakes.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-18T03:21:00Z">18 Nov 2026, 03:21</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/asia-oceania-pacific/2026/11/18/indian-shares-set-lower-open-foreign-inflows-easing-crude-lend-support.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/indian-shares-set-lower-open-foreign-inflows-easing-crude-lend-support.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/asia-oceania-pacific/2026/11/18/indian-shares-set-lower-open-foreign-inflows-easing-crude-lend-support.html">Indian shares face pullback after nine-month high rally</a></h3>
+          <p class="gc-summary">Indian shares may open lower after a nine-month high, with record foreign inflows and easing oil prices likely to limit losses.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-18T02:37:00Z">18 Nov 2026, 02:37</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/north-america/2026/11/17/us-loses-measles-elimination-status-after-nearly-three-decades.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/us-loses-measles-elimination-status-after-nearly-three-decades.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/north-america/2026/11/17/us-loses-measles-elimination-status-after-nearly-three-decades.html">United States Loses Measles-Free Status After 26 Years</a></h3>
+          <p class="gc-summary">The United States lost measles elimination status after 26 years as cases reached a three-decade high. Bolivia and Mexico also lost the designation.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-17T21:49:00+05:30">17 Nov 2026, 21:49</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/north-america/2026/11/17/rare-images-isolated-indigenous-group-brazil-highlight-threats.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/rare-images-isolated-indigenous-group-brazil-highlight-threats.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/north-america/2026/11/17/rare-images-isolated-indigenous-group-brazil-highlight-threats.html">Rare Footage Reveals Isolated Amazon Tribe's Plight</a></h3>
+          <p class="gc-summary">Rare images of uncontacted Awa people in Brazil&amp;#x27;s Amazon renew focus on threats to isolated Indigenous groups and the case for protecting their forest home.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-17T03:47:00+05:30">17 Nov 2026, 03:47</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/asia-oceania-pacific/2026/11/17/manila-quad-talks-open-a-week-of-high-stakes-summits.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/assets/images/articles/manila-quad-talks-open-a-week-of-high-stakes-summits.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/asia-oceania-pacific/2026/11/17/manila-quad-talks-open-a-week-of-high-stakes-summits.html">Manila Quad Talks Open a Week of High-Stakes Summits</a></h3>
+          <p class="gc-summary">Trump opens a Manila summit week with Quad talks, then APEC and a three-way meeting with China and Russia, against a fragile truce and new chip curbs.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-17T01:26:00Z">17 Nov 2026, 01:26</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/geopolitics/europe/2026/11/14/zelenskiy-donbas-nato-talks.html" tabindex="-1" aria-hidden="true"><img src="https://y-squre.com/geopolitics/europe/2026/11/14/zelenskiy-donbas-nato-talks.jpg" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/geopolitics/europe/2026/11/14/zelenskiy-donbas-nato-talks.html">NATO Ties to Donbas Withdrawal Floated in US-Russia Talks</a></h3>
+          <p class="gc-summary">US negotiators raised linking NATO membership to a Ukrainian withdrawal from Donbas; Zelenskiy said he would put any territorial concession to a national referendum.</p>
+          <p class="gc-meta">
+            <time datetime="2026-11-14T01:10:03Z">14 Nov 2026, 01:10</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-geo" href="/">Global News</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/geopolitics/global/world/2026/10/26/brazil-heads-back-future-flavio-bolsonaro-refuses.html">Brazil Election: Bolsonaro Refuses to Concede to Lula</a></h3>
+          <p class="gc-summary">Flavio Bolsonaro refuses to concede Brazil election to Lula, raising protest risks and market turmoil. Analysis of international and economic fallout.</p>
+          <p class="gc-meta">
+            <time datetime="2026-10-26T12:37:00+05:30">26 Oct 2026, 12:37</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/blog/2026/09/26/understanding-currency-depreciation.html" tabindex="-1" aria-hidden="true"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Specimen_500_euro_note%2C_Europe%2C_2002._Lent_by_the_Bank_of_England%3B_it%27s_no_longer_available_in_the_UK._On_display_at_the_British_Museum_in_London.jpg/1920px-Specimen_500_euro_note%2C_Europe%2C_2002._Lent_by_the_Bank_of_England%3B_it%27s_no_longer_available_in_the_UK._On_display_at_the_British_Museum_in_London.jpg?utm_source=commons.wikimedia.org&amp;amp;utm_campaign=imageinfo&amp;amp;utm_content=thumbnail" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-analysis" href="/blog/">Blog</a>
+            <span class="gc-type">Explainer</span>
+          </div>
+          <h3 class="gc-headline"><a href="/blog/2026/09/26/understanding-currency-depreciation.html">Understanding currency depreciation: a mechanics explainer</a></h3>
+          <p class="gc-summary">A falling currency is a number, not a mechanism. Three distinct channels produce it, and the same move means opposite things depending on which one is running.</p>
+          <p class="gc-meta">
+            <time datetime="2026-09-26T16:00:00+05:30">26 Sep 2026, 16:00</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/blog/2026/09/26/reading-central-bank-intent.html" tabindex="-1" aria-hidden="true"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/London_MMB_%C2%BB2M1_Threadneedle_Street.jpg/1920px-London_MMB_%C2%BB2M1_Threadneedle_Street.jpg?utm_source=commons.wikimedia.org&amp;amp;utm_campaign=imageinfo&amp;amp;utm_content=thumbnail" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-analysis" href="/blog/">Blog</a>
+            <span class="gc-type">Analysis</span>
+          </div>
+          <h3 class="gc-headline"><a href="/blog/2026/09/26/reading-central-bank-intent.html">What a central bank balance sheet tells you that the rate does not</a></h3>
+          <p class="gc-summary">The judgement calls on top of the mechanics — and the three situations where the framework should be abandoned rather than used.</p>
+          <p class="gc-meta">
+            <time datetime="2026-09-26T14:30:00+05:30">26 Sep 2026, 14:30</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      <article class="grid-card">
+          <a class="gc-img" href="/research/2026/09/26/central-bank-balance-sheets.html" tabindex="-1" aria-hidden="true"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Buildings_on_Threadneedle_Street_-_geograph.org.uk_-_2165404.jpg/1920px-Buildings_on_Threadneedle_Street_-_geograph.org.uk_-_2165404.jpg?utm_source=commons.wikimedia.org&amp;amp;utm_campaign=imageinfo&amp;amp;utm_content=thumbnail" alt="" loading="lazy" width="1400" height="900"></a>
+        <div class="gc-body">
+          <div class="gc-kicker">
+            <a class="kicker kicker-research" href="/research/">Research</a>
+            <span class="gc-type">Research</span>
+          </div>
+          <h3 class="gc-headline"><a href="/research/2026/09/26/central-bank-balance-sheets.html">The balance sheet is the policy: reading central banks</a></h3>
+          <p class="gc-summary">Markets price the rate decision, then react to what the central bank did to its portfolio. The gap between those two events is where the mispricing sits.</p>
+          <p class="gc-meta">
+            <time datetime="2026-09-26T11:00:00+05:30">26 Sep 2026, 11:00</time>
+            <span class="meta-sep">/</span>Article
+          </p>
+        </div>
+      </article>
+      </div>
+    </section>
+      <section class="mkt-quick" aria-label="Latest headlines" data-mkt-quick>
+        <div class="mkt-quick-head">
+          <h2>All headlines</h2>
+          <div class="mkt-filters" data-mkt-filters>
+            <button class="mkt-filter" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="mkt-filter" type="button" data-filter="global" aria-pressed="false">Global News</button>
+            <button class="mkt-filter" type="button" data-filter="market" aria-pressed="false">Market</button>
+            <button class="mkt-filter" type="button" data-filter="crypto" aria-pressed="false">Crypto</button>
+            <button class="mkt-filter" type="button" data-filter="business" aria-pressed="false">World Economies</button>
+          </div>
+        </div>
+      <a class="mkt-row" href="/asia-oceania-pacific/2026/11/19/xi-trump-putin-summit.html" data-desk="global">
+        <time datetime="2026-11-19T03:24:00+00:00">2026-11-19 03:24</time>
+        <span class="mkt-desk">Global News</span>
+        <h3>Why the China Summit May Stay Mostly Symbolic</h3>
+        <span class="mkt-type">Analysis</span>
+      </a>
+      <a class="mkt-row" href="/north-america/2026/11/19/elon-musk-midterms.html" data-desk="global">
+        <time datetime="2026-11-19T03:05:00+00:00">2026-11-19 03:05</time>
+        <span class="mkt-desk">Global News</span>
+        <h3>Musk&#x27;s $446 Million Bet Meets a Changed Congress</h3>
+        <span class="mkt-type">Analysis</span>
+      </a>
+      <a class="mkt-row" href="/north-america/2026/11/19/canada-trade-diversification.html" data-desk="global">
+        <time datetime="2026-11-19T02:52:00+00:00">2026-11-19 02:52</time>
+        <span class="mkt-desk">Global News</span>
+        <h3>Canada Builds Trade Options Beyond Washington</h3>
+        <span class="mkt-type">Analysis</span>
+      </a>
+      <a class="mkt-row" href="/asia-oceania-pacific/2026/11/19/024210_vietnam-russia-leaders-agree-deepen-021454770.html" data-desk="global">
+        <time datetime="2026-11-19T02:14:00+00:00">2026-11-19 02:14</time>
+        <span class="mkt-desk">Global News</span>
+        <h3>Hanoi and Moscow Widen Energy Ties at Shenzhen Summit</h3>
+        <span class="mkt-type">Analysis</span>
+      </a>
+      <a class="mkt-row" href="/asia-oceania-pacific/2026/11/19/024105_unhcr-halts-refugee-registration-malaysia.html" data-desk="global">
+        <time datetime="2026-11-19T01:58:00+00:00">2026-11-19 01:58</time>
+        <span class="mkt-desk">Global News</span>
+        <h3>Malaysia Refugee Registration Shifts to State Control</h3>
+        <span class="mkt-type">Analysis</span>
+      </a>
+      <a class="mkt-row" href="/asia-oceania-pacific/2026/11/19/024126_global-markets-wrapup-1.html" data-desk="global">
+        <time datetime="2026-11-19T01:53:00+00:00">2026-11-19 01:53</time>
+        <span class="mkt-desk">Global News</span>
+        <h3>Anthropic Listing Puts AI Sentiment to the Test</h3>
+        <span class="mkt-type">Analysis</span>
+      </a>
+      <a class="mkt-row" href="/asia-oceania-pacific/2026/11/19/004917_us-department-justice-charges-russian-234724250.html" data-desk="global">
+        <time datetime="2026-11-19T00:35:00+00:00">2026-11-19 00:35</time>
+        <span class="mkt-desk">Global News</span>
+        <h3>Russian National Indicted in Palantir Surveillance Case</h3>
+        <span class="mkt-type">Analysis</span>
+      </a>
+      <a class="mkt-row" href="/asia-oceania-pacific/2026/11/19/004939_takeaways-day-2-trumps-asia-213904763.html" data-desk="global">
+        <time datetime="2026-11-19T00:31:00+00:00">2026-11-19 00:31</time>
+        <span class="mkt-desk">Global News</span>
+        <h3>Shenzhen Summit: Three Leaders, One Unpredictable Stage</h3>
+        <span class="mkt-type">Analysis</span>
+      </a>
+      <a class="mkt-row" href="/asia-oceania-pacific/2026/11/18/024042_trumps-historic-meeting-with-xi-putin-headlines-asia-trip.html" data-desk="global">
+        <time datetime="2026-11-18T23:05:00+00:00">2026-11-18 23:05</time>
+        <span class="mkt-desk">Global News</span>
+        <h3>Trump heads into Xi-Putin summit with agenda unsettled</h3>
+        <span class="mkt-type">Analysis</span>
+      </a>
+      <a class="mkt-row" href="/asia-oceania-pacific/2026/11/18/mexicos-sheinbaum-says-she-had-130912970.html" data-desk="global">
+        <time datetime="2026-11-18T20:41:00+05:30">2026-11-18 20:41</time>
+        <span class="mkt-desk">Global News</span>
+        <h3>Mexico and US Trade Talks Move Closer, Sheinbaum Says</h3>
+        <span class="mkt-type">Analysis</span>
+      </a>
+      <a class="mkt-row" href="/asia-oceania-pacific/2026/11/18/yankees-great-reacts-picking-last.html" data-desk="global">
+        <time datetime="2026-11-18T19:33:00+05:30">2026-11-18 19:33</time>
+        <span class="mkt-desk">Global News</span>
+        <h3>Teixeira Turns Last House Office Pick Into a Joke</h3>
+        <span class="mkt-type">Analysis</span>
+      </a>
+      <a class="mkt-row" href="/asia-oceania-pacific/2026/11/18/exclusive-saudis-preparing-yemen-campaign.html" data-desk="global">
+        <time datetime="2026-11-18T19:26:00+05:30">2026-11-18 19:26</time>
+        <span class="mkt-desk">Global News</span>
+        <h3>Saudi Arabia Gears Up for a Long Yemen Campaign</h3>
+        <span class="mkt-type">Analysis</span>
+      </a>
+      <a class="mkt-row" href="/europe-uk-middle-east/2026/11/18/commemoration-italian-parliament-ex-fascist-leader-causes-uproar.html" data-desk="global">
+        <time datetime="2026-11-18T13:16:00Z">2026-11-18 13:16</time>
+        <span class="mkt-desk">Global News</span>
+        <h3>Italy Removes Fascist Images From Parliament Exhibition</h3>
+        <span class="mkt-type">Analysis</span>
+      </a>
+      <a class="mkt-row" href="/north-america/2026/11/18/canada-china-are-widening-access-each-others-financial-firms-carney-says.html" data-desk="global">
+        <time datetime="2026-11-18T12:11:00+05:30">2026-11-18 12:11</time>
+        <span class="mkt-desk">Global News</span>
+        <h3>Canada and China open financial channels in Shenzhen</h3>
+        <span class="mkt-type">Analysis</span>
+      </a>
+      </section>
+      <section class="mkt-rail" aria-label="Browse desks">
+        <div>
+          <h3>News desks</h3>
+          <ul>
+            <li><a href="/asia-oceania-pacific/">Asia / Oceania / Pacific</a></li>
+            <li><a href="/europe-uk-middle-east/">Europe / UK / Middle East</a></li>
+            <li><a href="/north-america/">North America</a></li>
+            <li><a href="/business/">World Economies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Research desks</h3>
+          <ul>
+            <li><a href="/markets/">Market</a></li>
+            <li><a href="/crypto/">Crypto</a></li>
+            <li><a href="/blog/">Blog &amp; analysis</a></li>
+            <li><a href="/research/">Research notes</a></li>
+          </ul>
+        </div>
       </section>
     </div>
   </main>

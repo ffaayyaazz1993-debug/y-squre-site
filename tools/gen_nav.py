@@ -230,7 +230,7 @@ def primary_nav(current=""):
     # its panel (first click) and has nowhere to go (second click). The
     # economy categories are placeholders until the Business section exists.
     biz_pid = "m-business"
-    out.append(_trigger("Business", "/business/", biz_pid))
+    out.append(_trigger("World Economies", "/business/", biz_pid))
     biz_items = "".join(
         '<li><a href="/business/' + sl + '/">' + esc(n) + '</a></li>'
         for n, sl in (("Developed Economies", "developed-economies"),
@@ -238,10 +238,10 @@ def primary_nav(current=""):
                       ("Potential Economies", "potential-economies"),
                       ("Non-Performing Economies", "non-performing-economies")))
     out.append(
-      '<div class="mega" id="' + biz_pid + '" data-open="false" aria-label="Business sections">\n'
+      '<div class="mega" id="' + biz_pid + '" data-open="false" aria-label="World Economies sections">\n'
       '        <div class="mega-inner">\n'
       '          <div class="mega-head">\n'
-      '            <a class="mega-title" href="/business/">Business</a>\n'
+      '            <a class="mega-title" href="/business/">World Economies</a>\n'
       '          </div>\n'
       '          <div class="mega-cols">\n'
       '            <div class="mega-col">\n'
@@ -319,7 +319,7 @@ def mobile_menu():
     rows = []
     for name, path in GLOBAL_NAV:
         rows.append(f'<li class="acc-leaf"><a href="{path}">{esc(name)}</a></li>')
-    rows.append('<li class="acc-leaf"><a href="/business/">Business</a></li>')
+    rows.append('<li class="acc-leaf"><a href="/business/">World Economies</a></li>')
     rows.append('<li class="acc-leaf"><a href="/crypto/">Crypto</a></li>')
     for slug in ("markets", "research", "blog"):
         t = TOPICS[slug]
@@ -340,42 +340,63 @@ def mobile_menu():
     </div>'''
 
 
+def market_tape():
+    """Real published headlines in a dense terminal-style strip.
+
+    No prices, no 'live' claim: the only dynamic element is a UTC/IST clock and
+    the only links are to articles that exist in articles.json.
+    """
+    path = os.path.join(ROOT, "assets", "data", "articles.json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+    except (OSError, ValueError):
+        return ""
+    items = sorted(data.get("articles", []),
+                   key=lambda a: a.get("published") or "", reverse=True)[:8]
+    if not items:
+        return ""
+    desk_names = {
+        "global": "GLOBAL NEWS", "business": "WORLD ECONOMIES",
+        "market": "MARKET", "crypto": "CRYPTO",
+        "blog": "BLOG", "research": "RESEARCH",
+    }
+    out = []
+    for a in items:
+        title = html.unescape(a.get("title") or a.get("h1") or "").strip()
+        url = html.escape(a.get("url") or "#", quote=True)
+        desk = desk_names.get((a.get("section") or "global").lower(), "GLOBAL NEWS")
+        pub = a.get("published") or ""
+        t = pub[11:16] if len(pub) >= 16 else ""
+        out.append(
+            f'<a class="mkt-tape-item" href="{url}">'
+            f'<span class="tape-kicker">{desk}</span>'
+            f'<span>{html.escape(title)}</span>'
+            f'<span class="tape-time">{html.escape(t)}</span></a>'
+        )
+    track = "".join(out)
+    sections = [
+        ("GLOBAL NEWS", "/"), ("WORLD ECONOMIES", "/business/"),
+        ("MARKET", "/markets/"), ("CRYPTO", "/crypto/"),
+    ]
+    nav = "".join(f'<a href="{href}">{label}</a>' for label, href in sections)
+    return f'''
+    <div class="mkt-tape" aria-label="Main bar">
+      <div class="wrap mkt-tape-inner">
+        <a class="mkt-brand" href="/">Y<span>-</span>SQURE</a>
+        <nav class="mkt-nav" aria-label="Sections">{nav}</nav>
+        <span class="mkt-tape-viewport"><span class="mkt-tape-track">{track}</span></span>
+        <span class="mkt-clock" data-mkt-clock>UTC --:--:--</span>
+      </div>
+    </div>'''
+
+
 def header(current=""):
-    """The complete header block injected into every page."""
+    """Single-bar header: the headline tape replaces the masthead + nav."""
     return f'''
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="masthead">
-      <div class="wrap masthead-inner">
-        <a class="brand" href="/">
-          <span class="brand-mark" aria-hidden="true">Y</span>
-          <span class="brand-text"><span class="brand-name">Y-SQURE</span></span>
-        </a>
-        <p class="tagline">Global News, Data &amp; Analysis</p>
-        <div class="masthead-utils">
-          <a class="util-link" href="/search/index.html">
-            <svg class="util-icon" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
-              <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M10.5 10.5L15 15" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-            </svg>
-            <span>Search</span>
-          </a>
-          <a class="util-link util-signin" href="/account/index.html">Sign In</a>
-        </div>
-        <button class="nav-toggle" data-burger aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-          <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span class="nav-toggle-text">Menu</span>
-        </button>
-      </div>
-    </div>
-    <nav class="primary-nav" data-nav aria-label="Sections">
-      <div class="wrap">
-        <ul class="nav-list nav-list-geo">
-{primary_nav(current)}
-        </ul>
-      </div>
-    </nav>
-{mobile_menu()}
+{market_tape()}
   </header>
 '''
 

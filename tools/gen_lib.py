@@ -99,7 +99,7 @@ def head(title, desc, url, *, ctype="website", published="", updated="",
     css = "".join('\n    <link rel="stylesheet" href="%s">' % asset(c) for c in
                   ["/assets/css/base.css", "/assets/css/layout.css",
                    "/assets/css/article.css", "/assets/css/nav.css", "/assets/css/sections.css",
-                   "/assets/css/responsive.css"])
+                   "/assets/css/market.css", "/assets/css/responsive.css"])
     for c in extra_css:
         css += '\n    <link rel="stylesheet" href="%s">' % asset(c)
     # OG image is a real, on-server asset (SVG) so crawlers have something to fetch.
@@ -133,6 +133,7 @@ def head(title, desc, url, *, ctype="website", published="", updated="",
   <script src="{asset('/assets/js/nav.js')}" defer></script>
   <script src="{asset('/assets/js/consent.js')}" defer></script>
   <script src="{asset('/assets/js/search.js')}" defer></script>
+  <script src="{asset('/assets/js/market.js')}" defer></script>
 </head>
 <body>
 """
