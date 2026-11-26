@@ -29,6 +29,8 @@
   font-size: .74rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: .04em; text-decoration: none;
 }
+.nav-icon { margin-right: 4px; font-size: .9em; }
+.nav-pro { color: var(--mkt-accent) !important; }
 /* ---------- headline tape (inside the sticky header) ---------- */
 .mkt-tape {
   background: #111;

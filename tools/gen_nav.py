@@ -196,66 +196,30 @@ def _trigger(label, href, panel_id):
 
 
 def primary_nav(current=""):
-    """Primary bar: top-level tabs.
-
-    The geographic triggers moved off the bar and into the section-front
-    region strip. The bar now carries the three top-level tabs: Global News,
-    Business, and Market.
-    """
+    '''Exact main bar requested: Investing.com label set, Y-Squre links.'''
     out = []
-    # Global News carries a mega panel: clicking it opens the region list
-    # (North America first); a second click follows the href to "/".
-    # Without aria-controls + a panel, nav.js never binds the trigger and
-    # the click just navigates -- North America never appears.
-    pid = "m-global-news"
-    out.append(_trigger("Global News", "/", pid))
-    items = "".join(
-        '<li><a href="' + path + '">' + esc(name) + '</a></li>'
-        for name, path in GLOBAL_NAV)
-    out.append(
-      '<div class="mega" id="' + pid + '" data-open="false" aria-label="Global News regions">\n'
-      '        <div class="mega-inner">\n'
-      '          <div class="mega-head">\n'
-      '            <a class="mega-title" href="/">Global News</a>\n'
-      '          </div>\n'
-      '          <div class="mega-cols">\n'
-      '            <div class="mega-col">\n'
-      '      <ul class="mega-list">' + items + '</ul>\n'
-      '            </div>\n'
-      '          </div>\n'
-      '        </div>\n'
-      '      </div>\n'
-      '      </li>')
-    # Business: fresh start. No destination pages yet, so the trigger opens
-    # its panel (first click) and has nowhere to go (second click). The
-    # economy categories are placeholders until the Business section exists.
-    biz_pid = "m-business"
-    out.append(_trigger("World Economies", "/business/", biz_pid))
-    biz_items = "".join(
-        '<li><a href="/business/' + sl + '/">' + esc(n) + '</a></li>'
-        for n, sl in (("Developed Economies", "developed-economies"),
-                      ("Emerging Economies", "emerging-economies"),
-                      ("Potential Economies", "potential-economies"),
-                      ("Non-Performing Economies", "non-performing-economies")))
-    out.append(
-      '<div class="mega" id="' + biz_pid + '" data-open="false" aria-label="World Economies sections">\n'
-      '        <div class="mega-inner">\n'
-      '          <div class="mega-head">\n'
-      '            <a class="mega-title" href="/business/">World Economies</a>\n'
-      '          </div>\n'
-      '          <div class="mega-cols">\n'
-      '            <div class="mega-col">\n'
-      '      <ul class="mega-list">' + biz_items + '</ul>\n'
-      '            </div>\n'
-      '          </div>\n'
-      '        </div>\n'
-      '      </div>\n'
-      '      </li>')
-    # Market: home tab with a two-item dropdown, same pattern as Business.
-    mkt_pid = "m-markets"
-    out.append(_trigger("Market", "/markets/", mkt_pid))
-    # Stock Market carries a side flyout (US, UK, Europe, Asia) that stays
-    # open while the Market dropdown is open.
+
+    def plain(label, href, cls=""):
+        c = " " + cls if cls else ""
+        return (f'      <li class="nav-item"><a class="nav-link{c}" '
+                f'href="{href}">{label}</a></li>')
+
+    def simple_panel(pid, title, href, rows):
+        lis = "".join(f'<li><a href="{u}">{esc(t)}</a></li>' for t, u in rows)
+        return f'''<div class="mega" id="{pid}" data-open="false" aria-label="{esc(title)}">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="{href}">{esc(title)}</a>
+          </div>
+          <div class="mega-cols"><div class="mega-col">
+      <ul class="mega-list">{lis}</ul>
+          </div></div>
+        </div>
+      </div>
+      </li>'''
+
+    mid = "m-markets"
+    out.append(_trigger("Markets", "/markets/", mid))
     sm_fly = "".join(
         '<li><a href="/markets/stock-market/' + sl + '/">' + esc(n) + '</a></li>'
         for n, sl in (("US", "us"), ("UK", "uk"),
@@ -263,73 +227,50 @@ def primary_nav(current=""):
     mkt_items = (
         '<li class="has-flyout"><a href="/markets/stock-market/">Stock Market</a>'
         '<ul class="mega-flyout">' + sm_fly + '</ul></li>'
-        '<li><a href="/markets/forex-market/">Forex Market</a></li>')
-    out.append(
-      '<div class="mega" id="' + mkt_pid + '" data-open="false" aria-label="Market sections">\n'
-      '        <div class="mega-inner">\n'
-      '          <div class="mega-head">\n'
-      '            <a class="mega-title" href="/markets/">Market</a>\n'
-      '          </div>\n'
-      '          <div class="mega-cols">\n'
-      '            <div class="mega-col">\n'
-      '      <ul class="mega-list">' + mkt_items + '</ul>\n'
-      '            </div>\n'
-      '          </div>\n'
-      '        </div>\n'
-      '      </div>\n'
-      '      </li>')
-    # Crypto: home tab with a three-item dropdown, same pattern as Market.
-    crypto_pid = "m-crypto"
-    out.append(_trigger("Crypto", "/crypto/", crypto_pid))
-    crypto_items = "".join(
-        '<li><a href="/crypto/' + sl + '/">' + esc(n) + '</a></li>'
-        for n, sl in (("Popular Coins", "popular-coins"),
-                      ("Alt-Coins", "alt-coins"),
-                      ("NFTs", "nfts")))
-    out.append(
-      '<div class="mega" id="' + crypto_pid + '" data-open="false" aria-label="Crypto sections">\n'
-      '        <div class="mega-inner">\n'
-      '          <div class="mega-head">\n'
-      '            <a class="mega-title" href="/crypto/">Crypto</a>\n'
-      '          </div>\n'
-      '          <div class="mega-cols">\n'
-      '            <div class="mega-col">\n'
-      '      <ul class="mega-list">' + crypto_items + '</ul>\n'
-      '            </div>\n'
-      '          </div>\n'
-      '        </div>\n'
-      '      </div>\n'
-      '      </li>')
-    # Plain sections — no aria-controls, so nav.js leaves them as real links.
-    for label, href in (("News", "/latest/"), ("Analysis", "/blog/"),
-                        ("Research", "/research/")):
-        out.append(f'      <li class="nav-item"><a class="nav-link" href="{href}">{label}</a></li>')
+        '<li><a href="/markets/forex-market/">Forex Market</a></li>'
+        '<li><a href="/markets/indices/">Indices</a></li>'
+        '<li><a href="/markets/commodities/">Commodities</a></li>'
+        '<li><a href="/markets/currencies/">Currencies</a></li>'
+        '<li><a href="/markets/companies/">Companies</a></li>'
+        '<li><a href="/markets/sectors/">Sectors</a></li>'
+        '<li><a href="/markets/bonds/">Bonds</a></li>')
+    out.append(f'''<div class="mega" id="{mid}" data-open="false" aria-label="Market sections">
+        <div class="mega-inner">
+          <div class="mega-head">
+            <a class="mega-title" href="/markets/">Markets</a>
+          </div>
+          <div class="mega-cols"><div class="mega-col">
+      <ul class="mega-list">{mkt_items}</ul>
+          </div></div>
+        </div>
+      </div>
+      </li>''')
 
-    def simple_panel(pid, title, href, rows):
-        lis = "".join(f'<li><a href="{u}">{esc(t)}</a></li>' for t, u in rows)
-        return (f'<div class="mega" id="{pid}" data-open="false" aria-label="{esc(title)}">\n'
-                '        <div class="mega-inner">\n'
-                '          <div class="mega-head">\n'
-                f'            <a class="mega-title" href="{href}">{esc(title)}</a>\n'
-                '          </div>\n'
-                '          <div class="mega-cols"><div class="mega-col">\n'
-                f'      <ul class="mega-list">{lis}</ul>\n'
-                '          </div></div>\n'
-                '        </div>\n'
-                '      </div>\n'
-                '      </li>')
+    out.append(plain('<span class="nav-icon" aria-hidden="true">★</span> My Watchlist',
+                     '/account/index.html'))
+    out.append(plain('<span class="nav-icon" aria-hidden="true">&#128293;</span> Investing Challenges',
+                     '/blog/'))
+    out.append(plain("News", "/latest/"))
+    out.append(plain("Analysis", "/blog/"))
+    out.append(plain("Charts", "/markets/"))
+    out.append(plain("Technical", "/research/"))
+    out.append(plain("Brokers", "/advertising/index.html"))
 
-    tools_pid = "m-tools"
-    out.append(_trigger("Tools", "/search/index.html", tools_pid))
+    tid = "m-tools"
+    out.append(_trigger("Tools", "/search/index.html", tid))
     out.append(simple_panel(
-        tools_pid, "Tools", "/search/index.html",
+        tid, "Tools", "/search/index.html",
         [("Search", "/search/index.html"), ("Sitemap", "/sitemap.xml"),
          ("All articles", "/latest/")]))
 
-    more_pid = "m-more"
-    out.append(_trigger("More", "/about/index.html", more_pid))
+    out.append(plain("Academy", "/blog/"))
+    out.append(plain("Stock Screener", "/markets/stock-market/"))
+    out.append(plain("InvestingPro", "/advertising/index.html", "nav-pro"))
+
+    more_id = "m-more"
+    out.append(_trigger("More", "/about/index.html", more_id))
     out.append(simple_panel(
-        more_pid, "More", "/about/index.html",
+        more_id, "More", "/about/index.html",
         [("About", "/about/index.html"), ("Contact", "/contact/index.html"),
          ("Editorial Policy", "/editorial-policy/index.html"),
          ("Advertising", "/advertising/index.html"),
